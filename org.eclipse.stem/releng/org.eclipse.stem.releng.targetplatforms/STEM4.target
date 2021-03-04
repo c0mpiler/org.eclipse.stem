@@ -28,9 +28,10 @@
 			<unit id="org.eclipse.help.ui" version="4.2.100.v20200923-2139"/>
 			<repository location="http://download.eclipse.org/eclipse/updates/4.18"/>
 		</location>
-		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="true" type="InstallableUnit">
-    		<repository location="https://download.eclipse.org/justj/jres/11/updates/release/11.0.2"/>
-    		<unit id="org.eclipse.justj.openjdk.hotspot.jre.full" version="0.0.0"/>
+		<location>
+			<unit id="org.eclipse.justj.openjdk.hotspot.jre.full" version="11.0.2.v20200815-0835"/>
+			<unit id="a.jre.org.eclipse.justj.openjdk.hotspot.jre.full" version="11.0.0"/>
+			<repository location="https://download.eclipse.org/justj/jres/11/updates/release/latest/"/>
 		</location>
 	</locations>
 </target>
