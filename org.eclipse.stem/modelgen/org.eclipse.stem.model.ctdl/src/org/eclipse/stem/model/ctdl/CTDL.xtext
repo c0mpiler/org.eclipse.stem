@@ -1,0 +1,132 @@
+/*******************************************************************************
+ * Copyright (c) 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018
+ * IBM Corporation, BfR, and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v2.0
+ * which accompanies this distribution, and is available at
+ * https://www.eclipse.org/legal/epl-2.0/
+ *
+ * Contributors:
+ *     IBM Corporation - initial API and implementation and new features
+ *     Bundesinstitut für Risikobewertung - Pajek Graph interface, new Veterinary Models
+ *******************************************************************************/
+grammar org.eclipse.stem.model.ctdl.CTDL with org.eclipse.xtext.common.Terminals
+
+import "http://www.eclipse.org/emf/2002/Ecore" as ecore
+import "http:///org/eclipse/stem/model/metamodel.ecore" as metamodel
+import "http:///org/eclipse/stem/model/ctdl/functions.ecore" as extFunc
+
+generate ctdl "http:///org/eclipse/stem/model/ctdl.ecore"
+
+CompartmentTransitionDefinitions:
+	(metamodel = [MetamodelResource])?
+	(expression = TransitionBlock)
+;
+
+MetamodelResource: 
+	'metamodel' package=[metamodel::Package|STRING]
+	'model' model=[metamodel::Model]
+	'transition' transition=[metamodel::Transition]
+;
+
+TransitionBlock:
+	//'transition ' transition=[metamodel::Transition|TRANS_STMT]
+	block = Block
+;
+
+Transition returns metamodel::Transition: 
+	{metamodel::Transition} source=[metamodel::Compartment] '->' target=[metamodel::Compartment]
+;
+	
+Compartment returns metamodel::Compartment:
+	name = ID
+;
+
+//terminal STEM_TRANS_NAME : ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_')* '->' ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_')*
+	
+Block :
+	{Block} (statements+=DefStatement)* ret=ReturnStatement
+;
+
+DefStatement:
+	varname=ID '=' expr=Evaluation
+;
+
+ReturnStatement:
+	'delta' Evaluation
+;
+
+Evaluation:
+	expression=Expression ';';
+
+Expression:
+	Addition;
+
+Addition returns Expression:
+	Multiplication (({Plus.left=current} '+' | {Minus.left=current} '-') right=Multiplication)*;
+
+Multiplication returns Expression:
+	NegatedExpression (({Multi.left=current} '*' | {Div.left=current} '/') right=NegatedExpression)*;
+
+NegatedExpression returns Expression:
+	{PrimaryExpression} negate?='-'? exp=PrimaryExpression
+;
+
+PrimaryExpression returns Expression:
+	{NumberLiteral} value=NUMBER |
+	'(' exp=Expression ')' |
+	{FunctionCall}  ref=[FunctionReference|ID] ('(' (args+=FunctionArgument)? (',' args+=FunctionArgument)* ')') |
+	{VariableReference} ref=[ScopedVariableReference|ID]
+;
+
+FunctionArgument returns Expression:
+	{BooleanLiteral} value=BOOLEAN |
+	{StringLiteral} value=STRING |
+	Expression
+;
+
+FunctionReference:
+	name=ID | {ExternalFunctionReference} func=[extFunc::ExternalFunctionDefinition]
+;
+
+ScopedVariableReference:
+	 name=ID |
+	{LocalVariableReference} | 
+	{GlobalVariableReference} |
+	{CompartmentReference} | 
+	{ModelParamReference} 
+;
+
+LocalVariableReference:
+	{DefStatementReference} obj=[DefStatement]
+;
+
+CompartmentReference:
+	obj=[metamodel::Compartment] | {AbsoluteCompartmentValueReference} | {RelativeCompartmentValueReference}
+;
+
+ModelParamReference:
+	obj=[metamodel::ModelParam] 
+;
+
+
+GlobalVariable:
+	name=ID
+;
+
+// Commented out since it breaks expressions with '-' sign.
+//terminal TRANS_STMT returns ecore::EString:
+//	ID '->' ID
+//;
+
+terminal BOOLEAN returns ecore::EBoolean:
+	("true")|("false")
+;
+
+terminal NUMBER returns ecore::EDouble:
+	(('0'..'9')+ ('.' ('0'..'9')*)? | '.' ('0'..'9')+)
+    (('e' | 'E') ('+' | '-')? ('0'..'9')+)?;
+
+@Override 
+terminal INT returns ecore::EInt:
+	'this one has been deactivated';

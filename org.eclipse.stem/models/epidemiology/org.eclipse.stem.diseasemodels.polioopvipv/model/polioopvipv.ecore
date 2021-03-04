@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="polioopvipv"
+    nsURI="http:///org/eclipse/stem/diseasemodels/polioopvipv/polioopvipv.ecore" nsPrefix="org.eclipse.stem.diseasemodels.polioopvipv">
+  <eAnnotations source="org.eclipse.stem.model.generated">
+    <details key="version" value="1.0"/>
+  </eAnnotations>
+  <eClassifiers xsi:type="ecore:EClass" name="PolioOpvIpvLabel" eSuperTypes="platform:/plugin/org.eclipse.stem.diseasemodels/model/standard.ecore#//StandardDiseaseModelLabel">
+    <eAnnotations source="org.eclipse.stem.model.generated">
+      <details key="version" value="1.0"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PolioOpvIpvLabelValue" eSuperTypes="platform:/plugin/org.eclipse.stem.diseasemodels/model/standard.ecore#//SEIRLabelValue">
+    <eAnnotations source="org.eclipse.stem.model.generated">
+      <details key="version" value="1.0"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Sopv" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble">
+      <eAnnotations source="org.eclipse.stem.model.generated">
+        <details key="version" value="1.0"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Eopv" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble">
+      <eAnnotations source="org.eclipse.stem.model.generated">
+        <details key="version" value="1.0"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Vopv" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble">
+      <eAnnotations source="org.eclipse.stem.model.generated">
+        <details key="version" value="1.0"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Popv" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble">
+      <eAnnotations source="org.eclipse.stem.model.generated">
+        <details key="version" value="1.0"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Pw" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble">
+      <eAnnotations source="org.eclipse.stem.model.generated">
+        <details key="version" value="1.0"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Sipv" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble">
+      <eAnnotations source="org.eclipse.stem.model.generated">
+        <details key="version" value="1.0"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Eipv_w" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble">
+      <eAnnotations source="org.eclipse.stem.model.generated">
+        <details key="version" value="1.0"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Cipv_w" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble">
+      <eAnnotations source="org.eclipse.stem.model.generated">
+        <details key="version" value="1.0"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Eipv_opv" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble">
+      <eAnnotations source="org.eclipse.stem.model.generated">
+        <details key="version" value="1.0"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Cipv_opv" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble">
+      <eAnnotations source="org.eclipse.stem.model.generated">
+        <details key="version" value="1.0"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Incidence_opv" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble">
+      <eAnnotations source="org.eclipse.stem.model.compartmentType">
+        <details key="type" value="Incidence"/>
+      </eAnnotations>
+      <eAnnotations source="org.eclipse.stem.model.generated">
+        <details key="version" value="1.0"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Incidence_ipv_w" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble">
+      <eAnnotations source="org.eclipse.stem.model.compartmentType">
+        <details key="type" value="Incidence"/>
+      </eAnnotations>
+      <eAnnotations source="org.eclipse.stem.model.generated">
+        <details key="version" value="1.0"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Incidence_ipv_opv" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble">
+      <eAnnotations source="org.eclipse.stem.model.compartmentType">
+        <details key="type" value="Incidence"/>
+      </eAnnotations>
+      <eAnnotations source="org.eclipse.stem.model.generated">
+        <details key="version" value="1.0"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PolioOpvIpvDiseaseModel" eSuperTypes="platform:/plugin/org.eclipse.stem.diseasemodels/model/standard.ecore#//SEIR">
+    <eAnnotations source="org.eclipse.stem.model.label">
+      <details key="*" value="PolioOpvIpvLabel"/>
+    </eAnnotations>
+    <eAnnotations source="org.eclipse.stem.model.labelvalue">
+      <details key="*" value="PolioOpvIpvLabelValue"/>
+    </eAnnotations>
+    <eAnnotations source="org.eclipse.stem.model.generated">
+      <details key="version" value="1.0"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="opvEfficacy" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+        defaultValueLiteral="0.9">
+      <eAnnotations source="org.eclipse.stem.models.feature.constraint">
+        <details key="minValue" value="0.0"/>
+        <details key="maxValue" value="1.0"/>
+      </eAnnotations>
+      <eAnnotations source="org.eclipse.stem.models.feature.messages">
+        <details key="name" value="Efficacy of live-attenuated vaccine (a)"/>
+      </eAnnotations>
+      <eAnnotations source="org.eclipse.stem.model.generated">
+        <details key="version" value="1.0"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="reversionRateOPV" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+        defaultValueLiteral="10e-4">
+      <eAnnotations source="org.eclipse.stem.models.feature.constraint">
+        <details key="minValue" value="0.0"/>
+        <details key="maxValue" value="1.0"/>
+      </eAnnotations>
+      <eAnnotations source="org.eclipse.stem.models.feature.messages">
+        <details key="name" value="OPV Reversion Rate (φ)"/>
+      </eAnnotations>
+      <eAnnotations source="org.eclipse.stem.model.generated">
+        <details key="version" value="1.0"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="birthDeathRateDeveloping"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble" defaultValueLiteral="0.04">
+      <eAnnotations source="org.eclipse.stem.models.feature.constraint">
+        <details key="minValue" value="0.0"/>
+        <details key="maxValue" value="1.0"/>
+      </eAnnotations>
+      <eAnnotations source="org.eclipse.stem.models.feature.messages">
+        <details key="name" value="Birth-Death Rate - Developing Countries (μ)"/>
+      </eAnnotations>
+      <eAnnotations source="org.eclipse.stem.model.generated">
+        <details key="version" value="1.0"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="transmissionRateOPV" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+        defaultValueLiteral="0.1">
+      <eAnnotations source="org.eclipse.stem.models.feature.constraint">
+        <details key="minValue" value="0.0"/>
+        <details key="maxValue" value="1.0"/>
+      </eAnnotations>
+      <eAnnotations source="org.eclipse.stem.models.feature.messages">
+        <details key="name" value="Transmission Rate - OPV Derived Virus (βopv)"/>
+      </eAnnotations>
+      <eAnnotations source="org.eclipse.stem.model.generated">
+        <details key="version" value="1.0"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="transmissionRateWild" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+        defaultValueLiteral="0.5">
+      <eAnnotations source="org.eclipse.stem.models.feature.constraint">
+        <details key="minValue" value="0.0"/>
+        <details key="maxValue" value="1.0"/>
+      </eAnnotations>
+      <eAnnotations source="org.eclipse.stem.models.feature.messages">
+        <details key="name" value="Transmission Rate - Wild Virus (βw)"/>
+      </eAnnotations>
+      <eAnnotations source="org.eclipse.stem.model.generated">
+        <details key="version" value="1.0"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="relativeSusceptibilityRecentOPV"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble" defaultValueLiteral="0.25">
+      <eAnnotations source="org.eclipse.stem.models.feature.constraint">
+        <details key="minValue" value="0.0"/>
+        <details key="maxValue" value="1.0"/>
+      </eAnnotations>
+      <eAnnotations source="org.eclipse.stem.models.feature.messages">
+        <details key="name" value="Relative Susceptibility - Recent OPV Infection (fr)"/>
+      </eAnnotations>
+      <eAnnotations source="org.eclipse.stem.model.generated">
+        <details key="version" value="1.0"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="relativeSusceptibilityIPV"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble" defaultValueLiteral="0.95">
+      <eAnnotations source="org.eclipse.stem.models.feature.constraint">
+        <details key="minValue" value="0.0"/>
+        <details key="maxValue" value="1.0"/>
+      </eAnnotations>
+      <eAnnotations source="org.eclipse.stem.models.feature.messages">
+        <details key="name" value="Relative Susceptibility - IPV Only (fi)"/>
+      </eAnnotations>
+      <eAnnotations source="org.eclipse.stem.model.generated">
+        <details key="version" value="1.0"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="incubationRateVaccine"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble" defaultValueLiteral="0.1">
+      <eAnnotations source="org.eclipse.stem.models.feature.constraint">
+        <details key="minValue" value="0.0"/>
+        <details key="maxValue" value="1.0"/>
+      </eAnnotations>
+      <eAnnotations source="org.eclipse.stem.models.feature.messages">
+        <details key="name" value="Incubation Rate - Vaccine (σv)"/>
+        <details key="tooltip" value="Incubation rate of vaccine-derived poliovirus"/>
+      </eAnnotations>
+      <eAnnotations source="org.eclipse.stem.model.generated">
+        <details key="version" value="1.0"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="incubationRateWild" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+        defaultValueLiteral="0.5">
+      <eAnnotations source="org.eclipse.stem.models.feature.constraint">
+        <details key="minValue" value="0.0"/>
+        <details key="maxValue" value="1.0"/>
+      </eAnnotations>
+      <eAnnotations source="org.eclipse.stem.models.feature.messages">
+        <details key="name" value="Incubation Rate - Wild (σw)"/>
+        <details key="tooltip" value="Incubation rate of wild poliovirus"/>
+      </eAnnotations>
+      <eAnnotations source="org.eclipse.stem.model.generated">
+        <details key="version" value="1.0"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="recoveryRateVaccine" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+        defaultValueLiteral="0.143">
+      <eAnnotations source="org.eclipse.stem.models.feature.constraint">
+        <details key="minValue" value="0.0"/>
+        <details key="maxValue" value="1.0"/>
+      </eAnnotations>
+      <eAnnotations source="org.eclipse.stem.models.feature.messages">
+        <details key="name" value="Recovery Rate - Vaccine (γv)"/>
+        <details key="tooltip" value="Recovery Rate of vaccine-derived poliovirus"/>
+      </eAnnotations>
+      <eAnnotations source="org.eclipse.stem.model.generated">
+        <details key="version" value="1.0"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="recoveryRateWild" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+        defaultValueLiteral="0.625">
+      <eAnnotations source="org.eclipse.stem.models.feature.constraint">
+        <details key="minValue" value="0.0"/>
+        <details key="maxValue" value="1.0"/>
+      </eAnnotations>
+      <eAnnotations source="org.eclipse.stem.models.feature.messages">
+        <details key="name" value="Recovery Rate - Wild (γw)"/>
+        <details key="tooltip" value="Recovery Rate of wild poliovirus"/>
+      </eAnnotations>
+      <eAnnotations source="org.eclipse.stem.model.generated">
+        <details key="version" value="1.0"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="paralyticIncidenceFromVaccine"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble" defaultValueLiteral="7.14e-7">
+      <eAnnotations source="org.eclipse.stem.models.feature.constraint">
+        <details key="minValue" value="0.0"/>
+        <details key="maxValue" value="1.0"/>
+      </eAnnotations>
+      <eAnnotations source="org.eclipse.stem.models.feature.messages">
+        <details key="name" value="Paralytic Incidences in Newly Vaccinated (ε)"/>
+      </eAnnotations>
+      <eAnnotations source="org.eclipse.stem.model.generated">
+        <details key="version" value="1.0"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="paralyticCaseProportion"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble" defaultValueLiteral="0.005">
+      <eAnnotations source="org.eclipse.stem.models.feature.constraint">
+        <details key="minValue" value="0.0"/>
+        <details key="maxValue" value="1.0"/>
+      </eAnnotations>
+      <eAnnotations source="org.eclipse.stem.models.feature.messages">
+        <details key="name" value="Proportion of Paralytic Polio cases (πpara)"/>
+      </eAnnotations>
+      <eAnnotations source="org.eclipse.stem.model.generated">
+        <details key="version" value="1.0"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+</ecore:EPackage>

@@ -1,0 +1,216 @@
+package org.eclipse.stem.definitions.labels.impl;
+
+/*******************************************************************************
+ * Copyright (c) 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018
+ * IBM Corporation, BfR, and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v2.0
+ * which accompanies this distribution, and is available at
+ * https://www.eclipse.org/legal/epl-2.0/
+ *
+ * Contributors:
+ *     IBM Corporation - initial API and implementation and new features
+ *     Bundesinstitut für Risikobewertung - Pajek Graph interface, new Veterinary Models
+ *******************************************************************************/
+
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.stem.core.graph.impl.LabelValueImpl;
+import org.eclipse.stem.definitions.labels.LabelsPackage;
+import org.eclipse.stem.definitions.labels.PopulationLabelValue;
+
+/**
+ * <!-- begin-user-doc --> An implementation of the model object '<em><b>Population Label Value</b></em>'.
+ * <!-- end-user-doc -->
+ * <p>
+ * The following features are implemented:
+ * </p>
+ * <ul>
+ *   <li>{@link org.eclipse.stem.definitions.labels.impl.PopulationLabelValueImpl#getCount <em>Count</em>}</li>
+ * </ul>
+ *
+ * @generated
+ */
+public class PopulationLabelValueImpl extends LabelValueImpl implements
+		PopulationLabelValue {
+	/**
+	 * The default value of the '{@link #getCount() <em>Count</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @see #getCount()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final double COUNT_EDEFAULT = 0.0;
+
+	/**
+	 * The cached value of the '{@link #getCount() <em>Count</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @see #getCount()
+	 * @generated
+	 * @ordered
+	 */
+	protected double count = COUNT_EDEFAULT;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected PopulationLabelValueImpl() {
+		super();
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return LabelsPackage.Literals.POPULATION_LABEL_VALUE;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * 
+	 * @return
+	 * 
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public double getCount() {
+		return count;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setCount(double newCount) {
+		double oldCount = count;
+		count = newCount;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LabelsPackage.POPULATION_LABEL_VALUE__COUNT, oldCount, count));
+	}
+
+	/**
+	 * @see org.eclipse.stem.core.graph.impl.LabelValueImpl#reset()
+	 */
+	@Override
+	public void reset() {
+		// We don't reset
+		// setCount(COUNT_EDEFAULT);
+	} // reset
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * 
+	 * @param featureID
+	 * @param resolve
+	 * @param coreType
+	 * @return
+	 * 
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("boxing")
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+		switch (featureID) {
+			case LabelsPackage.POPULATION_LABEL_VALUE__COUNT:
+				return getCount();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * 
+	 * @param featureID
+	 * @param newValue
+	 * 
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("boxing")
+	@Override
+	public void eSet(int featureID, Object newValue) {
+		switch (featureID) {
+			case LabelsPackage.POPULATION_LABEL_VALUE__COUNT:
+				setCount((Double)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * 
+	 * @param featureID
+	 * 
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eUnset(int featureID) {
+		switch (featureID) {
+			case LabelsPackage.POPULATION_LABEL_VALUE__COUNT:
+				setCount(COUNT_EDEFAULT);
+				return;
+		}
+		super.eUnset(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * 
+	 * @param featureID
+	 * @return
+	 * 
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean eIsSet(int featureID) {
+		switch (featureID) {
+			case LabelsPackage.POPULATION_LABEL_VALUE__COUNT:
+				return count != COUNT_EDEFAULT;
+		}
+		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * 
+	 * @return
+	 * 
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (count: "); //$NON-NLS-1$
+		result.append(count);
+		result.append(')');
+		return result.toString();
+	}
+
+	/**
+	 * @return <code>true</code> if the value is sane
+	 * @see org.eclipse.stem.core.graph.impl.LabelImpl#sane()
+	 */
+	@Override
+	public boolean sane() {
+		boolean retValue = true;
+
+		retValue = retValue
+				&& (!eIsSet(LabelsPackage.POPULATION_LABEL_VALUE__COUNT) || getCount() >= 0);
+		assert retValue;
+
+		return retValue;
+	} // sane
+} // PopulationLabelValueImpl

@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.eclipse.stem.models.epidemiology.feature"
+      label="%featureName"
+      version="3.0.0.qualifier"
+      provider-name="%providerName">
+
+   <description>
+      %description
+   </description>
+
+   <copyright>
+      %copyright
+   </copyright>
+
+   <license url="%licenseURL">
+      %license
+   </license>
+
+   <url>
+      <update label="%updateSiteName" url="http://download.eclipse.org/stem/update-site/"/>
+   </url>
+
+   <includes
+         id="org.eclipse.stem.data.diseasemodels.feature"
+         version="0.0.0"/>
+
+   <requires>
+      <import plugin="org.eclipse.core.runtime"/>
+      <import plugin="org.eclipse.stem.definitions"/>
+      <import plugin="org.eclipse.stem.transport"/>
+      <import plugin="org.eclipse.stem.populationmodels"/>
+      <import plugin="org.eclipse.emf.ecore.edit" version="2.6.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.stem.ui"/>
+      <import plugin="org.eclipse.stem.data.geography"/>
+      <import plugin="org.eclipse.ui.navigator"/>
+      <import plugin="org.eclipse.ui.navigator.resources"/>
+      <import plugin="org.eclipse.stem.analysis"/>
+      <import plugin="org.eclipse.emf.ecore"/>
+      <import plugin="org.eclipse.stem.core"/>
+      <import plugin="org.eclipse.emf.edit"/>
+      <import plugin="org.eclipse.stem.util.analysis"/>
+      <import plugin="org.eclipse.emf.ecore.edit" version="2.5.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.core.resources"/>
+      <import plugin="org.eclipse.emf.ecore.xmi"/>
+      <import plugin="org.eclipse.emf.edit.ui"/>
+      <import plugin="org.eclipse.ui.ide"/>
+      <import plugin="org.eclipse.stem.util.loggers"/>
+      <import plugin="org.eclipse.stem.ui.diseasemodels" version="1.1.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.stem.ui" version="1.1.0" match="greaterOrEqual"/>
+   </requires>
+
+   <plugin
+         id="org.eclipse.stem.ui.interventions"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.stem.interventions"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.stem.diseasemodels"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.stem.ui.diseasemodels"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.stem.diseasemodels.example"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.stem.diseasemodels.experimental"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.stem.diseasemodels.externaldatasource"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.stem.diseasemodels.forcing"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.stem.diseasemodels.globalinfluenzamodel"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.stem.diseasemodels.multipopulation"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.stem.diseasemodels.vector"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.stem.ui.diseasemodels.example"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.stem.ui.diseasemodels.experimental"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.stem.ui.diseasemodels.externaldatasource"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.stem.ui.diseasemodels.multipopulation"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.stem.ui.diseasemodels.vector"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.stem.ui.diseasemodels.forcing"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.stem.ui.diseasemodels.globalinfluenzamodel"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.stem.diseasemodels.polioopvipv"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.stem.diseasemodels.measles"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.stem.diseasemodels.avianinfluenza"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.stem.diseasemodels.veterinary"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.stem.diseasemodels.evolving"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+</feature>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ <copyright>
+ </copyright>
+
+ $Id$
+-->
+
+<plugin>
+   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <factory
+            uri="http:///org/eclipse/stem/diseasemodels/polio.ecore"
+            class="org.eclipse.stem.diseasemodels.poliodiseasemodel.provider.PolioItemProviderAdapterFactory"
+            supportedTypes=
+              "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
+               org.eclipse.emf.edit.provider.IStructuredItemContentProvider
+               org.eclipse.emf.edit.provider.ITreeItemContentProvider
+               org.eclipse.emf.edit.provider.IItemLabelProvider
+               org.eclipse.emf.edit.provider.IItemPropertySource"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http:///org/eclipse/stem/diseasemodels/polio.ecore"
+            class="org.eclipse.stem.diseasemodels.poliodiseasemodel.PolioPackage"
+            genModel="model/polio.genmodel"/>
+   </extension>
+   <extension
+         point="org.eclipse.stem.diseasemodels.diseasemodel">
+      <classdef
+            class="org.eclipse.stem.diseasemodels.poliodiseasemodel.impl.OralPolioVaccineModelImpl">
+      </classdef>
+      <dublin_core
+            category_id="/"
+            description="model for experiment of OPV "
+            identifier="org.eclipse.stem.diseasemodels.poliodiseasemodel.dublin_core1"
+            title="%dc_title_polioOPV">
+      </dublin_core>
+   </extension>
+
+</plugin>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="loggers" nsURI="http://org/eclipse/stem/loggers/" nsPrefix="org.eclipse.stem.loggers">
+  <eClassifiers xsi:type="ecore:EClass" name="SimulationLogger" abstract="true" eSuperTypes="../../org.eclipse.stem.core/model/logger.ecore#//Logger">
+    <eOperations name="simulationEvent">
+      <eParameters name="event" eType="#//SimulationEvent"/>
+    </eOperations>
+    <eOperations name="loggerEvent">
+      <eParameters name="simulation" eType="#//Simulation"/>
+      <eParameters name="event" eType="#//LOGGER_EVENTS"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="enabled" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"
+        defaultValueLiteral="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="stepMod" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"
+        defaultValueLiteral="1"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="startStep" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//ELong"
+        defaultValueLiteral="0"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="LOGGER_EVENTS">
+    <eLiterals name="LOGGER_MANAGER_STARTED" literal="LOGGER_MANAGER_STARTED"/>
+    <eLiterals name="LOGGER_MANAGER_STOPPED" value="1" literal="LOGGER_MANAGER_STOPPED"/>
+    <eLiterals name="LOGGER_STARTED" value="2" literal="LOGGER_STARTED"/>
+    <eLiterals name="LOGGER_STOPPED" value="3" literal="LOGGER_STOPPED"/>
+    <eLiterals name="LOGGER_ENABLED" value="4" literal="LOGGER_ENABLED"/>
+    <eLiterals name="LOGGER_DISABLED" value="5" literal="LOGGER_DISABLED"/>
+    <eLiterals name="SIMULATIONS_ADDED" value="6" literal="SIMULATIONS_ADDED"/>
+    <eLiterals name="SIMULATIONS_REMOVED" value="7" literal=""/>
+    <eLiterals name="LOGGERS_ADDED" value="8" literal="LOGGERS_ADDED"/>
+    <eLiterals name="LOGGERS_REMOVED" value="9"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SynchronousLogger" abstract="true" interface="true"
+      eSuperTypes="#//SimulationLogger"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="Simulation" instanceClassName="org.eclipse.stem.jobs.simulation.ISimulation"
+      serializable="false"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ISimulationListener" instanceClassName="org.eclipse.stem.jobs.simulation.ISimulationListener"
+      abstract="true" interface="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AsynchronousLogger" abstract="true"
+      interface="true" eSuperTypes="#//SimulationLogger"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="SimulationEvent" instanceClassName="org.eclipse.stem.jobs.simulation.SimulationEvent"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SimulationLoggerEvent"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SynchronousDecoratorPropertyLogger"
+      abstract="true" eSuperTypes="#//SynchronousLogger">
+    <eOperations name="getDecoratorProperties">
+      <eGenericType eClassifier="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EMap">
+        <eTypeArguments eClassifier="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+        <eTypeArguments eClassifier="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EEList">
+          <eTypeArguments eClassifier="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+        </eTypeArguments>
+      </eGenericType>
+      <eParameters name="decoratorURI" eType="ecore:EDataType ../../org.eclipse.stem.core/model/common.ecore#//URI"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="properties" upperBound="-1"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IdentifierProperty">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="identifier" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="property" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+  </eClassifiers>
+</ecore:EPackage>

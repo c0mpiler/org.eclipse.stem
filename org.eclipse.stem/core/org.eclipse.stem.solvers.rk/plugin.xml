@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ <copyright>
+ </copyright>
+
+ $Id$
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http:///org/eclipse/stem/solvers/rk"
+            class="org.eclipse.stem.solvers.rk.RkPackage"
+            genModel="model/rk.genmodel"/>
+   </extension>
+   <extension
+         point="org.eclipse.stem.core.solver">
+      <classdef
+            class="org.eclipse.stem.solvers.rk.impl.RungeKuttaImpl">
+      </classdef>
+      <dublin_core
+            identifier="org.eclipse.stem.solvers.rk.dublin_core2"
+            title="%dc_rk_title"
+            creator="%dc_rk_creator">
+      </dublin_core>
+   </extension>
+   <extension
+         point="org.eclipse.stem.core.solver">
+      <classdef
+            class="org.eclipse.stem.solvers.rk.impl.DormandPrince853Impl">
+      </classdef>
+      <dublin_core
+            identifier="org.eclipse.stem.solvers.rk.dublin_core3"
+            title="%dc_dp853_title"
+            creator="%dc_dp853_creator">
+      </dublin_core>
+   </extension>
+   <extension
+         point="org.eclipse.stem.core.solver">
+      <classdef
+            class="org.eclipse.stem.solvers.rk.impl.DormandPrince54Impl">
+      </classdef>
+      <dublin_core
+            identifier="%dc_dp54_title"
+            title="%dc_dp54_title"
+            creator="%dc_dp54_creator">
+      </dublin_core>
+   </extension>
+   <!--
+    <extension
+         point="org.eclipse.stem.core.solver">
+      <classdef
+            class="org.eclipse.stem.solvers.rk.impl.FastRungeKuttaImpl">
+      </classdef>
+      <dublin_core
+            identifier="%dc_frk_title"
+            title="%dc_frk_title"
+            creator="%dc_frk_creator">
+      </dublin_core>
+   </extension>
+   -->
+   <extension
+         point="org.eclipse.stem.core.solver">
+      <classdef
+            class="org.eclipse.stem.solvers.rk.impl.GraggBulirschStoerImpl">
+      </classdef>
+      <dublin_core
+            identifier="%dc_gbs_title"
+            title="%dc_gbs_title"
+            creator="%dc_gbs_creator">
+      </dublin_core>
+   </extension>
+   
+      <extension
+         point="org.eclipse.stem.core.solver">
+      <classdef
+            class="org.eclipse.stem.solvers.rk.impl.HighamHall54Impl">
+      </classdef>
+      <dublin_core
+            identifier="%dc_hh_title"
+            title="%dc_hh_title"
+            creator="%dc_hh_creator">
+      </dublin_core>
+   </extension>
+   
+   <extension
+         point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <factory
+            class="org.eclipse.stem.solvers.rk.provider.RkItemProviderAdapterFactory"
+            uri="http:///org/eclipse/stem/solvers/rk"
+            supportedTypes=
+              "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
+               org.eclipse.emf.edit.provider.IStructuredItemContentProvider
+               org.eclipse.emf.edit.provider.ITreeItemContentProvider
+               org.eclipse.emf.edit.provider.IItemLabelProvider
+               org.eclipse.emf.edit.provider.IItemPropertySource">
+      </factory>
+   </extension>
+</plugin>

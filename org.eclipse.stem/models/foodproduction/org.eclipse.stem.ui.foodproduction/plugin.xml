@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ <copyright>
+ </copyright>
+
+ $Id$
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="org.eclipse.stem.foodproduction.presentation.FoodproductionModelWizardID"
+            name="%_UI_FoodproductionModelWizard_label"
+            class="org.eclipse.stem.foodproduction.presentation.FoodproductionModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/FoodproductionModelFile.gif">
+         <description>%_UI_FoodproductionModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+<extension
+      point="org.eclipse.ui.views">
+</extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="org.eclipse.stem.foodproduction.presentation.FoodproductionEditorID"
+            name="%_UI_FoodproductionEditor_label"
+            icon="icons/full/obj16/FoodproductionModelFile.gif"
+            extensions="foodproduction"
+            class="org.eclipse.stem.foodproduction.presentation.FoodproductionEditor"
+            contributorClass="org.eclipse.stem.foodproduction.presentation.FoodproductionActionBarContributor">
+      </editor>
+   </extension>
+   
+    <extension point="org.eclipse.ui.menus">   
+      <menuContribution locationURI="toolbar:org.eclipse.ui.main.toolbar?after=additions">
+         <toolbar id="org.eclipse.stem.ui.toolbar.newwizards">
+            <command 
+ 				  commandId="org.eclipse.stem.ui.command.wiz.foodproduction"
+				  icon="icons/full/obj16/food.png"
+                  label="%_UI_FoodproductionModelWizard_label"
+                  style="push"
+                  tooltip="%_UI_FoodproductionModelWizard_description">
+            </command>
+            </toolbar>
+       </menuContribution>
+  </extension>
+
+<extension
+        point="org.eclipse.ui.commands">
+     <command
+           defaultHandler="org.eclipse.stem.foodproduction.presentation.NewFoodTransformerWizard$NewFoodTransformerWizardCommandHandler"
+           description="%_UI_FoodproductionModelWizard_description"
+           id="org.eclipse.stem.ui.command.wiz.foodproduction"
+           name="%_UI_FoodproductionModelWizard_label">
+     </command>
+  </extension>
+</plugin>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<org.eclipse.stem.core.scenario:Scenario xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.eclipse.stem.core.scenario="http:///org/eclipse/stem/core/scenario.ecore" xmlns:org.eclipse.stem.core.sequencer="http:///org/eclipse/stem/core/sequencer.ecore" xmlns:org.eclipse.stem.solvers.rk="http:///org/eclipse/stem/solvers/rk" uRI="platform:/resource/BasicTests/scenarios/TwoSquaresMixingSEIR_RK.scenario" typeURI="stemtype://org.eclipse.stem/Scenario">
+  <dublinCore identifier="platform:/resource/BasicTests/scenarios/TwoSquaresMixingSEIR_RK.scenario" creator="edlund" format="http:///org/eclipse/stem/core/scenario.ecore" type="stemtype://org.eclipse.stem/Scenario" created="2011-01-24"/>
+  <model href="platform:/resource/BasicTests/models/TwoSquaresMixingSEIRModel.model#/"/>
+  <sequencer xsi:type="org.eclipse.stem.core.sequencer:SequentialSequencer" href="platform:/resource/BasicTests/sequencers/30DaySequencer.sequencer#/"/>
+  <scenarioDecorators href="platform:/resource/BasicTests/decorators/TwoSquaresSEIRInfector.standard#/"/>
+  <solver xsi:type="org.eclipse.stem.solvers.rk:RungeKutta" uRI="stem://org.eclipse.stem/RungeKuttaSolver/D3313B7C1A933FE6" typeURI="stemtype://org.eclipse.stem/Solver">
+    <dublinCore identifier="stem://org.eclipse.stem/RungeKuttaSolver/D3313B7C1A933FE6" type="stemtype://org.eclipse.stem/Solver"/>
+  </solver>
+</org.eclipse.stem.core.scenario:Scenario>

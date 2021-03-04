@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.eclipse.stem.diseasemodels.evolving/src" editDirectory="/org.eclipse.stem.diseasemodels.evolving/src"
+    editorDirectory="/org.eclipse.stem.diseasemodels.evolving/src" modelPluginID="org.eclipse.stem.diseasemodels.evolving"
+    templateDirectory="platform:/plugin/org.eclipse.stem.model.codegen/templates"
+    dynamicTemplates="true" forceOverwrite="true" modelName="Evolving" importerID="org.eclipse.emf.importer.ecore"
+    suppressNotification="true" complianceLevel="6.0" publicConstructors="true" editPluginID="org.eclipse.stem.diseasemodels.evolving"
+    editorPluginID="org.eclipse.stem.diseasemodels.evolving" usedGenPackages="platform:/plugin/org.eclipse.stem.core/model/core.genmodel#//common platform:/plugin/org.eclipse.stem.core/model/core.genmodel#//graph platform:/plugin/org.eclipse.stem.core/model/core.genmodel#//model platform:/plugin/org.eclipse.stem.core/model/core.genmodel#//modifier platform:/plugin/org.eclipse.stem.core/model/core.genmodel#//scenario platform:/plugin/org.eclipse.stem.core/model/core.genmodel#//sequencer platform:/plugin/org.eclipse.stem.diseasemodels/model/diseasemodels.genmodel#//standard platform:/plugin/org.eclipse.stem.core/model/core.genmodel#//logger platform:/plugin/org.eclipse.stem.core/model/core.genmodel#//solver platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore platform:/plugin/org.eclipse.stem.populationmodels/model/standard.genmodel#//standard platform:/plugin/org.eclipse.stem.definitions/model/definitions.genmodel#//labels">
+  <foreignModel>evolving.ecore</foreignModel>
+  <templatePluginVariables>STEM_CODEGEN=org.eclipse.stem.model.codegen</templatePluginVariables>
+  <templatePluginVariables>STEM_METAMODEL=org.eclipse.stem.model</templatePluginVariables>
+  <genPackages prefix="Evolving" basePackage="org.eclipse.stem.diseasemodels" disposableProviderFactory="true"
+      ecorePackage="evolving.ecore#/">
+    <genDataTypes ecoreDataType="evolving.ecore#//BooleanArray"/>
+    <genClasses ecoreClass="evolving.ecore#//EvolvingDiseaseTransformer">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference evolving.ecore#//EvolvingDiseaseTransformer/baseDisease"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference evolving.ecore#//EvolvingDiseaseTransformer/evolvedDiseases"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute evolving.ecore#//EvolvingDiseaseTransformer/evolutionCount"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute evolving.ecore#//EvolvingDiseaseTransformer/evolutionCountHardLimit"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute evolving.ecore#//EvolvingDiseaseTransformer/stopAllEvolution"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="evolving.ecore#//EvolvingDiseaseModel">
+      <genFeatures property="None" notify="false" createChild="false" propertySortChoices="true"
+          ecoreFeature="ecore:EReference evolving.ecore#//EvolvingDiseaseModel/parentDisease"/>
+      <genFeatures property="None" notify="false" createChild="false" propertySortChoices="true"
+          ecoreFeature="ecore:EReference evolving.ecore#//EvolvingDiseaseModel/transformer"/>
+      <genFeatures property="None" notify="false" createChild="false" propertySortChoices="true"
+          ecoreFeature="ecore:EReference evolving.ecore#//EvolvingDiseaseModel/evolvedAt"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EAttribute evolving.ecore#//EvolvingDiseaseModel/genome"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EAttribute evolving.ecore#//EvolvingDiseaseModel/evolutionCount"/>
+      <genOperations ecoreOperation="evolving.ecore#//EvolvingDiseaseModel/evolve">
+        <genParameters ecoreParameter="evolving.ecore#//EvolvingDiseaseModel/evolve/label"/>
+      </genOperations>
+      <genOperations ecoreOperation="evolving.ecore#//EvolvingDiseaseModel/calculateEvolvedInitialState"/>
+      <genOperations ecoreOperation="evolving.ecore#//EvolvingDiseaseModel/getGeneticDistance">
+        <genParameters ecoreParameter="evolving.ecore#//EvolvingDiseaseModel/getGeneticDistance/otherDiseaseStrain"/>
+      </genOperations>
+    </genClasses>
+    <genClasses ecoreClass="evolving.ecore#//EvolvingSIDiseaseModelLabel"/>
+    <genClasses ecoreClass="evolving.ecore#//EvolvingSIDiseaseModelLabelValue"/>
+    <genClasses image="false" ecoreClass="evolving.ecore#//EvolvingSIDiseaseModel">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute evolving.ecore#//EvolvingSIDiseaseModel/caseMutationRate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute evolving.ecore#//EvolvingSIDiseaseModel/genomeLength"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute evolving.ecore#//EvolvingSIDiseaseModel/geneticDistNonlinExponent"/>
+    </genClasses>
+    <genClasses ecoreClass="evolving.ecore#//EvolvingSIRDiseaseModelLabel"/>
+    <genClasses ecoreClass="evolving.ecore#//EvolvingSIRDiseaseModelLabelValue"/>
+    <genClasses image="false" ecoreClass="evolving.ecore#//EvolvingSIRDiseaseModel">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute evolving.ecore#//EvolvingSIRDiseaseModel/immunityLossRate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute evolving.ecore#//EvolvingSIRDiseaseModel/crossImmunityRate"/>
+    </genClasses>
+    <genClasses ecoreClass="evolving.ecore#//EvolvingSEIRDiseaseModelLabel"/>
+    <genClasses ecoreClass="evolving.ecore#//EvolvingSEIRDiseaseModelLabelValue"/>
+    <genClasses image="false" ecoreClass="evolving.ecore#//EvolvingSEIRDiseaseModel">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute evolving.ecore#//EvolvingSEIRDiseaseModel/incubationRate"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

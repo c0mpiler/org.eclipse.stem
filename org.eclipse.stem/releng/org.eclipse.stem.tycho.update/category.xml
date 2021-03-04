@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/org.eclipse.stem.data.diseasemodels.feature_3.0.0.qualifier.jar" id="org.eclipse.stem.data.diseasemodels.feature" version="3.0.0.qualifier">
+      <category name="org.eclipse.stem.data"/>
+   </feature>
+   <feature url="features/org.eclipse.stem.data.geography.feature_3.0.0.qualifier.jar" id="org.eclipse.stem.data.geography.feature" version="3.0.0.qualifier">
+      <category name="org.eclipse.stem.data"/>
+   </feature>
+   <feature url="features/org.eclipse.stem.data.population.human.feature_3.0.0.qualifier.jar" id="org.eclipse.stem.data.population.human.feature" version="3.0.0.qualifier">
+      <category name="org.eclipse.stem.data"/>
+   </feature>
+   <feature url="features/org.eclipse.stem.data.transportation.feature_3.0.0.qualifier.jar" id="org.eclipse.stem.data.transportation.feature" version="3.0.0.qualifier">
+      <category name="org.eclipse.stem.data"/>
+   </feature>
+   <category-def name="org.eclipse.stem.data" label="STEM Denominator Data"/>
+</site>

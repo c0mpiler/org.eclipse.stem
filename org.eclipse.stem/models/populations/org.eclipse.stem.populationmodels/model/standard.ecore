@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="standard" nsURI="http:///org/eclipse/stem/populationmodels/standard"
+    nsPrefix="org.eclipse.stem.populationmodels.standard">
+  <eClassifiers xsi:type="ecore:EClass" name="PopulationModel" abstract="true" eSuperTypes="../../org.eclipse.stem.core/model/model.ecore#//IntegrationDecorator ../../org.eclipse.stem.core/model/modifier.ecore#//Modifiable">
+    <eOperations name="getAllLabelIdentifiers" upperBound="-1" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eOperations name="createPopulationModelLabel" eType="#//PopulationModelLabel">
+      <eParameters name="populationIdentifier" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    </eOperations>
+    <eOperations name="createPopulationModelLabelValue" eType="#//PopulationModelLabelValue">
+      <eParameters name="populationIdentifier" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="populationIdentifier" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"
+        defaultValueLiteral="human"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"
+        defaultValueLiteral="HumanPopulationModel"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="targetISOKey" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"
+        defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="initialRescalingFactor"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="1.0"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="timePeriod" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"
+        defaultValueLiteral="86400000"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StandardPopulationModel" eSuperTypes="#//PopulationModel">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="birthRate" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="0.0"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="deathRate" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="0.0"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PopulationModelLabel" eSuperTypes="../../org.eclipse.stem.core/model/graph.ecore#//IntegrationLabel">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="populationLabel" eType="ecore:EClass ../../org.eclipse.stem.definitions/model/labels.ecore#//PopulationLabel"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="populationIdentifier" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StandardPopulationModelLabel" eSuperTypes="#//PopulationModelLabel"/>
+  <eClassifiers xsi:type="ecore:EClass" name="PopulationModelLabelValue" eSuperTypes="../../org.eclipse.stem.core/model/graph.ecore#//IntegrationLabelValue"/>
+  <eClassifiers xsi:type="ecore:EClass" name="StandardPopulationModelLabelValue" eSuperTypes="#//PopulationModelLabelValue">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="count" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="births" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="deaths" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="density" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        changeable="false" derived="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StochasticStandardPopulationModel" eSuperTypes="#//StandardPopulationModel">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="gain" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="0.01"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DemographicPopulationModel" eSuperTypes="#//StandardPopulationModel">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="populationGroups" lowerBound="1"
+        upperBound="-1" eType="#//PopulationGroup" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PopulationGroup">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="identifier" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="fraction" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="0.5"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PopulationInitializer" abstract="true"
+      eSuperTypes="../../org.eclipse.stem.core/model/model.ecore#//NodeDecorator ../../org.eclipse.stem.core/model/modifier.ecore#//Modifiable">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="populationIdentifier" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"
+        defaultValueLiteral="human"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StandardPopulationInitializer" eSuperTypes="#//PopulationInitializer">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="individuals" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="1"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="useDensity" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"
+        defaultValueLiteral="false"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="targetISOKey" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="targetURI" eType="ecore:EDataType ../../org.eclipse.stem.core/model/common.ecore#//URI"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SeasonalPopulationModel" eSuperTypes="#//StandardPopulationModel">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="phase" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="0.0"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="modulationAmplitude" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="1.0"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="period" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        changeable="false" defaultValueLiteral="365.25"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="useLatitude" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"
+        defaultValueLiteral="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EarthSciencePopulationInitializer" abstract="true"
+      eSuperTypes="#//PopulationInitializer"/>
+  <eClassifiers xsi:type="ecore:EClass" name="YetiPopulationInitializer" eSuperTypes="#//EarthSciencePopulationInitializer"/>
+  <eClassifiers xsi:type="ecore:EClass" name="MosquitoPopulationModel" eSuperTypes="#//PopulationModel">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="scalingFactor" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="1.0"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="mortalityRate" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="0.05"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="host" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"
+        defaultValueLiteral="human"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AgingPopulationModel" eSuperTypes="#//DemographicPopulationModel">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hasMaxAge" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AgeGroup" eSuperTypes="#//PopulationGroup">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="fromAge" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="toAge" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="deathFactor" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="1.0"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="limited" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ExternalDataSourcePopulationInitializer"
+      eSuperTypes="#//PopulationInitializer">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dataPath" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="row" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"
+        defaultValueLiteral="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ExternalDataSourcePopulationModel" eSuperTypes="#//PopulationModel">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dataPath" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="bufferSize" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"
+        defaultValueLiteral="250"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="restart" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"
+        defaultValueLiteral="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SinModulatePopulationModel" eSuperTypes="#//StandardPopulationModel">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="phaseShift" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="0.0"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="periodSin" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="365.25"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxBound" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="1"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="minBound" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="0"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SeasonalMigratoryPopulationModel" eSuperTypes="#//StandardPopulationModel">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="phase" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="0.0"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="period" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        changeable="false" defaultValueLiteral="365.25"/>
+  </eClassifiers>
+</ecore:EPackage>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.eclipse.stem.diseasemodels.polioopvipv/src"
+    editDirectory="/org.eclipse.stem.diseasemodels.polioopvipv/src" editorDirectory="/org.eclipse.stem.diseasemodels.polioopvipv/src"
+    modelPluginID="org.eclipse.stem.diseasemodels.polioopvipv" templateDirectory="platform:/plugin/org.eclipse.stem.model.codegen/templates"
+    dynamicTemplates="true" forceOverwrite="true" modelName="polioopvipv" editPluginClass="org.eclipse.stem.diseasemodels.polioopvipv.provider.PolioOpvIpvEditPlugin"
+    editorPluginClass="org.eclipse.stem.diseasemodels.polioopvipv.presentation.PolioOpvIpvEditorPlugin"
+    importerID="org.eclipse.stem.model.generator" suppressNotification="true" complianceLevel="6.0"
+    publicConstructors="true" editPluginID="org.eclipse.stem.diseasemodels.polioopvipv"
+    editorPluginID="org.eclipse.stem.diseasemodels.polioopvipv" usedGenPackages="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore platform:/plugin/org.eclipse.stem.diseasemodels/model/diseasemodels.genmodel#//standard platform:/plugin/org.eclipse.stem.diseasemodels/model/diseasemodels.genmodel#//diseasepredicates platform:/plugin/org.eclipse.stem.core/model/core.genmodel#//common platform:/plugin/org.eclipse.stem.core/model/core.genmodel#//experiment platform:/plugin/org.eclipse.stem.core/model/core.genmodel#//graph platform:/plugin/org.eclipse.stem.core/model/core.genmodel#//model platform:/plugin/org.eclipse.stem.core/model/core.genmodel#//modifier platform:/plugin/org.eclipse.stem.core/model/core.genmodel#//predicate platform:/plugin/org.eclipse.stem.core/model/core.genmodel#//scenario platform:/plugin/org.eclipse.stem.core/model/core.genmodel#//sequencer platform:/plugin/org.eclipse.stem.core/model/core.genmodel#//trigger platform:/plugin/org.eclipse.stem.core/model/core.genmodel#//solver platform:/plugin/org.eclipse.stem.core/model/core.genmodel#//logger platform:/plugin/org.eclipse.stem.populationmodels/model/standard.genmodel#//standard platform:/plugin/org.eclipse.stem.definitions/model/definitions.genmodel#//labels">
+  <templatePluginVariables>STEM_UI=org.eclipse.stem.ui</templatePluginVariables>
+  <templatePluginVariables>STEM_CODEGEN=org.eclipse.stem.model.codegen</templatePluginVariables>
+  <genPackages prefix="PolioOpvIpv" basePackage="org.eclipse.stem.diseasemodels" disposableProviderFactory="true"
+      generateExampleClass="false" ecorePackage="polioopvipv.ecore#/">
+    <genClasses ecoreClass="polioopvipv.ecore#//PolioOpvIpvLabel"/>
+    <genClasses ecoreClass="polioopvipv.ecore#//PolioOpvIpvLabelValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute polioopvipv.ecore#//PolioOpvIpvLabelValue/Sopv"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute polioopvipv.ecore#//PolioOpvIpvLabelValue/Eopv"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute polioopvipv.ecore#//PolioOpvIpvLabelValue/Vopv"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute polioopvipv.ecore#//PolioOpvIpvLabelValue/Popv"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute polioopvipv.ecore#//PolioOpvIpvLabelValue/Pw"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute polioopvipv.ecore#//PolioOpvIpvLabelValue/Sipv"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute polioopvipv.ecore#//PolioOpvIpvLabelValue/Eipv_w"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute polioopvipv.ecore#//PolioOpvIpvLabelValue/Cipv_w"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute polioopvipv.ecore#//PolioOpvIpvLabelValue/Eipv_opv"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute polioopvipv.ecore#//PolioOpvIpvLabelValue/Cipv_opv"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute polioopvipv.ecore#//PolioOpvIpvLabelValue/Incidence_opv"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute polioopvipv.ecore#//PolioOpvIpvLabelValue/Incidence_ipv_w"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute polioopvipv.ecore#//PolioOpvIpvLabelValue/Incidence_ipv_opv"/>
+    </genClasses>
+    <genClasses ecoreClass="polioopvipv.ecore#//PolioOpvIpvDiseaseModel">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute polioopvipv.ecore#//PolioOpvIpvDiseaseModel/opvEfficacy"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute polioopvipv.ecore#//PolioOpvIpvDiseaseModel/reversionRateOPV"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute polioopvipv.ecore#//PolioOpvIpvDiseaseModel/birthDeathRateDeveloping"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute polioopvipv.ecore#//PolioOpvIpvDiseaseModel/transmissionRateOPV"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute polioopvipv.ecore#//PolioOpvIpvDiseaseModel/transmissionRateWild"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute polioopvipv.ecore#//PolioOpvIpvDiseaseModel/relativeSusceptibilityRecentOPV"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute polioopvipv.ecore#//PolioOpvIpvDiseaseModel/relativeSusceptibilityIPV"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute polioopvipv.ecore#//PolioOpvIpvDiseaseModel/incubationRateVaccine"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute polioopvipv.ecore#//PolioOpvIpvDiseaseModel/incubationRateWild"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute polioopvipv.ecore#//PolioOpvIpvDiseaseModel/recoveryRateVaccine"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute polioopvipv.ecore#//PolioOpvIpvDiseaseModel/recoveryRateWild"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute polioopvipv.ecore#//PolioOpvIpvDiseaseModel/paralyticIncidenceFromVaccine"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute polioopvipv.ecore#//PolioOpvIpvDiseaseModel/paralyticCaseProportion"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

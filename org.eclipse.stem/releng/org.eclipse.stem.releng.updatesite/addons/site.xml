@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <description name="STEM Add-ons" url="http://download.eclipse.org/stem/update-site/addons/">
+      Downloadable add-ons for STEM, including extra data.
+   </description>
+   <feature url="features/org.eclipse.stem.data.geography.earthscience.feature_2.0.0.jar" id="org.eclipse.stem.data.geography.earthscience.feature" version="2.0.0">
+      <category name="org.eclipse.stem.data"/>
+   </feature>
+   <feature url="features/org.eclipse.stem.data.geography.earthscience.2000.feature_2.0.0.jar" id="org.eclipse.stem.data.geography.earthscience.2000.feature" version="2.0.0"/>
+   <feature url="features/org.eclipse.stem.data.geography.earthscience.2001.feature_2.0.0.jar" id="org.eclipse.stem.data.geography.earthscience.2001.feature" version="2.0.0"/>
+   <feature url="features/org.eclipse.stem.data.geography.earthscience.2002.feature_2.0.0.jar" id="org.eclipse.stem.data.geography.earthscience.2002.feature" version="2.0.0"/>
+   <feature url="features/org.eclipse.stem.data.geography.earthscience.2003.feature_2.0.0.jar" id="org.eclipse.stem.data.geography.earthscience.2003.feature" version="2.0.0"/>
+   <feature url="features/org.eclipse.stem.data.geography.earthscience.2004.feature_2.0.0.jar" id="org.eclipse.stem.data.geography.earthscience.2004.feature" version="2.0.0"/>
+   <feature url="features/org.eclipse.stem.data.geography.earthscience.2005.feature_2.0.0.jar" id="org.eclipse.stem.data.geography.earthscience.2005.feature" version="2.0.0"/>
+   <feature url="features/org.eclipse.stem.data.geography.earthscience.2006.feature_2.0.0.jar" id="org.eclipse.stem.data.geography.earthscience.2006.feature" version="2.0.0"/>
+   <feature url="features/org.eclipse.stem.data.geography.earthscience.2007.feature_2.0.0.jar" id="org.eclipse.stem.data.geography.earthscience.2007.feature" version="2.0.0"/>
+   <feature url="features/org.eclipse.stem.data.geography.earthscience.2008.feature_2.0.0.jar" id="org.eclipse.stem.data.geography.earthscience.2008.feature" version="2.0.0"/>
+   <feature url="features/org.eclipse.stem.data.geography.earthscience.2009.feature_2.0.0.jar" id="org.eclipse.stem.data.geography.earthscience.2009.feature" version="2.0.0"/>
+   <feature url="features/org.eclipse.stem.data.geography.earthscience.2010.feature_2.0.0.jar" id="org.eclipse.stem.data.geography.earthscience.2010.feature" version="2.0.0"/>
+   <category-def name="org.eclipse.stem.data" label="STEM Denominator Data">
+      <description>
+         Additional denominator data for use in STEM
+      </description>
+   </category-def>
+</site>

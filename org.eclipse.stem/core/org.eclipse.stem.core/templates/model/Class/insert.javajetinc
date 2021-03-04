@@ -1,0 +1,45 @@
+<%if (isImplementation && !genModel.isReflectiveDelegation()) {%>
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public double eGetDouble(int featureID)
+	{
+		switch (featureID<%=negativeOffsetCorrection%>)
+		{
+<%for (GenFeature genFeature : genClass.getAllGenFeatures()) {%>
+  <%if (genFeature.getImportedType(genClass).equals("double")) {%>
+			case <%=genClass.getQualifiedFeatureID(genFeature)%>:
+				return <%=genFeature.getGetAccessor()%>();
+  <%}%>
+<%}%>
+		}
+		
+		throw new IllegalArgumentException("The feature ID" + featureID + " is not valid for this method");
+	}
+
+<%}%>
+<%if (isImplementation && !genModel.isReflectiveDelegation()) {%>
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void eSetDouble(int featureID, double newValue)
+	{
+		switch (featureID<%=negativeOffsetCorrection%>)
+		{
+  <%for (GenFeature genFeature : genClass.getAllGenFeatures()) {%>
+    <%if (genFeature.isChangeable() && genFeature.getImportedType(genClass).equals("double")) {%>
+			case <%=genClass.getQualifiedFeatureID(genFeature)%>:
+				set<%=genFeature.getAccessorName()%>(newValue);
+				return;
+    <%}%>
+  <%}%>
+		}
+		
+		throw new IllegalArgumentException("The feature ID" + featureID + " is not valid for this method");
+	}
+
+<%}%>

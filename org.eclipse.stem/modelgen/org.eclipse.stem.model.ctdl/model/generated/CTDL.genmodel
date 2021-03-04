@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.eclipse.stem.model.ctdl/src-gen" editDirectory="/org.eclipse.stem.model.ctdl.edit/src"
+    editorDirectory="/org.eclipse.stem.model.ctdl.editor/src" modelPluginID="org.eclipse.stem.model.ctdl"
+    forceOverwrite="true" modelName="CTDL" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    complianceLevel="5.0" copyrightFields="false" editPluginID="org.eclipse.stem.model.ctdl.edit"
+    editorPluginID="org.eclipse.stem.model.ctdl.editor" runtimeVersion="2.10" usedGenPackages="platform:/resource/org.eclipse.stem.model.ctdl.functions/model/ExternalFunctions.genmodel#//functions platform:/resource/org.eclipse.stem.model/model/metamodel.genmodel#//metamodel">
+  <genPackages prefix="Ctdl" basePackage="org.eclipse.stem.model.ctdl" disposableProviderFactory="true"
+      ecorePackage="CTDL.ecore#/">
+    <genClasses ecoreClass="CTDL.ecore#//CompartmentTransitionDefinitions">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CTDL.ecore#//CompartmentTransitionDefinitions/metamodel"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CTDL.ecore#//CompartmentTransitionDefinitions/expression"/>
+    </genClasses>
+    <genClasses ecoreClass="CTDL.ecore#//MetamodelResource">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CTDL.ecore#//MetamodelResource/package"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CTDL.ecore#//MetamodelResource/model"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CTDL.ecore#//MetamodelResource/transition"/>
+    </genClasses>
+    <genClasses ecoreClass="CTDL.ecore#//TransitionBlock">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CTDL.ecore#//TransitionBlock/block"/>
+    </genClasses>
+    <genClasses ecoreClass="CTDL.ecore#//Block">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CTDL.ecore#//Block/statements"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CTDL.ecore#//Block/ret"/>
+    </genClasses>
+    <genClasses ecoreClass="CTDL.ecore#//DefStatement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CTDL.ecore#//DefStatement/varname"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CTDL.ecore#//DefStatement/expr"/>
+    </genClasses>
+    <genClasses ecoreClass="CTDL.ecore#//ReturnStatement"/>
+    <genClasses ecoreClass="CTDL.ecore#//Evaluation">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CTDL.ecore#//Evaluation/expression"/>
+    </genClasses>
+    <genClasses ecoreClass="CTDL.ecore#//Expression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CTDL.ecore#//Expression/exp"/>
+    </genClasses>
+    <genClasses ecoreClass="CTDL.ecore#//FunctionReference">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CTDL.ecore#//FunctionReference/name"/>
+    </genClasses>
+    <genClasses ecoreClass="CTDL.ecore#//ScopedVariableReference">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CTDL.ecore#//ScopedVariableReference/name"/>
+    </genClasses>
+    <genClasses ecoreClass="CTDL.ecore#//LocalVariableReference"/>
+    <genClasses ecoreClass="CTDL.ecore#//CompartmentReference">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CTDL.ecore#//CompartmentReference/obj"/>
+    </genClasses>
+    <genClasses ecoreClass="CTDL.ecore#//ModelParamReference">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CTDL.ecore#//ModelParamReference/obj"/>
+    </genClasses>
+    <genClasses ecoreClass="CTDL.ecore#//GlobalVariable">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CTDL.ecore#//GlobalVariable/name"/>
+    </genClasses>
+    <genClasses ecoreClass="CTDL.ecore#//Plus">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CTDL.ecore#//Plus/left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CTDL.ecore#//Plus/right"/>
+    </genClasses>
+    <genClasses ecoreClass="CTDL.ecore#//Minus">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CTDL.ecore#//Minus/left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CTDL.ecore#//Minus/right"/>
+    </genClasses>
+    <genClasses ecoreClass="CTDL.ecore#//Multi">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CTDL.ecore#//Multi/left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CTDL.ecore#//Multi/right"/>
+    </genClasses>
+    <genClasses ecoreClass="CTDL.ecore#//Div">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CTDL.ecore#//Div/left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CTDL.ecore#//Div/right"/>
+    </genClasses>
+    <genClasses ecoreClass="CTDL.ecore#//PrimaryExpression">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CTDL.ecore#//PrimaryExpression/negate"/>
+    </genClasses>
+    <genClasses ecoreClass="CTDL.ecore#//NumberLiteral">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CTDL.ecore#//NumberLiteral/value"/>
+    </genClasses>
+    <genClasses ecoreClass="CTDL.ecore#//FunctionCall">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CTDL.ecore#//FunctionCall/ref"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CTDL.ecore#//FunctionCall/args"/>
+    </genClasses>
+    <genClasses ecoreClass="CTDL.ecore#//VariableReference">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CTDL.ecore#//VariableReference/ref"/>
+    </genClasses>
+    <genClasses ecoreClass="CTDL.ecore#//BooleanLiteral">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CTDL.ecore#//BooleanLiteral/value"/>
+    </genClasses>
+    <genClasses ecoreClass="CTDL.ecore#//StringLiteral">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CTDL.ecore#//StringLiteral/value"/>
+    </genClasses>
+    <genClasses ecoreClass="CTDL.ecore#//ExternalFunctionReference">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CTDL.ecore#//ExternalFunctionReference/func"/>
+    </genClasses>
+    <genClasses ecoreClass="CTDL.ecore#//GlobalVariableReference"/>
+    <genClasses ecoreClass="CTDL.ecore#//DefStatementReference">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CTDL.ecore#//DefStatementReference/obj"/>
+    </genClasses>
+    <genClasses ecoreClass="CTDL.ecore#//AbsoluteCompartmentValueReference"/>
+    <genClasses ecoreClass="CTDL.ecore#//RelativeCompartmentValueReference"/>
+  </genPackages>
+</genmodel:GenModel>

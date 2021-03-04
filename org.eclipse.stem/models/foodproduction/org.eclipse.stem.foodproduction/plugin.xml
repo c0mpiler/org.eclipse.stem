@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ <copyright>
+ </copyright>
+
+ $Id$
+-->
+
+<plugin>
+
+   <extension-point id="foodproducer" name="%EP_Food_Producer" schema="schema/foodproducer.exsd"/>
+ 
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http:///org/eclipse/stem/foodproduction/foodproduction.ecore"
+            class="org.eclipse.stem.foodproduction.FoodproductionPackage"
+            genModel="model/foodproduction.genmodel"/>
+   </extension>
+   
+     <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+    <factory 
+       uri = "http:///org/eclipse/stem/foodproduction/foodproduction.ecore" 
+       class = "org.eclipse.stem.foodproduction.provider.FoodproductionItemProviderAdapterFactory" 
+       supportedTypes = 
+         "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
+          org.eclipse.emf.edit.provider.IStructuredItemContentProvider
+          org.eclipse.emf.edit.provider.ITreeItemContentProvider
+          org.eclipse.emf.edit.provider.IItemLabelProvider
+          org.eclipse.emf.edit.provider.IItemPropertySource" />
+  </extension>
+   
+   
+  <extension
+        point="org.eclipse.stem.foodproduction.foodproducer">
+     <classdef
+           class="org.eclipse.stem.foodproduction.impl.FoodProducerImpl">
+     </classdef>
+     <dublin_core
+           creator="%dc_creator_stemteam"
+           description="%dc_desc_food_producer"
+           identifier="%dc_identier"
+           license="%dc_license"
+           publisher="%dc_publisher"
+           source="%dc_SOURCE"
+           title="%dc_title_food_producer">
+     </dublin_core>
+ </extension>
+  <extension
+        point="org.eclipse.stem.foodproduction.foodproducer">
+     <classdef
+           class="org.eclipse.stem.foodproduction.impl.SlaughterHouseImpl">
+     </classdef>
+     <dublin_core
+           creator="%dc_creator_stemteam"
+           description="%dc_desc_slaughterhouse"
+           identifier="%dc_identier"
+           license="%dc_license"
+           publisher="%dc_publisher"
+           source="%dc_SOURCE"
+           title="%dc_title_slaughterhouse">
+     </dublin_core>
+ </extension>
+  <extension
+        point="org.eclipse.stem.foodproduction.foodproducer">
+     <classdef
+           class="org.eclipse.stem.foodproduction.impl.FoodConsumerImpl">
+     </classdef>
+     <dublin_core
+           creator="%dc_creator_stemteam"
+           description="%dc_desc_foodconsumer"
+           identifier="%dc_identier"
+           license="%dc_license"
+           publisher="%dc_publisher"
+           source="%dc_SOURCE"
+           title="%dc_title_foodconsumer">
+     </dublin_core>
+  </extension>
+</plugin>

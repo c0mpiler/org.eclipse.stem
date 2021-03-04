@@ -1,0 +1,101 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- Schema file written by PDE -->
+<schema targetNamespace="org.eclipse.stem.analysis" xmlns="http://www.w3.org/2001/XMLSchema">
+<annotation>
+      <appInfo>
+         <meta.schema plugin="org.eclipse.stem.analysis" id="errorfunction" name="org.eclipse.stem.analysis.errorfunction"/>
+      </appInfo>
+      <documentation>
+         Error functions are used in the analysis perspective to calculate errors between a reference and the output of a model. 
+         Error functions are also used to fit model parameters to a reference using the automated experiment functionality.
+      </documentation>
+   </annotation>
+
+    <include schemaLocation="schema://org.eclipse.stem.core/schema/dublin_core.exsd"/>
+
+    <element name="extension">
+      <complexType>
+         <sequence>
+            <element ref="classdef"/>
+            <element ref="dublin_core"/>
+         </sequence>
+         <attribute name="point" type="string" use="required">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="id" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="name" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+               <appInfo>
+                  <meta.attribute translatable="true"/>
+               </appInfo>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <element name="classdef">
+      <complexType>
+         <attribute name="class" type="string" use="required">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+               <appInfo>
+                  <meta.attribute kind="java" basedOn="org.eclipse.stem.diseasemodels.standard.impl.DiseaseModelImpl:org.eclipse.stem.diseasemodels.standard.DiseaseModel"/>
+               </appInfo>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+   
+   <annotation>
+      <appInfo>
+         <meta.section type="since"/>
+      </appInfo>
+      <documentation>
+         [Enter the first release in which this extension point appears.]
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appInfo>
+         <meta.section type="examples"/>
+      </appInfo>
+      <documentation>
+         [Enter extension point usage example here.]
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appInfo>
+         <meta.section type="apiinfo"/>
+      </appInfo>
+      <documentation>
+         [Enter API information here.]
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appInfo>
+         <meta.section type="implementation"/>
+      </appInfo>
+      <documentation>
+         [Enter information about supplied implementation of this extension point.]
+      </documentation>
+   </annotation>
+
+
+</schema>

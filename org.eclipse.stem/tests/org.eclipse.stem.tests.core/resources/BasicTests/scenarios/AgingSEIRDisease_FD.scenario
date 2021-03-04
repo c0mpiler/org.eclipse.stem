@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<org.eclipse.stem.core.scenario:Scenario xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.eclipse.stem.core.scenario="http:///org/eclipse/stem/core/scenario.ecore" xmlns:org.eclipse.stem.core.sequencer="http:///org/eclipse/stem/core/sequencer.ecore" xmlns:org.eclipse.stem.solvers.fd="http:///org/eclipse/stem/solvers/fd" uRI="platform:/resource/BasicTests/scenarios/AgingSEIRDisease_FD.scenario" typeURI="stemtype://org.eclipse.stem/Scenario">
+  <dublinCore identifier="platform:/resource/BasicTests/scenarios/AgingSEIRDisease_FD.scenario" creator="loaner25" format="http:///org/eclipse/stem/core/scenario.ecore" type="stemtype://org.eclipse.stem/Scenario" created="2011-05-26"/>
+  <model href="platform:/resource/BasicTests/models/EgyptAgingDiseaseModel.model#/"/>
+  <sequencer xsi:type="org.eclipse.stem.core.sequencer:SequentialSequencer" href="platform:/resource/BasicTests/sequencers/30DaySequencer.sequencer#/"/>
+  <scenarioDecorators href="platform:/resource/BasicTests/decorators/EgyptHuman0to0Infector.standard#/"/>
+  <solver xsi:type="org.eclipse.stem.solvers.fd:FiniteDifference" uRI="stem://org.eclipse.stem/FiniteDifferenceSolver/B9ABB1443A466DAD" typeURI="stemtype://org.eclipse.stem/Solver">
+    <dublinCore identifier="stem://org.eclipse.stem/FiniteDifferenceSolver/B9ABB1443A466DAD" type="stemtype://org.eclipse.stem/Solver"/>
+  </solver>
+</org.eclipse.stem.core.scenario:Scenario>

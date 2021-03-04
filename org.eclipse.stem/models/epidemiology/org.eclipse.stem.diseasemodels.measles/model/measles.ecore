@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="measles" nsURI="http:///org/eclipse/stem/diseasemodels/measles/measles.ecore"
+    nsPrefix="org.eclipse.stem.diseasemodels.measles">
+  <eAnnotations source="http:///org/eclipse/stem/modelgen/generated">
+    <details key="version" value="1.0"/>
+  </eAnnotations>
+  <eAnnotations source="http:///org/eclipse/stem/modelgen/metamodel">
+    <details key="uri" value="platform:/resource/.stemgenerator/model/measles.metamodel"/>
+  </eAnnotations>
+  <eAnnotations source="http:///org/eclipse/stem/modelgen/metamodel">
+    <details key="uri" value="platform:/resource/org.eclipse.stem.diseasemodels.measles/model/measles.metamodel"/>
+  </eAnnotations>
+  <eClassifiers xsi:type="ecore:EClass" name="MeaslesLabel" eSuperTypes="platform:/plugin/org.eclipse.stem.diseasemodels/model/standard.ecore#//StandardDiseaseModelLabel">
+    <eAnnotations source="http:///org/eclipse/stem/modelgen/generated">
+      <details key="version" value="1.0"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MeaslesLabelValue" eSuperTypes="platform:/plugin/org.eclipse.stem.diseasemodels/model/standard.ecore#//SEIRLabelValue">
+    <eAnnotations source="http:///org/eclipse/stem/modelgen/generated">
+      <details key="version" value="1.0"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="vaccinated" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble">
+      <eAnnotations source="http:///org/eclipse/stem/modelgen/generated">
+        <details key="version" value="1.0"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="immunisations" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble">
+      <eAnnotations source="http:///org/eclipse/stem/modelgen/compartment/type">
+        <details key="type" value="Incidence"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/stem/modelgen/generated">
+        <details key="version" value="1.0"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="m" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble">
+      <eAnnotations source="http:///org/eclipse/stem/modelgen/generated">
+        <details key="version" value="1.0"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="incidenceV" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble">
+      <eAnnotations source="http:///org/eclipse/stem/modelgen/compartment/type">
+        <details key="type" value="Incidence"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/stem/modelgen/generated">
+        <details key="version" value="1.0"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Measles" eSuperTypes="platform:/plugin/org.eclipse.stem.diseasemodels.multipopulation/model/multipopulation.ecore#//MultiPopulationSEIRDiseaseModel">
+    <eAnnotations source="http:///org/eclipse/stem/modelgen/model/label">
+      <details key="*" value="MeaslesLabel"/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/stem/modelgen/model/labelvalue">
+      <details key="*" value="MeaslesLabelValue"/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/stem/modelgen/model/transitions"/>
+    <eAnnotations source="http:///org/eclipse/stem/modelgen/model/adapters"/>
+    <eAnnotations source="http:///org/eclipse/stem/modelgen/generated">
+      <details key="version" value="1.0"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="vaccineEfficacy" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+        defaultValueLiteral="0.95">
+      <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/constraints">
+        <details key="minValue" value="0"/>
+        <details key="maxValue" value="1.0"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/messages">
+        <details key="name" value="Vaccine Efficacy"/>
+        <details key="tooltip" value="Vaccine Efficiacy (fractions of inoculations successful)"/>
+        <details key="invalid" value="Vaccine Efficiacy is invalid"/>
+        <details key="missing" value="Vaccine Efficiacy is missing"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/stem/modelgen/generated">
+        <details key="version" value="1.0"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="inoculationScaling" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+        defaultValueLiteral="1.0">
+      <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/constraints">
+        <details key="minValue" value="0"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/messages">
+        <details key="name" value="Inoculation Scaling"/>
+        <details key="tooltip" value="Scale the total number of incoculations performed (everywhere) using a factor"/>
+        <details key="invalid" value="Inoculation Scaling is invalid"/>
+        <details key="missing" value="Inoculation Scaling is missing"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/stem/modelgen/generated">
+        <details key="version" value="1.0"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="phaseShift" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+        defaultValueLiteral="0.0">
+      <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/constraints">
+        <details key="minValue" value="0"/>
+        <details key="maxValue" value="1"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/messages">
+        <details key="name" value="Phase Shift"/>
+        <details key="tooltip" value="The phase shift for the seasonal modulation for measles"/>
+        <details key="invalid" value="Phase shift is invalid (must be between 0 and 1)"/>
+        <details key="missing" value="Phase shift is missing"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/stem/modelgen/generated">
+        <details key="version" value="1.0"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="seasonalModulation" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+        defaultValueLiteral="1.9">
+      <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/constraints">
+        <details key="minValue" value="1"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/messages">
+        <details key="name" value="Seasonal Modulation"/>
+        <details key="tooltip" value="The seasonal modulation in the contact rate for measles"/>
+        <details key="invalid" value="Seasonal modulation is invalid (>1)"/>
+        <details key="missing" value="Seasonal modulation is missing"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/stem/modelgen/generated">
+        <details key="version" value="1.0"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="seasonalModulationPeriod"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong" defaultValueLiteral="31556925994">
+      <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/constraints">
+        <details key="minValue" value="0"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/messages">
+        <details key="name" value="Seasonal Modulation Period"/>
+        <details key="unit" value="ms"/>
+        <details key="tooltip" value="The period of the seasonal modulation (in ms)"/>
+        <details key="invalid" value="Seasonal Modulation Period is invalid (>0)"/>
+        <details key="missing" value="Seasonal Modulation Period is missing"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/stem/modelgen/generated">
+        <details key="version" value="1.0"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="inoculatedImmunityRate"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble" defaultValueLiteral="0.05">
+      <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/constraints">
+        <details key="minValue" value="0"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/messages">
+        <details key="name" value="Inoculated Immunity Rate"/>
+        <details key="unit" value="1/TP"/>
+        <details key="tooltip" value="Rate rate at which population members come immune after inoculation"/>
+        <details key="invalid" value="Inoculation Immunity Rate is invalid (>0)"/>
+        <details key="missing" value="Inoculation Immunity Rate is missing"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/stem/modelgen/generated">
+        <details key="version" value="1.0"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="newbornImmunityLossRate"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble" defaultValueLiteral="2.7E-3">
+      <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/constraints">
+        <details key="minValue" value="0"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/messages">
+        <details key="name" value="Newborn Immunity Loss Rate"/>
+        <details key="unit" value="1/TP"/>
+        <details key="tooltip" value="The immunity loss rate for new borns"/>
+        <details key="invalid" value="New Born Immunity Loss Rate is invalid (>1)"/>
+        <details key="missing" value="New Born Immunity Loss Rate is missing"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/stem/modelgen/generated">
+        <details key="version" value="1.0"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="transmissionRateScaling"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble" defaultValueLiteral="1.0">
+      <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/constraints">
+        <details key="minValue" value="0"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/messages">
+        <details key="name" value="Transmission Rate Scaling"/>
+        <details key="tooltip" value="Scaling factor for all transmission rates"/>
+        <details key="invalid" value="Transmission rate scaling is invalid"/>
+        <details key="missing" value="Transmission rate scaling is missing"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/stem/modelgen/generated">
+        <details key="version" value="1.0"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+</ecore:EPackage>

@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ <copyright>
+ </copyright>
+
+ $Id$
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="org.eclipse.stem.populationmodels.standard.presentation.StandardModelWizardID"
+            name="%_UI_StandardModelWizard_label"
+            class="org.eclipse.stem.populationmodels.standard.presentation.StandardModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/custom16/populationmodel.gif">
+         <description>%_UI_StandardModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+    <wizard
+          category="org.eclipse.stem.ui.wizards.stemcategory"
+          class="org.eclipse.stem.ui.populationmodels.standard.wizards.NewPopulationModelWizard"
+          hasPages="true"
+          icon="icons/full/custom16/populationmodel.gif"
+          id="org.eclipse.stem.populationmodels.standard.presentation.StandardModelWizardID"
+          name="%_UI_New_Population_Model"/>
+    <wizard
+          category="org.eclipse.stem.ui.wizards.stemcategory"
+          class="org.eclipse.stem.ui.populationmodels.standard.wizards.NewPopulationInitializerWizard"
+          hasPages="true"
+          icon="icons/full/custom16/populationinitializer.gif"
+          id="org.eclipse.stem.populationmodels.standard.presentation.StandardModelWizardID"
+          name="%_UI_New_Population_Initializer"/>      
+   </extension>
+
+	<extension
+        point="org.eclipse.ui.views">
+     <view
+           category="org.eclipse.stem.ui.views"
+           class="org.eclipse.stem.ui.views.populationmodel.PopulationModelView"
+           icon="icons/full/custom16/populationmodel.gif"
+           id="org.eclipse.stem.ui.views.populationmodels"
+           name="%_UI_PView_Name"/>
+     <!--<view
+           category="org.eclipse.stem.ui.views"
+           class="org.eclipse.stem.ui.views.populationmodel.PopulationInitializerView"
+           icon="icons/full/custom16/populationinitializer.gif"
+           id="org.eclipse.stem.ui.views.populationinitializer"
+           name="%_UI_PIView_Name"/> -->     
+  </extension>
+  
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="org.eclipse.stem.populationmodels.standard.presentation.StandardEditorID"
+            name="%_UI_StandardEditor_label"
+            icon="icons/full/custom16/populationmodel.gif"
+            extensions="standard"
+            class="org.eclipse.stem.populationmodels.standard.presentation.StandardEditor"
+            contributorClass="org.eclipse.stem.populationmodels.standard.presentation.StandardActionBarContributor">
+      </editor>
+   </extension>
+
+	<extension
+        point="org.eclipse.ui.menus">
+     <menuContribution
+           locationURI="menu:org.eclipse.stem.ui.menu.newwizards?after=additions">
+        <command
+              commandId="org.eclipse.stem.ui.populationmodels.command.wiz.populationmodel"
+              icon="icons/full/custom16/populationmodel.gif"
+              label="%_UI_PopulationModelWizard_label"
+              style="push"
+              tooltip="%_UI_PopulationModel_description">
+        </command>
+         <command
+              commandId="org.eclipse.stem.ui.populationmodels.command.wiz.populationinitializer"
+              icon="icons/full/custom16/populationinitializer.gif"
+              label="%_UI_PopulationInitializerWizard_label"
+              style="push"
+              tooltip="%_UI_PopulationInitializer_description">
+        </command>
+     </menuContribution>
+     <menuContribution
+           locationURI="toolbar:org.eclipse.stem.ui.toolbar.newwizards?before=scenariocontent">
+        <command
+              commandId="org.eclipse.stem.ui.populationmodels.command.wiz.populationmodel"
+              icon="icons/full/custom16/populationmodel.gif"
+              label="%_UI_PopulationModelWizard_label"
+              style="push"
+              tooltip="%_UI_PopulationModel_description">
+        </command>
+        <command
+              commandId="org.eclipse.stem.ui.populationmodels.command.wiz.populationinitializer"
+              icon="icons/full/custom16/populationinitializer.gif"
+              label="%_UI_PopulationInitializerWizard_label"
+              style="push"
+              tooltip="%_UI_PopulationInitializer_description">
+        </command>
+     </menuContribution>
+  </extension>
+  
+  <extension
+        point="org.eclipse.ui.commands">
+     <command
+           defaultHandler="org.eclipse.stem.ui.populationmodels.standard.wizards.NewPopulationModelWizard$NewPopulationModelWizardCommandHandler"
+           description="%_UI_PopulationModel_description"
+           id="org.eclipse.stem.ui.populationmodels.command.wiz.populationmodel"
+           name="%_UI_PopulationModelWizard_label">
+     </command>
+      <command
+           defaultHandler="org.eclipse.stem.ui.populationmodels.standard.wizards.NewPopulationInitializerWizard$NewPopulationInitializerWizardCommandHandler"
+           description="%_UI_PopulationInitializer_description"
+           id="org.eclipse.stem.ui.populationmodels.command.wiz.populationinitializer"
+           name="%_UI_PopulationInitializerWizard_label">
+     </command>
+  </extension>
+  
+  <extension
+         point="org.eclipse.ui.preferencePages">
+      <page
+      	    category="org.eclipse.stem.ui.preferences.VisualizationPreferencePage"
+            class="org.eclipse.stem.ui.populationmodels.preferences.PopulationPreferencePage"
+            id="org.eclipse.stem.ui.preferences.PopulationPreferencePage"
+            name="%_UI_PopulationPPage"/>
+   </extension>
+   <extension
+         point="org.eclipse.core.runtime.preferences">
+      <initializer class="org.eclipse.stem.ui.populationmodels.preferences.PreferenceInitializer"/>
+   </extension>
+   
+   <extension
+        point="org.eclipse.ui.startup">
+     <startup
+           class="org.eclipse.stem.ui.populationmodels.adapters.StandardRelativeValueProviderAdapterFactory"></startup>
+  </extension>
+  
+  <extension
+        point="org.eclipse.ui.startup">
+     <startup
+           class="org.eclipse.stem.ui.populationmodels.adapters.PopulationModelNewModifierPageAdapterFactory"></startup>
+  </extension>
+  
+</plugin>

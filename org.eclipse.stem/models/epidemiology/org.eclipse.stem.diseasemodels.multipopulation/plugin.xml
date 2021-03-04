@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <factory
+            class="org.eclipse.stem.diseasemodels.multipopulation.provider.MultipopulationItemProviderAdapterFactory"
+            supportedTypes="org.eclipse.emf.edit.provider.IEditingDomainItemProvider
+        	 org.eclipse.emf.edit.provider.IStructuredItemContentProvider
+        	 org.eclipse.emf.edit.provider.ITreeItemContentProvider
+        	 org.eclipse.emf.edit.provider.IItemLabelProvider
+        	 org.eclipse.emf.edit.provider.IItemPropertySource"
+            uri="http:///org/eclipse/stem/diseasemodels/multipopulation.ecore">
+      </factory>
+   </extension>
+   <extension
+         point="org.eclipse.emf.ecore.generated_package">
+      <package
+            class="org.eclipse.stem.diseasemodels.multipopulation.MultipopulationPackage"
+            genModel="model/multipopulation.genmodel"
+            uri="http:///org/eclipse/stem/diseasemodels/multipopulation.ecore">
+      </package>
+   </extension>
+   <extension
+         point="org.eclipse.stem.diseasemodels.diseasemodel">
+      <classdef
+            class="org.eclipse.stem.diseasemodels.multipopulation.impl.MultiPopulationSIDiseaseModelImpl">
+      </classdef>
+      <dublin_core
+            category_id="/"
+            creator="%dc_creator_edlund"
+            identifier="%dc_identier"
+            source="%dc_SOURCE"
+            license="%dc_license"
+            publisher="%dc_publisher"
+            description="%dc_descr_MP_SI"
+            title="%dc_title_MP_SI">
+      </dublin_core>
+   </extension>
+
+  <extension
+         point="org.eclipse.stem.diseasemodels.diseasemodel">
+      <classdef
+            class="org.eclipse.stem.diseasemodels.multipopulation.impl.MultiPopulationSIRDiseaseModelImpl">
+      </classdef>
+      <dublin_core
+            category_id="/"
+            creator="%dc_creator_edlund"
+            identifier="%dc_identier"
+            source="%dc_SOURCE"
+            license="%dc_license"
+            publisher="%dc_publisher"
+            description="%dc_descr_MP_SIR"
+            title="%dc_title_MP_SIR">
+      </dublin_core>
+   </extension>
+
+  <extension
+         point="org.eclipse.stem.diseasemodels.diseasemodel">
+      <classdef
+            class="org.eclipse.stem.diseasemodels.multipopulation.impl.MultiPopulationSEIRDiseaseModelImpl">
+      </classdef>
+      <dublin_core
+            category_id="/"
+            creator="%dc_creator_edlund"
+            identifier="%dc_identier"
+            source="%dc_SOURCE"
+            license="%dc_license"
+            publisher="%dc_publisher"
+            description="%dc_descr_MP_SEIR"
+            title="%dc_title_MP_SEIR">
+      </dublin_core>
+   </extension>
+  <extension
+        point="org.eclipse.stem.diseasemodels.diseasemodel">
+     <classdef
+           class="org.eclipse.stem.diseasemodels.multipopulation.impl.MultiPopulationSeasonalDiseaseModelImpl">
+     </classdef>
+     <dublin_core
+           category_id="/"
+           creator="%dc_creator_cthoens"
+           description="%dc_descr_MP_SEASONAL"
+           identifier="%dc_identier"
+           license="%dc_license"
+           publisher="%dc_publisher"
+           source="%dc_SOURCE"
+           title="%dc_title_MP_SEASONAL">
+     </dublin_core>
+  </extension>
+
+	<extension point="org.eclipse.stem.model.metamodel">
+    	<metamodel path="model/multipopulation.metamodel">
+    	</metamodel>
+    </extension>
+</plugin>

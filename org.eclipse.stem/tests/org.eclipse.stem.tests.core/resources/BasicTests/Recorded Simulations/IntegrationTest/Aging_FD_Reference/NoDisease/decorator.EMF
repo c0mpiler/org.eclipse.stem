@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<org.eclipse.stem.diseasemodels.multipopulation:MultiPopulationSIDiseaseModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:org.eclipse.stem.diseasemodels.multipopulation="http:///org/eclipse/stem/diseasemodels/multipopulation.ecore" uRI="platform:/resource/BasicTests/decorators/NoDisease.standard" typeURI="stemtype://org.eclipse.stem/Identifiable" diseaseName="NoDisease">
+  <dublinCore identifier="platform:/resource/BasicTests/decorators/NoDisease.standard" creator="loaner25" format="http:///org/eclipse/stem/diseasemodels/standard.ecore" type="stemtype://org.eclipse.stem/Identifiable" created="2011-05-26"/>
+  <populationGroups>
+    <values value="human0to0"/>
+    <values value="human1to1"/>
+    <values value="human2to-"/>
+  </populationGroups>
+  <transmissionRate>
+    <valueLists identifier="human0to0">
+      <values identifier="human0to0"/>
+      <values identifier="human1to1"/>
+      <values identifier="human2to-"/>
+    </valueLists>
+    <valueLists identifier="human1to1">
+      <values identifier="human0to0"/>
+      <values identifier="human1to1"/>
+      <values identifier="human2to-"/>
+    </valueLists>
+    <valueLists identifier="human2to-">
+      <values identifier="human0to0"/>
+      <values identifier="human1to1"/>
+      <values identifier="human2to-"/>
+    </valueLists>
+  </transmissionRate>
+  <recoveryRate>
+    <values identifier="human0to0"/>
+    <values identifier="human1to1"/>
+    <values identifier="human2to-"/>
+  </recoveryRate>
+  <infectiousMortalityRate>
+    <values identifier="human0to0"/>
+    <values identifier="human1to1"/>
+    <values identifier="human2to-"/>
+  </infectiousMortalityRate>
+</org.eclipse.stem.diseasemodels.multipopulation:MultiPopulationSIDiseaseModel>

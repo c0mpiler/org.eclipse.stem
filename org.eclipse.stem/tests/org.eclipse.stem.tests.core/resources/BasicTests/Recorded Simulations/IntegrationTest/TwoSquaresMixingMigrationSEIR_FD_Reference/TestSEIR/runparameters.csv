@@ -1,0 +1,2 @@
+decorator,diseaseName,populationIdentifier,timePeriod,frequencyDependent,referencePopulationDensity,roadNetworkInfectiousProportion,characteristicMixingDistance,transmissionRate,nonLinearityCoefficient,recoveryRate,infectiousMortalityRate,immunityLossRate,incubationRate
+org.eclipse.stem.diseasemodels.standard.impl.DeterministicSEIRDiseaseModelImpl,TestSEIR,human,86400000,true,100.0,0.01,2.25,1.6,1.0,0.3,0.0,0.0,0.4

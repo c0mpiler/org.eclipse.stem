@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<org.eclipse.stem.core.graph:Graph xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.eclipse.stem.core.graph="http:///org/eclipse/stem/core/graph.ecore" xmlns:org.eclipse.stem.definitions.labels="http:///org/eclipse/stem/definitions/labels.ecore" xmlns:org.eclipse.stem.definitions.nodes="http:///org/eclipse/stem/definitions/nodes.ecore" uRI="platform:/resource/BasicTests/graphs/SingleSquareGraph.graph" typeURI="stemtype://org.eclipse.stem/Graph">
+  <dublinCore identifier="platform:/resource/BasicTests/graphs/SingleSquareGraph.graph" creator="edlund" date="2011-01-24" format="http:///org/eclipse/stem/core/graph.ecore" source="Generated" type="stemtype://org.eclipse.stem/Graph" created="2011-01-24"/>
+  <nodes key="stem://org.eclipse.stem/node/54D5EEA3F5CBE3/LAT_SQR_0_0">
+    <value xsi:type="org.eclipse.stem.definitions.nodes:Region" uRI="stem://org.eclipse.stem/node/54D5EEA3F5CBE3/LAT_SQR_0_0" typeURI="stemtype://org.eclipse.stem/Node">
+      <dublinCore title="Node[0.0, 0.0]" identifier="stem://org.eclipse.stem/node/54D5EEA3F5CBE3/LAT_SQR_0_0" type="stemtype://org.eclipse.stem/Node" spatial="stemspatial:inline:///-0.2,0.2,0.2,0.2,0.2,-0.2,-0.2,-0.2"/>
+      <labels xsi:type="org.eclipse.stem.definitions.labels:AreaLabel" href="platform:/resource/BasicTests/graphs/SingleSquareGraph.graph#//@nodeLabels.0/@value"/>
+    </value>
+  </nodes>
+  <nodeLabels key="stem://org.eclipse.stem/label/934F11B3342F1103">
+    <value xsi:type="org.eclipse.stem.definitions.labels:AreaLabel" uRI="stem://org.eclipse.stem/label/934F11B3342F1103" typeURI="stemtype://org.eclipse.stem/label">
+      <dublinCore identifier="stem://org.eclipse.stem/label/934F11B3342F1103" type="stemtype://org.eclipse.stem/label"/>
+      <currentValue xsi:type="org.eclipse.stem.definitions.labels:AreaLabelValue" area="2025.0" averageExtent="45.0"/>
+      <node href="#//@nodes.0/@value"/>
+    </value>
+  </nodeLabels>
+</org.eclipse.stem.core.graph:Graph>

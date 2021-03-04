@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.eclipse.stem.data.feature"
+      label="%featureName"
+      version="3.0.0.201812181050"
+      provider-name="%providerName">
+
+   <description url="http://www.example.com/description">
+      [Enter Feature Description here.]
+   </description>
+
+   <copyright url="http://www.example.com/copyright">
+      [Enter Copyright Description here.]
+   </copyright>
+
+   <license url="http://www.example.com/license">
+      [Enter License Description here.]
+   </license>
+
+   <url>
+      <update label="%updateSiteName" url="http://download.eclipse.org/stem/update-site/"/>
+   </url>
+
+   <includes
+         id="org.eclipse.stem.data.diseasemodels.feature"
+         version="3.0.0.201812181050"/>
+
+   <includes
+         id="org.eclipse.stem.data.geography.feature"
+         version="3.0.0.201812181050"/>
+
+   <includes
+         id="org.eclipse.stem.data.population.human.feature"
+         version="3.0.0.201812181050"/>
+
+   <includes
+         id="org.eclipse.stem.data.transportation.feature"
+         version="3.0.0.201812181050"/>
+
+</feature>

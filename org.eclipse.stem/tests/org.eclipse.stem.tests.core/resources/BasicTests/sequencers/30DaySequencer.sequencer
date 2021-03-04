@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<org.eclipse.stem.core.sequencer:SequentialSequencer xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:org.eclipse.stem.core.sequencer="http:///org/eclipse/stem/core/sequencer.ecore" uRI="platform:/resource/BasicTests/sequencers/30DaySequencer.sequencer" typeURI="stemtype://org.eclipse.stem/Identifiable" duration="2678399000" workComplete="36.0" cycle="12">
+  <dublinCore identifier="platform:/resource/BasicTests/sequencers/30DaySequencer.sequencer" description="Sequential Sequencer &quot;30DaySequencer&quot; starting from 2011-01-24 to 2011-02-24 with a cycle period of 1 day." creator="edlund" format="http:///org/eclipse/stem/core/sequencer.ecore" type="stemtype://org.eclipse.stem/Identifiable" created="2011-01-24" valid="start=2011-01-24; end=2011-02-24;"/>
+  <startTime time="2011-01-24T12:00:00.965-0800"/>
+  <endTime time="2011-02-24T11:59:59.965-0800"/>
+  <currentTime time="2011-01-25T12:00:00.965-0800"/>
+</org.eclipse.stem.core.sequencer:SequentialSequencer>

@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: STEM Geography Utils
+Bundle-SymbolicName: org.eclipse.stem.geography
+Bundle-Version: 3.0.0.qualifier
+Bundle-Activator: org.eclipse.stem.geography.Activator
+Bundle-Vendor: Eclipse.org
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.stem.core,
+ org.eclipse.stem.data.geography
+Export-Package: org.eclipse.stem.geography,
+ org.eclipse.stem.geography.centers,
+ org.eclipse.stem.geography.names
+Automatic-Module-Name: org.eclipse.stem.geography

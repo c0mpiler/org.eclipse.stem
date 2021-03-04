@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ <copyright>
+ </copyright>
+
+ $Id$
+-->
+
+<plugin>
+   <extension-point id="disease" name="%EP_Disease" schema="schema/disease.exsd"/>
+   <extension-point id="diseasemodel" name="%EP_Disease_Model" schema="schema/diseasemodel.exsd"/>
+    
+	<extension point="org.eclipse.stem.model.metamodel">
+	<metamodel
+       path="model/standard.metamodel">
+	</metamodel>
+	</extension>
+    
+  <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+    <factory 
+       uri = "http:///org/eclipse/stem/diseasemodels/standard.ecore" 
+       class = "org.eclipse.stem.diseasemodels.standard.provider.StandardItemProviderAdapterFactory" 
+       supportedTypes = 
+         "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
+          org.eclipse.emf.edit.provider.IStructuredItemContentProvider
+          org.eclipse.emf.edit.provider.ITreeItemContentProvider
+          org.eclipse.emf.edit.provider.IItemLabelProvider
+          org.eclipse.emf.edit.provider.IItemPropertySource" />
+  </extension>
+  
+  <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+    <factory 
+       uri = "http:///org/eclipse/stem/diseasemodels/diseasepredicates.ecore" 
+       class = "org.eclipse.stem.diseasemodels.predicates.diseasepredicates.provider.DiseasepredicatesItemProviderAdapterFactory" 
+       supportedTypes = 
+         "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
+          org.eclipse.emf.edit.provider.IStructuredItemContentProvider
+          org.eclipse.emf.edit.provider.ITreeItemContentProvider
+          org.eclipse.emf.edit.provider.IItemLabelProvider
+          org.eclipse.emf.edit.provider.IItemPropertySource" />
+  </extension>
+
+   <extension point="org.eclipse.emf.edit.childCreationExtenders">
+      <!-- @generated diseasemodels -->
+      <extender
+            uri="http:///org/eclipse/stem/core/predicate.ecore"
+            class="org.eclipse.stem.diseasemodels.predicates.diseasepredicates.provider.DiseasepredicatesItemProviderAdapterFactory$PredicateChildCreationExtender"/>
+   </extension>
+
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <package
+       uri = "http:///org/eclipse/stem/diseasemodels/standard.ecore"
+       class = "org.eclipse.stem.diseasemodels.standard.StandardPackage"
+       genModel = "model/diseasemodels.genmodel" /> 
+  </extension>
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <package
+       uri = "http:///org/eclipse/stem/diseasemodels/diseasepredicates.ecore"
+       class = "org.eclipse.stem.diseasemodels.predicates.diseasepredicates.DiseasepredicatesPackage"
+       genModel = "model/diseasemodels.genmodel" /> 
+  </extension>
+
+   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <!-- @generated diseasemodels -->
+      <factory
+            uri="http:///org/eclipse/stem/diseasemodels/standard.ecore"
+            class="org.eclipse.stem.diseasemodels.standard.provider.StandardItemProviderAdapterFactory"
+            supportedTypes=
+              "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
+               org.eclipse.emf.edit.provider.IStructuredItemContentProvider
+               org.eclipse.emf.edit.provider.ITreeItemContentProvider
+               org.eclipse.emf.edit.provider.IItemLabelProvider
+               org.eclipse.emf.edit.provider.IItemPropertySource"/>
+   </extension>
+  <extension
+        point="org.eclipse.stem.diseasemodels.diseasemodel">
+     <classdef class="org.eclipse.stem.diseasemodels.standard.impl.SIImpl"/>
+     <dublin_core
+           category_id="/"
+           creator="%dc_creator_stemteam"
+           description="%dc_desc_D_SI"
+           identifier="%dc_identier"
+           license="%dc_license"
+           publisher="%dc_publisher"
+           source="%dc_SOURCE"
+           title="%dc_title_D_SI"/>
+  </extension>
+  <extension
+        point="org.eclipse.stem.diseasemodels.diseasemodel">
+     <classdef class="org.eclipse.stem.diseasemodels.standard.impl.SEIRImpl"/>
+     <dublin_core
+           category_id="/"
+           creator="%dc_creator_stemteam"
+           description="%dc_desc_D_SEIR"
+           identifier="%dc_identier"
+           license="%dc_license"
+           publisher="%dc_publisher"
+           source="%dc_SOURCE"
+           title="%dc_title_D_SEIR"/>
+  </extension>
+  <extension
+        point="org.eclipse.stem.diseasemodels.diseasemodel">
+     <classdef class="org.eclipse.stem.diseasemodels.standard.impl.SIRImpl"/>
+     <dublin_core
+           category_id="/"
+           creator="%dc_creator_stemteam"
+           description="%dc_desc_D_SIR"
+           identifier="%dc_identier"
+           license="%dc_license"
+           publisher="%dc_publisher"
+           source="%dc_SOURCE"
+           title="%dc_title_D_SIR"/>
+  </extension>
+  <!-- Deprecated with the new stochastic models
+  
+  <extension
+        point="org.eclipse.stem.diseasemodels.diseasemodel">
+     <classdef
+           class="org.eclipse.stem.diseasemodels.standard.impl.StochasticSEIRDiseaseModelImpl">
+     </classdef>
+     <dublin_core
+           creator="%dc_creator_stemteam"
+           description="%dc_desc_S_SEIR"
+           identifier="%dc_identier"
+           license="%dc_license"
+           publisher="%dc_publisher"
+           source="%dc_SOURCE"
+           title="%dc_title_S_SEIR">
+     </dublin_core>
+  </extension>
+  <extension
+        point="org.eclipse.stem.diseasemodels.diseasemodel">
+     <classdef
+           class="org.eclipse.stem.diseasemodels.standard.impl.StochasticSIRDiseaseModelImpl">
+     </classdef>
+     <dublin_core
+           creator="%dc_creator_stemteam"
+           description="%dc_desc_S_SIR"
+           identifier="%dc_identier"
+           license="%dc_license"
+           publisher="%dc_publisher"
+           source="%dc_SOURCE"
+           title="%dc_title_S_SIR">
+     </dublin_core>
+  </extension>
+  <extension
+        point="org.eclipse.stem.diseasemodels.diseasemodel">
+     <classdef
+           class="org.eclipse.stem.diseasemodels.standard.impl.StochasticSIDiseaseModelImpl">
+     </classdef>
+     <dublin_core
+           creator="%dc_creator_stemteam"
+           description="%dc_desc_S_SI"
+           identifier="%dc_identier"
+           license="%dc_license"
+           publisher="%dc_publisher"
+           source="%dc_SOURCE"
+           title="%dc_title_S_SI">
+     </dublin_core>
+  </extension>
+  <extension
+        point="org.eclipse.stem.diseasemodels.diseasemodel">
+     <classdef
+           class="org.eclipse.stem.diseasemodels.standard.impl.StochasticPoissonSIDiseaseModelImpl">
+     </classdef>
+     <dublin_core
+           creator="%dc_creator_stemteam"
+           description="%dc_desc_S_SI"
+           identifier="%dc_identier"
+           license="%dc_license"
+           publisher="%dc_publisher"
+           source="%dc_SOURCE"
+           title="%dc_title_PS_SI">
+     </dublin_core>
+  </extension>
+   <extension
+        point="org.eclipse.stem.diseasemodels.diseasemodel">
+     <classdef
+           class="org.eclipse.stem.diseasemodels.standard.impl.StochasticPoissonSIRDiseaseModelImpl">
+     </classdef>
+     <dublin_core
+           creator="%dc_creator_stemteam"
+           description="%dc_desc_S_SI"
+           identifier="%dc_identier"
+           license="%dc_license"
+           publisher="%dc_publisher"
+           source="%dc_SOURCE"
+           title="%dc_title_PS_SIR">
+     </dublin_core>
+  </extension>
+   <extension
+        point="org.eclipse.stem.diseasemodels.diseasemodel">
+     <classdef
+           class="org.eclipse.stem.diseasemodels.standard.impl.StochasticPoissonSEIRDiseaseModelImpl">
+     </classdef>
+     <dublin_core
+           creator="%dc_creator_stemteam"
+           description="%dc_desc_S_SI"
+           identifier="%dc_identier"
+           license="%dc_license"
+           publisher="%dc_publisher"
+           source="%dc_SOURCE"
+           title="%dc_title_PS_SEIR">
+     </dublin_core>
+  </extension>
+  -->
+  <!--
+  <extension
+        point="org.eclipse.core.runtime.preferences">
+     <initializer
+           class="org.eclipse.stem.diseasemodels.preferences.PreferenceInitializer">
+     </initializer>
+  </extension>
+-->
+   
+   
+    <!-- CTDL function names -->
+   <extension
+         point="org.eclipse.stem.model.ctdl.functions.functions">
+ 
+ 		 <function 
+	         	name="vaccinations"
+	         	className="org.eclipse.stem.diseasemodels.functions.CTDLFunctions"
+	         	methodName="vaccinations">
+	         	<functionParams/>
+	         	<generatedParams>
+	         		<generatedParam name="node" mapsFrom="node" />
+	         		<generatedParam mapsFrom="label" />
+	         		<generatedParam mapsFrom="labelValue" />
+	         		<generatedParam name="time" mapsFrom="time" />
+	         		<generatedParam name="timeDelta" mapsFrom="timeDelta" />
+	         		<generatedParam name="t" mapsFrom="t" />
+	         	</generatedParams>
+	   </function>
+	    <function 
+	         	name="isolations"
+	         	className="org.eclipse.stem.diseasemodels.functions.CTDLFunctions"
+	         	methodName="isolations">
+	         	<functionParams/>
+	         	<generatedParams>
+	         		<generatedParam mapsFrom="node" />
+	         		<generatedParam mapsFrom="label" />
+	         		<generatedParam mapsFrom="labelValue" />
+	         		<generatedParam mapsFrom="time" />
+	         		<generatedParam mapsFrom="timeDelta" />
+	         		<generatedParam mapsFrom="t" />
+	         	</generatedParams>
+	   </function>
+	   <!-- (EAttribute infectiousAttribute, StandardDiseaseModel disease, Node node, IntegrationLabel diseaseLabel) -->
+	    <function 
+	         	name="effective"
+	         	className="org.eclipse.stem.diseasemodels.functions.CTDLFunctions"
+	         	methodName="computeEffective">
+	         	<functionParams>
+	         		<functionParam name="compartment" type="compartment" />
+	         	</functionParams>
+	         	<generatedParams>
+	         		<generatedParam mapsFrom="compartment" />
+	         		<generatedParam mapsFrom="model" />
+	         		<generatedParam mapsFrom="node" />
+	         		<generatedParam mapsFrom="label" />
+	         	</generatedParams>
+	   </function>	   
+	</extension>
+</plugin>
+

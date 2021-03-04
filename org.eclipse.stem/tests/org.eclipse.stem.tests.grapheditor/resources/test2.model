@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<org.eclipse.stem.core.model:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:org.eclipse.stem.core.model="http:///org/eclipse/stem/core/model.ecore" uRI="platform:/resource/test2.model" typeURI="stemtype://org.eclipse.stem/Model">
+  <dublinCore title="Test canonical graph" identifier="platform:/resource/test2.model" description="" creator="WiggerJ" format="http:///org/eclipse/stem/core/model.ecore" coverage="test:1/" subject="Model:geography" type="stemtype://org.eclipse.stem/Model" created="2011-03-15"/>
+  <graphs href="platform:/plugin/org.eclipse.stem.tests.grapheditor/resources/test2.graph#/"/>
+  <graphs href="platform:/plugin/org.eclipse.stem.tests.grapheditor/resources/test2_area.graph#/"/>
+</org.eclipse.stem.core.model:Model>

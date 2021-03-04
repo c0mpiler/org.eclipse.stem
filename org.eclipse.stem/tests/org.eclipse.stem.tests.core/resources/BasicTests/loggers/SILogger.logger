@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<org.eclipse.stem.loggers.csv.model:CSVLogger xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:org.eclipse.stem.loggers.csv.model="http://org/eclipse/stem/loggers/csv" uRI="platform:/resource/BasicTests/loggers/SILogger.logger" typeURI="stemtype://org.eclipse.stem/Identifiable" dataPath="" logInitialState="true">
+  <dublinCore title="CSV File Logger" identifier="platform:/resource/BasicTests/loggers/SILogger.logger" description="STEM logger for writing the results of a simulation to an entry-delimited text file" creator="edlund" format="http://org/eclipse/stem/core/logger" publisher="The Eclipse Foundation" source="http://wiki.eclipse.org/STEM_Loggers" type="stemtype://org.eclipse.stem/Logger" created="2013-08-12" license="Eclipse Public License (EPL)"/>
+  <properties>platform:/resource/BasicTests/decorators/SI.standard#human/s</properties>
+  <properties>platform:/resource/BasicTests/decorators/SI.standard#human/i</properties>
+  <properties>platform:/resource/BasicTests/decorators/SI.standard#human/populationCount</properties>
+  <properties>platform:/resource/BasicTests/decorators/SI.standard#human/incidence</properties>
+  <properties>platform:/resource/BasicTests/decorators/SI.standard#human/diseaseDeaths</properties>
+</org.eclipse.stem.loggers.csv.model:CSVLogger>

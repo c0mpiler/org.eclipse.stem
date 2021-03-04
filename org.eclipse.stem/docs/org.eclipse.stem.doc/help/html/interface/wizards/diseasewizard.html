@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>New Disease Wizard</title>
+</head>
+<body>
+<p>The <em>New Disease Wizard</em> is used to create and define the
+properties of a new Disease. A file name for the new instance along with the Disease Name must be provided.</p>
+<p>Parameters that can be specified depends upon the particular disease model selected in the Disease Model drop-down. 
+For example, for an SI model, the parameters are:
+<ul>
+	<li>Disease Name</li>
+	<li>Population: i.e., human</li>
+	<li>Time Period (TP): In milliseconds, the reference time period all rates are in relation to.</li>
+	<li>Frequency Dependent: Yes or No. If No, the disease model assumes density dependency and transmission rates are scaled according to the local population density.</li>
+	<li>Reference Pop Density: PM/SQ KM. The reference density, only used when frequency dependent is No</li>
+	<li>Transmission Rate (&beta;).  This is the transmission (or contact) rate, not the basic reproductive number (R<sub>o</sub>).
+	If 's' represents the fraction of the population that is susceptible, R<sub>o</sub>~s&beta;/(&gamma; + &mu;).</li> 
+	<li>Non-Linearity Coefficient (&nu;): Typically &nu;=1. Must be greater than or equal to 0.0. Incidence is &beta;*S*I<sup>&nu;</sup> </li>
+	<li>Infectious Recovery Rate (&gamma;): PM/TP*</li>
+	<li>Infectious Mortality Rate (&mu; &iota;): PM/TP*</li>
+	<li>Characteristic Mixing Distance: In kilometers, the distance threshold where the population is assumed fully mixed.</li>
+	<li>Road.Net.Inf.Proportion: Fraction per Road</li>
+</ul></p>
+
+<img src="img/diseasewizard1.jpg" />
+<img src="img/diseasewizard2.jpg" />
+<img src="img/diseaseproperties.jpg" />
+</body>
+</html>

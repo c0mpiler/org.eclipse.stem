@@ -1,0 +1,19 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: STEM Internal Geography Models
+Bundle-SymbolicName: org.eclipse.stem.internal.data.geography.models
+Bundle-Version: 2.0.3.qualifier
+Require-Bundle: org.eclipse.emf.ecore,
+ org.eclipse.emf.ecore.xmi,
+ org.eclipse.stem.core,
+ org.eclipse.stem.internal.data,
+ org.eclipse.stem.internal.data.geography,
+ org.eclipse.stem.data.geography,
+ org.eclipse.stem.definitions,
+ org.eclipse.stem.data.geography.models,
+ org.eclipse.stem.geography
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Export-Package: org.eclipse.stem.internal.data.geography.models,
+ org.eclipse.stem.internal.data.specifications
+Bundle-Vendor: Eclipse.org
+Automatic-Module-Name: org.eclipse.stem.internal.data.geography.models

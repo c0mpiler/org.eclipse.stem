@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="graphsynchronizer"
+    nsURI="http:///org/eclipse/stem/graphsynchronizer/graphsynchronizer.ecore" nsPrefix="org.eclipse.stem.graphsynchronizer">
+  <eClassifiers xsi:type="ecore:EClass" name="SynchGraphPartitioner" eSuperTypes="../../org.eclipse.stem.core/model/graph.ecore#//GraphPartitioner">
+    <eOperations name="getIdentifiableRank" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EInt">
+      <eParameters name="identifiable" eType="ecore:EClass ../../org.eclipse.stem.core/model/common.ecore#//Identifiable"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="numNodes" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"
+        defaultValueLiteral="1"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nodeRank" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"
+        defaultValueLiteral="0"/>
+  </eClassifiers>
+</ecore:EPackage>

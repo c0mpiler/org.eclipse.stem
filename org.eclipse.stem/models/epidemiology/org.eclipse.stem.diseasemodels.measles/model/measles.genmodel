@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.eclipse.stem.diseasemodels.measles/src" editDirectory="/org.eclipse.stem.diseasemodels.measles/src"
+    editorDirectory="/org.eclipse.stem.diseasemodels.measles/src" modelPluginID="org.eclipse.stem.diseasemodels.measles"
+    templateDirectory="platform:/plugin/org.eclipse.stem.model.codegen/templates"
+    dynamicTemplates="true" forceOverwrite="true" modelName="Measles" importerID="http:///org/eclipse/stem/modelgen"
+    suppressNotification="true" complianceLevel="6.0" publicConstructors="true" editPluginID="org.eclipse.stem.diseasemodels.measles"
+    editorPluginID="org.eclipse.stem.diseasemodels.measles" usedGenPackages="platform:/plugin/org.eclipse.stem.diseasemodels/model/diseasemodels.genmodel#//standard platform:/plugin/org.eclipse.stem.diseasemodels.multipopulation/model/multipopulation.genmodel#//multipopulation platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore platform:/plugin/org.eclipse.stem.core/model/core.genmodel#//common platform:/plugin/org.eclipse.stem.core/model/core.genmodel#//experiment platform:/plugin/org.eclipse.stem.core/model/core.genmodel#//graph platform:/plugin/org.eclipse.stem.core/model/core.genmodel#//model platform:/plugin/org.eclipse.stem.core/model/core.genmodel#//modifier platform:/plugin/org.eclipse.stem.core/model/core.genmodel#//predicate platform:/plugin/org.eclipse.stem.core/model/core.genmodel#//scenario platform:/plugin/org.eclipse.stem.core/model/core.genmodel#//sequencer platform:/plugin/org.eclipse.stem.core/model/core.genmodel#//trigger platform:/plugin/org.eclipse.stem.core/model/core.genmodel#//solver platform:/plugin/org.eclipse.stem.core/model/core.genmodel#//logger">
+  <templatePluginVariables>STEM_CODEGEN=org.eclipse.stem.model.codegen</templatePluginVariables>
+  <templatePluginVariables>STEM_METAMODEL=org.eclipse.stem.model</templatePluginVariables>
+  <genPackages prefix="Measles" basePackage="org.eclipse.stem.diseasemodels" disposableProviderFactory="true"
+      ecorePackage="measles.ecore#/">
+    <genClasses image="false" ecoreClass="measles.ecore#//MeaslesLabel"/>
+    <genClasses image="false" ecoreClass="measles.ecore#//MeaslesLabelValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute measles.ecore#//MeaslesLabelValue/vaccinated"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute measles.ecore#//MeaslesLabelValue/immunisations"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute measles.ecore#//MeaslesLabelValue/m"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute measles.ecore#//MeaslesLabelValue/incidenceV"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="measles.ecore#//Measles">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute measles.ecore#//Measles/vaccineEfficacy"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute measles.ecore#//Measles/inoculationScaling"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute measles.ecore#//Measles/phaseShift"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute measles.ecore#//Measles/seasonalModulation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute measles.ecore#//Measles/seasonalModulationPeriod"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute measles.ecore#//Measles/inoculatedImmunityRate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute measles.ecore#//Measles/newbornImmunityLossRate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute measles.ecore#//Measles/transmissionRateScaling"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

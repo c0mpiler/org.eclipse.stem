@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<org.eclipse.stem.model:Package xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:org.eclipse.stem.model="http:///org/eclipse/stem/model/metamodel.ecore"
+    packagePrefix="org.eclipse.stem" name="EvolvingCrossSpeciesModel">
+  <models name="EvolvingCrossSpeciesModel" class="evolvingcrossspeciesmodel.ecore#//EvolvingCrossSpeciesModel"
+      parentModel="platform:/plugin/org.eclipse.stem.diseasemodels.evolving/model/evolving.metamodel#//@models.1"
+      compartments="#//@compartmentGroups.0">
+    <parameters name="otherToOtherTransmissionRate" dataType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+        defaultValue="0.0" displayName="Other To Other Transmission Rate" unit=""
+        helpMessage="" invalidMessage="" missingMessage=""/>
+    <parameters name="otherRecoveryRate" dataType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+        defaultValue="0.1" displayName="Other Recovery Rate" unit="" helpMessage=""
+        invalidMessage="" missingMessage=""/>
+    <parameters name="otherToHostTransmissionRate" dataType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+        defaultValue="0.0" displayName="Other To Host Transmission Rate" unit="" helpMessage=""
+        invalidMessage="" missingMessage=""/>
+    <parameters name="temperatureFactor" dataType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+        defaultValue="20.0" displayName="Temperature Factor" unit="" helpMessage=""
+        invalidMessage="" missingMessage=""/>
+    <parameters name="otherPopulationIdentifier" dataType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValue="avian" displayName="Other Population Identifier" unit="" helpMessage=""
+        invalidMessage="" missingMessage=""/>
+    <parameters name="otherImmunityLossRate" dataType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+        defaultValue="0.001" displayName="Other Immunity Loss Rate" unit="" helpMessage=""
+        invalidMessage="" missingMessage=""/>
+    <parameters name="incubationRate" dataType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+        defaultValue="1.0" displayName="Incubation Rate" unit="" helpMessage="" invalidMessage=""
+        missingMessage=""/>
+    <transitions source="platform:/plugin/org.eclipse.stem.diseasemodels/model/standard.metamodel#//@compartmentGroups.2/@compartments.0"
+        target="platform:/plugin/org.eclipse.stem.diseasemodels/model/standard.metamodel#//@compartmentGroups.3/@compartments.0"
+        expression="delta recoveryRate*I;"/>
+    <transitions source="platform:/plugin/org.eclipse.stem.diseasemodels/model/standard.metamodel#//@compartmentGroups.3/@compartments.0"
+        target="platform:/plugin/org.eclipse.stem.diseasemodels/model/standard.metamodel#//@compartmentGroups.4/@compartments.0"
+        expression="delta immunityLossRate*R;"/>
+    <transitions source="platform:/plugin/org.eclipse.stem.diseasemodels/model/standard.metamodel#//@compartmentGroups.4/@compartments.0"
+        target="#//@compartmentGroups.0/@compartments.0" expression="delta transmissionRate*S*effective(i);"/>
+    <transitions source="#//@compartmentGroups.0/@compartments.0" target="platform:/plugin/org.eclipse.stem.diseasemodels/model/standard.metamodel#//@compartmentGroups.2/@compartments.0"
+        expression="delta incubationRate*E;"/>
+  </models>
+  <compartmentGroups name="EvolvingCrossSpeciesModel" class="evolvingcrossspeciesmodel.ecore#//EvolvingCrossSpeciesModelLabel"
+      valueClass="evolvingcrossspeciesmodel.ecore#//EvolvingCrossSpeciesModelLabelValue"
+      parentGroup="platform:/plugin/org.eclipse.stem.diseasemodels/model/standard.metamodel#//@compartmentGroups.3">
+    <compartments name="e" dataType="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <compartments name="seff" dataType="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+  </compartmentGroups>
+</org.eclipse.stem.model:Package>

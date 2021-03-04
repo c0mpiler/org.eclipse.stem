@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<org.eclipse.stem.model:Package xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:org.eclipse.stem.model="http:///org/eclipse/stem/model/metamodel.ecore"
+    packagePrefix="org.eclipse.stem.diseasemodels" name="Measles">
+  <models name="Measles" class="measles.ecore#//Measles" parentModel="platform:/plugin/org.eclipse.stem.diseasemodels.multipopulation/model/multipopulation.metamodel#//@models.2"
+      compartments="#//@compartmentGroups.0">
+    <parameters name="vaccineEfficacy" dataType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+        defaultValue="0.95" displayName="Vaccine Efficacy" unit="" helpMessage="Vaccine Efficiacy (fractions of inoculations successful)"
+        invalidMessage="Vaccine Efficiacy is invalid" missingMessage="Vaccine Efficiacy is missing">
+      <constraints name="minValue" constraint="0"/>
+      <constraints name="maxValue" constraint="1.0"/>
+    </parameters>
+    <parameters name="inoculationScaling" dataType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+        defaultValue="1.0" displayName="Inoculation Scaling" unit="" helpMessage="Scale the total number of incoculations performed (everywhere) using a factor"
+        invalidMessage="Inoculation Scaling is invalid" missingMessage="Inoculation Scaling is missing">
+      <constraints name="minValue" constraint="0"/>
+    </parameters>
+    <parameters name="phaseShift" dataType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+        defaultValue="0.0" displayName="Phase Shift" unit="" helpMessage="The phase shift for the seasonal modulation for measles"
+        invalidMessage="Phase shift is invalid (must be between 0 and 1)" missingMessage="Phase shift is missing">
+      <constraints name="minValue" constraint="0"/>
+      <constraints name="maxValue" constraint="1"/>
+    </parameters>
+    <parameters name="seasonalModulation" dataType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+        defaultValue="1.9" displayName="Seasonal Modulation" unit="" helpMessage="The seasonal modulation in the contact rate for measles"
+        invalidMessage="Seasonal modulation is invalid (>1)" missingMessage="Seasonal modulation is missing">
+      <constraints name="minValue" constraint="1"/>
+    </parameters>
+    <parameters name="seasonalModulationPeriod" dataType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"
+        defaultValue="31556925994" displayName="Seasonal Modulation Period" unit="ms"
+        helpMessage="The period of the seasonal modulation (in ms)" invalidMessage="Seasonal Modulation Period is invalid (>0)"
+        missingMessage="Seasonal Modulation Period is missing">
+      <constraints name="minValue" constraint="0"/>
+    </parameters>
+    <parameters name="inoculatedImmunityRate" dataType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+        defaultValue="0.05" displayName="Inoculated Immunity Rate" unit="1/TP" helpMessage="Rate rate at which population members come immune after inoculation"
+        invalidMessage="Inoculation Immunity Rate is invalid (>0)" missingMessage="Inoculation Immunity Rate is missing">
+      <constraints name="minValue" constraint="0"/>
+    </parameters>
+    <parameters name="newbornImmunityLossRate" dataType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+        defaultValue="2.7E-3" displayName="Newborn Immunity Loss Rate" unit="1/TP"
+        helpMessage="The immunity loss rate for new borns" invalidMessage="New Born Immunity Loss Rate is invalid (>1)"
+        missingMessage="New Born Immunity Loss Rate is missing">
+      <constraints name="minValue" constraint="0"/>
+    </parameters>
+    <parameters name="transmissionRateScaling" dataType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+        defaultValue="1.0" displayName="Transmission Rate Scaling" unit="" helpMessage="Scaling factor for all transmission rates"
+        invalidMessage="Transmission rate scaling is invalid" missingMessage="Transmission rate scaling is missing">
+      <constraints name="minValue" constraint="0"/>
+    </parameters>
+  </models>
+  <compartmentGroups name="Measles" class="measles.ecore#//MeaslesLabel" valueClass="measles.ecore#//MeaslesLabelValue"
+      parentGroup="platform:/plugin/org.eclipse.stem.diseasemodels/model/standard.metamodel#//@compartmentGroups.1">
+    <compartments name="vaccinated" dataType="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <compartments name="immunisations" dataType="http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+        type="Incidence"/>
+    <compartments name="m" dataType="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <compartments name="incidenceV" dataType="http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+        type="Incidence"/>
+  </compartmentGroups>
+</org.eclipse.stem.model:Package>

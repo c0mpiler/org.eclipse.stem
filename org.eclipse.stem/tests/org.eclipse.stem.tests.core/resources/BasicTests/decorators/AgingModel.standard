@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<org.eclipse.stem.populationmodels.standard:AgingPopulationModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.eclipse.stem.populationmodels.standard="http:///org/eclipse/stem/populationmodels/standard" uRI="platform:/resource/BasicTests/decorators/AgingModel.standard" typeURI="stemtype://org.eclipse.stem/Identifiable" birthRate="1.0E-4" deathRate="1.0E-4">
+  <dublinCore identifier="platform:/resource/BasicTests/decorators/AgingModel.standard" creator="loaner25" format="http:///org/eclipse/stem/populationmodels/standard" type="stemtype://org.eclipse.stem/Identifiable" created="2011-05-26"/>
+  <populationGroups xsi:type="org.eclipse.stem.populationmodels.standard:AgeGroup" identifier="human0to0" fraction="0.4" deathFactor="2.0" limited="true"/>
+  <populationGroups xsi:type="org.eclipse.stem.populationmodels.standard:AgeGroup" identifier="human1to1" fraction="0.4" fromAge="1" toAge="1" limited="true"/>
+  <populationGroups xsi:type="org.eclipse.stem.populationmodels.standard:AgeGroup" identifier="human2to-" fraction="0.2" fromAge="2" deathFactor="0.0"/>
+</org.eclipse.stem.populationmodels.standard:AgingPopulationModel>

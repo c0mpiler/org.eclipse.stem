@@ -1,0 +1,80 @@
+<%@ jet package="org.eclipse.emf.codegen.ecore.templates.editor" imports="org.eclipse.stem.model.codegen.* org.eclipse.emf.codegen.ecore.genmodel.*" class="PropertyEditorAdapterFactory" version="" %>
+<%
+/**
+ * <copyright>
+ *
+ * Copyright (c) 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018
+ * IBM Corporation, BfR, and others.
+ * All rights reserved.   This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *   IBM - Initial API and implementation
+ *
+ * </copyright>
+ */
+%>
+<%
+STEMGenPackage stemGenPackage = (STEMGenPackage)((Object[])argument)[0]; 
+GenPackage genPackage = stemGenPackage.getGenPackage(); 
+GenModel genModel=genPackage.getGenModel(); 
+%>
+<%@ include file="../Header.javajetinc"%>
+package <%=genPackage.getPresentationPackageName()%>;
+
+import org.eclipse.emf.common.notify.Adapter;
+import <%=genPackage.getUtilitiesPackageName() %>.<%=genPackage.getAdapterFactoryClassName()%>;
+import org.eclipse.ui.IStartup;
+<%genModel.markImportLocation(stringBuffer);%>
+
+/**
+ * @generated
+ */
+public class <%=genPackage.getPrefix()%>PropertyEditorAdapterFactory extends
+		<%=genPackage.getPrefix()%>AdapterFactory implements IStartup<% for (String adapterFactoryType : stemGenPackage.getPropertyEditorAdapterFactoryBaseTypes().values()) { %>, <%=genModel.getImportedName(adapterFactoryType)%><%}%> {
+
+	/**
+	 * @generated
+	 */
+	public <%=genPackage.getPrefix()%>PropertyEditorAdapterFactory() 
+	{
+		super();
+<% for (String adapterFactoryType : stemGenPackage.getPropertyEditorAdapterFactoryBaseTypes().values()) { %>
+		<%=genModel.getImportedName(adapterFactoryType)%>.INSTANCE.addAdapterFactory(this);
+<%}%>
+	}
+
+	/**
+	 * @generated
+	 */
+	public void earlyStartup() {
+		new <%=genPackage.getPrefix()%>PropertyStringProviderAdapterFactory();
+	}
+
+<% /* Generates the adapter methods for each computational model EClass */ %>
+<% for (STEMGenClass stemGenClass : stemGenPackage.getComputationalModelClasses()) { %>
+	/**
+	 * @generated
+	 */
+	@Override
+	public Adapter create<%=stemGenClass.getGenClass().getName() %>Adapter() {
+		return new <%=stemGenClass.getGenClass().getName()%>PropertyEditorAdapter();
+	}
+	
+<% } %>
+
+	/**
+	 * @generated
+	 */
+	public boolean isFactoryForType(Object type) 
+	{
+		boolean isType = super.isFactoryForType(type);
+<% for (String adapterType : stemGenPackage.getPropertyEditorAdapterBaseTypes().values()) { %>
+		isType = isType || type == <%=genModel.getImportedName(adapterType)%>.class;
+<%}%>
+		return isType;
+	}
+}
+<%genModel.emitSortedImports();%>

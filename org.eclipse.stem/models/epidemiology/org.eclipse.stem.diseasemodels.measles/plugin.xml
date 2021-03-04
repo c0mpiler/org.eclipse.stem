@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ <copyright>
+ </copyright>
+
+ $Id$
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <factory
+            uri="http:///org/eclipse/stem/diseasemodels/measles/measles.ecore"
+            class="org.eclipse.stem.diseasemodels.measles.provider.MeaslesItemProviderAdapterFactory"
+            supportedTypes=
+              "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
+               org.eclipse.emf.edit.provider.IStructuredItemContentProvider
+               org.eclipse.emf.edit.provider.ITreeItemContentProvider
+               org.eclipse.emf.edit.provider.IItemLabelProvider
+               org.eclipse.emf.edit.provider.IItemPropertySource"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http:///org/eclipse/stem/diseasemodels/measles/measles.ecore"
+            class="org.eclipse.stem.diseasemodels.measles.MeaslesPackage"/>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="org.eclipse.stem.diseasemodels.measles.presentation.MeaslesModelWizardID"
+            name="%_UI_MeaslesModelWizard_label"
+            class="org.eclipse.stem.diseasemodels.measles.presentation.MeaslesModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/MeaslesModelFile.gif">
+         <description>%_UI_MeaslesModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="org.eclipse.stem.diseasemodels.measles.presentation.MeaslesEditorID"
+            name="%_UI_MeaslesEditor_label"
+            icon="icons/full/obj16/MeaslesModelFile.gif"
+            extensions="measles"
+            class="org.eclipse.stem.diseasemodels.measles.presentation.MeaslesEditor"
+            contributorClass="org.eclipse.stem.diseasemodels.measles.presentation.MeaslesActionBarContributor">
+      </editor>
+   </extension>
+
+	<extension point="org.eclipse.stem.diseasemodels.diseasemodel">
+		<classdef class="org.eclipse.stem.diseasemodels.measles.impl.MeaslesImpl"></classdef>
+		<dublin_core
+			creator=""
+			description=""
+			identifier=""
+			source=""
+			title="Measles"
+			license=""
+			publisher="">
+		</dublin_core>
+	</extension>
+
+
+  <extension
+        point="org.eclipse.ui.startup">        
+     <startup
+           class="org.eclipse.stem.diseasemodels.measles.presentation.MeaslesPropertyEditorAdapterFactory">
+     </startup>
+     <startup
+           class="org.eclipse.stem.diseasemodels.measles.presentation.MeaslesRelativeValueProviderAdapterFactory">
+     </startup>     
+  </extension>
+
+
+</plugin>

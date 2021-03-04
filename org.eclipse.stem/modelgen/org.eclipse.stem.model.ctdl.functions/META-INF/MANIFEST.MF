@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: STEM External Function Definition
+Bundle-SymbolicName: org.eclipse.stem.model.ctdl.functions;singleton:=true
+Bundle-Version: 3.0.0.qualifier
+Bundle-Activator: org.eclipse.stem.model.ctdl.functions.Activator
+Bundle-Vendor: Eclipse.org
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.emf.ecore,
+ org.eclipse.stem.core
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Bundle-ActivationPolicy: lazy
+Export-Package: org.eclipse.stem.model.ctdl.functions,
+ org.eclipse.stem.model.ctdl.functions.util
+Automatic-Module-Name: org.eclipse.stem.model.ctdl.functions

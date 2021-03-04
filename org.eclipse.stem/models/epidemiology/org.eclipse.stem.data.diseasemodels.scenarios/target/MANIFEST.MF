@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-SymbolicName: org.eclipse.stem.data.diseasemodels.scenarios;sin
+ gleton:=true
+Export-Package: org.eclipse.stem.data.diseasemodels.scenarios
+Bundle-Name: Generated Disease Model Scenarios Plug-in
+Bundle-Version: 3.0.0.201812181050
+Bundle-Localization: plugin
+Require-Bundle: org.eclipse.core.runtime
+Bundle-ManifestVersion: 2
+Bundle-Activator: org.eclipse.stem.data.diseasemodels.scenarios.Activa
+ tor
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Bundle-ActivationPolicy: lazy
+Bundle-Vendor: Eclipse.org
+

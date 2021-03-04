@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<!--
+/*******************************************************************************
+ * Copyright (c) 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018
+ * IBM Corporation, BfR, and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v2.0
+ * which accompanies this distribution, and is available at
+ * https://www.eclipse.org/legal/epl-2.0/
+ *
+ * Contributors:
+ *     IBM Corporation - initial API and implementation and new features
+ *     Bundesinstitut für Risikobewertung - Pajek Graph interface, new Veterinary Models
+ *******************************************************************************/
+ -->
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            category="org.eclipse.stem.ui.views"
+            class="org.eclipse.stem.model.ctdl.ui.embed.EmbeddedEditorView"
+            id="org.eclipse.stem.model.ctdl.ui.embed.embeddedEditorView"
+            name="CTDL Viewer"/>
+           </extension>
+
+    <extension
+            point="org.eclipse.ui.editors">
+        <editor
+            class="org.eclipse.stem.model.ctdl.ui.CTDLExecutableExtensionFactory:org.eclipse.xtext.ui.editor.XtextEditor"
+            contributorClass="org.eclipse.ui.editors.text.TextEditorActionContributor"
+            default="true"
+            extensions="sctd"
+            id="org.eclipse.stem.model.ctdl.CTDL"
+            name="CTDL Editor">
+        </editor>
+    </extension>
+    <extension
+        point="org.eclipse.ui.handlers">
+        <handler
+            class="org.eclipse.stem.model.ctdl.ui.CTDLExecutableExtensionFactory:org.eclipse.xtext.ui.editor.hyperlinking.OpenDeclarationHandler"
+            commandId="org.eclipse.xtext.ui.editor.hyperlinking.OpenDeclaration">
+            <activeWhen>
+                <reference
+                    definitionId="org.eclipse.stem.model.ctdl.CTDL.Editor.opened">
+                </reference>
+            </activeWhen>
+        </handler>
+        <handler
+            class="org.eclipse.stem.model.ctdl.ui.CTDLExecutableExtensionFactory:org.eclipse.xtext.ui.editor.handler.ValidateActionHandler"
+            commandId="org.eclipse.stem.model.ctdl.CTDL.validate">
+         <activeWhen>
+            <reference
+                    definitionId="org.eclipse.stem.model.ctdl.CTDL.Editor.opened">
+            </reference>
+         </activeWhen>
+      </handler>
+    </extension>
+    <extension point="org.eclipse.core.expressions.definitions">
+        <definition id="org.eclipse.stem.model.ctdl.CTDL.Editor.opened">
+            <and>
+                <reference definitionId="isActiveEditorAnInstanceOfXtextEditor"/>
+                <with variable="activeEditor">
+                    <test property="org.eclipse.xtext.ui.editor.XtextEditor.languageName" 
+                        value="org.eclipse.stem.model.ctdl.CTDL" 
+                        forcePluginActivation="true"/>
+                </with>        
+            </and>
+        </definition>
+    </extension>
+    <extension
+            point="org.eclipse.ui.preferencePages">
+        <page
+            class="org.eclipse.stem.model.ctdl.ui.CTDLExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
+            id="org.eclipse.stem.model.ctdl.CTDL"
+            name="CTDL">
+            <keywordReference id="org.eclipse.stem.model.ctdl.ui.keyword_CTDL"/>
+        </page>
+        <page
+            category="org.eclipse.stem.model.ctdl.CTDL"
+            class="org.eclipse.stem.model.ctdl.ui.CTDLExecutableExtensionFactory:org.eclipse.xtext.ui.editor.syntaxcoloring.SyntaxColoringPreferencePage"
+            id="org.eclipse.stem.model.ctdl.CTDL.coloring"
+            name="Syntax Coloring">
+            <keywordReference id="org.eclipse.stem.model.ctdl.ui.keyword_CTDL"/>
+        </page>
+        <page
+            category="org.eclipse.stem.model.ctdl.CTDL"
+            class="org.eclipse.stem.model.ctdl.ui.CTDLExecutableExtensionFactory:org.eclipse.xtext.ui.editor.templates.XtextTemplatePreferencePage"
+            id="org.eclipse.stem.model.ctdl.CTDL.templates"
+            name="Templates">
+            <keywordReference id="org.eclipse.stem.model.ctdl.ui.keyword_CTDL"/>
+        </page>
+    </extension>
+    <extension
+            point="org.eclipse.ui.propertyPages">
+        <page
+            class="org.eclipse.stem.model.ctdl.ui.CTDLExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
+            id="org.eclipse.stem.model.ctdl.CTDL"
+            name="CTDL">
+            <keywordReference id="org.eclipse.stem.model.ctdl.ui.keyword_CTDL"/>
+            <enabledWhen>
+	            <adapt type="org.eclipse.core.resources.IProject"/>
+			</enabledWhen>
+	        <filter name="projectNature" value="org.eclipse.xtext.ui.shared.xtextNature"/>
+        </page>
+    </extension>
+    <extension
+        point="org.eclipse.ui.keywords">
+        <keyword
+            id="org.eclipse.stem.model.ctdl.ui.keyword_CTDL"
+            label="CTDL"/>
+    </extension>
+    <extension
+         point="org.eclipse.ui.commands">
+      <command
+            description="Trigger expensive validation"
+            id="org.eclipse.stem.model.ctdl.CTDL.validate"
+            name="Validate">
+      </command>
+    </extension>
+    <extension point="org.eclipse.ui.menus">
+        <menuContribution
+            locationURI="popup:#TextEditorContext?after=group.edit">
+             <command
+                 commandId="org.eclipse.stem.model.ctdl.CTDL.validate"
+                 style="push"
+                 tooltip="Trigger expensive validation">
+            <visibleWhen checkEnabled="false">
+                <reference
+                    definitionId="org.eclipse.stem.model.ctdl.CTDL.Editor.opened">
+                </reference>
+            </visibleWhen>
+         </command>  
+         </menuContribution>
+    </extension>
+    <extension point="org.eclipse.ui.menus">
+		<menuContribution locationURI="popup:#TextEditorContext?endof=group.find">
+			<command commandId="org.eclipse.xtext.ui.editor.FindReferences">
+				<visibleWhen checkEnabled="false">
+                	<reference definitionId="org.eclipse.stem.model.ctdl.CTDL.Editor.opened">
+                	</reference>
+            	</visibleWhen>
+			</command>
+		</menuContribution>
+	</extension>
+	<extension point="org.eclipse.ui.handlers">
+	    <handler
+            class="org.eclipse.stem.model.ctdl.ui.CTDLExecutableExtensionFactory:org.eclipse.xtext.ui.editor.findrefs.FindReferencesHandler"
+            commandId="org.eclipse.xtext.ui.editor.FindReferences">
+            <activeWhen>
+                <reference
+                    definitionId="org.eclipse.stem.model.ctdl.CTDL.Editor.opened">
+                </reference>
+            </activeWhen>
+        </handler>
+    </extension>   
+
+<!-- adding resource factories -->
+
+	<extension
+		point="org.eclipse.emf.ecore.extension_parser">
+		<parser
+			class="org.eclipse.stem.model.ctdl.ui.CTDLExecutableExtensionFactory:org.eclipse.xtext.resource.IResourceFactory"
+			type="sctd">
+		</parser>
+	</extension>
+	<extension point="org.eclipse.xtext.extension_resourceServiceProvider">
+        <resourceServiceProvider
+            class="org.eclipse.stem.model.ctdl.ui.CTDLExecutableExtensionFactory:org.eclipse.xtext.ui.resource.IResourceUIServiceProvider"
+            uriExtension="sctd">
+        </resourceServiceProvider>
+    </extension>
+
+
+    <!-- marker definitions for org.eclipse.stem.model.ctdl.CTDL -->
+    <extension
+            id="ctdl.check.fast"
+            name="CTDL Problem"
+            point="org.eclipse.core.resources.markers">
+        <super type="org.eclipse.xtext.ui.check.fast"/>
+        <persistent value="true"/>
+    </extension>
+    <extension
+            id="ctdl.check.normal"
+            name="CTDL Problem"
+            point="org.eclipse.core.resources.markers">
+        <super type="org.eclipse.xtext.ui.check.normal"/>
+        <persistent value="true"/>
+    </extension>
+    <extension
+            id="ctdl.check.expensive"
+            name="CTDL Problem"
+            point="org.eclipse.core.resources.markers">
+        <super type="org.eclipse.xtext.ui.check.expensive"/>
+        <persistent value="true"/>
+    </extension>
+
+   <extension
+         point="org.eclipse.xtext.builder.participant">
+      <participant
+            class="org.eclipse.stem.model.ctdl.ui.CTDLExecutableExtensionFactory:org.eclipse.xtext.builder.IXtextBuilderParticipant">
+      </participant>
+   </extension>
+   <extension
+            point="org.eclipse.ui.preferencePages">
+        <page
+            category="org.eclipse.stem.model.ctdl.CTDL"
+            class="org.eclipse.stem.model.ctdl.ui.CTDLExecutableExtensionFactory:org.eclipse.xtext.builder.preferences.BuilderPreferencePage"
+            id="org.eclipse.stem.model.ctdl.CTDL.compiler.preferencePage"
+            name="Compiler">
+            <keywordReference id="org.eclipse.stem.model.ctdl.ui.keyword_CTDL"/>
+        </page>
+    </extension>
+    <extension
+            point="org.eclipse.ui.propertyPages">
+        <page
+            category="org.eclipse.stem.model.ctdl.CTDL"
+            class="org.eclipse.stem.model.ctdl.ui.CTDLExecutableExtensionFactory:org.eclipse.xtext.builder.preferences.BuilderPreferencePage"
+            id="org.eclipse.stem.model.ctdl.CTDL.compiler.propertyPage"
+            name="Compiler">
+            <keywordReference id="org.eclipse.stem.model.ctdl.ui.keyword_CTDL"/>
+            <enabledWhen>
+	            <adapt type="org.eclipse.core.resources.IProject"/>
+			</enabledWhen>
+	        <filter name="projectNature" value="org.eclipse.xtext.ui.shared.xtextNature"/>
+        </page>
+    </extension>
+
+	<!-- Quick Outline -->
+	<extension
+		point="org.eclipse.ui.handlers">
+		<handler 
+			class="org.eclipse.stem.model.ctdl.ui.CTDLExecutableExtensionFactory:org.eclipse.xtext.ui.editor.outline.quickoutline.ShowQuickOutlineActionHandler"
+			commandId="org.eclipse.xtext.ui.editor.outline.QuickOutline">
+			<activeWhen>
+				<reference
+					definitionId="org.eclipse.stem.model.ctdl.CTDL.Editor.opened">
+				</reference>
+			</activeWhen>
+		</handler>
+	</extension>
+	<extension
+		point="org.eclipse.ui.commands">
+		<command
+			description="Open the quick outline."
+			id="org.eclipse.xtext.ui.editor.outline.QuickOutline"
+			name="Quick Outline">
+		</command>
+	</extension>
+	<extension point="org.eclipse.ui.menus">
+		<menuContribution
+			locationURI="popup:#TextEditorContext?after=group.open">
+			<command commandId="org.eclipse.xtext.ui.editor.outline.QuickOutline"
+				style="push"
+				tooltip="Open Quick Outline">
+				<visibleWhen checkEnabled="false">
+					<reference definitionId="org.eclipse.stem.model.ctdl.CTDL.Editor.opened"/>
+				</visibleWhen>
+			</command>
+		</menuContribution>
+	</extension>
+    <!-- quickfix marker resolution generator for org.eclipse.stem.model.ctdl.CTDL -->
+    <extension
+            point="org.eclipse.ui.ide.markerResolution">
+        <markerResolutionGenerator
+            class="org.eclipse.stem.model.ctdl.ui.CTDLExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
+            markerType="org.eclipse.stem.model.ctdl.ui.ctdl.check.fast">
+            <attribute
+                name="FIXABLE_KEY"
+                value="true">
+            </attribute>
+        </markerResolutionGenerator>
+        <markerResolutionGenerator
+            class="org.eclipse.stem.model.ctdl.ui.CTDLExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
+            markerType="org.eclipse.stem.model.ctdl.ui.ctdl.check.normal">
+            <attribute
+                name="FIXABLE_KEY"
+                value="true">
+            </attribute>
+        </markerResolutionGenerator>
+        <markerResolutionGenerator
+            class="org.eclipse.stem.model.ctdl.ui.CTDLExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
+            markerType="org.eclipse.stem.model.ctdl.ui.ctdl.check.expensive">
+            <attribute
+                name="FIXABLE_KEY"
+                value="true">
+            </attribute>
+        </markerResolutionGenerator>
+    </extension>
+   	<!-- Rename Refactoring -->
+	<extension point="org.eclipse.ui.handlers">
+		<handler 
+			class="org.eclipse.stem.model.ctdl.ui.CTDLExecutableExtensionFactory:org.eclipse.xtext.ui.refactoring.ui.IRenameElementHandler"
+			commandId="org.eclipse.xtext.ui.refactoring.RenameElement">
+			<activeWhen>
+				<reference
+					definitionId="org.eclipse.stem.model.ctdl.CTDL.Editor.opened">
+				</reference>
+			</activeWhen>
+		</handler>
+	</extension>
+    <extension point="org.eclipse.ui.menus">
+         <menuContribution
+            locationURI="popup:#TextEditorContext?after=group.edit">
+         <command commandId="org.eclipse.xtext.ui.refactoring.RenameElement"
+               style="push">
+            <visibleWhen checkEnabled="false">
+               <reference
+                     definitionId="org.eclipse.stem.model.ctdl.CTDL.Editor.opened">
+               </reference>
+            </visibleWhen>
+         </command>
+      </menuContribution>
+   </extension>
+   <extension point="org.eclipse.ui.preferencePages">
+	    <page
+	        category="org.eclipse.stem.model.ctdl.CTDL"
+	        class="org.eclipse.stem.model.ctdl.ui.CTDLExecutableExtensionFactory:org.eclipse.xtext.ui.refactoring.ui.RefactoringPreferencePage"
+	        id="org.eclipse.stem.model.ctdl.CTDL.refactoring"
+	        name="Refactoring">
+	        <keywordReference id="org.eclipse.stem.model.ctdl.ui.keyword_CTDL"/>
+	    </page>
+	</extension>
+
+  <extension point="org.eclipse.compare.contentViewers">
+    <viewer id="org.eclipse.stem.model.ctdl.CTDL.compare.contentViewers"
+            class="org.eclipse.stem.model.ctdl.ui.CTDLExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
+            extensions="sctd">
+    </viewer>
+  </extension>
+  <extension point="org.eclipse.compare.contentMergeViewers">
+    <viewer id="org.eclipse.stem.model.ctdl.CTDL.compare.contentMergeViewers"
+            class="org.eclipse.stem.model.ctdl.ui.CTDLExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
+            extensions="sctd" label="CTDL Compare">
+     </viewer>
+  </extension>
+  <extension point="org.eclipse.ui.editors.documentProviders">
+    <provider id="org.eclipse.stem.model.ctdl.CTDL.editors.documentProviders"
+            class="org.eclipse.stem.model.ctdl.ui.CTDLExecutableExtensionFactory:org.eclipse.xtext.ui.editor.model.XtextDocumentProvider"
+            extensions="sctd">
+    </provider>
+  </extension>
+
+</plugin>

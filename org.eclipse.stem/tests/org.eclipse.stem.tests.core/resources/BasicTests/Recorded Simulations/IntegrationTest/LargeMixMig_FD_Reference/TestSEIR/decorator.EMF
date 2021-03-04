@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<org.eclipse.stem.diseasemodels.standard:DeterministicSEIRDiseaseModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:org.eclipse.stem.diseasemodels.standard="http:///org/eclipse/stem/diseasemodels/standard.ecore" uRI="platform:/resource/BasicTests/decorators/YemenSEIR.standard" typeURI="stemtype://org.eclipse.stem/Identifiable" diseaseName="TestSEIR" transmissionRate="45.0" recoveryRate="0.4" incubationRate="0.4">
+  <dublinCore identifier="platform:/resource/BasicTests/decorators/YemenSEIR.standard" creator="edlund" format="http:///org/eclipse/stem/diseasemodels/standard.ecore" type="stemtype://org.eclipse.stem/Identifiable" created="2011-02-03"/>
+</org.eclipse.stem.diseasemodels.standard:DeterministicSEIRDiseaseModel>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.eclipse.stem.diseasemodels.poliodiseasemodel/src"
+    editDirectory="/org.eclipse.stem.diseasemodels.poliodiseasemodel/src" editorDirectory="/org.eclipse.stem.ui.diseasemodels.poliodiseasemodel/src"
+    modelPluginID="org.eclipse.stem.diseasemodels.poliodiseasemodel" modelName="Polio"
+    editPluginClass="org.eclipse.stem.diseasemodels.poliodiseasemodel.provider.PolioEditPlugin"
+    editorPluginClass="org.eclipse.stem.ui.diseasemodels.poliodiseasemodel.PolioEditorPlugin"
+    nonNLSMarkers="true" testsDirectory="/org.eclipse.stem.tests.diseasemodels.poliodiseasemodel/src"
+    testSuiteClass="org.eclipse.stem.diseasemodels.poliodiseasemodel.tests.PolioDiseaseModelAllTests"
+    importerID="org.eclipse.emf.importer.ecore" suppressNotification="true" complianceLevel="6.0"
+    copyrightFields="false" editPluginID="org.eclipse.stem.diseasemodels.poliodiseasemodel"
+    editorPluginID="org.eclipse.stem.ui.diseasemodels.poliodiseasemodel" testsPluginID="org.eclipse.stem.tests.diseasemodels.poliodiseasemodel"
+    runtimeVersion="2.6" usedGenPackages="../../org.eclipse.stem.core/model/core.genmodel#//common ../../org.eclipse.stem.core/model/core.genmodel#//graph ../../org.eclipse.stem.core/model/core.genmodel#//model ../../org.eclipse.stem.core/model/core.genmodel#//modifier ../../org.eclipse.stem.core/model/core.genmodel#//scenario ../../org.eclipse.stem.core/model/core.genmodel#//sequencer ../../org.eclipse.stem.core/model/core.genmodel#//solver ../../org.eclipse.stem.core/model/core.genmodel#//logger ../../org.eclipse.stem.definitions/model/definitions.genmodel#//labels ../../org.eclipse.stem.diseasemodels/model/diseasemodels.genmodel#//standard ../../org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore ../../org.eclipse.stem.populationmodels/model/standard.genmodel#//standard">
+  <foreignModel>polio.ecore</foreignModel>
+  <genPackages prefix="Polio" basePackage="org.eclipse.stem.diseasemodels" disposableProviderFactory="true"
+      ecorePackage="polio.ecore#/">
+    <genClasses ecoreClass="polio.ecore#//OralPolioVaccineModel">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute polio.ecore#//OralPolioVaccineModel/efficacyVaccine"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute polio.ecore#//OralPolioVaccineModel/reversionRate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute polio.ecore#//OralPolioVaccineModel/partialSusceptibilityVaccine"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute polio.ecore#//OralPolioVaccineModel/transRateVaccine"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute polio.ecore#//OralPolioVaccineModel/incubRateVaccine"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute polio.ecore#//OralPolioVaccineModel/infectRecoveryRateVaccine"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute polio.ecore#//OralPolioVaccineModel/paralyticFractionVaccine"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute polio.ecore#//OralPolioVaccineModel/paralyticFractionWild"/>
+    </genClasses>
+    <genClasses ecoreClass="polio.ecore#//OpvLabel"/>
+    <genClasses ecoreClass="polio.ecore#//OpvLabelValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute polio.ecore#//OpvLabelValue/sv"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute polio.ecore#//OpvLabelValue/ev"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute polio.ecore#//OpvLabelValue/v"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute polio.ecore#//OpvLabelValue/pv"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute polio.ecore#//OpvLabelValue/pw"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

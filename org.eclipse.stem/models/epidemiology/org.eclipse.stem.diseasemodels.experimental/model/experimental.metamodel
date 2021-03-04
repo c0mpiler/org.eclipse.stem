@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<org.eclipse.stem.model:Package xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:org.eclipse.stem.model="http:///org/eclipse/stem/model/metamodel.ecore" packagePrefix="org.eclipse.stem.diseasemodels.experimental"
+    name="experimental">
+  <models name="PercolationDiseaseModel" class="experimental.ecore#//PercolationDiseaseModel"
+      parentModel="../../org.eclipse.stem.diseasemodels/model/standard.metamodel#//@models.1"
+      compartments="../../org.eclipse.stem.diseasemodels/model/standard.metamodel#//@compartmentGroups.1">
+    <generatorSettings propertyEditorClass="org.eclipse.stem.ui.diseasemodels.experimental.adapters.ExperimentalDiseaseModelPropertyEditor"
+        propertyEditorParentClass="" stringProviderAdapterClass="org.eclipse.stem.ui.diseasemodels.experimental.adapters.ExperimentalPropertyStringProviderAdapterFactory.ExperimentalPropertyStringProviderAdapter"
+        stringProviderAdapterParentClass="" labelRelativeValueProviderAdapterClass=""
+        labelValueRelativeValueProviderAdapterClass="org.eclipse.stem.ui.diseasemodels.experimental.adapters.ExperimentalRelativeValueProviderAdapterFactory.ExperimentalDiseaseModelLabelValueRelativeValueProvider"/>
+  </models>
+  <models name="TBDiseaseModel" class="experimental.ecore#//TBDiseaseModel" parentModel="../../org.eclipse.stem.diseasemodels/model/standard.metamodel#//@models.4"
+      compartments="#//@compartmentGroups.0">
+    <parameters name="transmissionRate" dataType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+        displayName="Transmission Rate"/>
+    <parameters name="activeInfProb" dataType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+        displayName="Active Infectious Probability"/>
+    <generatorSettings propertyEditorClass="org.eclipse.stem.ui.diseasemodels.experimental.adapters.ExperimentalDiseaseModelPropertyEditor"
+        propertyEditorParentClass="" stringProviderAdapterClass="org.eclipse.stem.ui.diseasemodels.experimental.adapters.ExperimentalPropertyStringProviderAdapterFactory.ExperimentalPropertyStringProviderAdapter"
+        stringProviderAdapterParentClass="" labelRelativeValueProviderAdapterClass=""
+        labelValueRelativeValueProviderAdapterClass="org.eclipse.stem.ui.diseasemodels.experimental.adapters.ExperimentalRelativeValueProviderAdapterFactory.ExperimentalDiseaseModelLabelValueRelativeValueProvider"/>
+  </models>
+  <compartmentGroups name="TBDiseaseModel" class="experimental.ecore#//TBDiseaseModelLabel"
+      valueClass="experimental.ecore#//TBDiseaseModelLabelValue" parentGroup="../../org.eclipse.stem.diseasemodels/model/standard.metamodel#//@compartmentGroups.4"/>
+</org.eclipse.stem.model:Package>

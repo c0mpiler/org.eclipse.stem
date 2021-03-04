@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="veterinary" nsURI="http:///org/eclipse/stem/diseasemodels/veterinary/veterinary.ecore"
+    nsPrefix="org.eclipse.stem.diseasemodels.veterinary">
+  <eAnnotations source="http:///org/eclipse/stem/modelgen/generated">
+    <details key="version" value="1.0"/>
+  </eAnnotations>
+  <eAnnotations source="http:///org/eclipse/stem/modelgen/metamodel">
+    <details key="uri" value="platform:/resource/.stemgenerator/model/veterinary.metamodel"/>
+  </eAnnotations>
+  <eAnnotations source="http:///org/eclipse/stem/modelgen/metamodel">
+    <details key="uri" value="platform:/resource/org.eclipse.stem.diseasemodels.veterinary/model/veterinary.metamodel"/>
+  </eAnnotations>
+  <eClassifiers xsi:type="ecore:EClass" name="SimpleVeterinaryDiseaseLabel" eSuperTypes="platform:/plugin/org.eclipse.stem.diseasemodels/model/standard.ecore#//StandardDiseaseModelLabel">
+    <eAnnotations source="http:///org/eclipse/stem/modelgen/generated">
+      <details key="version" value="1.0"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SimpleVeterinaryDiseaseLabelValue" eSuperTypes="platform:/plugin/org.eclipse.stem.diseasemodels/model/standard.ecore#//SILabelValue">
+    <eAnnotations source="http:///org/eclipse/stem/modelgen/generated">
+      <details key="version" value="1.0"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SimpleVeterinaryDisease" eSuperTypes="platform:/plugin/org.eclipse.stem.diseasemodels/model/standard.ecore#//SI">
+    <eAnnotations source="http:///org/eclipse/stem/modelgen/model/label">
+      <details key="*" value="SimpleVeterinaryDiseaseLabel"/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/stem/modelgen/model/labelvalue">
+      <details key="*" value="SimpleVeterinaryDiseaseLabelValue"/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/stem/modelgen/model/adapters">
+      <details key="propertyEditorSuperClass" value="org.eclipse.stem.ui.wizards.StandardDiseaseModelPropertyEditor"/>
+      <details key="stringProviderSuperClass" value="org.eclipse.stem.ui.wizards.StandardPropertyStringProviderAdapterFactory.StandardPropertyStringProviderAdapter"/>
+      <details key="labelRelativeValueProviderSuperClass" value="org.eclipse.stem.diseasemodels.standard.provider.StandardRelativeValueProviderAdapterFactory.DiseaseModelLabelRelativeValueProvider"/>
+      <details key="labelValueRelativeValueProviderSuperClass" value="org.eclipse.stem.diseasemodels.standard.provider.StandardRelativeValueProviderAdapterFactory.DiseaseModelLabelValueRelativeValueProvider"/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/stem/modelgen/generated">
+      <details key="version" value="1.0"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="environmentalTransmissionRate"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble" defaultValueLiteral="0.0">
+      <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/constraints">
+        <details key="minValue" value="0"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/messages">
+        <details key="name" value="Environmental Transmission Rate"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/stem/modelgen/generated">
+        <details key="version" value="1.0"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ContaminatedUnitsLabel" eSuperTypes="platform:/plugin/org.eclipse.stem.populationmodels/model/standard.ecore#//StandardPopulationModelLabel">
+    <eAnnotations source="http:///org/eclipse/stem/modelgen/generated">
+      <details key="version" value="1.0"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ContaminatedUnitsLabelValue" eSuperTypes="platform:/plugin/org.eclipse.stem.populationmodels/model/standard.ecore#//StandardPopulationModelLabelValue">
+    <eAnnotations source="http:///org/eclipse/stem/modelgen/generated">
+      <details key="version" value="1.0"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ContaminatedUnits" eSuperTypes="platform:/plugin/org.eclipse.stem.populationmodels/model/standard.ecore#//PopulationModel">
+    <eAnnotations source="http:///org/eclipse/stem/modelgen/model/label">
+      <details key="*" value="ContaminatedUnitsLabel"/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/stem/modelgen/model/labelvalue">
+      <details key="*" value="ContaminatedUnitsLabelValue"/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/stem/modelgen/model/adapters">
+      <details key="propertyEditorSuperClass" value="org.eclipse.stem.ui.populationmodels.adapters.PopulationModelPropertyEditor"/>
+      <details key="stringProviderSuperClass" value="org.eclipse.stem.ui.populationmodels.standard.wizards.StandardPropertyStringProviderAdapterFactory.StandardPropertyStringProviderAdapter"/>
+      <details key="labelRelativeValueProviderSuperClass" value="org.eclipse.stem.ui.populationmodels.adapters.StandardRelativeValueProviderAdapterFactory.StandardPopulationModelLabelRelativeValueProvider"/>
+      <details key="labelValueRelativeValueProviderSuperClass" value="org.eclipse.stem.ui.populationmodels.adapters.StandardRelativeValueProviderAdapterFactory.PopulationModelLabelValueRelativeValueProvider"/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/stem/modelgen/generated">
+      <details key="version" value="1.0"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dissapationRate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+        defaultValueLiteral="0.0">
+      <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/constraints">
+        <details key="minValue" value="0"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/messages">
+        <details key="name" value="Dissapation Rate"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/stem/modelgen/generated">
+        <details key="version" value="1.0"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sheddingFactor" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+        defaultValueLiteral="0.0">
+      <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/constraints">
+        <details key="minValue" value="0"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/messages">
+        <details key="name" value="Shedding Factor"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/stem/modelgen/generated">
+        <details key="version" value="1.0"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+</ecore:EPackage>

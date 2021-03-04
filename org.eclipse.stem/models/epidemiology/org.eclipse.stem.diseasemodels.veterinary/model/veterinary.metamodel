@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<org.eclipse.stem.model:Package xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:org.eclipse.stem.model="http:///org/eclipse/stem/model/metamodel.ecore"
+    packagePrefix="org.eclipse.stem.diseasemodels" name="Veterinary">
+  <models name="SimpleVeterinaryDisease" class="veterinary.ecore#//SimpleVeterinaryDisease"
+      parentModel="platform:/plugin/org.eclipse.stem.diseasemodels/model/standard.metamodel#//@models.2"
+      compartments="#//@compartmentGroups.0">
+    <parameters name="environmentalTransmissionRate" dataType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+        defaultValue="0.0" displayName="Environmental Transmission Rate" unit="" helpMessage=""
+        invalidMessage="" missingMessage="">
+      <constraints name="minValue" constraint="0"/>
+    </parameters>
+    <transitions source="platform:/plugin/org.eclipse.stem.diseasemodels/model/standard.metamodel#//@compartmentGroups.4/@compartments.0"
+        target="platform:/plugin/org.eclipse.stem.diseasemodels/model/standard.metamodel#//@compartmentGroups.2/@compartments.0"
+        expression="delta 0;"/>
+  </models>
+  <models name="ContaminatedUnits" modelType="PopulationModel" class="veterinary.ecore#//ContaminatedUnits"
+      parentModel="platform:/plugin/org.eclipse.stem.populationmodels/model/standard.metamodel#//@models.0"
+      compartments="#//@compartmentGroups.1">
+    <parameters name="dissapationRate" dataType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+        defaultValue="0.0" displayName="Dissapation Rate" unit="" helpMessage="" invalidMessage=""
+        missingMessage="">
+      <constraints name="minValue" constraint="0"/>
+    </parameters>
+    <parameters name="sheddingFactor" dataType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+        defaultValue="0.0" displayName="Shedding Factor" unit="" helpMessage="" invalidMessage=""
+        missingMessage="">
+      <constraints name="minValue" constraint="0"/>
+    </parameters>
+  </models>
+  <compartmentGroups name="SimpleVeterinaryDisease" class="veterinary.ecore#//SimpleVeterinaryDiseaseLabel"
+      valueClass="veterinary.ecore#//SimpleVeterinaryDiseaseLabelValue" parentGroup="platform:/plugin/org.eclipse.stem.diseasemodels/model/standard.metamodel#//@compartmentGroups.2"/>
+  <compartmentGroups name="ContaminatedUnits" class="veterinary.ecore#//ContaminatedUnitsLabel"
+      valueClass="veterinary.ecore#//ContaminatedUnitsLabelValue" parentGroup="platform:/plugin/org.eclipse.stem.populationmodels/model/standard.metamodel#//@compartmentGroups.1"/>
+</org.eclipse.stem.model:Package>

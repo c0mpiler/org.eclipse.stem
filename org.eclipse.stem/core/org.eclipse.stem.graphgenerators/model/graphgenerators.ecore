@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="graphgenerators" nsURI="http:///org/eclipse/stem/graphgenerators/graphgenerators.ecore"
+    nsPrefix="org.eclipse.stem.graphgenerators">
+  <eClassifiers xsi:type="ecore:EClass" name="GraphGenerator" abstract="true" eSuperTypes="../../org.eclipse.stem.core/model/common.ecore#//Identifiable">
+    <eOperations name="getGraph" eType="ecore:EClass ../../org.eclipse.stem.core/model/graph.ecore#//Graph"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LatticeGraphGenerator" abstract="true"
+      eSuperTypes="#//GraphGenerator">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="useNearestNeighbors" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"
+        defaultValueLiteral="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="useNextNearestNeighbors"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"
+        defaultValueLiteral="false"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="periodicBoundaries" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"
+        defaultValueLiteral="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SquareLatticeGraphGenerator" eSuperTypes="#//LatticeGraphGenerator">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="xSize" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"
+        defaultValueLiteral="10"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ySize" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"
+        defaultValueLiteral="10"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="area" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="2025"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MigrationEdgeGraphGenerator" eSuperTypes="#//GraphGenerator">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="location" eType="ecore:EDataType ../../org.eclipse.stem.core/model/common.ecore#//URI"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="migrationRate" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="0.1"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="population" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"
+        defaultValueLiteral="human"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="useAbsoluteValues" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"
+        defaultValueLiteral="0"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MixingEdgeGraphGenerator" eSuperTypes="#//GraphGenerator">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="location" eType="ecore:EDataType ../../org.eclipse.stem.core/model/common.ecore#//URI"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="mixingRate" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="0.1"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="population" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"
+        defaultValueLiteral="human"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="useAbsoluteValues" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"
+        defaultValueLiteral="0"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PlateCarreeGlobeGraphGenerator" eSuperTypes="#//LatticeGraphGenerator">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="angularStep" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"
+        defaultValueLiteral="10"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="radius" lowerBound="1"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="6371.0"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PajekNetGraphGenerator" eSuperTypes="#//GraphGenerator">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dataFile" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"
+        defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="scalingFactor" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="1"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nodeSize" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="0.1"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="useRegionURI" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"
+        defaultValueLiteral="0"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="moveNodesToContainers"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"
+        defaultValueLiteral="0"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="useAbsoluteRates" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"
+        defaultValueLiteral="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ShapefileGraphGenerator" eSuperTypes="#//GraphGenerator">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="shapefiles" upperBound="-1"
+        eType="#//Shapefile"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Shapefile" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="fileName" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RegionShapefile" eSuperTypes="#//Shapefile">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="area" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="areaUnit" eType="#//AreaUnit"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="populationNames" unique="false"
+        upperBound="-1" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="populationSizes" unique="false"
+        upperBound="-1" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RoadShapefile" eSuperTypes="#//Shapefile">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="roadClass" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MigrationShapefile" eSuperTypes="#//Shapefile">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="populationName" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="migrationRate" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="AreaUnit">
+    <eLiterals name="SQ_KM" literal="km^2"/>
+    <eLiterals name="SQ_M" value="1" literal="m^2"/>
+    <eLiterals name="SQ_MILE" value="2" literal="mi^2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SeasonalMigrationEdgeGraphGenerator"
+      eSuperTypes="#//GraphGenerator">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="locationA" eType="ecore:EDataType ../../org.eclipse.stem.core/model/common.ecore#//URI"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="locationB" eType="ecore:EDataType ../../org.eclipse.stem.core/model/common.ecore#//URI"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="migrationRate" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="0.1"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="population" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"
+        defaultValueLiteral="human"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="toleranceAngleA" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="15"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="toleranceAngleB" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="15"/>
+  </eClassifiers>
+</ecore:EPackage>

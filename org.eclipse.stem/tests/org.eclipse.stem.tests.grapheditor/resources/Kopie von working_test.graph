@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<org.eclipse.stem.core.graph:Graph xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.eclipse.stem.core.graph="http:///org/eclipse/stem/core/graph.ecore" xmlns:org.eclipse.stem.definitions.labels="http:///org/eclipse/stem/definitions/labels.ecore" xmlns:org.eclipse.stem.definitions.nodes="http:///org/eclipse/stem/definitions/nodes.ecore" uRI="platform:/resource/test2/graphs/ireland.graph" typeURI="stemtype://org.eclipse.stem/Graph">
+  <dublinCore title="" identifier="platform:/resource/test2/graphs/ireland.graph" description="" format="http:///org/eclipse/stem/core/graph.ecore" coverage="IRL:1/" source="Primary (http://www.grid.unep.ch/data/data.php?category=human_related). " subject="Label:population" type="stemtype://org.eclipse.stem/Graph" 
+
+valid="start=2006-01-01; end=2006-12-31;"/>
+
+  <nodes key="stem://org.eclipse.stem/node/geo/region/IE-I">
+    <value xsi:type="org.eclipse.stem.definitions.nodes:Region" uRI="stem://org.eclipse.stem/node/geo/region/IE-I" typeURI="stemtype://org.eclipse.stem/Node">
+      <dublinCore title="IRELAND, 08, I IE-I" identifier="stem://org.eclipse.stem/node/geo/region/IE-I" type="stemtype://org.eclipse.stem/Node" 
+
+spatial="stemspatial:inline:///4987.61,1000.2,4986.99,1004.09,4985.2,1007.61,4982.41,1010.4,4978.89,1012.19,4975.0,1012.81,4971.1,1012.19,4967.58,1010.4,4964.79,1007.61,4963.0,1004.09,4962.38,1000.2,4963.0,996.3,4964.79,992.78,4967.58,989.99,4971.1,988.2,4975.0,987.58,4978.89,988.2,4982.41,989.99,4985.2,992.78,4986.99,996.3,4987.61,1000.2"/>
+
+
+      <labels xsi:type="org.eclipse.stem.definitions.labels:PopulationLabel" href="#//@nodeLabels.0/@value"/>
+      <labels xsi:type="org.eclipse.stem.definitions.labels:AreaLabel" href="#//@nodeLabels.1/@value"/>
+    </value>
+  </nodes>
+  <nodeLabels key="stem://org.eclipse.stem/label/population/IRL/1/human/2006/IE-I">
+    <value xsi:type="org.eclipse.stem.definitions.labels:PopulationLabel" uRI="stem://org.eclipse.stem/label/population/IRL/1/human/2006/IE-I" typeURI="stemtype://org.eclipse.stem/label/population" uRIOfIdentifiableToBeLabeled="stem://org.eclipse.stem/node/geo/region/IE-I" populationIdentifier="human">
+      <dublinCore identifier="stem://org.eclipse.stem/label/population/IRL/1/human/2006/IE-I" type="stemtype://org.eclipse.stem/label/population"/>
+      <currentValue xsi:type="org.eclipse.stem.definitions.labels:PopulationLabelValue" count="3506500.0"/>
+      <node href="#//@nodes.0/@value"/>
+    </value>
+  </nodeLabels>
+  <nodeLabels key="stem://org.eclipse.stem/label/area/IRL/1/IE-I">
+    <value xsi:type="org.eclipse.stem.definitions.labels:AreaLabel" uRI="stem://org.eclipse.stem/label/area/IRL/1/IE-I" typeURI="stemtype://org.eclipse.stem/label" uRIOfIdentifiableToBeLabeled="stem://org.eclipse.stem/node/geo/region/IE-I">
+      <dublinCore identifier="stem://org.eclipse.stem/label/area/IRL/1/IE-I" type="stemtype://org.eclipse.stem/label"/>
+      <currentValue xsi:type="org.eclipse.stem.definitions.labels:AreaLabelValue" area="68895.0" averageExtent="262.4785705538645"/>
+      <node href="#//@nodes.0/@value"/>
+    </value>
+  </nodeLabels>
+</org.eclipse.stem.core.graph:Graph>

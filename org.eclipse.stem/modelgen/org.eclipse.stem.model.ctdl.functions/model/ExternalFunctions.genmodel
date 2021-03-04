@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.eclipse.stem.model.ctdl.functions/src" editDirectory="/org.eclipse.stem.model.ctdl.functions/src"
+    editorDirectory="/org.eclipse.stem.model.ctdl.functions.ui/src" modelPluginID="org.eclipse.stem.model.ctdl.functions"
+    modelName="ExternalFunctions" importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0"
+    copyrightFields="false" editorPluginID="org.eclipse.stem.model.ctdl.functions.ui"
+    runtimeVersion="2.7">
+  <foreignModel>ExternalFunctions.ecore</foreignModel>
+  <genPackages prefix="ExternalFunctions" basePackage="org.eclipse.stem.model.ctdl"
+      disposableProviderFactory="true" fileExtensions="extFunc" ecorePackage="ExternalFunctions.ecore#/">
+    <genDataTypes ecoreDataType="ExternalFunctions.ecore#//IConfigurationElement"/>
+    <genDataTypes ecoreDataType="ExternalFunctions.ecore#//Method"/>
+    <genClasses ecoreClass="ExternalFunctions.ecore#//ExternalFunctionDefinition">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ExternalFunctions.ecore#//ExternalFunctionDefinition/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ExternalFunctions.ecore#//ExternalFunctionDefinition/class"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ExternalFunctions.ecore#//ExternalFunctionDefinition/method"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ExternalFunctions.ecore#//ExternalFunctionDefinition/returnType"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute ExternalFunctions.ecore#//ExternalFunctionDefinition/signature"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ExternalFunctions.ecore#//ExternalFunctionDefinition/className"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ExternalFunctions.ecore#//ExternalFunctionDefinition/methodName"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute ExternalFunctions.ecore#//ExternalFunctionDefinition/contributingPlugin"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ExternalFunctions.ecore#//ExternalFunctionDefinition/extPointDefinition"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ExternalFunctions.ecore#//ExternalFunctionDefinition/functionArguments"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ExternalFunctions.ecore#//ExternalFunctionDefinition/javaMethodArguments"/>
+    </genClasses>
+    <genClasses ecoreClass="ExternalFunctions.ecore#//FunctionArgument">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ExternalFunctions.ecore#//FunctionArgument/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ExternalFunctions.ecore#//FunctionArgument/type"/>
+    </genClasses>
+    <genClasses ecoreClass="ExternalFunctions.ecore#//JavaMethodArgument">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ExternalFunctions.ecore#//JavaMethodArgument/mapsFrom"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ExternalFunctions.ecore#//JavaMethodArgument/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ExternalFunctions.ecore#//JavaMethodArgument/javaType"/>
+    </genClasses>
+    <genClasses ecoreClass="ExternalFunctions.ecore#//SystemArgumentReference">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ExternalFunctions.ecore#//SystemArgumentReference/ref"/>
+    </genClasses>
+    <genClasses ecoreClass="ExternalFunctions.ecore#//FunctionArgumentReference">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ExternalFunctions.ecore#//FunctionArgumentReference/argIndex"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ExternalFunctions.ecore#//FunctionArgumentReference/ref"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+ <extension
+       id="MetamodelBuilder"
+       point="org.eclipse.core.resources.builders" name="Metamodel File Builder">
+    <builder hasNature="true" callOnEmptyDelta="true">
+       <run
+             class="org.eclipse.stem.model.builder.MetamodelBuilder">
+       </run>
+    </builder>
+ </extension>
+ 
+    <extension
+        id="ModelNeedsRegenerationErrorMarker"
+        name="Model Needs Regeneration Error"
+        point="org.eclipse.core.resources.markers">
+     <super type="org.eclipse.core.resources.problemmarker"/>
+  </extension>
+  
+   <extension
+        id="ExpressionCompileErrorMarker"
+        name="Expression Compile Error"
+        point="org.eclipse.core.resources.markers">
+        
+        
+        
+     <super type="org.eclipse.core.resources.problemmarker"/>
+     
+     <persistent value="true"/>
+     <attribute name="model"/>
+     <attribute name="sourceCompartment"/>
+     <attribute name="targetCompartment"/>
+  </extension>
+</plugin>

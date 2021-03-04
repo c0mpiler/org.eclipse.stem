@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<org.eclipse.stem.core.model:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:org.eclipse.stem.core.model="http:///org/eclipse/stem/core/model.ecore" uRI="platform:/resource/BasicTests/models/SingleSquareSIRModel.model" typeURI="stemtype://org.eclipse.stem/Model">
+  <dublinCore identifier="platform:/resource/BasicTests/models/SingleSquareSIRModel.model" creator="edlund" format="http:///org/eclipse/stem/core/model.ecore" type="stemtype://org.eclipse.stem/Model" created="2011-01-24"/>
+  <models href="platform:/resource/BasicTests/models/SingleSquareModel.model#/"/>
+  <nodeDecorators href="platform:/resource/BasicTests/decorators/SIR.standard#/"/>
+</org.eclipse.stem.core.model:Model>

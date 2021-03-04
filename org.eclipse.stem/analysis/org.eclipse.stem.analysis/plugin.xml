@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ <copyright>
+ </copyright>
+
+ $Id: plugin.xml,v 1.1 2009/03/25 00:50:29 sedlund Exp $
+-->
+
+<plugin>
+
+	<extension-point id="errorfunction" name="%EP_ErrorFunction" schema="schema/errorfunction.exsd"/>
+	
+	<extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+    <factory 
+       uri = "http:///org/eclipse/stem/analysis.ecore" 
+       class = "org.eclipse.stem.analysis.provider.AnalysisItemProviderAdapterFactory" 
+       supportedTypes = 
+         "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
+          org.eclipse.emf.edit.provider.IStructuredItemContentProvider
+          org.eclipse.emf.edit.provider.ITreeItemContentProvider
+          org.eclipse.emf.edit.provider.IItemLabelProvider
+          org.eclipse.emf.edit.provider.IItemPropertySource" />
+  	</extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated analysis -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="org.eclipse.stem.analysis.presentation.AnalysisModelWizardID"
+            name="%_UI_AnalysisModelWizard_label"
+            class="org.eclipse.stem.analysis.presentation.AnalysisModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/AnalysisModelFile.gif">
+         <description>%_UI_AnalysisModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated analysis -->
+      <editor
+            id="org.eclipse.stem.analysis.presentation.AnalysisEditorID"
+            name="%_UI_AnalysisEditor_label"
+            icon="icons/full/obj16/AnalysisModelFile.gif"
+            extensions="analysis"
+            class="org.eclipse.stem.analysis.presentation.AnalysisEditor"
+            contributorClass="org.eclipse.stem.analysis.presentation.AnalysisActionBarContributor">
+      </editor>
+   </extension>
+	
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http:///org/eclipse/stem/analysis.ecore"
+            class="org.eclipse.stem.analysis.AnalysisPackage"
+            genModel="model/analysis.genmodel"/>
+   </extension>
+
+<extension
+        point="org.eclipse.stem.analysis.errorfunction">
+     <classdef class="org.eclipse.stem.analysis.impl.SimpleErrorFunctionImpl"/>
+     <dublin_core
+           category_id="/"
+           creator="%dc_creator_edlund"
+           description="%dc_desc_NELDER"
+           identifier="foo"
+           title="%dc_desc_NELDER"/>
+  </extension>
+<extension
+      point="org.eclipse.stem.analysis.errorfunction">
+      <classdef class="org.eclipse.stem.analysis.impl.CompoundErrorFunctionImpl"/>
+     <dublin_core
+           category_id="/"
+           creator="%dc_creator_vishrawas"
+           description="%dc_desc_NELDER"
+           identifier="bar"
+           title="%dc_desc_NELDER"/>
+</extension>
+
+  
+</plugin>

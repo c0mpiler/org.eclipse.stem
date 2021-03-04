@@ -1,0 +1,412 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<org.eclipse.stem.model:Package xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:org.eclipse.stem.model="http:///org/eclipse/stem/model/metamodel.ecore" packagePrefix="org.eclipse.stem.diseasemodels.vector"
+    name="vector">
+  <models name="MacdonaldRossDiseaseModel" class="vector.ecore#//MacdonaldRossDiseaseModel"
+      parentModel="#//@models.1" compartments="../../org.eclipse.stem.diseasemodels/model/standard.metamodel#//@compartmentGroups.1">
+    <parameters name="bitingRate" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="0.5" displayName="Biting Rate"/>
+    <parameters name="infectiousBitingProportionHuman" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="0.5" displayName="Infectious Biting Proportion Human"/>
+    <parameters name="infectiousBitingProportionVector" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="1.0" displayName="Infectious Biting Proportion Vector"/>
+    <parameters name="recoveryRate" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="3.33E-3" displayName="Recovery Rate"/>
+    <parameters name="incubationRate" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="0.0625" displayName="Incubation Rate"/>
+    <parameters name="vectorIncubationRate" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="0.1" displayName="Vector Incubation Rate"/>
+    <parameters name="immunityLossRate" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="0.02" displayName="Immunity Loss Rate"/>
+  </models>
+  <models name="VectorDiseaseModel" class="vector.ecore#//VectorDiseaseModel" parentModel="../../org.eclipse.stem.diseasemodels/model/standard.metamodel#//@models.4"
+      compartments="#//@compartmentGroups.0">
+    <parameters name="vectorPopulationIdentifier" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"
+        defaultValue="anopheles" displayName="Vector Population Identifier"/>
+  </models>
+  <models name="DengueModel" class="vector.ecore#//DengueModel" parentModel="#//@models.5"
+      compartments="#//@compartmentGroups.0">
+    <parameters name="bitingRateSV" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="1" displayName="Biting Rate SV"/>
+    <parameters name="bitingRateIV" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="1" displayName="Biting Rate IV"/>
+    <parameters name="hostInfectivity1" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="0.5" displayName="Host Infectivity1"/>
+    <parameters name="hostInfectivity2" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="0.5" displayName="Host Infectivity2"/>
+    <parameters name="hostInfectivity3" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="0.5" displayName="Host Infectivity3"/>
+    <parameters name="hostInfectivity4" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="0.5" displayName="Host Infectivity4"/>
+    <parameters name="hostPrimaryIncubationRate1" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="0.2" displayName="Host Primary Incubation Rate1"/>
+    <parameters name="hostPrimaryIncubationRate2" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="0.2" displayName="Host Primary Incubation Rate2"/>
+    <parameters name="hostPrimaryIncubationRate3" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="0.2" displayName="Host Primary Incubation Rate3"/>
+    <parameters name="hostPrimaryIncubationRate4" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="0.2" displayName="Host Primary Incubation Rate4"/>
+    <parameters name="hostPrimaryRecoveryRate1" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="0.14" displayName="Host Primary Recovery Rate1"/>
+    <parameters name="hostPrimaryRecoveryRate2" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="0.14" displayName="Host Primary Recovery Rate2"/>
+    <parameters name="hostPrimaryRecoveryRate3" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="0.14" displayName="Host Primary Recovery Rate3"/>
+    <parameters name="hostPrimaryRecoveryRate4" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="0.14" displayName="Host Primary Recovery Rate4"/>
+    <parameters name="hostPrimaryImmunityLossRate1" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="0.024" displayName="Host Primary Immunity Loss Rate1"/>
+    <parameters name="hostPrimaryImmunityLossRate2" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="0.024" displayName="Host Primary Immunity Loss Rate2"/>
+    <parameters name="hostPrimaryImmunityLossRate3" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="0.024" displayName="Host Primary Immunity Loss Rate3"/>
+    <parameters name="hostPrimaryImmunityLossRate4" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="0.024" displayName="Host Primary Immunity Loss Rate4"/>
+    <parameters name="hostPrimaryDiseaseDeathRate1" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="0.0000001" displayName="Host Primary Disease Death Rate1"/>
+    <parameters name="hostPrimaryDiseaseDeathRate2" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="0.0000001" displayName="Host Primary Disease Death Rate2"/>
+    <parameters name="hostPrimaryDiseaseDeathRate3" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="0.0000001" displayName="Host Primary Disease Death Rate3"/>
+    <parameters name="hostPrimaryDiseaseDeathRate4" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="0.0000001" displayName="Host Primary Disease Death Rate4"/>
+    <parameters name="hostADE12" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="1.8" displayName="Host ADE12"/>
+    <parameters name="hostADE13" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="1.8" displayName="Host ADE13"/>
+    <parameters name="hostADE14" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="1.8" displayName="Host ADE14"/>
+    <parameters name="hostADE21" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="1.8" displayName="Host ADE21"/>
+    <parameters name="hostADE23" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="1.8" displayName="Host ADE23"/>
+    <parameters name="hostADE24" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="1.8" displayName="Host ADE24"/>
+    <parameters name="hostADE31" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="1.8" displayName="Host ADE31"/>
+    <parameters name="hostADE32" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="1.8" displayName="Host ADE32"/>
+    <parameters name="hostADE34" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="1.8" displayName="Host ADE34"/>
+    <parameters name="hostADE41" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="1.8" displayName="Host ADE41"/>
+    <parameters name="hostADE42" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="1.8" displayName="Host ADE42"/>
+    <parameters name="hostADE43" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="1.8" displayName="Host ADE43"/>
+    <parameters name="hostSecondaryDiseaseDeathRate12" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="0.00123" displayName="Host Secondary Disease Death Rate12"/>
+    <parameters name="hostSecondaryDiseaseDeathRate13" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="0.00123" displayName="Host Secondary Disease Death Rate13"/>
+    <parameters name="hostSecondaryDiseaseDeathRate14" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="0.00123" displayName="Host Secondary Disease Death Rate14"/>
+    <parameters name="hostSecondaryDiseaseDeathRate21" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="0.00123" displayName="Host Secondary Disease Death Rate21"/>
+    <parameters name="hostSecondaryDiseaseDeathRate23" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="0.00123" displayName="Host Secondary Disease Death Rate23"/>
+    <parameters name="hostSecondaryDiseaseDeathRate24" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="0.00123" displayName="Host Secondary Disease Death Rate24"/>
+    <parameters name="hostSecondaryDiseaseDeathRate31" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="0.00123" displayName="Host Secondary Disease Death Rate31"/>
+    <parameters name="hostSecondaryDiseaseDeathRate32" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="0.00123" displayName="Host Secondary Disease Death Rate32"/>
+    <parameters name="hostSecondaryDiseaseDeathRate34" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="0.00123" displayName="Host Secondary Disease Death Rate34"/>
+    <parameters name="hostSecondaryDiseaseDeathRate41" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="0.00123" displayName="Host Secondary Disease Death Rate41"/>
+    <parameters name="hostSecondaryDiseaseDeathRate42" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="0.00123" displayName="Host Secondary Disease Death Rate42"/>
+    <parameters name="hostSecondaryDiseaseDeathRate43" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="0.00123" displayName="Host Secondary Disease Death Rate43"/>
+    <parameters name="hostSecondaryRecoveryRate12" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="0.1" displayName="Host Secondary Recovery Rate12"/>
+    <parameters name="hostSecondaryRecoveryRate13" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="0.1" displayName="Host Secondary Recovery Rate13"/>
+    <parameters name="hostSecondaryRecoveryRate14" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="0.1" displayName="Host Secondary Recovery Rate14"/>
+    <parameters name="hostSecondaryRecoveryRate21" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="0.1" displayName="Host Secondary Recovery Rate21"/>
+    <parameters name="hostSecondaryRecoveryRate23" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="0.1" displayName="Host Secondary Recovery Rate23"/>
+    <parameters name="hostSecondaryRecoveryRate24" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="0.1" displayName="Host Secondary Recovery Rate24"/>
+    <parameters name="hostSecondaryRecoveryRate31" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="0.1" displayName="Host Secondary Recovery Rate31"/>
+    <parameters name="hostSecondaryRecoveryRate32" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="0.1" displayName="Host Secondary Recovery Rate32"/>
+    <parameters name="hostSecondaryRecoveryRate34" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="0.1" displayName="Host Secondary Recovery Rate34"/>
+    <parameters name="hostSecondaryRecoveryRate41" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="0.1" displayName="Host Secondary Recovery Rate41"/>
+    <parameters name="hostSecondaryRecoveryRate42" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="0.1" displayName="Host Secondary Recovery Rate42"/>
+    <parameters name="hostSecondaryRecoveryRate43" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="0.1" displayName="Host Secondary Recovery Rate43"/>
+    <parameters name="hostSecondaryIncubationRate12" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="0.2" displayName="Host Secondary Incubation Rate12"/>
+    <parameters name="hostSecondaryIncubationRate13" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="0.2" displayName="Host Secondary Incubation Rate13"/>
+    <parameters name="hostSecondaryIncubationRate14" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="0.2" displayName="Host Secondary Incubation Rate14"/>
+    <parameters name="hostSecondaryIncubationRate21" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="0.2" displayName="Host Secondary Incubation Rate21"/>
+    <parameters name="hostSecondaryIncubationRate23" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="0.2" displayName="Host Secondary Incubation Rate23"/>
+    <parameters name="hostSecondaryIncubationRate24" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="0.2" displayName="Host Secondary Incubation Rate24"/>
+    <parameters name="hostSecondaryIncubationRate31" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="0.2" displayName="Host Secondary Incubation Rate31"/>
+    <parameters name="hostSecondaryIncubationRate32" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="0.2" displayName="Host Secondary Incubation Rate32"/>
+    <parameters name="hostSecondaryIncubationRate34" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="0.2" displayName="Host Secondary Incubation Rate34"/>
+    <parameters name="hostSecondaryIncubationRate41" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="0.2" displayName="Host Secondary Incubation Rate41"/>
+    <parameters name="hostSecondaryIncubationRate42" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="0.2" displayName="Host Secondary Incubation Rate42"/>
+    <parameters name="hostSecondaryIncubationRate43" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="0.2" displayName="Host Secondary Incubation Rate43"/>
+    <parameters name="vectorInfectivity1" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="1" displayName="Vector Infectivity1"/>
+    <parameters name="vectorInfectivity2" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="1" displayName="Vector Infectivity2"/>
+    <parameters name="vectorInfectivity3" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="1" displayName="Vector Infectivity3"/>
+    <parameters name="vectorInfectivity4" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="1" displayName="Vector Infectivity4"/>
+    <parameters name="vectorADE1" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="1.0" displayName="Vector ADE1"/>
+    <parameters name="vectorADE2" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="1.0" displayName="Vector ADE2"/>
+    <parameters name="vectorADE3" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="1.0" displayName="Vector ADE3"/>
+    <parameters name="vectorADE4" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="1.0" displayName="Vector ADE4"/>
+    <parameters name="vectorIncubationRate1" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="0.1" displayName="Vector Incubation Rate1"/>
+    <parameters name="vectorIncubationRate2" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="0.1" displayName="Vector Incubation Rate2"/>
+    <parameters name="vectorIncubationRate3" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="0.1" displayName="Vector Incubation Rate3"/>
+    <parameters name="vectorIncubationRate4" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="0.1" displayName="Vector Incubation Rate4"/>
+    <parameters name="episilon1" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="0.5" displayName="Episilon1"/>
+    <parameters name="episilon2" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="0.5" displayName="Episilon2"/>
+    <parameters name="episilon3" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="0.5" displayName="Episilon3"/>
+    <parameters name="episilon4" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="0.5" displayName="Episilon4"/>
+  </models>
+  <models name="SimpleDengueModel" class="vector.ecore#//SimpleDengueModel" parentModel="#//@models.5"
+      compartments="#//@compartmentGroups.0">
+    <parameters name="bitingRate" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="1.0" displayName="Biting Rate"/>
+    <parameters name="hostInfectivity1" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="0.5" displayName="Host Infectivity1"/>
+    <parameters name="hostInfectivity2" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="0.5" displayName="Host Infectivity2"/>
+    <parameters name="hostInfectivity3" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="0.5" displayName="Host Infectivity3"/>
+    <parameters name="hostInfectivity4" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="0.5" displayName="Host Infectivity4"/>
+    <parameters name="crossImmunity1" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="0.5" displayName="Cross Immunity1"/>
+    <parameters name="crossImmunity2" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="0.5" displayName="Cross Immunity2"/>
+    <parameters name="crossImmunity3" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="0.5" displayName="Cross Immunity3"/>
+    <parameters name="crossImmunity4" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="0.5" displayName="Cross Immunity4"/>
+    <parameters name="hostPrimaryIncubationRate" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="0.2" displayName="Host Primary Incubation Rate"/>
+    <parameters name="hostPrimaryRecoveryRate" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="0.14" displayName="Host Primary Recovery Rate"/>
+    <parameters name="hostPrimaryImmunityLossRate" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="0.024" displayName="Host Primary Immunity Loss Rate"/>
+    <parameters name="hostPrimaryDeathRate" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="0.0000001" displayName="Host Primary Death Rate"/>
+    <parameters name="hostADE1" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="1.8" displayName="Host ADE1"/>
+    <parameters name="hostADE2" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="1.8" displayName="Host ADE2"/>
+    <parameters name="hostADE3" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="1.8" displayName="Host ADE3"/>
+    <parameters name="hostADE4" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="1.8" displayName="Host ADE4"/>
+    <parameters name="hostSecondaryIncubationRate" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="0.2" displayName="Host Secondary Incubation Rate"/>
+    <parameters name="hostSecondaryRecoveryRate" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="0.1" displayName="Host Secondary Recovery Rate"/>
+    <parameters name="hostSecondaryDeathRate" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="0.00123" displayName="Host Secondary Death Rate"/>
+    <parameters name="vectorInfectivity1" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="0.5" displayName="Vector Infectivity1"/>
+    <parameters name="vectorInfectivity2" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="0.5" displayName="Vector Infectivity2"/>
+    <parameters name="vectorInfectivity3" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="0.5" displayName="Vector Infectivity3"/>
+    <parameters name="vectorInfectivity4" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="0.5" displayName="Vector Infectivity4"/>
+    <parameters name="vectorADE1" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="1.8" displayName="Vector ADE1"/>
+    <parameters name="vectorADE2" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="1.8" displayName="Vector ADE2"/>
+    <parameters name="vectorADE3" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="1.8" displayName="Vector ADE3"/>
+    <parameters name="vectorADE4" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="1.8" displayName="Vector ADE4"/>
+    <parameters name="vectorIncubationRate" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="0.1" displayName="Vector Incubation Rate"/>
+  </models>
+  <models name="VerySimpleDengueModel" class="vector.ecore#//VerySimpleDengueModel"
+      parentModel="#//@models.5" compartments="#//@compartmentGroups.0">
+    <parameters name="hostTransmissionRate" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="0.041" displayName="Host Transmission Rate"/>
+    <parameters name="hostIncubationRate" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="0.178" displayName="Host Incubation Rate"/>
+    <parameters name="hostRecoveryRate" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="0.274" displayName="Host Recovery Rate"/>
+    <parameters name="hostImmunityLossRate" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="0.0055" displayName="Host Immunity Loss Rate"/>
+    <parameters name="vectorTransmissionRate" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="1.452" displayName="Vector Transmission Rate"/>
+    <parameters name="vectorIncubationRate" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="0.082" displayName="Vector Incubation Rate"/>
+    <parameters name="ADE" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="1.0" displayName="ADE"/>
+    <parameters name="crossImmunity" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="0.0" displayName="Cross Immunity"/>
+  </models>
+  <models name="AbstractDengueModel" class="vector.ecore#//AbstractDengueModel" parentModel="#//@models.1"
+      compartments="#//@compartmentGroups.0"/>
+  <compartmentGroups name="DengueModelHost" class="vector.ecore#//DengueModelHostLabel"
+      valueClass="vector.ecore#//DengueModelHostLabelValue" parentGroup="../../org.eclipse.stem.diseasemodels/model/standard.metamodel#//@compartmentGroups.4">
+    <compartments name="E1" dataType="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <compartments name="E2" dataType="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <compartments name="E3" dataType="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <compartments name="E4" dataType="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <compartments name="I1" dataType="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <compartments name="I2" dataType="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <compartments name="I3" dataType="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <compartments name="I4" dataType="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <compartments name="T1" dataType="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <compartments name="T2" dataType="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <compartments name="T3" dataType="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <compartments name="T4" dataType="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <compartments name="R1" dataType="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <compartments name="R2" dataType="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <compartments name="R3" dataType="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <compartments name="R4" dataType="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <compartments name="E12" dataType="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <compartments name="E13" dataType="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <compartments name="E14" dataType="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <compartments name="E21" dataType="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <compartments name="E23" dataType="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <compartments name="E24" dataType="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <compartments name="E31" dataType="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <compartments name="E32" dataType="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <compartments name="E34" dataType="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <compartments name="E41" dataType="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <compartments name="E42" dataType="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <compartments name="E43" dataType="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <compartments name="I12" dataType="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <compartments name="I13" dataType="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <compartments name="I14" dataType="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <compartments name="I21" dataType="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <compartments name="I23" dataType="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <compartments name="I24" dataType="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <compartments name="I31" dataType="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <compartments name="I32" dataType="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <compartments name="I34" dataType="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <compartments name="I41" dataType="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <compartments name="I42" dataType="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <compartments name="I43" dataType="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <compartments name="R" dataType="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <compartments name="incidence1" dataType="http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+        type="Incidence"/>
+    <compartments name="incidence2" dataType="http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+        type="Incidence"/>
+    <compartments name="incidence3" dataType="http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+        type="Incidence"/>
+    <compartments name="incidence4" dataType="http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+        type="Incidence"/>
+    <compartments name="incidence12" dataType="http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+        type="Incidence"/>
+    <compartments name="incidence21" dataType="http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+        type="Incidence"/>
+    <compartments name="incidence31" dataType="http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+        type="Incidence"/>
+    <compartments name="incidence41" dataType="http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+        type="Incidence"/>
+    <compartments name="incidence13" dataType="http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+        type="Incidence"/>
+    <compartments name="incidence23" dataType="http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+        type="Incidence"/>
+    <compartments name="incidence32" dataType="http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+        type="Incidence"/>
+    <compartments name="incidence42" dataType="http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+        type="Incidence"/>
+    <compartments name="incidence14" dataType="http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+        type="Incidence"/>
+    <compartments name="incidence24" dataType="http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+        type="Incidence"/>
+    <compartments name="incidence34" dataType="http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+        type="Incidence"/>
+    <compartments name="incidence43" dataType="http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+        type="Incidence"/>
+    <compartments name="diseaseDeaths1" dataType="http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+        type="Deaths"/>
+    <compartments name="diseaseDeaths2" dataType="http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+        type="Deaths"/>
+    <compartments name="diseaseDeaths3" dataType="http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+        type="Deaths"/>
+    <compartments name="diseaseDeaths4" dataType="http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+        type="Deaths"/>
+    <compartments name="diseaseDeaths12" dataType="http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+        type="Deaths"/>
+    <compartments name="diseaseDeaths21" dataType="http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+        type="Deaths"/>
+    <compartments name="diseaseDeaths31" dataType="http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+        type="Deaths"/>
+    <compartments name="diseaseDeaths41" dataType="http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+        type="Deaths"/>
+    <compartments name="diseaseDeaths13" dataType="http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+        type="Deaths"/>
+    <compartments name="diseaseDeaths23" dataType="http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+        type="Deaths"/>
+    <compartments name="diseaseDeaths32" dataType="http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+        type="Deaths"/>
+    <compartments name="diseaseDeaths42" dataType="http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+        type="Deaths"/>
+    <compartments name="diseaseDeaths14" dataType="http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+        type="Deaths"/>
+    <compartments name="diseaseDeaths24" dataType="http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+        type="Deaths"/>
+    <compartments name="diseaseDeaths34" dataType="http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+        type="Deaths"/>
+    <compartments name="diseaseDeaths43" dataType="http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+        type="Deaths"/>
+  </compartmentGroups>
+  <compartmentGroups name="DengueModelVector" class="vector.ecore#//DengueModelVectorLabel"
+      valueClass="vector.ecore#//DengueModelVectorLabelValue" parentGroup="../../org.eclipse.stem.diseasemodels/model/standard.metamodel#//@compartmentGroups.4">
+    <compartments name="E1" dataType="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <compartments name="E2" dataType="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <compartments name="E3" dataType="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <compartments name="E4" dataType="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <compartments name="I1" dataType="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <compartments name="I2" dataType="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <compartments name="I3" dataType="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <compartments name="I4" dataType="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <compartments name="incidence1" dataType="http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+        type="Incidence"/>
+    <compartments name="incidence2" dataType="http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+        type="Incidence"/>
+    <compartments name="incidence3" dataType="http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+        type="Incidence"/>
+    <compartments name="incidence4" dataType="http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+        type="Incidence"/>
+  </compartmentGroups>
+</org.eclipse.stem.model:Package>

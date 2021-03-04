@@ -1,0 +1,132 @@
+// DiseaseModelPropertyComposite.java
+package org.eclipse.stem.ui.populationmodels.standard.wizards;
+
+/*******************************************************************************
+ * Copyright (c) 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018
+ * IBM Corporation, BfR, and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v2.0
+ * which accompanies this distribution, and is available at
+ * https://www.eclipse.org/legal/epl-2.0/
+ *
+ * Contributors:
+ *     IBM Corporation - initial API and implementation and new features
+ *     Bundesinstitut für Risikobewertung - Pajek Graph interface, new Veterinary Models
+ *******************************************************************************/
+
+import java.util.HashMap;
+import java.util.Map;
+
+import org.eclipse.core.resources.IProject;
+import org.eclipse.stem.populationmodels.standard.PopulationModel;
+import org.eclipse.stem.ui.Activator;
+import org.eclipse.stem.ui.populationmodels.adapters.PopulationModelPropertyEditor;
+import org.eclipse.stem.ui.populationmodels.adapters.PopulationModelPropertyEditorAdapter;
+import org.eclipse.stem.ui.populationmodels.adapters.PopulationModelPropertyEditorAdapterFactory;
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.custom.StackLayout;
+import org.eclipse.swt.events.ModifyListener;
+import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Label;
+
+/**
+ * This class represents
+ */
+public class PopulationModelPropertyComposite extends Composite {
+
+	private final Map<PopulationModel, PopulationModelPropertyEditor> modelMap = new HashMap<PopulationModel, PopulationModelPropertyEditor>();
+
+	private StackLayout stackLayout = null;
+
+	/**
+	 * Create the composite
+	 * 
+	 * @param parent
+	 * @param style
+	 * @param projectValidator
+	 */
+	public PopulationModelPropertyComposite(final Composite parent,
+			final int style, final PopulationModel[] populationModels,
+			ModifyListener projectValidator, IProject project) {
+		super(parent, style);
+		stackLayout = new StackLayout();
+		setLayout(stackLayout);
+
+		Label label;
+		label = new Label(this, SWT.NONE);
+		label.setText(PopulationModelWizardMessages.getString("DMPC1")); //$NON-NLS-1$
+		PopulationModelPropertyEditor firstOne = null;
+		// Any disease models?
+		if (populationModels != null) {
+			// Yes
+			for (int i = 0; i < populationModels.length; i++) {
+
+				PopulationModelPropertyEditorAdapter dmpea = (PopulationModelPropertyEditorAdapter) PopulationModelPropertyEditorAdapterFactory.INSTANCE
+						.adapt(populationModels[i],
+								PopulationModelPropertyEditorAdapter.class);
+
+				final PopulationModelPropertyEditor dmpe = dmpea
+						.createPopulationModelPropertyEditor(this, SWT.NONE,
+								projectValidator, project);
+
+				modelMap.put(populationModels[i], dmpe);
+				if (firstOne == null) {
+					// Yes
+					firstOne = dmpe;
+				} // if
+			} // for i
+		} // if any disease models?
+
+		stackLayout.topControl = firstOne;
+	} // DiseaseModelPropertyComposite
+
+	void displayDiseaseModel(final PopulationModel diseaseModel) {
+		final PopulationModelPropertyEditor dmpe = modelMap.get(diseaseModel);
+		// Did we find it?
+		if (dmpe != null) {
+			// Yes
+			stackLayout.topControl = dmpe;
+			layout();
+		} // if
+		else {
+			Activator.logError(PopulationModelWizardMessages.getString("DMPC2") //$NON-NLS-1$
+					+ diseaseModel.getClass().getName() + "\"", null); //$NON-NLS-1$
+		}
+	} // displayDiseaseModel
+	
+	@Override
+	public void dispose() {
+		super.dispose();
+	}
+
+	@Override
+	protected void checkSubclass() {
+		// Disable the check that prevents sub-classing of SWT components
+	}
+
+	/**
+	 * @return <code>true</code> if the contents of the composite are valid,
+	 *         <code>false</code> otherwise.
+	 */
+	public boolean validate() {
+		return ((PopulationModelPropertyEditor) (stackLayout.topControl))
+				.validate();
+	} // validate
+
+	/**
+	 * @return
+	 */
+	public String getErrorMessage() {
+		return ((PopulationModelPropertyEditor) (stackLayout.topControl))
+				.getErrorMessage();
+	}
+
+	/**
+	 * @param diseaseModel
+	 */
+	public void populatePopulationModel(PopulationModel populationModel) {
+		((PopulationModelPropertyEditor) (stackLayout.topControl))
+				.populate(populationModel);
+	} // populatePopulationModel
+
+} // PopulationModelPropertyComposite

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="ASCII"?>
+<org.eclipse.stem.diseasemodels.standard:SEIR xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:org.eclipse.stem.diseasemodels.standard="http:///org/eclipse/stem/diseasemodels/standard.ecore" uRI="platform:/plugin/org.eclipse.stem.diseases/resources/diseases/influenza_deterministic_seir.standard" typeURI="stemtype://org.eclipse.stem/identifiable1" diseaseName="Influenza" transmissionRate="1.0" nonLinearityCoefficient="1.0" recoveryRate="0.175" infectiousMortalityRate="0.0" characteristicMixingDistance="2.25" incubationRate="0.67">
+  <dublinCore title="Demo Deterministic SEIR" identifier="platform:/plugin/org.eclipse.stem.diseases/resources/diseases/influenza_deterministic_seir.standard" description="1 Model Decorator" creator="daford" format="http:///org/eclipse/stem/diseasemodels/standard.ecore"/>
+</org.eclipse.stem.diseasemodels.standard:SEIR>
+	

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<!--
+/*******************************************************************************
+ * Copyright (c) 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018
+ * IBM Corporation, BfR, and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v2.0
+ * which accompanies this distribution, and is available at
+ * https://www.eclipse.org/legal/epl-2.0/
+ *
+ * Contributors:
+ *     IBM Corporation - initial API and implementation and new features
+ *     Bundesinstitut für Risikobewertung - Pajek Graph interface, new Veterinary Models
+ *******************************************************************************/
+-->
+<plugin>
+
+   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <factory
+            uri="http:///org/eclipse/stem/model/vmm.ecore"
+            class="org.eclipse.stem.model.ui.editor.vismodel.provider.VisualMetamodelItemProviderAdapterFactory"
+            supportedTypes=
+              "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
+               org.eclipse.emf.edit.provider.IStructuredItemContentProvider
+               org.eclipse.emf.edit.provider.ITreeItemContentProvider
+               org.eclipse.emf.edit.provider.IItemLabelProvider
+               org.eclipse.emf.edit.provider.IItemPropertySource"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http:///org/eclipse/stem/model/vmm.ecore"
+            class="org.eclipse.stem.model.ui.editor.vismodel.VisualMetamodelPackage"
+            genModel="model/vmm.genmodel"/>
+   </extension>
+
+
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="org.eclipse.stem.model.ui.editor.vismodel.presentation.VisualMetamodelEditorID"
+            name="%_UI_VisualMetamodelEditor_label"
+            icon="icons/full/obj16/VisualMetamodelModelFile.gif"
+            extensions="vmm"
+            class="org.eclipse.stem.model.ui.editor.vismodel.presentation.VisualMetamodelEditor"
+            contributorClass="org.eclipse.stem.model.ui.editor.vismodel.presentation.VisualMetamodelActionBarContributor">
+      </editor>
+   </extension>
+
+     <extension point="org.eclipse.ui.editors">
+      <editor name="Metamodel Diagram Editor"
+              extensions="metamodel"
+              icon="icons/MetaModelIcon.png"
+              default="true"
+              class="org.eclipse.stem.model.ui.editor.ModelDiagramEditor"
+              contributorClass="org.eclipse.stem.model.ui.editor.ModelDiagramEditorActionBarContributor"
+              id="org.eclipse.stem.model.metamodel.editor">
+      </editor>      
+   </extension>
+
+</plugin>

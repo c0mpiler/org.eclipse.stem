@@ -1,0 +1,3195 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script type="text/javascript">function toggleRow(tr, open)
+{
+	if (open == 1) {
+		tr.style.display = 'table-row';
+	} else {
+		tr.style.display = 'none';
+	}
+}
+
+function getVisibleStatusNode(node)
+{
+	var attr = node.getAttributeNode('showRow');
+	if (attr == null) {
+		attr = document.createAttribute('showRow')
+		attr.nodeValue = '1';
+		node.setAttributeNode(attr);
+	}
+	return attr;
+}
+
+function toggleButton(node,state)
+{
+	var nodeText = node.innerHTML.substring(1);
+
+	console.log(nodeText);
+
+	if (state == 1) {
+		node.innerHTML = "-"+nodeText;
+	} else {
+		node.innerHTML = "+"+nodeText;
+	}
+}
+
+function toggleIdentifiable(node,buttonNode)
+{
+	var visStatusNode = getVisibleStatusNode(node);
+
+	var state;
+	var forceClose;
+	if (visStatusNode.nodeValue == 1) {
+		state = 0;
+		forceClose = true;
+	} else {
+		state = 1;
+		forceClose = false;
+	}
+
+	toggleButton(buttonNode,state);
+
+	visStatusNode.nodeValue = state;
+
+	var tr = node;
+	while (tr = tr.nextSibling) {
+		if (tr.tagName == "TR") {
+			if (tr.id.search('TITLE_ROW') >= 0) {
+				break;
+			}
+
+			toggleRow(tr,state);
+
+			if (tr.id.search('DUBLINCORE') >= 0) {
+				toggleDublinCore(tr,false,forceClose);
+				break;
+			}
+		}
+	}    	
+
+}
+
+function toggleDublinCore(node, toggle, forceClose)
+{
+	var visStatusNode = getVisibleStatusNode(node);
+
+	var state = 0;
+
+	if (!forceClose) {
+		if (toggle) {
+			if (visStatusNode.nodeValue == 1) {
+				state = 0;
+			} else {
+				state = 1;
+			}
+			visStatusNode.nodeValue = state;
+		} else {
+			state = visStatusNode.nodeValue;
+		}
+	}
+
+	var tr = node;
+	while (tr = tr.nextSibling) {
+		if (tr.tagName == "TR") {
+			if (tr.id.search('DUBLINCORE') < 0) {
+				break;
+			}
+
+			toggleRow(tr, state);
+		}
+	}    			
+}
+
+
+function toggle(node)
+{
+	var titleRow = node.parentNode.parentNode;
+	toggleIdentifiable(titleRow,node);
+}
+
+
+function collapseDublinCores()
+{
+	var nodes = document.getElementsByTagName('tr');
+	for (var idx=0; idx<nodes.length; idx++) {
+		var node = nodes[idx];
+		if (node.id.search('DUBLINCORE_ROW_0') >= 0) {
+			toggleDublinCore(node,true,false);
+		}
+	}
+}
+
+</script>
+    <style type="text/css">A {color: #000; text-decoration: none;}
+.idHeader {background-color:#00ffff; font-weight: bold;}
+.idBody {background-color:#c8ffff;}
+.dcBody {background-color:#e1ffe1;}
+.dcHeader {background-color:#c8ffc8;}
+.scenario {background-color:#c8c8ff;}
+.blank {background-color: #fff;}</style>
+    <title>AgingSEIRDisease_DP853</title>
+  </head>
+  <body onload="collapseDublinCores();">
+    <table style="text-align: left; width: 100%;" cellpadding="2" border="4" cellspacing="5">
+      <tbody>
+        <tr id="TITLE_ROW_AgingSEIRDisease_DP853" align="left">
+          <td style="background-color: rgb(200, 200, 255);">
+            <span style="font-weight: bold;">-STEM Scenario: AgingSEIRDisease_DP853</span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <table frame="box" style="text-align: left;" width="100%" cellpadding="2" border="0" cellspacing="2">
+              <tbody>
+                <tr>
+                  <td style="width: 100px;">
+                  </td>
+                  <td style="width: 100px;">
+                  </td>
+                  <td style="width: 200px;">
+                  </td>
+                  <td style="background-color: rgb(255, 255, 255);">
+                  </td>
+                </tr>
+                <tr>
+                </tr>
+                <tr id="TITLE_ROW_AgingSEIRDisease_DP853" class="idHeader">
+                  <td>
+                    <a id="TITLE_ROW_AgingSEIRDisease_DP853_toggle" null="null" onclick="toggle(this);return false;" href="#">-Scenario</a>
+                  </td>
+                  <td>AgingSEIRDisease_DP853</td>
+                  <td>Scenario</td>
+                </tr>
+                <tr id="DATA_ROW_0_platform:/resource/BasicTests/scenarios/AgingSEIRDisease_DP853.scenario_uRI" class="idBody">
+                  <td align="left">
+                  </td>
+                  <td align="right">uRI:   </td>
+                  <td align="left">platform:/resource/BasicTests/scenarios/AgingSEIRDisease_DP853.scenario</td>
+                </tr>
+                <tr id="DATA_ROW_1_platform:/resource/BasicTests/scenarios/AgingSEIRDisease_DP853.scenario_typeURI" class="idBody">
+                  <td align="left">
+                  </td>
+                  <td align="right">typeURI:   </td>
+                  <td align="left">stemtype://org.eclipse.stem/Scenario</td>
+                </tr>
+                <tr align="center">
+                </tr>
+                <tr id="DUBLINCORE_ROW_0_platform:/resource/BasicTests/scenarios/AgingSEIRDisease_DP853.scenario">
+                  <td style="width: 100px;" class="dcHeader">
+                    <a onclick="toggle(this);return false;" href="#">+Dublin Core</a>
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">title:   </td>
+                  <td style="width: 200px;" class="dcBody">Scenario</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_1_platform:/resource/BasicTests/scenarios/AgingSEIRDisease_DP853.scenario">
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">identifier:   </td>
+                  <td style="width: 200px;" class="dcBody">platform:/resource/BasicTests/scenarios/AgingSEIRDisease_DP853.scenario</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_2_platform:/resource/BasicTests/scenarios/AgingSEIRDisease_DP853.scenario">
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">description:   </td>
+                  <td style="width: 200px;" class="dcBody">A scenario contains a complete model or model hierarchy along with initial conditions (infectors, inoculators) and a sequencer</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_3_platform:/resource/BasicTests/scenarios/AgingSEIRDisease_DP853.scenario">
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">creator:   </td>
+                  <td style="width: 200px;" class="dcBody">edlund</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_5_platform:/resource/BasicTests/scenarios/AgingSEIRDisease_DP853.scenario">
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">format:   </td>
+                  <td style="width: 200px;" class="dcBody">http:///org/eclipse/stem/core/scenario.ecore</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_6_platform:/resource/BasicTests/scenarios/AgingSEIRDisease_DP853.scenario">
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">publisher:   </td>
+                  <td style="width: 200px;" class="dcBody">The Eclipse Foundation</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_11_platform:/resource/BasicTests/scenarios/AgingSEIRDisease_DP853.scenario">
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">source:   </td>
+                  <td style="width: 200px;" class="dcBody">http://wiki.eclipse.org/Creating_a_STEM_Scenario   (and references there-in)</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_13_platform:/resource/BasicTests/scenarios/AgingSEIRDisease_DP853.scenario">
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">type:   </td>
+                  <td style="width: 200px;" class="dcBody">stemtype://org.eclipse.stem/Scenario</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_16_platform:/resource/BasicTests/scenarios/AgingSEIRDisease_DP853.scenario">
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">created:   </td>
+                  <td style="width: 200px;" class="dcBody">2011-09-13</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_17_platform:/resource/BasicTests/scenarios/AgingSEIRDisease_DP853.scenario">
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">license:   </td>
+                  <td style="width: 200px;" class="dcBody">Eclipse Public License (EPL)</td>
+                </tr>
+                <tr>
+                </tr>
+                <tr id="TITLE_ROW_EgyptHuman0to0Infector" class="idHeader">
+                  <td>
+                    <a id="TITLE_ROW_EgyptHuman0to0Infector_toggle" null="null" onclick="toggle(this);return false;" href="#">-Decorator</a>
+                  </td>
+                  <td>EgyptHuman0to0Infector</td>
+                  <td>SIInfector</td>
+                </tr>
+                <tr id="DATA_ROW_0_platform:/resource/BasicTests/decorators/EgyptHuman0to0Infector.standard_uRI" class="idBody">
+                  <td align="left">
+                  </td>
+                  <td align="right">uRI:   </td>
+                  <td align="left">platform:/resource/BasicTests/decorators/EgyptHuman0to0Infector.standard</td>
+                </tr>
+                <tr id="DATA_ROW_1_platform:/resource/BasicTests/decorators/EgyptHuman0to0Infector.standard_typeURI" class="idBody">
+                  <td align="left">
+                  </td>
+                  <td align="right">typeURI:   </td>
+                  <td align="left">stemtype://org.eclipse.stem/Identifiable</td>
+                </tr>
+                <tr id="DATA_ROW_5_platform:/resource/BasicTests/decorators/EgyptHuman0to0Infector.standard_targetURI" class="idBody">
+                  <td align="left">
+                  </td>
+                  <td align="right">targetURI:   </td>
+                  <td align="left">stem://org.eclipse.stem/node/geo/region/EG-UPE</td>
+                </tr>
+                <tr id="DATA_ROW_6_platform:/resource/BasicTests/decorators/EgyptHuman0to0Infector.standard_diseaseName" class="idBody">
+                  <td align="left">
+                  </td>
+                  <td align="right">diseaseName:   </td>
+                  <td align="left">AgingSEIRDisease</td>
+                </tr>
+                <tr id="DATA_ROW_7_platform:/resource/BasicTests/decorators/EgyptHuman0to0Infector.standard_targetISOKey" class="idBody">
+                  <td align="left">
+                  </td>
+                  <td align="right">targetISOKey:   </td>
+                  <td align="left">EG-UPE</td>
+                </tr>
+                <tr id="DATA_ROW_8_platform:/resource/BasicTests/decorators/EgyptHuman0to0Infector.standard_populationIdentifier" class="idBody">
+                  <td align="left">
+                  </td>
+                  <td align="right">populationIdentifier:   </td>
+                  <td align="left">human0to0</td>
+                </tr>
+                <tr id="DATA_ROW_9_platform:/resource/BasicTests/decorators/EgyptHuman0to0Infector.standard_infectPercentage" class="idBody">
+                  <td align="left">
+                  </td>
+                  <td align="right">infectPercentage:   </td>
+                  <td align="left">true</td>
+                </tr>
+                <tr id="DATA_ROW_10_platform:/resource/BasicTests/decorators/EgyptHuman0to0Infector.standard_targetFeature" class="idBody">
+                  <td align="left">
+                  </td>
+                  <td align="right">targetFeature:   </td>
+                  <td align="left">i</td>
+                </tr>
+                <tr id="DATA_ROW_11_platform:/resource/BasicTests/decorators/EgyptHuman0to0Infector.standard_infectiousCount" class="idBody">
+                  <td align="left">
+                  </td>
+                  <td align="right">infectiousCount:   </td>
+                  <td align="left">1.0</td>
+                </tr>
+                <tr align="center">
+                </tr>
+                <tr id="DUBLINCORE_ROW_1_platform:/resource/BasicTests/decorators/EgyptHuman0to0Infector.standard">
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">identifier:   </td>
+                  <td style="width: 200px;" class="dcBody">platform:/resource/BasicTests/decorators/EgyptHuman0to0Infector.standard</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_3_platform:/resource/BasicTests/decorators/EgyptHuman0to0Infector.standard">
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">creator:   </td>
+                  <td style="width: 200px;" class="dcBody">loaner25</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_5_platform:/resource/BasicTests/decorators/EgyptHuman0to0Infector.standard">
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">format:   </td>
+                  <td style="width: 200px;" class="dcBody">http:///org/eclipse/stem/diseasemodels/standard.ecore</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_13_platform:/resource/BasicTests/decorators/EgyptHuman0to0Infector.standard">
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">type:   </td>
+                  <td style="width: 200px;" class="dcBody">stemtype://org.eclipse.stem/Identifiable</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_16_platform:/resource/BasicTests/decorators/EgyptHuman0to0Infector.standard">
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">created:   </td>
+                  <td style="width: 200px;" class="dcBody">2011-05-26</td>
+                </tr>
+                <tr>
+                </tr>
+                <tr id="TITLE_ROW_30DaySequencer" class="idHeader">
+                  <td>
+                    <a id="TITLE_ROW_30DaySequencer_toggle" null="null" onclick="toggle(this);return false;" href="#">-Sequencer</a>
+                  </td>
+                  <td>30DaySequencer</td>
+                  <td>SequentialSequencer</td>
+                </tr>
+                <tr id="DATA_ROW_0_platform:/resource/BasicTests/sequencers/30DaySequencer.sequencer_uRI" class="idBody">
+                  <td align="left">
+                  </td>
+                  <td align="right">uRI:   </td>
+                  <td align="left">platform:/resource/BasicTests/sequencers/30DaySequencer.sequencer</td>
+                </tr>
+                <tr id="DATA_ROW_1_platform:/resource/BasicTests/sequencers/30DaySequencer.sequencer_typeURI" class="idBody">
+                  <td align="left">
+                  </td>
+                  <td align="right">typeURI:   </td>
+                  <td align="left">stemtype://org.eclipse.stem/Identifiable</td>
+                </tr>
+                <tr id="DATA_ROW_3_platform:/resource/BasicTests/sequencers/30DaySequencer.sequencer_duration" class="idBody">
+                  <td align="left">
+                  </td>
+                  <td align="right">duration:   </td>
+                  <td align="left">2678399000</td>
+                </tr>
+                <tr id="DATA_ROW_5_platform:/resource/BasicTests/sequencers/30DaySequencer.sequencer_workComplete" class="idBody">
+                  <td align="left">
+                  </td>
+                  <td align="right">workComplete:   </td>
+                  <td align="left">0.0</td>
+                </tr>
+                <tr id="DATA_ROW_7_platform:/resource/BasicTests/sequencers/30DaySequencer.sequencer_cycle" class="idBody">
+                  <td align="left">
+                  </td>
+                  <td align="right">cycle:   </td>
+                  <td align="left">0</td>
+                </tr>
+                <tr id="DATA_ROW_8_platform:/resource/BasicTests/sequencers/30DaySequencer.sequencer_timeIncrement" class="idBody">
+                  <td align="left">
+                  </td>
+                  <td align="right">timeIncrement:   </td>
+                  <td align="left">86400000</td>
+                </tr>
+                <tr align="center">
+                </tr>
+                <tr id="DUBLINCORE_ROW_1_platform:/resource/BasicTests/sequencers/30DaySequencer.sequencer">
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">identifier:   </td>
+                  <td style="width: 200px;" class="dcBody">platform:/resource/BasicTests/sequencers/30DaySequencer.sequencer</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_2_platform:/resource/BasicTests/sequencers/30DaySequencer.sequencer">
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">description:   </td>
+                  <td style="width: 200px;" class="dcBody">Sequential Sequencer "30DaySequencer" starting from 2011-01-24 to 2011-02-24 with a cycle period of 1 day.</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_3_platform:/resource/BasicTests/sequencers/30DaySequencer.sequencer">
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">creator:   </td>
+                  <td style="width: 200px;" class="dcBody">edlund</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_5_platform:/resource/BasicTests/sequencers/30DaySequencer.sequencer">
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">format:   </td>
+                  <td style="width: 200px;" class="dcBody">http:///org/eclipse/stem/core/sequencer.ecore</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_13_platform:/resource/BasicTests/sequencers/30DaySequencer.sequencer">
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">type:   </td>
+                  <td style="width: 200px;" class="dcBody">stemtype://org.eclipse.stem/Identifiable</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_16_platform:/resource/BasicTests/sequencers/30DaySequencer.sequencer">
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">created:   </td>
+                  <td style="width: 200px;" class="dcBody">2011-01-24</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_20_platform:/resource/BasicTests/sequencers/30DaySequencer.sequencer">
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">valid:   </td>
+                  <td style="width: 200px;" class="dcBody">start=2011-01-24; end=2011-02-24;</td>
+                </tr>
+                <tr>
+                </tr>
+                <tr id="TITLE_ROW_FF938EE2F47EF775" class="idHeader">
+                  <td>
+                    <a id="TITLE_ROW_FF938EE2F47EF775_toggle" null="null" onclick="toggle(this);return false;" href="#">-Solver</a>
+                  </td>
+                  <td>FF938EE2F47EF775</td>
+                  <td>DormandPrince853</td>
+                </tr>
+                <tr id="DATA_ROW_0_stem://org.eclipse.stem/RungeKuttaSolver/FF938EE2F47EF775_uRI" class="idBody">
+                  <td align="left">
+                  </td>
+                  <td align="right">uRI:   </td>
+                  <td align="left">stem://org.eclipse.stem/RungeKuttaSolver/FF938EE2F47EF775</td>
+                </tr>
+                <tr id="DATA_ROW_1_stem://org.eclipse.stem/RungeKuttaSolver/FF938EE2F47EF775_typeURI" class="idBody">
+                  <td align="left">
+                  </td>
+                  <td align="right">typeURI:   </td>
+                  <td align="left">stemtype://org.eclipse.stem/Solver</td>
+                </tr>
+                <tr id="DATA_ROW_2_stem://org.eclipse.stem/RungeKuttaSolver/FF938EE2F47EF775_relativeTolerance" class="idBody">
+                  <td align="left">
+                  </td>
+                  <td align="right">relativeTolerance:   </td>
+                  <td align="left">1.0E-9</td>
+                </tr>
+                <tr id="DATA_ROW_3_stem://org.eclipse.stem/RungeKuttaSolver/FF938EE2F47EF775_absoluteTolerance" class="idBody">
+                  <td align="left">
+                  </td>
+                  <td align="right">absoluteTolerance:   </td>
+                  <td align="left">1.0E-5</td>
+                </tr>
+                <tr id="DATA_ROW_4_stem://org.eclipse.stem/RungeKuttaSolver/FF938EE2F47EF775_minStep" class="idBody">
+                  <td align="left">
+                  </td>
+                  <td align="right">minStep:   </td>
+                  <td align="left">1.0E-8</td>
+                </tr>
+                <tr id="DATA_ROW_5_stem://org.eclipse.stem/RungeKuttaSolver/FF938EE2F47EF775_maxStep" class="idBody">
+                  <td align="left">
+                  </td>
+                  <td align="right">maxStep:   </td>
+                  <td align="left">1.0</td>
+                </tr>
+                <tr align="center">
+                </tr>
+                <tr id="DUBLINCORE_ROW_1_stem://org.eclipse.stem/RungeKuttaSolver/FF938EE2F47EF775">
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">identifier:   </td>
+                  <td style="width: 200px;" class="dcBody">stem://org.eclipse.stem/RungeKuttaSolver/FF938EE2F47EF775</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_13_stem://org.eclipse.stem/RungeKuttaSolver/FF938EE2F47EF775">
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">type:   </td>
+                  <td style="width: 200px;" class="dcBody">stemtype://org.eclipse.stem/Solver</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <table frame="box" style="text-align: left;" width="100%" cellpadding="2" border="0" cellspacing="2">
+              <tbody>
+                <tr>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;">
+                  </td>
+                  <td style="width: 100px;">
+                  </td>
+                  <td style="width: 200px;">
+                  </td>
+                  <td style="background-color: rgb(255, 255, 255);">
+                  </td>
+                </tr>
+                <tr>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                </tr>
+                <tr id="TITLE_ROW_EgyptAgingDiseaseModel" class="idHeader">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td>
+                    <a id="TITLE_ROW_EgyptAgingDiseaseModel_toggle" null="null" onclick="toggle(this);return false;" href="#">-Model</a>
+                  </td>
+                  <td>EgyptAgingDiseaseModel</td>
+                  <td>Model</td>
+                </tr>
+                <tr id="DATA_ROW_0_platform:/resource/BasicTests/models/EgyptAgingDiseaseModel.model_uRI" class="idBody">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td align="left">
+                  </td>
+                  <td align="right">uRI:   </td>
+                  <td align="left">platform:/resource/BasicTests/models/EgyptAgingDiseaseModel.model</td>
+                </tr>
+                <tr id="DATA_ROW_1_platform:/resource/BasicTests/models/EgyptAgingDiseaseModel.model_typeURI" class="idBody">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td align="left">
+                  </td>
+                  <td align="right">typeURI:   </td>
+                  <td align="left">stemtype://org.eclipse.stem/Model</td>
+                </tr>
+                <tr align="center">
+                </tr>
+                <tr id="DUBLINCORE_ROW_1_platform:/resource/BasicTests/models/EgyptAgingDiseaseModel.model">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">identifier:   </td>
+                  <td style="width: 200px;" class="dcBody">platform:/resource/BasicTests/models/EgyptAgingDiseaseModel.model</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_3_platform:/resource/BasicTests/models/EgyptAgingDiseaseModel.model">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">creator:   </td>
+                  <td style="width: 200px;" class="dcBody">loaner25</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_5_platform:/resource/BasicTests/models/EgyptAgingDiseaseModel.model">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">format:   </td>
+                  <td style="width: 200px;" class="dcBody">http:///org/eclipse/stem/core/model.ecore</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_13_platform:/resource/BasicTests/models/EgyptAgingDiseaseModel.model">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">type:   </td>
+                  <td style="width: 200px;" class="dcBody">stemtype://org.eclipse.stem/Model</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_16_platform:/resource/BasicTests/models/EgyptAgingDiseaseModel.model">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">created:   </td>
+                  <td style="width: 200px;" class="dcBody">2011-05-26</td>
+                </tr>
+                <tr>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                </tr>
+                <tr id="TITLE_ROW_AgingModel" class="idHeader">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td>
+                    <a id="TITLE_ROW_AgingModel_toggle" null="null" onclick="toggle(this);return false;" href="#">-Decorator</a>
+                  </td>
+                  <td>AgingModel</td>
+                  <td>AgingPopulationModel</td>
+                </tr>
+                <tr id="DATA_ROW_0_platform:/resource/BasicTests/decorators/AgingModel.standard_uRI" class="idBody">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td align="left">
+                  </td>
+                  <td align="right">uRI:   </td>
+                  <td align="left">platform:/resource/BasicTests/decorators/AgingModel.standard</td>
+                </tr>
+                <tr id="DATA_ROW_1_platform:/resource/BasicTests/decorators/AgingModel.standard_typeURI" class="idBody">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td align="left">
+                  </td>
+                  <td align="right">typeURI:   </td>
+                  <td align="left">stemtype://org.eclipse.stem/Identifiable</td>
+                </tr>
+                <tr id="DATA_ROW_5_platform:/resource/BasicTests/decorators/AgingModel.standard_addStochasticNoise" class="idBody">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td align="left">
+                  </td>
+                  <td align="right">addStochasticNoise:   </td>
+                  <td align="left">false</td>
+                </tr>
+                <tr id="DATA_ROW_6_platform:/resource/BasicTests/decorators/AgingModel.standard_randomSeed" class="idBody">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td align="left">
+                  </td>
+                  <td align="right">randomSeed:   </td>
+                  <td align="left">1</td>
+                </tr>
+                <tr id="DATA_ROW_8_platform:/resource/BasicTests/decorators/AgingModel.standard_populationIdentifier" class="idBody">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td align="left">
+                  </td>
+                  <td align="right">populationIdentifier:   </td>
+                  <td align="left">human</td>
+                </tr>
+                <tr id="DATA_ROW_9_platform:/resource/BasicTests/decorators/AgingModel.standard_name" class="idBody">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td align="left">
+                  </td>
+                  <td align="right">name:   </td>
+                  <td align="left">HumanPopulationModel</td>
+                </tr>
+                <tr id="DATA_ROW_11_platform:/resource/BasicTests/decorators/AgingModel.standard_initialRescalingFactor" class="idBody">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td align="left">
+                  </td>
+                  <td align="right">initialRescalingFactor:   </td>
+                  <td align="left">1.0</td>
+                </tr>
+                <tr id="DATA_ROW_12_platform:/resource/BasicTests/decorators/AgingModel.standard_birthRate" class="idBody">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td align="left">
+                  </td>
+                  <td align="right">birthRate:   </td>
+                  <td align="left">1.0E-4</td>
+                </tr>
+                <tr id="DATA_ROW_13_platform:/resource/BasicTests/decorators/AgingModel.standard_deathRate" class="idBody">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td align="left">
+                  </td>
+                  <td align="right">deathRate:   </td>
+                  <td align="left">1.0E-4</td>
+                </tr>
+                <tr id="DATA_ROW_14_platform:/resource/BasicTests/decorators/AgingModel.standard_timePeriod" class="idBody">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td align="left">
+                  </td>
+                  <td align="right">timePeriod:   </td>
+                  <td align="left">86400000</td>
+                </tr>
+                <tr id="DATA_ROW_15_platform:/resource/BasicTests/decorators/AgingModel.standard_hasMaxAge" class="idBody">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td align="left">
+                  </td>
+                  <td align="right">hasMaxAge:   </td>
+                  <td align="left">false</td>
+                </tr>
+                <tr align="center">
+                </tr>
+                <tr id="DUBLINCORE_ROW_1_platform:/resource/BasicTests/decorators/AgingModel.standard">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">identifier:   </td>
+                  <td style="width: 200px;" class="dcBody">platform:/resource/BasicTests/decorators/AgingModel.standard</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_3_platform:/resource/BasicTests/decorators/AgingModel.standard">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">creator:   </td>
+                  <td style="width: 200px;" class="dcBody">loaner25</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_5_platform:/resource/BasicTests/decorators/AgingModel.standard">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">format:   </td>
+                  <td style="width: 200px;" class="dcBody">http:///org/eclipse/stem/populationmodels/standard</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_13_platform:/resource/BasicTests/decorators/AgingModel.standard">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">type:   </td>
+                  <td style="width: 200px;" class="dcBody">stemtype://org.eclipse.stem/Identifiable</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_16_platform:/resource/BasicTests/decorators/AgingModel.standard">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">created:   </td>
+                  <td style="width: 200px;" class="dcBody">2011-05-26</td>
+                </tr>
+                <tr>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                </tr>
+                <tr id="TITLE_ROW_AgingSEIRDisease" class="idHeader">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td>
+                    <a id="TITLE_ROW_AgingSEIRDisease_toggle" null="null" onclick="toggle(this);return false;" href="#">-Decorator</a>
+                  </td>
+                  <td>AgingSEIRDisease</td>
+                  <td>MultiPopulationSEIRDiseaseModel</td>
+                </tr>
+                <tr id="DATA_ROW_0_platform:/resource/BasicTests/decorators/AgingSEIRDisease.standard_uRI" class="idBody">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td align="left">
+                  </td>
+                  <td align="right">uRI:   </td>
+                  <td align="left">platform:/resource/BasicTests/decorators/AgingSEIRDisease.standard</td>
+                </tr>
+                <tr id="DATA_ROW_1_platform:/resource/BasicTests/decorators/AgingSEIRDisease.standard_typeURI" class="idBody">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td align="left">
+                  </td>
+                  <td align="right">typeURI:   </td>
+                  <td align="left">stemtype://org.eclipse.stem/Identifiable</td>
+                </tr>
+                <tr id="DATA_ROW_5_platform:/resource/BasicTests/decorators/AgingSEIRDisease.standard_addStochasticNoise" class="idBody">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td align="left">
+                  </td>
+                  <td align="right">addStochasticNoise:   </td>
+                  <td align="left">false</td>
+                </tr>
+                <tr id="DATA_ROW_6_platform:/resource/BasicTests/decorators/AgingSEIRDisease.standard_randomSeed" class="idBody">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td align="left">
+                  </td>
+                  <td align="right">randomSeed:   </td>
+                  <td align="left">1</td>
+                </tr>
+                <tr id="DATA_ROW_8_platform:/resource/BasicTests/decorators/AgingSEIRDisease.standard_populationIdentifier" class="idBody">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td align="left">
+                  </td>
+                  <td align="right">populationIdentifier:   </td>
+                  <td align="left">human</td>
+                </tr>
+                <tr id="DATA_ROW_9_platform:/resource/BasicTests/decorators/AgingSEIRDisease.standard_timePeriod" class="idBody">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td align="left">
+                  </td>
+                  <td align="right">timePeriod:   </td>
+                  <td align="left">86400000</td>
+                </tr>
+                <tr id="DATA_ROW_10_platform:/resource/BasicTests/decorators/AgingSEIRDisease.standard_diseaseName" class="idBody">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td align="left">
+                  </td>
+                  <td align="right">diseaseName:   </td>
+                  <td align="left">AgingSEIRDisease</td>
+                </tr>
+                <tr id="DATA_ROW_11_platform:/resource/BasicTests/decorators/AgingSEIRDisease.standard_finiteDifference" class="idBody">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td align="left">
+                  </td>
+                  <td align="right">finiteDifference:   </td>
+                  <td align="left">true</td>
+                </tr>
+                <tr id="DATA_ROW_12_platform:/resource/BasicTests/decorators/AgingSEIRDisease.standard_frequencyDependent" class="idBody">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td align="left">
+                  </td>
+                  <td align="right">frequencyDependent:   </td>
+                  <td align="left">true</td>
+                </tr>
+                <tr id="DATA_ROW_13_platform:/resource/BasicTests/decorators/AgingSEIRDisease.standard_referencePopulationDensity" class="idBody">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td align="left">
+                  </td>
+                  <td align="right">referencePopulationDensity:   </td>
+                  <td align="left">100.0</td>
+                </tr>
+                <tr id="DATA_ROW_14_platform:/resource/BasicTests/decorators/AgingSEIRDisease.standard_roadNetworkInfectiousProportion" class="idBody">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td align="left">
+                  </td>
+                  <td align="right">roadNetworkInfectiousProportion:   </td>
+                  <td align="left">0.01</td>
+                </tr>
+                <tr id="DATA_ROW_15_platform:/resource/BasicTests/decorators/AgingSEIRDisease.standard_characteristicMixingDistance" class="idBody">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td align="left">
+                  </td>
+                  <td align="right">characteristicMixingDistance:   </td>
+                  <td align="left">2.25</td>
+                </tr>
+                <tr align="center">
+                </tr>
+                <tr id="DUBLINCORE_ROW_1_platform:/resource/BasicTests/decorators/AgingSEIRDisease.standard">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">identifier:   </td>
+                  <td style="width: 200px;" class="dcBody">platform:/resource/BasicTests/decorators/AgingSEIRDisease.standard</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_3_platform:/resource/BasicTests/decorators/AgingSEIRDisease.standard">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">creator:   </td>
+                  <td style="width: 200px;" class="dcBody">loaner25</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_5_platform:/resource/BasicTests/decorators/AgingSEIRDisease.standard">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">format:   </td>
+                  <td style="width: 200px;" class="dcBody">http:///org/eclipse/stem/diseasemodels/standard.ecore</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_13_platform:/resource/BasicTests/decorators/AgingSEIRDisease.standard">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">type:   </td>
+                  <td style="width: 200px;" class="dcBody">stemtype://org.eclipse.stem/Identifiable</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_16_platform:/resource/BasicTests/decorators/AgingSEIRDisease.standard">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">created:   </td>
+                  <td style="width: 200px;" class="dcBody">2011-05-26</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <table frame="box" style="text-align: left;" width="100%" cellpadding="2" border="0" cellspacing="2">
+              <tbody>
+                <tr>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;">
+                  </td>
+                  <td style="width: 100px;">
+                  </td>
+                  <td style="width: 200px;">
+                  </td>
+                  <td style="background-color: rgb(255, 255, 255);">
+                  </td>
+                </tr>
+                <tr>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                </tr>
+                <tr id="TITLE_ROW_EqyptModel" class="idHeader">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td>
+                    <a id="TITLE_ROW_EqyptModel_toggle" null="null" onclick="toggle(this);return false;" href="#">-Model</a>
+                  </td>
+                  <td>EqyptModel</td>
+                  <td>Model</td>
+                </tr>
+                <tr id="DATA_ROW_0_platform:/resource/BasicTests/models/EqyptModel.model_uRI" class="idBody">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td align="left">
+                  </td>
+                  <td align="right">uRI:   </td>
+                  <td align="left">platform:/resource/BasicTests/models/EqyptModel.model</td>
+                </tr>
+                <tr id="DATA_ROW_1_platform:/resource/BasicTests/models/EqyptModel.model_typeURI" class="idBody">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td align="left">
+                  </td>
+                  <td align="right">typeURI:   </td>
+                  <td align="left">stemtype://org.eclipse.stem/Model</td>
+                </tr>
+                <tr align="center">
+                </tr>
+                <tr id="DUBLINCORE_ROW_1_platform:/resource/BasicTests/models/EqyptModel.model">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">identifier:   </td>
+                  <td style="width: 200px;" class="dcBody">platform:/resource/BasicTests/models/EqyptModel.model</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_3_platform:/resource/BasicTests/models/EqyptModel.model">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">creator:   </td>
+                  <td style="width: 200px;" class="dcBody">edlund</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_5_platform:/resource/BasicTests/models/EqyptModel.model">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">format:   </td>
+                  <td style="width: 200px;" class="dcBody">http:///org/eclipse/stem/core/model.ecore</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_13_platform:/resource/BasicTests/models/EqyptModel.model">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">type:   </td>
+                  <td style="width: 200px;" class="dcBody">stemtype://org.eclipse.stem/Model</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_16_platform:/resource/BasicTests/models/EqyptModel.model">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">created:   </td>
+                  <td style="width: 200px;" class="dcBody">2011-01-28</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <table frame="box" style="text-align: left;" width="100%" cellpadding="2" border="0" cellspacing="2">
+              <tbody>
+                <tr>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;">
+                  </td>
+                  <td style="width: 100px;">
+                  </td>
+                  <td style="width: 200px;">
+                  </td>
+                  <td style="background-color: rgb(255, 255, 255);">
+                  </td>
+                </tr>
+                <tr>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                </tr>
+                <tr id="TITLE_ROW_EGY_0_1_2_population" class="idHeader">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td>
+                    <a id="TITLE_ROW_EGY_0_1_2_population_toggle" null="null" onclick="toggle(this);return false;" href="#">-Model</a>
+                  </td>
+                  <td>EGY_0_1_2_population</td>
+                  <td>Model</td>
+                </tr>
+                <tr id="DATA_ROW_0_platform:/plugin/org.eclipse.stem.data.geography.population.human.models/resources/data/country/EGY/EGY_0_1_2_population.model_uRI" class="idBody">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td align="left">
+                  </td>
+                  <td align="right">uRI:   </td>
+                  <td align="left">platform:/plugin/org.eclipse.stem.data.geography.population.human.models/resources/data/country/EGY/EGY_0_1_2_population.model</td>
+                </tr>
+                <tr id="DATA_ROW_1_platform:/plugin/org.eclipse.stem.data.geography.population.human.models/resources/data/country/EGY/EGY_0_1_2_population.model_typeURI" class="idBody">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td align="left">
+                  </td>
+                  <td align="right">typeURI:   </td>
+                  <td align="left">stemtype://org.eclipse.stem/Model</td>
+                </tr>
+                <tr align="center">
+                </tr>
+                <tr id="DUBLINCORE_ROW_0_platform:/plugin/org.eclipse.stem.data.geography.population.human.models/resources/data/country/EGY/EGY_0_1_2_population.model">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                    <a onclick="toggle(this);return false;" href="#">+Dublin Core</a>
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">title:   </td>
+                  <td style="width: 200px;" class="dcBody">EGY Human Population (Levels: 0,1,2)</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_1_platform:/plugin/org.eclipse.stem.data.geography.population.human.models/resources/data/country/EGY/EGY_0_1_2_population.model">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">identifier:   </td>
+                  <td style="width: 200px;" class="dcBody">platform:/plugin/org.eclipse.stem.data.geography.population.human.models/resources/data/country/EGY/EGY_0_1_2_population.model</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_2_platform:/plugin/org.eclipse.stem.data.geography.population.human.models/resources/data/country/EGY/EGY_0_1_2_population.model">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">description:   </td>
+                  <td style="width: 200px;" class="dcBody"></td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_3_platform:/plugin/org.eclipse.stem.data.geography.population.human.models/resources/data/country/EGY/EGY_0_1_2_population.model">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">creator:   </td>
+                  <td style="width: 200px;" class="dcBody">edlund</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_5_platform:/plugin/org.eclipse.stem.data.geography.population.human.models/resources/data/country/EGY/EGY_0_1_2_population.model">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">format:   </td>
+                  <td style="width: 200px;" class="dcBody">http:///org/eclipse/stem/core/model.ecore</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_7_platform:/plugin/org.eclipse.stem.data.geography.population.human.models/resources/data/country/EGY/EGY_0_1_2_population.model">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">coverage:   </td>
+                  <td style="width: 200px;" class="dcBody">EGY:0_1_2/</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_12_platform:/plugin/org.eclipse.stem.data.geography.population.human.models/resources/data/country/EGY/EGY_0_1_2_population.model">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">subject:   </td>
+                  <td style="width: 200px;" class="dcBody">Model:population</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_13_platform:/plugin/org.eclipse.stem.data.geography.population.human.models/resources/data/country/EGY/EGY_0_1_2_population.model">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">type:   </td>
+                  <td style="width: 200px;" class="dcBody">stemtype://org.eclipse.stem/Model</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_16_platform:/plugin/org.eclipse.stem.data.geography.population.human.models/resources/data/country/EGY/EGY_0_1_2_population.model">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">created:   </td>
+                  <td style="width: 200px;" class="dcBody">2013-05-31</td>
+                </tr>
+                <tr>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                </tr>
+                <tr id="TITLE_ROW_EGY_2_human_2006_population" class="idHeader">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td>
+                    <a id="TITLE_ROW_EGY_2_human_2006_population_toggle" null="null" onclick="toggle(this);return false;" href="#">-Graph</a>
+                  </td>
+                  <td>EGY_2_human_2006_population</td>
+                  <td>Graph</td>
+                </tr>
+                <tr id="DATA_ROW_0_platform:/plugin/org.eclipse.stem.data.geography.population.human/resources/data/country/EGY/EGY_2_human_2006_population.graph_uRI" class="idBody">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td align="left">
+                  </td>
+                  <td align="right">uRI:   </td>
+                  <td align="left">platform:/plugin/org.eclipse.stem.data.geography.population.human/resources/data/country/EGY/EGY_2_human_2006_population.graph</td>
+                </tr>
+                <tr id="DATA_ROW_1_platform:/plugin/org.eclipse.stem.data.geography.population.human/resources/data/country/EGY/EGY_2_human_2006_population.graph_typeURI" class="idBody">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td align="left">
+                  </td>
+                  <td align="right">typeURI:   </td>
+                  <td align="left">stemtype://org.eclipse.stem/Graph</td>
+                </tr>
+                <tr align="center">
+                </tr>
+                <tr id="DUBLINCORE_ROW_0_platform:/plugin/org.eclipse.stem.data.geography.population.human/resources/data/country/EGY/EGY_2_human_2006_population.graph">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                    <a onclick="toggle(this);return false;" href="#">+Dublin Core</a>
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">title:   </td>
+                  <td style="width: 200px;" class="dcBody">EGY (2) population</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_1_platform:/plugin/org.eclipse.stem.data.geography.population.human/resources/data/country/EGY/EGY_2_human_2006_population.graph">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">identifier:   </td>
+                  <td style="width: 200px;" class="dcBody">platform:/plugin/org.eclipse.stem.data.geography.population.human/resources/data/country/EGY/EGY_2_human_2006_population.graph</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_2_platform:/plugin/org.eclipse.stem.data.geography.population.human/resources/data/country/EGY/EGY_2_human_2006_population.graph">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">description:   </td>
+                  <td style="width: 200px;" class="dcBody"></td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_5_platform:/plugin/org.eclipse.stem.data.geography.population.human/resources/data/country/EGY/EGY_2_human_2006_population.graph">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">format:   </td>
+                  <td style="width: 200px;" class="dcBody">http:///org/eclipse/stem/core/graph.ecore</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_7_platform:/plugin/org.eclipse.stem.data.geography.population.human/resources/data/country/EGY/EGY_2_human_2006_population.graph">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">coverage:   </td>
+                  <td style="width: 200px;" class="dcBody">EGY:2/</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_11_platform:/plugin/org.eclipse.stem.data.geography.population.human/resources/data/country/EGY/EGY_2_human_2006_population.graph">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">source:   </td>
+                  <td style="width: 200px;" class="dcBody">Primary (https://www.cia.gov/library/publications/the-world-factbook/). </td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_12_platform:/plugin/org.eclipse.stem.data.geography.population.human/resources/data/country/EGY/EGY_2_human_2006_population.graph">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">subject:   </td>
+                  <td style="width: 200px;" class="dcBody">Label:population</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_13_platform:/plugin/org.eclipse.stem.data.geography.population.human/resources/data/country/EGY/EGY_2_human_2006_population.graph">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">type:   </td>
+                  <td style="width: 200px;" class="dcBody">stemtype://org.eclipse.stem/Graph</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_20_platform:/plugin/org.eclipse.stem.data.geography.population.human/resources/data/country/EGY/EGY_2_human_2006_population.graph">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">valid:   </td>
+                  <td style="width: 200px;" class="dcBody">start=2006-01-01; end=2006-12-31;</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <table frame="box" style="text-align: left;" width="100%" cellpadding="2" border="0" cellspacing="2">
+              <tbody>
+                <tr>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;">
+                  </td>
+                  <td style="width: 100px;">
+                  </td>
+                  <td style="width: 200px;">
+                  </td>
+                  <td style="background-color: rgb(255, 255, 255);">
+                  </td>
+                </tr>
+                <tr>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                </tr>
+                <tr id="TITLE_ROW_EGY_0_1_2" class="idHeader">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td>
+                    <a id="TITLE_ROW_EGY_0_1_2_toggle" null="null" onclick="toggle(this);return false;" href="#">-Model</a>
+                  </td>
+                  <td>EGY_0_1_2</td>
+                  <td>Model</td>
+                </tr>
+                <tr id="DATA_ROW_0_platform:/plugin/org.eclipse.stem.data.geography.models/resources/data/country/EGY/EGY_0_1_2.model_uRI" class="idBody">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td align="left">
+                  </td>
+                  <td align="right">uRI:   </td>
+                  <td align="left">platform:/plugin/org.eclipse.stem.data.geography.models/resources/data/country/EGY/EGY_0_1_2.model</td>
+                </tr>
+                <tr id="DATA_ROW_1_platform:/plugin/org.eclipse.stem.data.geography.models/resources/data/country/EGY/EGY_0_1_2.model_typeURI" class="idBody">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td align="left">
+                  </td>
+                  <td align="right">typeURI:   </td>
+                  <td align="left">stemtype://org.eclipse.stem/Model</td>
+                </tr>
+                <tr align="center">
+                </tr>
+                <tr id="DUBLINCORE_ROW_0_platform:/plugin/org.eclipse.stem.data.geography.models/resources/data/country/EGY/EGY_0_1_2.model">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                    <a onclick="toggle(this);return false;" href="#">+Dublin Core</a>
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">title:   </td>
+                  <td style="width: 200px;" class="dcBody">EGY Geography (Levels: 0,1,2), Common Border(2), Containment(0->1, 1->2)</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_1_platform:/plugin/org.eclipse.stem.data.geography.models/resources/data/country/EGY/EGY_0_1_2.model">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">identifier:   </td>
+                  <td style="width: 200px;" class="dcBody">platform:/plugin/org.eclipse.stem.data.geography.models/resources/data/country/EGY/EGY_0_1_2.model</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_2_platform:/plugin/org.eclipse.stem.data.geography.models/resources/data/country/EGY/EGY_0_1_2.model">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">description:   </td>
+                  <td style="width: 200px;" class="dcBody"></td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_3_platform:/plugin/org.eclipse.stem.data.geography.models/resources/data/country/EGY/EGY_0_1_2.model">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">creator:   </td>
+                  <td style="width: 200px;" class="dcBody">edlund</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_5_platform:/plugin/org.eclipse.stem.data.geography.models/resources/data/country/EGY/EGY_0_1_2.model">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">format:   </td>
+                  <td style="width: 200px;" class="dcBody">http:///org/eclipse/stem/core/model.ecore</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_7_platform:/plugin/org.eclipse.stem.data.geography.models/resources/data/country/EGY/EGY_0_1_2.model">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">coverage:   </td>
+                  <td style="width: 200px;" class="dcBody">EGY:0_1_2/</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_12_platform:/plugin/org.eclipse.stem.data.geography.models/resources/data/country/EGY/EGY_0_1_2.model">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">subject:   </td>
+                  <td style="width: 200px;" class="dcBody">Model:geography</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_13_platform:/plugin/org.eclipse.stem.data.geography.models/resources/data/country/EGY/EGY_0_1_2.model">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">type:   </td>
+                  <td style="width: 200px;" class="dcBody">stemtype://org.eclipse.stem/Model</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_16_platform:/plugin/org.eclipse.stem.data.geography.models/resources/data/country/EGY/EGY_0_1_2.model">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">created:   </td>
+                  <td style="width: 200px;" class="dcBody">2013-05-31</td>
+                </tr>
+                <tr>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                </tr>
+                <tr id="TITLE_ROW_EGY_0" class="idHeader">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td>
+                    <a id="TITLE_ROW_EGY_0_toggle" null="null" onclick="toggle(this);return false;" href="#">-Graph</a>
+                  </td>
+                  <td>EGY_0</td>
+                  <td>Graph</td>
+                </tr>
+                <tr id="DATA_ROW_0_platform:/plugin/org.eclipse.stem.data.geography/resources/data/country/EGY/EGY_0.graph_uRI" class="idBody">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td align="left">
+                  </td>
+                  <td align="right">uRI:   </td>
+                  <td align="left">platform:/plugin/org.eclipse.stem.data.geography/resources/data/country/EGY/EGY_0.graph</td>
+                </tr>
+                <tr id="DATA_ROW_1_platform:/plugin/org.eclipse.stem.data.geography/resources/data/country/EGY/EGY_0.graph_typeURI" class="idBody">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td align="left">
+                  </td>
+                  <td align="right">typeURI:   </td>
+                  <td align="left">stemtype://org.eclipse.stem/Graph</td>
+                </tr>
+                <tr align="center">
+                </tr>
+                <tr id="DUBLINCORE_ROW_0_platform:/plugin/org.eclipse.stem.data.geography/resources/data/country/EGY/EGY_0.graph">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                    <a onclick="toggle(this);return false;" href="#">+Dublin Core</a>
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">title:   </td>
+                  <td style="width: 200px;" class="dcBody">EGY(0) Nodes</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_1_platform:/plugin/org.eclipse.stem.data.geography/resources/data/country/EGY/EGY_0.graph">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">identifier:   </td>
+                  <td style="width: 200px;" class="dcBody">platform:/plugin/org.eclipse.stem.data.geography/resources/data/country/EGY/EGY_0.graph</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_2_platform:/plugin/org.eclipse.stem.data.geography/resources/data/country/EGY/EGY_0.graph">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">description:   </td>
+                  <td style="width: 200px;" class="dcBody"></td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_5_platform:/plugin/org.eclipse.stem.data.geography/resources/data/country/EGY/EGY_0.graph">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">format:   </td>
+                  <td style="width: 200px;" class="dcBody">http:///org/eclipse/stem/core/graph.ecore</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_7_platform:/plugin/org.eclipse.stem.data.geography/resources/data/country/EGY/EGY_0.graph">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">coverage:   </td>
+                  <td style="width: 200px;" class="dcBody">EGY:0/</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_11_platform:/plugin/org.eclipse.stem.data.geography/resources/data/country/EGY/EGY_0.graph">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">source:   </td>
+                  <td style="width: 200px;" class="dcBody">http://www.iso.org/iso/home.htm</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_12_platform:/plugin/org.eclipse.stem.data.geography/resources/data/country/EGY/EGY_0.graph">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">subject:   </td>
+                  <td style="width: 200px;" class="dcBody">Node:region</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_13_platform:/plugin/org.eclipse.stem.data.geography/resources/data/country/EGY/EGY_0.graph">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">type:   </td>
+                  <td style="width: 200px;" class="dcBody">stemtype://org.eclipse.stem/Graph</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_19_platform:/plugin/org.eclipse.stem.data.geography/resources/data/country/EGY/EGY_0.graph">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">spatial:   </td>
+                  <td style="width: 200px;" class="dcBody">platform:/plugin/org.eclipse.stem.data.geography/resources/data/geo/country/EGY/EGY_0_MAP.xml</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_20_platform:/plugin/org.eclipse.stem.data.geography/resources/data/country/EGY/EGY_0.graph">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">valid:   </td>
+                  <td style="width: 200px;" class="dcBody">start=1900-01-01;</td>
+                </tr>
+                <tr>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                </tr>
+                <tr id="TITLE_ROW_EGY_1" class="idHeader">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td>
+                    <a id="TITLE_ROW_EGY_1_toggle" null="null" onclick="toggle(this);return false;" href="#">-Graph</a>
+                  </td>
+                  <td>EGY_1</td>
+                  <td>Graph</td>
+                </tr>
+                <tr id="DATA_ROW_0_platform:/plugin/org.eclipse.stem.data.geography/resources/data/country/EGY/EGY_1.graph_uRI" class="idBody">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td align="left">
+                  </td>
+                  <td align="right">uRI:   </td>
+                  <td align="left">platform:/plugin/org.eclipse.stem.data.geography/resources/data/country/EGY/EGY_1.graph</td>
+                </tr>
+                <tr id="DATA_ROW_1_platform:/plugin/org.eclipse.stem.data.geography/resources/data/country/EGY/EGY_1.graph_typeURI" class="idBody">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td align="left">
+                  </td>
+                  <td align="right">typeURI:   </td>
+                  <td align="left">stemtype://org.eclipse.stem/Graph</td>
+                </tr>
+                <tr align="center">
+                </tr>
+                <tr id="DUBLINCORE_ROW_0_platform:/plugin/org.eclipse.stem.data.geography/resources/data/country/EGY/EGY_1.graph">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                    <a onclick="toggle(this);return false;" href="#">+Dublin Core</a>
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">title:   </td>
+                  <td style="width: 200px;" class="dcBody">EGY(1) Nodes</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_1_platform:/plugin/org.eclipse.stem.data.geography/resources/data/country/EGY/EGY_1.graph">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">identifier:   </td>
+                  <td style="width: 200px;" class="dcBody">platform:/plugin/org.eclipse.stem.data.geography/resources/data/country/EGY/EGY_1.graph</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_2_platform:/plugin/org.eclipse.stem.data.geography/resources/data/country/EGY/EGY_1.graph">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">description:   </td>
+                  <td style="width: 200px;" class="dcBody"></td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_5_platform:/plugin/org.eclipse.stem.data.geography/resources/data/country/EGY/EGY_1.graph">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">format:   </td>
+                  <td style="width: 200px;" class="dcBody">http:///org/eclipse/stem/core/graph.ecore</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_7_platform:/plugin/org.eclipse.stem.data.geography/resources/data/country/EGY/EGY_1.graph">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">coverage:   </td>
+                  <td style="width: 200px;" class="dcBody">EGY:1/</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_11_platform:/plugin/org.eclipse.stem.data.geography/resources/data/country/EGY/EGY_1.graph">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">source:   </td>
+                  <td style="width: 200px;" class="dcBody">http://www.iso.org/iso/home.htm</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_12_platform:/plugin/org.eclipse.stem.data.geography/resources/data/country/EGY/EGY_1.graph">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">subject:   </td>
+                  <td style="width: 200px;" class="dcBody">Node:region</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_13_platform:/plugin/org.eclipse.stem.data.geography/resources/data/country/EGY/EGY_1.graph">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">type:   </td>
+                  <td style="width: 200px;" class="dcBody">stemtype://org.eclipse.stem/Graph</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_19_platform:/plugin/org.eclipse.stem.data.geography/resources/data/country/EGY/EGY_1.graph">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">spatial:   </td>
+                  <td style="width: 200px;" class="dcBody">platform:/plugin/org.eclipse.stem.data.geography/resources/data/geo/country/EGY/EGY_1_MAP.xml</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_20_platform:/plugin/org.eclipse.stem.data.geography/resources/data/country/EGY/EGY_1.graph">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">valid:   </td>
+                  <td style="width: 200px;" class="dcBody">start=1900-01-01;</td>
+                </tr>
+                <tr>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                </tr>
+                <tr id="TITLE_ROW_EGY_2" class="idHeader">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td>
+                    <a id="TITLE_ROW_EGY_2_toggle" null="null" onclick="toggle(this);return false;" href="#">-Graph</a>
+                  </td>
+                  <td>EGY_2</td>
+                  <td>Graph</td>
+                </tr>
+                <tr id="DATA_ROW_0_platform:/plugin/org.eclipse.stem.data.geography/resources/data/country/EGY/EGY_2.graph_uRI" class="idBody">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td align="left">
+                  </td>
+                  <td align="right">uRI:   </td>
+                  <td align="left">platform:/plugin/org.eclipse.stem.data.geography/resources/data/country/EGY/EGY_2.graph</td>
+                </tr>
+                <tr id="DATA_ROW_1_platform:/plugin/org.eclipse.stem.data.geography/resources/data/country/EGY/EGY_2.graph_typeURI" class="idBody">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td align="left">
+                  </td>
+                  <td align="right">typeURI:   </td>
+                  <td align="left">stemtype://org.eclipse.stem/Graph</td>
+                </tr>
+                <tr align="center">
+                </tr>
+                <tr id="DUBLINCORE_ROW_0_platform:/plugin/org.eclipse.stem.data.geography/resources/data/country/EGY/EGY_2.graph">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                    <a onclick="toggle(this);return false;" href="#">+Dublin Core</a>
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">title:   </td>
+                  <td style="width: 200px;" class="dcBody">EGY(2) Nodes</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_1_platform:/plugin/org.eclipse.stem.data.geography/resources/data/country/EGY/EGY_2.graph">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">identifier:   </td>
+                  <td style="width: 200px;" class="dcBody">platform:/plugin/org.eclipse.stem.data.geography/resources/data/country/EGY/EGY_2.graph</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_2_platform:/plugin/org.eclipse.stem.data.geography/resources/data/country/EGY/EGY_2.graph">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">description:   </td>
+                  <td style="width: 200px;" class="dcBody"></td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_5_platform:/plugin/org.eclipse.stem.data.geography/resources/data/country/EGY/EGY_2.graph">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">format:   </td>
+                  <td style="width: 200px;" class="dcBody">http:///org/eclipse/stem/core/graph.ecore</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_7_platform:/plugin/org.eclipse.stem.data.geography/resources/data/country/EGY/EGY_2.graph">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">coverage:   </td>
+                  <td style="width: 200px;" class="dcBody">EGY:2/</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_11_platform:/plugin/org.eclipse.stem.data.geography/resources/data/country/EGY/EGY_2.graph">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">source:   </td>
+                  <td style="width: 200px;" class="dcBody">http://www.iso.org/iso/home.htm</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_12_platform:/plugin/org.eclipse.stem.data.geography/resources/data/country/EGY/EGY_2.graph">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">subject:   </td>
+                  <td style="width: 200px;" class="dcBody">Node:region</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_13_platform:/plugin/org.eclipse.stem.data.geography/resources/data/country/EGY/EGY_2.graph">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">type:   </td>
+                  <td style="width: 200px;" class="dcBody">stemtype://org.eclipse.stem/Graph</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_19_platform:/plugin/org.eclipse.stem.data.geography/resources/data/country/EGY/EGY_2.graph">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">spatial:   </td>
+                  <td style="width: 200px;" class="dcBody">platform:/plugin/org.eclipse.stem.data.geography/resources/data/geo/country/EGY/EGY_2_MAP.xml</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_20_platform:/plugin/org.eclipse.stem.data.geography/resources/data/country/EGY/EGY_2.graph">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">valid:   </td>
+                  <td style="width: 200px;" class="dcBody">start=1900-01-01;</td>
+                </tr>
+                <tr>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                </tr>
+                <tr id="TITLE_ROW_EGY_0_area" class="idHeader">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td>
+                    <a id="TITLE_ROW_EGY_0_area_toggle" null="null" onclick="toggle(this);return false;" href="#">-Graph</a>
+                  </td>
+                  <td>EGY_0_area</td>
+                  <td>Graph</td>
+                </tr>
+                <tr id="DATA_ROW_0_platform:/plugin/org.eclipse.stem.data.geography/resources/data/country/EGY/EGY_0_area.graph_uRI" class="idBody">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td align="left">
+                  </td>
+                  <td align="right">uRI:   </td>
+                  <td align="left">platform:/plugin/org.eclipse.stem.data.geography/resources/data/country/EGY/EGY_0_area.graph</td>
+                </tr>
+                <tr id="DATA_ROW_1_platform:/plugin/org.eclipse.stem.data.geography/resources/data/country/EGY/EGY_0_area.graph_typeURI" class="idBody">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td align="left">
+                  </td>
+                  <td align="right">typeURI:   </td>
+                  <td align="left">stemtype://org.eclipse.stem/Graph</td>
+                </tr>
+                <tr align="center">
+                </tr>
+                <tr id="DUBLINCORE_ROW_0_platform:/plugin/org.eclipse.stem.data.geography/resources/data/country/EGY/EGY_0_area.graph">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                    <a onclick="toggle(this);return false;" href="#">+Dublin Core</a>
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">title:   </td>
+                  <td style="width: 200px;" class="dcBody">EGY (0) area</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_1_platform:/plugin/org.eclipse.stem.data.geography/resources/data/country/EGY/EGY_0_area.graph">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">identifier:   </td>
+                  <td style="width: 200px;" class="dcBody">platform:/plugin/org.eclipse.stem.data.geography/resources/data/country/EGY/EGY_0_area.graph</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_2_platform:/plugin/org.eclipse.stem.data.geography/resources/data/country/EGY/EGY_0_area.graph">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">description:   </td>
+                  <td style="width: 200px;" class="dcBody"></td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_5_platform:/plugin/org.eclipse.stem.data.geography/resources/data/country/EGY/EGY_0_area.graph">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">format:   </td>
+                  <td style="width: 200px;" class="dcBody">http:///org/eclipse/stem/core/graph.ecore</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_7_platform:/plugin/org.eclipse.stem.data.geography/resources/data/country/EGY/EGY_0_area.graph">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">coverage:   </td>
+                  <td style="width: 200px;" class="dcBody">EGY:0/</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_11_platform:/plugin/org.eclipse.stem.data.geography/resources/data/country/EGY/EGY_0_area.graph">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">source:   </td>
+                  <td style="width: 200px;" class="dcBody">https://www.cia.gov/cia/publications/factbook/geos/eg.html</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_12_platform:/plugin/org.eclipse.stem.data.geography/resources/data/country/EGY/EGY_0_area.graph">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">subject:   </td>
+                  <td style="width: 200px;" class="dcBody">Label:area</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_13_platform:/plugin/org.eclipse.stem.data.geography/resources/data/country/EGY/EGY_0_area.graph">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">type:   </td>
+                  <td style="width: 200px;" class="dcBody">stemtype://org.eclipse.stem/Graph</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_20_platform:/plugin/org.eclipse.stem.data.geography/resources/data/country/EGY/EGY_0_area.graph">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">valid:   </td>
+                  <td style="width: 200px;" class="dcBody">start=1900-01-01;</td>
+                </tr>
+                <tr>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                </tr>
+                <tr id="TITLE_ROW_EGY_1_area" class="idHeader">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td>
+                    <a id="TITLE_ROW_EGY_1_area_toggle" null="null" onclick="toggle(this);return false;" href="#">-Graph</a>
+                  </td>
+                  <td>EGY_1_area</td>
+                  <td>Graph</td>
+                </tr>
+                <tr id="DATA_ROW_0_platform:/plugin/org.eclipse.stem.data.geography/resources/data/country/EGY/EGY_1_area.graph_uRI" class="idBody">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td align="left">
+                  </td>
+                  <td align="right">uRI:   </td>
+                  <td align="left">platform:/plugin/org.eclipse.stem.data.geography/resources/data/country/EGY/EGY_1_area.graph</td>
+                </tr>
+                <tr id="DATA_ROW_1_platform:/plugin/org.eclipse.stem.data.geography/resources/data/country/EGY/EGY_1_area.graph_typeURI" class="idBody">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td align="left">
+                  </td>
+                  <td align="right">typeURI:   </td>
+                  <td align="left">stemtype://org.eclipse.stem/Graph</td>
+                </tr>
+                <tr align="center">
+                </tr>
+                <tr id="DUBLINCORE_ROW_0_platform:/plugin/org.eclipse.stem.data.geography/resources/data/country/EGY/EGY_1_area.graph">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                    <a onclick="toggle(this);return false;" href="#">+Dublin Core</a>
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">title:   </td>
+                  <td style="width: 200px;" class="dcBody">EGY (1) area</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_1_platform:/plugin/org.eclipse.stem.data.geography/resources/data/country/EGY/EGY_1_area.graph">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">identifier:   </td>
+                  <td style="width: 200px;" class="dcBody">platform:/plugin/org.eclipse.stem.data.geography/resources/data/country/EGY/EGY_1_area.graph</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_2_platform:/plugin/org.eclipse.stem.data.geography/resources/data/country/EGY/EGY_1_area.graph">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">description:   </td>
+                  <td style="width: 200px;" class="dcBody"></td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_5_platform:/plugin/org.eclipse.stem.data.geography/resources/data/country/EGY/EGY_1_area.graph">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">format:   </td>
+                  <td style="width: 200px;" class="dcBody">http:///org/eclipse/stem/core/graph.ecore</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_7_platform:/plugin/org.eclipse.stem.data.geography/resources/data/country/EGY/EGY_1_area.graph">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">coverage:   </td>
+                  <td style="width: 200px;" class="dcBody">EGY:1/</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_11_platform:/plugin/org.eclipse.stem.data.geography/resources/data/country/EGY/EGY_1_area.graph">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">source:   </td>
+                  <td style="width: 200px;" class="dcBody">https://www.cia.gov/library/publications/the-world-factbook/</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_12_platform:/plugin/org.eclipse.stem.data.geography/resources/data/country/EGY/EGY_1_area.graph">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">subject:   </td>
+                  <td style="width: 200px;" class="dcBody">Label:area</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_13_platform:/plugin/org.eclipse.stem.data.geography/resources/data/country/EGY/EGY_1_area.graph">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">type:   </td>
+                  <td style="width: 200px;" class="dcBody">stemtype://org.eclipse.stem/Graph</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_20_platform:/plugin/org.eclipse.stem.data.geography/resources/data/country/EGY/EGY_1_area.graph">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">valid:   </td>
+                  <td style="width: 200px;" class="dcBody">start=1900-01-01;</td>
+                </tr>
+                <tr>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                </tr>
+                <tr id="TITLE_ROW_EGY_2_area" class="idHeader">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td>
+                    <a id="TITLE_ROW_EGY_2_area_toggle" null="null" onclick="toggle(this);return false;" href="#">-Graph</a>
+                  </td>
+                  <td>EGY_2_area</td>
+                  <td>Graph</td>
+                </tr>
+                <tr id="DATA_ROW_0_platform:/plugin/org.eclipse.stem.data.geography/resources/data/country/EGY/EGY_2_area.graph_uRI" class="idBody">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td align="left">
+                  </td>
+                  <td align="right">uRI:   </td>
+                  <td align="left">platform:/plugin/org.eclipse.stem.data.geography/resources/data/country/EGY/EGY_2_area.graph</td>
+                </tr>
+                <tr id="DATA_ROW_1_platform:/plugin/org.eclipse.stem.data.geography/resources/data/country/EGY/EGY_2_area.graph_typeURI" class="idBody">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td align="left">
+                  </td>
+                  <td align="right">typeURI:   </td>
+                  <td align="left">stemtype://org.eclipse.stem/Graph</td>
+                </tr>
+                <tr align="center">
+                </tr>
+                <tr id="DUBLINCORE_ROW_0_platform:/plugin/org.eclipse.stem.data.geography/resources/data/country/EGY/EGY_2_area.graph">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                    <a onclick="toggle(this);return false;" href="#">+Dublin Core</a>
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">title:   </td>
+                  <td style="width: 200px;" class="dcBody">EGY (2) area</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_1_platform:/plugin/org.eclipse.stem.data.geography/resources/data/country/EGY/EGY_2_area.graph">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">identifier:   </td>
+                  <td style="width: 200px;" class="dcBody">platform:/plugin/org.eclipse.stem.data.geography/resources/data/country/EGY/EGY_2_area.graph</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_2_platform:/plugin/org.eclipse.stem.data.geography/resources/data/country/EGY/EGY_2_area.graph">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">description:   </td>
+                  <td style="width: 200px;" class="dcBody"></td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_5_platform:/plugin/org.eclipse.stem.data.geography/resources/data/country/EGY/EGY_2_area.graph">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">format:   </td>
+                  <td style="width: 200px;" class="dcBody">http:///org/eclipse/stem/core/graph.ecore</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_7_platform:/plugin/org.eclipse.stem.data.geography/resources/data/country/EGY/EGY_2_area.graph">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">coverage:   </td>
+                  <td style="width: 200px;" class="dcBody">EGY:2/</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_11_platform:/plugin/org.eclipse.stem.data.geography/resources/data/country/EGY/EGY_2_area.graph">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">source:   </td>
+                  <td style="width: 200px;" class="dcBody">https://www.cia.gov/library/publications/the-world-factbook/</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_12_platform:/plugin/org.eclipse.stem.data.geography/resources/data/country/EGY/EGY_2_area.graph">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">subject:   </td>
+                  <td style="width: 200px;" class="dcBody">Label:area</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_13_platform:/plugin/org.eclipse.stem.data.geography/resources/data/country/EGY/EGY_2_area.graph">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">type:   </td>
+                  <td style="width: 200px;" class="dcBody">stemtype://org.eclipse.stem/Graph</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_20_platform:/plugin/org.eclipse.stem.data.geography/resources/data/country/EGY/EGY_2_area.graph">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">valid:   </td>
+                  <td style="width: 200px;" class="dcBody">start=1900-01-01;</td>
+                </tr>
+                <tr>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                </tr>
+                <tr id="TITLE_ROW_EGY_2_EGY_2" class="idHeader">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td>
+                    <a id="TITLE_ROW_EGY_2_EGY_2_toggle" null="null" onclick="toggle(this);return false;" href="#">-Graph</a>
+                  </td>
+                  <td>EGY_2_EGY_2</td>
+                  <td>Graph</td>
+                </tr>
+                <tr id="DATA_ROW_0_platform:/plugin/org.eclipse.stem.data.geography/resources/data/relationship/commonborder/EGY_2_EGY_2.graph_uRI" class="idBody">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td align="left">
+                  </td>
+                  <td align="right">uRI:   </td>
+                  <td align="left">platform:/plugin/org.eclipse.stem.data.geography/resources/data/relationship/commonborder/EGY_2_EGY_2.graph</td>
+                </tr>
+                <tr id="DATA_ROW_1_platform:/plugin/org.eclipse.stem.data.geography/resources/data/relationship/commonborder/EGY_2_EGY_2.graph_typeURI" class="idBody">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td align="left">
+                  </td>
+                  <td align="right">typeURI:   </td>
+                  <td align="left">stemtype://org.eclipse.stem/Graph</td>
+                </tr>
+                <tr align="center">
+                </tr>
+                <tr id="DUBLINCORE_ROW_0_platform:/plugin/org.eclipse.stem.data.geography/resources/data/relationship/commonborder/EGY_2_EGY_2.graph">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                    <a onclick="toggle(this);return false;" href="#">+Dublin Core</a>
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">title:   </td>
+                  <td style="width: 200px;" class="dcBody">Common Border relationship within country EGY</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_1_platform:/plugin/org.eclipse.stem.data.geography/resources/data/relationship/commonborder/EGY_2_EGY_2.graph">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">identifier:   </td>
+                  <td style="width: 200px;" class="dcBody">platform:/plugin/org.eclipse.stem.data.geography/resources/data/relationship/commonborder/EGY_2_EGY_2.graph</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_2_platform:/plugin/org.eclipse.stem.data.geography/resources/data/relationship/commonborder/EGY_2_EGY_2.graph">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">description:   </td>
+                  <td style="width: 200px;" class="dcBody"></td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_5_platform:/plugin/org.eclipse.stem.data.geography/resources/data/relationship/commonborder/EGY_2_EGY_2.graph">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">format:   </td>
+                  <td style="width: 200px;" class="dcBody">http:///org/eclipse/stem/core/graph.ecore</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_7_platform:/plugin/org.eclipse.stem.data.geography/resources/data/relationship/commonborder/EGY_2_EGY_2.graph">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">coverage:   </td>
+                  <td style="width: 200px;" class="dcBody">EGY:2/</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_12_platform:/plugin/org.eclipse.stem.data.geography/resources/data/relationship/commonborder/EGY_2_EGY_2.graph">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">subject:   </td>
+                  <td style="width: 200px;" class="dcBody">Edge:commonborder</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_13_platform:/plugin/org.eclipse.stem.data.geography/resources/data/relationship/commonborder/EGY_2_EGY_2.graph">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">type:   </td>
+                  <td style="width: 200px;" class="dcBody">stemtype://org.eclipse.stem/Graph</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_20_platform:/plugin/org.eclipse.stem.data.geography/resources/data/relationship/commonborder/EGY_2_EGY_2.graph">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">valid:   </td>
+                  <td style="width: 200px;" class="dcBody">start=2006-01-01;</td>
+                </tr>
+                <tr>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                </tr>
+                <tr id="TITLE_ROW_EGY_0_EGY_1" class="idHeader">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td>
+                    <a id="TITLE_ROW_EGY_0_EGY_1_toggle" null="null" onclick="toggle(this);return false;" href="#">-Graph</a>
+                  </td>
+                  <td>EGY_0_EGY_1</td>
+                  <td>Graph</td>
+                </tr>
+                <tr id="DATA_ROW_0_platform:/plugin/org.eclipse.stem.data.geography/resources/data/relationship/relativephysical/EGY_0_EGY_1.graph_uRI" class="idBody">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td align="left">
+                  </td>
+                  <td align="right">uRI:   </td>
+                  <td align="left">platform:/plugin/org.eclipse.stem.data.geography/resources/data/relationship/relativephysical/EGY_0_EGY_1.graph</td>
+                </tr>
+                <tr id="DATA_ROW_1_platform:/plugin/org.eclipse.stem.data.geography/resources/data/relationship/relativephysical/EGY_0_EGY_1.graph_typeURI" class="idBody">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td align="left">
+                  </td>
+                  <td align="right">typeURI:   </td>
+                  <td align="left">stemtype://org.eclipse.stem/Graph</td>
+                </tr>
+                <tr align="center">
+                </tr>
+                <tr id="DUBLINCORE_ROW_0_platform:/plugin/org.eclipse.stem.data.geography/resources/data/relationship/relativephysical/EGY_0_EGY_1.graph">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                    <a onclick="toggle(this);return false;" href="#">+Dublin Core</a>
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">title:   </td>
+                  <td style="width: 200px;" class="dcBody">Physical containment of EGY level (1) by EGY (0)</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_1_platform:/plugin/org.eclipse.stem.data.geography/resources/data/relationship/relativephysical/EGY_0_EGY_1.graph">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">identifier:   </td>
+                  <td style="width: 200px;" class="dcBody">platform:/plugin/org.eclipse.stem.data.geography/resources/data/relationship/relativephysical/EGY_0_EGY_1.graph</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_2_platform:/plugin/org.eclipse.stem.data.geography/resources/data/relationship/relativephysical/EGY_0_EGY_1.graph">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">description:   </td>
+                  <td style="width: 200px;" class="dcBody"></td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_5_platform:/plugin/org.eclipse.stem.data.geography/resources/data/relationship/relativephysical/EGY_0_EGY_1.graph">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">format:   </td>
+                  <td style="width: 200px;" class="dcBody">http:///org/eclipse/stem/core/graph.ecore</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_7_platform:/plugin/org.eclipse.stem.data.geography/resources/data/relationship/relativephysical/EGY_0_EGY_1.graph">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">coverage:   </td>
+                  <td style="width: 200px;" class="dcBody">EGY:0_1/</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_11_platform:/plugin/org.eclipse.stem.data.geography/resources/data/relationship/relativephysical/EGY_0_EGY_1.graph">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">source:   </td>
+                  <td style="width: 200px;" class="dcBody">http://www.ibm.com</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_12_platform:/plugin/org.eclipse.stem.data.geography/resources/data/relationship/relativephysical/EGY_0_EGY_1.graph">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">subject:   </td>
+                  <td style="width: 200px;" class="dcBody">Edge:relativephysical</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_13_platform:/plugin/org.eclipse.stem.data.geography/resources/data/relationship/relativephysical/EGY_0_EGY_1.graph">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">type:   </td>
+                  <td style="width: 200px;" class="dcBody">stemtype://org.eclipse.stem/Graph</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_20_platform:/plugin/org.eclipse.stem.data.geography/resources/data/relationship/relativephysical/EGY_0_EGY_1.graph">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">valid:   </td>
+                  <td style="width: 200px;" class="dcBody">start=1900-01-01;</td>
+                </tr>
+                <tr>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                </tr>
+                <tr id="TITLE_ROW_EGY_1_EGY_2" class="idHeader">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td>
+                    <a id="TITLE_ROW_EGY_1_EGY_2_toggle" null="null" onclick="toggle(this);return false;" href="#">-Graph</a>
+                  </td>
+                  <td>EGY_1_EGY_2</td>
+                  <td>Graph</td>
+                </tr>
+                <tr id="DATA_ROW_0_platform:/plugin/org.eclipse.stem.data.geography/resources/data/relationship/relativephysical/EGY_1_EGY_2.graph_uRI" class="idBody">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td align="left">
+                  </td>
+                  <td align="right">uRI:   </td>
+                  <td align="left">platform:/plugin/org.eclipse.stem.data.geography/resources/data/relationship/relativephysical/EGY_1_EGY_2.graph</td>
+                </tr>
+                <tr id="DATA_ROW_1_platform:/plugin/org.eclipse.stem.data.geography/resources/data/relationship/relativephysical/EGY_1_EGY_2.graph_typeURI" class="idBody">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td align="left">
+                  </td>
+                  <td align="right">typeURI:   </td>
+                  <td align="left">stemtype://org.eclipse.stem/Graph</td>
+                </tr>
+                <tr align="center">
+                </tr>
+                <tr id="DUBLINCORE_ROW_0_platform:/plugin/org.eclipse.stem.data.geography/resources/data/relationship/relativephysical/EGY_1_EGY_2.graph">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                    <a onclick="toggle(this);return false;" href="#">+Dublin Core</a>
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">title:   </td>
+                  <td style="width: 200px;" class="dcBody">Physical containment of EGY level (2) by EGY (1)</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_1_platform:/plugin/org.eclipse.stem.data.geography/resources/data/relationship/relativephysical/EGY_1_EGY_2.graph">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">identifier:   </td>
+                  <td style="width: 200px;" class="dcBody">platform:/plugin/org.eclipse.stem.data.geography/resources/data/relationship/relativephysical/EGY_1_EGY_2.graph</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_2_platform:/plugin/org.eclipse.stem.data.geography/resources/data/relationship/relativephysical/EGY_1_EGY_2.graph">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">description:   </td>
+                  <td style="width: 200px;" class="dcBody"></td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_5_platform:/plugin/org.eclipse.stem.data.geography/resources/data/relationship/relativephysical/EGY_1_EGY_2.graph">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">format:   </td>
+                  <td style="width: 200px;" class="dcBody">http:///org/eclipse/stem/core/graph.ecore</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_7_platform:/plugin/org.eclipse.stem.data.geography/resources/data/relationship/relativephysical/EGY_1_EGY_2.graph">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">coverage:   </td>
+                  <td style="width: 200px;" class="dcBody">EGY:1_2/</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_11_platform:/plugin/org.eclipse.stem.data.geography/resources/data/relationship/relativephysical/EGY_1_EGY_2.graph">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">source:   </td>
+                  <td style="width: 200px;" class="dcBody">http://www.ibm.com</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_12_platform:/plugin/org.eclipse.stem.data.geography/resources/data/relationship/relativephysical/EGY_1_EGY_2.graph">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">subject:   </td>
+                  <td style="width: 200px;" class="dcBody">Edge:relativephysical</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_13_platform:/plugin/org.eclipse.stem.data.geography/resources/data/relationship/relativephysical/EGY_1_EGY_2.graph">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">type:   </td>
+                  <td style="width: 200px;" class="dcBody">stemtype://org.eclipse.stem/Graph</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_20_platform:/plugin/org.eclipse.stem.data.geography/resources/data/relationship/relativephysical/EGY_1_EGY_2.graph">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">valid:   </td>
+                  <td style="width: 200px;" class="dcBody">start=1900-01-01;</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

@@ -1,0 +1,925 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="vector"
+    nsURI="http:///org/eclipse/stem/diseasemodels/vector.ecore" nsPrefix="org.eclipse.stem.diseasemodels.vector">
+  <eAnnotations source="http:///org/eclipse/stem/modelgen/generated">
+    <details key="version" value="1.0"/>
+  </eAnnotations>
+  <eClassifiers xsi:type="ecore:EClass" name="MacdonaldRossDiseaseModel" eSuperTypes="#//VectorDiseaseModel">
+    <eAnnotations source="http:///org/eclipse/stem/modelgen/generated">
+      <details key="version" value="1.0"/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/stem/modelgen/model/label">
+      <details key="*" value="SEIRLabel"/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/stem/modelgen/model/labelvalue">
+      <details key="*" value="SEIRLabelValue"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="bitingRate" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="0.5">
+      <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/constraints">
+        <details key="minValue" value="0"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="infectiousBitingProportionHuman"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="0.5">
+        <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/constraints">
+        	<details key="minValue" value="0"/>
+        	<details key="maxValue" value="1"/>
+      </eAnnotations>
+    </eStructuralFeatures> 
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="infectiousBitingProportionVector"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="1.0">
+        <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/constraints">
+        	<details key="minValue" value="0"/>
+        	<details key="maxValue" value="1"/>
+    	</eAnnotations>
+    </eStructuralFeatures> 
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="recoveryRate" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="3.33E-3">
+        <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/constraints">
+        	<details key="minValue" value="0"/>
+    	</eAnnotations>
+    </eStructuralFeatures> 
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="incubationRate" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="0.0625">
+         <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/constraints">
+        	<details key="minValue" value="0"/>
+    	</eAnnotations>
+    </eStructuralFeatures> 
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="vectorIncubationRate" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="0.1">
+         <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/constraints">
+        	<details key="minValue" value="0"/>
+    	</eAnnotations>
+    </eStructuralFeatures> 
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="immunityLossRate" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="0.02">
+         <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/constraints">
+        	<details key="minValue" value="0"/>
+    	</eAnnotations>
+    </eStructuralFeatures> 
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="VectorDiseaseModel" abstract="true"
+      eSuperTypes="../../org.eclipse.stem.diseasemodels/model/standard.ecore#//StandardDiseaseModel">
+    <eAnnotations source="http:///org/eclipse/stem/modelgen/generated">
+      <details key="version" value="1.0"/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/stem/modelgen/model/label">
+      <details key="*" value="StandardDiseaseModelLabel"/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/stem/modelgen/model/labelvalue">
+      <details key="*" value="StandardDiseaseModelLabelValue"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="vectorPopulationIdentifier"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"
+        defaultValueLiteral="anopheles"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DengueModel" eSuperTypes="#//AbstractDengueModel">
+    <eAnnotations source="http:///org/eclipse/stem/modelgen/generated">
+      <details key="version" value="1.0"/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/stem/modelgen/model/label">
+      <details key="*" value="DengueModelHostLabel"/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/stem/modelgen/model/labelvalue">
+      <details key="*" value="DengueModelHostLabelValue"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="bitingRateSV" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="1">
+        <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/constraints">
+        	<details key="minValue" value="0"/>
+    	</eAnnotations>
+    </eStructuralFeatures> 
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="bitingRateIV" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="1">
+        <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/constraints">
+        	<details key="minValue" value="0"/>
+    	</eAnnotations>
+    </eStructuralFeatures> 
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hostInfectivity1" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="0.5">
+        <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/constraints">
+        	<details key="minValue" value="0"/>
+        	<details key="maxValue" value="1"/>
+    	</eAnnotations>
+    </eStructuralFeatures> 
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hostInfectivity2" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="0.5">
+         <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/constraints">
+        	<details key="minValue" value="0"/>
+        	<details key="maxValue" value="1"/>
+    	</eAnnotations>
+    </eStructuralFeatures> 
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hostInfectivity3" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="0.5">
+         <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/constraints">
+        	<details key="minValue" value="0"/>
+        	<details key="maxValue" value="1"/>
+    	</eAnnotations>
+    </eStructuralFeatures> 
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hostInfectivity4" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="0.5">
+         <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/constraints">
+        	<details key="minValue" value="0"/>
+        	<details key="maxValue" value="1"/>
+    	</eAnnotations>
+    </eStructuralFeatures> 
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hostPrimaryIncubationRate1"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="0.2">
+        <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/constraints">
+        	<details key="minValue" value="0"/>
+    	</eAnnotations>
+    </eStructuralFeatures> 
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hostPrimaryIncubationRate2"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="0.2">
+        <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/constraints">
+        	<details key="minValue" value="0"/>
+    	</eAnnotations>
+    </eStructuralFeatures> 
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hostPrimaryIncubationRate3"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="0.2">
+        <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/constraints">
+        	<details key="minValue" value="0"/>
+    	</eAnnotations>
+    </eStructuralFeatures> 
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hostPrimaryIncubationRate4"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="0.2">
+        <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/constraints">
+        	<details key="minValue" value="0"/>
+    	</eAnnotations>
+    </eStructuralFeatures> 
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hostPrimaryRecoveryRate1"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="0.14">
+        <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/constraints">
+        	<details key="minValue" value="0"/>
+    	</eAnnotations>
+    </eStructuralFeatures> 
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hostPrimaryRecoveryRate2"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="0.14">
+        <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/constraints">
+        	<details key="minValue" value="0"/>
+    	</eAnnotations>
+    </eStructuralFeatures> 
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hostPrimaryRecoveryRate3"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="0.14">
+        <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/constraints">
+        	<details key="minValue" value="0"/>
+    	</eAnnotations>
+    </eStructuralFeatures> 
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hostPrimaryRecoveryRate4"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="0.14">
+        <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/constraints">
+        	<details key="minValue" value="0"/>
+    	</eAnnotations>
+    </eStructuralFeatures> 
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hostPrimaryImmunityLossRate1"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="0.024">
+        <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/constraints">
+        	<details key="minValue" value="0"/>
+    	</eAnnotations>
+    </eStructuralFeatures> 
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hostPrimaryImmunityLossRate2"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="0.024">
+        <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/constraints">
+        	<details key="minValue" value="0"/>
+    	</eAnnotations>
+    </eStructuralFeatures> 
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hostPrimaryImmunityLossRate3"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="0.024">
+        <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/constraints">
+        	<details key="minValue" value="0"/>
+    	</eAnnotations>
+    </eStructuralFeatures> 
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hostPrimaryImmunityLossRate4"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="0.024">
+        <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/constraints">
+        	<details key="minValue" value="0"/>
+    	</eAnnotations>
+    </eStructuralFeatures> 
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hostPrimaryDiseaseDeathRate1"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="0.0000001">
+        <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/constraints">
+        	<details key="minValue" value="0"/>
+    	</eAnnotations>
+    </eStructuralFeatures> 
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hostPrimaryDiseaseDeathRate2"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="0.0000001">
+        <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/constraints">
+        	<details key="minValue" value="0"/>
+    	</eAnnotations>
+    </eStructuralFeatures> 
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hostPrimaryDiseaseDeathRate3"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="0.0000001">
+        <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/constraints">
+        	<details key="minValue" value="0"/>
+    	</eAnnotations>
+    </eStructuralFeatures> 
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hostPrimaryDiseaseDeathRate4"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="0.0000001">
+        <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/constraints">
+        	<details key="minValue" value="0"/>
+    	</eAnnotations>
+    </eStructuralFeatures> 
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hostADE12" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="1.8">
+        <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/constraints">
+        	<details key="minValue" value="0"/>
+    	</eAnnotations>
+    </eStructuralFeatures> 
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hostADE13" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="1.8">
+        <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/constraints">
+        	<details key="minValue" value="0"/>
+    	</eAnnotations>
+    </eStructuralFeatures> 
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hostADE14" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="1.8">
+        <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/constraints">
+        	<details key="minValue" value="0"/>
+    	</eAnnotations>
+    </eStructuralFeatures> 
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hostADE21" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="1.8">
+        <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/constraints">
+        	<details key="minValue" value="0"/>
+    	</eAnnotations>
+    </eStructuralFeatures> 
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hostADE23" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="1.8">
+        <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/constraints">
+        	<details key="minValue" value="0"/>
+    	</eAnnotations>
+    </eStructuralFeatures> 
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hostADE24" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="1.8">
+        <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/constraints">
+        	<details key="minValue" value="0"/>
+    	</eAnnotations>
+    </eStructuralFeatures> 
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hostADE31" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="1.8">
+        <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/constraints">
+        	<details key="minValue" value="0"/>
+    	</eAnnotations>
+    </eStructuralFeatures> 
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hostADE32" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="1.8">
+        <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/constraints">
+        	<details key="minValue" value="0"/>
+    	</eAnnotations>
+    </eStructuralFeatures> 
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hostADE34" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="1.8">
+        <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/constraints">
+        	<details key="minValue" value="0"/>
+    	</eAnnotations>
+    </eStructuralFeatures> 
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hostADE41" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="1.8">
+        <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/constraints">
+        	<details key="minValue" value="0"/>
+    	</eAnnotations>
+    </eStructuralFeatures> 
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hostADE42" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="1.8">
+        <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/constraints">
+        	<details key="minValue" value="0"/>
+    	</eAnnotations>
+    </eStructuralFeatures> 
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hostADE43" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="1.8">
+        <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/constraints">
+        	<details key="minValue" value="0"/>
+    	</eAnnotations>
+    </eStructuralFeatures> 
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hostSecondaryDiseaseDeathRate12"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="0.00123">
+        <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/constraints">
+        	<details key="minValue" value="0"/>
+    	</eAnnotations>
+    </eStructuralFeatures> 
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hostSecondaryDiseaseDeathRate13"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="0.00123">
+        <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/constraints">
+        	<details key="minValue" value="0"/>
+    	</eAnnotations>
+    </eStructuralFeatures> 
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hostSecondaryDiseaseDeathRate14"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="0.00123">
+        <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/constraints">
+        	<details key="minValue" value="0"/>
+    	</eAnnotations>
+    </eStructuralFeatures> 
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hostSecondaryDiseaseDeathRate21"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="0.00123">
+        <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/constraints">
+        	<details key="minValue" value="0"/>
+    	</eAnnotations>
+    </eStructuralFeatures> 
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hostSecondaryDiseaseDeathRate23"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="0.00123">
+        <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/constraints">
+        	<details key="minValue" value="0"/>
+    	</eAnnotations>
+    </eStructuralFeatures> 
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hostSecondaryDiseaseDeathRate24"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="0.00123">
+        <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/constraints">
+        	<details key="minValue" value="0"/>
+    	</eAnnotations>
+    </eStructuralFeatures> 
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hostSecondaryDiseaseDeathRate31"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="0.00123">
+        <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/constraints">
+        	<details key="minValue" value="0"/>
+    	</eAnnotations>
+    </eStructuralFeatures> 
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hostSecondaryDiseaseDeathRate32"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="0.00123">
+        <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/constraints">
+        	<details key="minValue" value="0"/>
+    	</eAnnotations>
+    </eStructuralFeatures> 
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hostSecondaryDiseaseDeathRate34"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="0.00123">
+        <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/constraints">
+        	<details key="minValue" value="0"/>
+    	</eAnnotations>
+    </eStructuralFeatures> 
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hostSecondaryDiseaseDeathRate41"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="0.00123">
+        <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/constraints">
+        	<details key="minValue" value="0"/>
+    	</eAnnotations>
+    </eStructuralFeatures> 
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hostSecondaryDiseaseDeathRate42"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="0.00123">
+        <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/constraints">
+        	<details key="minValue" value="0"/>
+    	</eAnnotations>
+    </eStructuralFeatures> 
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hostSecondaryDiseaseDeathRate43"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="0.00123">
+        <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/constraints">
+        	<details key="minValue" value="0"/>
+    	</eAnnotations>
+    </eStructuralFeatures> 
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hostSecondaryRecoveryRate12"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="0.1">
+        <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/constraints">
+        	<details key="minValue" value="0"/>
+    	</eAnnotations>
+    </eStructuralFeatures> 
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hostSecondaryRecoveryRate13"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="0.1">
+        <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/constraints">
+        	<details key="minValue" value="0"/>
+    	</eAnnotations>
+    </eStructuralFeatures> 
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hostSecondaryRecoveryRate14"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="0.1">
+        <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/constraints">
+        	<details key="minValue" value="0"/>
+    	</eAnnotations>
+    </eStructuralFeatures> 
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hostSecondaryRecoveryRate21"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="0.1">
+        <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/constraints">
+        	<details key="minValue" value="0"/>
+    	</eAnnotations>
+    </eStructuralFeatures> 
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hostSecondaryRecoveryRate23"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="0.1">
+        <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/constraints">
+        	<details key="minValue" value="0"/>
+    	</eAnnotations>
+    </eStructuralFeatures> 
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hostSecondaryRecoveryRate24"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="0.1">
+        <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/constraints">
+        	<details key="minValue" value="0"/>
+    	</eAnnotations>
+    </eStructuralFeatures> 
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hostSecondaryRecoveryRate31"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="0.1">
+        <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/constraints">
+        	<details key="minValue" value="0"/>
+    	</eAnnotations>
+    </eStructuralFeatures> 
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hostSecondaryRecoveryRate32"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="0.1">
+        <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/constraints">
+        	<details key="minValue" value="0"/>
+    	</eAnnotations>
+    </eStructuralFeatures> 
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hostSecondaryRecoveryRate34"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="0.1">
+        <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/constraints">
+        	<details key="minValue" value="0"/>
+    	</eAnnotations>
+    </eStructuralFeatures> 
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hostSecondaryRecoveryRate41"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="0.1">
+        <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/constraints">
+        	<details key="minValue" value="0"/>
+    	</eAnnotations>
+    </eStructuralFeatures> 
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hostSecondaryRecoveryRate42"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="0.1">
+        <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/constraints">
+        	<details key="minValue" value="0"/>
+    	</eAnnotations>
+    </eStructuralFeatures> 
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hostSecondaryRecoveryRate43"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="0.1">
+        <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/constraints">
+        	<details key="minValue" value="0"/>
+    	</eAnnotations>
+    </eStructuralFeatures> 
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hostSecondaryIncubationRate12"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="0.2">
+        <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/constraints">
+        	<details key="minValue" value="0"/>
+    	</eAnnotations>
+    </eStructuralFeatures> 
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hostSecondaryIncubationRate13"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="0.2">
+        <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/constraints">
+        	<details key="minValue" value="0"/>
+    	</eAnnotations>
+    </eStructuralFeatures> 
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hostSecondaryIncubationRate14"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="0.2">
+        <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/constraints">
+        	<details key="minValue" value="0"/>
+    	</eAnnotations>
+    </eStructuralFeatures> 
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hostSecondaryIncubationRate21"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="0.2">
+        <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/constraints">
+        	<details key="minValue" value="0"/>
+    	</eAnnotations>
+    </eStructuralFeatures> 
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hostSecondaryIncubationRate23"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="0.2">
+        <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/constraints">
+        	<details key="minValue" value="0"/>
+    	</eAnnotations>
+    </eStructuralFeatures> 
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hostSecondaryIncubationRate24"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="0.2">
+        <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/constraints">
+        	<details key="minValue" value="0"/>
+    	</eAnnotations>
+    </eStructuralFeatures> 
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hostSecondaryIncubationRate31"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="0.2">
+        <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/constraints">
+        	<details key="minValue" value="0"/>
+    	</eAnnotations>
+    </eStructuralFeatures> 
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hostSecondaryIncubationRate32"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="0.2">
+        <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/constraints">
+        	<details key="minValue" value="0"/>
+    	</eAnnotations>
+    </eStructuralFeatures> 
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hostSecondaryIncubationRate34"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="0.2">
+        <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/constraints">
+        	<details key="minValue" value="0"/>
+    	</eAnnotations>
+    </eStructuralFeatures> 
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hostSecondaryIncubationRate41"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="0.2">
+        <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/constraints">
+        	<details key="minValue" value="0"/>
+    	</eAnnotations>
+    </eStructuralFeatures> 
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hostSecondaryIncubationRate42"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="0.2">
+        <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/constraints">
+        	<details key="minValue" value="0"/>
+    	</eAnnotations>
+    </eStructuralFeatures> 
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hostSecondaryIncubationRate43"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="0.2">
+        <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/constraints">
+        	<details key="minValue" value="0"/>
+    	</eAnnotations>
+    </eStructuralFeatures> 
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="vectorInfectivity1" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="1">
+        <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/constraints">
+        	<details key="minValue" value="0"/>
+        	<details key="maxValue" value="1"/>
+    	</eAnnotations>
+    </eStructuralFeatures> 
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="vectorInfectivity2" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="1">
+        <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/constraints">
+        	<details key="minValue" value="0"/>
+        	<details key="maxValue" value="1"/>
+    	</eAnnotations>
+    </eStructuralFeatures> 
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="vectorInfectivity3" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="1">
+        <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/constraints">
+        	<details key="minValue" value="0"/>
+        	<details key="maxValue" value="1"/>
+    	</eAnnotations>
+    </eStructuralFeatures> 
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="vectorInfectivity4" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="1">
+        <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/constraints">
+        	<details key="minValue" value="0"/>
+        	<details key="maxValue" value="1"/>
+    	</eAnnotations>
+    </eStructuralFeatures> 
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="vectorADE1" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="1.0">
+        <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/constraints">
+        	<details key="minValue" value="0"/>
+    	</eAnnotations>
+    </eStructuralFeatures> 
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="vectorADE2" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="1.0">
+        <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/constraints">
+        	<details key="minValue" value="0"/>
+    	</eAnnotations>
+    </eStructuralFeatures> 
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="vectorADE3" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="1.0">
+        <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/constraints">
+        	<details key="minValue" value="0"/>
+    	</eAnnotations>
+    </eStructuralFeatures> 
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="vectorADE4" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="1.0">
+        <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/constraints">
+        	<details key="minValue" value="0"/>
+    	</eAnnotations>
+    </eStructuralFeatures> 
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="vectorIncubationRate1"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="0.1">
+        <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/constraints">
+        	<details key="minValue" value="0"/>
+    	</eAnnotations>
+    </eStructuralFeatures> 
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="vectorIncubationRate2"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="0.1">
+        <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/constraints">
+        	<details key="minValue" value="0"/>
+    	</eAnnotations>
+    </eStructuralFeatures> 
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="vectorIncubationRate3"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="0.1">
+        <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/constraints">
+        	<details key="minValue" value="0"/>
+    	</eAnnotations>
+    </eStructuralFeatures> 
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="vectorIncubationRate4"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="0.1">
+        <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/constraints">
+        	<details key="minValue" value="0"/>
+    	</eAnnotations>
+    </eStructuralFeatures> 
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="episilon1" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="0.5">
+        <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/constraints">
+        	<details key="minValue" value="0"/>
+        	<details key="maxValue" value="1"/>
+    	</eAnnotations>
+    </eStructuralFeatures> 
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="episilon2" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="0.5">
+        <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/constraints">
+        	<details key="minValue" value="0"/>
+        	<details key="maxValue" value="1"/>
+    	</eAnnotations>
+    </eStructuralFeatures> 
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="episilon3" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="0.5">
+        <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/constraints">
+        	<details key="minValue" value="0"/>
+        	<details key="maxValue" value="1"/>
+    	</eAnnotations>
+    </eStructuralFeatures> 
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="episilon4" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="0.5">
+        <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/constraints">
+        	<details key="minValue" value="0"/>
+        	<details key="maxValue" value="1"/>
+    	</eAnnotations>
+    </eStructuralFeatures> 
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SimpleDengueModel" eSuperTypes="#//AbstractDengueModel">
+    <eAnnotations source="http:///org/eclipse/stem/modelgen/generated">
+      <details key="version" value="1.0"/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/stem/modelgen/model/label">
+      <details key="*" value="SimpleDengueModelHostLabel"/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/stem/modelgen/model/labelvalue">
+      <details key="*" value="SimpleDengueModelHostLabelValue"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hostTransmissionRate" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="0.041">
+        <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/constraints">
+        	<details key="minValue" value="0"/>
+    	</eAnnotations>
+    </eStructuralFeatures> 
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="adeFactor" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="1">
+        <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/constraints">
+        	<details key="minValue" value="0"/>
+    	</eAnnotations>
+    </eStructuralFeatures> 
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hostImmunityLossRate" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="0.005479">
+        <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/constraints">
+        	<details key="minValue" value="0"/>
+    	</eAnnotations>
+    </eStructuralFeatures> 
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hostPrimaryDeathRate" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="0">
+        <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/constraints">
+        	<details key="minValue" value="0"/>
+    	</eAnnotations>
+    </eStructuralFeatures> 
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hostRecoveryRate" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="0.247">
+        <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/constraints">
+        	<details key="minValue" value="0"/>
+    	</eAnnotations>
+    </eStructuralFeatures> 
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hostSecondaryDeathRate"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="0">
+        <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/constraints">
+        	<details key="minValue" value="0"/>
+    	</eAnnotations>
+    </eStructuralFeatures> 
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="vectorIncubationRate" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="0.082">
+        <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/constraints">
+        	<details key="minValue" value="0"/>
+    	</eAnnotations>
+    </eStructuralFeatures> 
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="vectorTransmissionRate"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="1.45">
+        <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/constraints">
+        	<details key="minValue" value="0"/>
+    	</eAnnotations>
+    </eStructuralFeatures> 
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="immunityStrength" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="0">
+        <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/constraints">
+        	<details key="minValue" value="0"/>
+        	<details key="maxValue" value="1"/>
+    	</eAnnotations>
+    </eStructuralFeatures> 
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="VerySimpleDengueModel" eSuperTypes="../../org.eclipse.stem.diseasemodels/model/standard.ecore#//StandardDiseaseModel">
+    <eAnnotations source="http:///org/eclipse/stem/modelgen/generated">
+      <details key="version" value="1.0"/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/stem/modelgen/model/label">
+      <details key="*" value="SimpleDengueModelHostLabel"/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/stem/modelgen/model/labelvalue">
+      <details key="*" value="SimpleDengueModelHostLabelValue"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="transmissionRate" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="0.55">
+        <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/constraints">
+        	<details key="minValue" value="0"/>
+    	</eAnnotations>
+    </eStructuralFeatures> 
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="recoveryRate" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="0.274">
+        <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/constraints">
+        	<details key="minValue" value="0"/>
+    	</eAnnotations>
+    </eStructuralFeatures> 
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="immunityLossRate" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="0.0055">
+        <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/constraints">
+        	<details key="minValue" value="0"/>
+    	</eAnnotations>
+    </eStructuralFeatures> 
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="adeFactor" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="1.0">
+        <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/constraints">
+        	<details key="minValue" value="0"/>
+    	</eAnnotations>
+    </eStructuralFeatures> 
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="immunityStrength" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="0.0">
+        <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/constraints">
+        	<details key="minValue" value="0"/>
+        	<details key="maxValue" value="1"/>
+    	</eAnnotations>
+    </eStructuralFeatures> 
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="primaryDeathRate" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="0">
+        <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/constraints">
+        	<details key="minValue" value="0"/>
+    	</eAnnotations>
+    </eStructuralFeatures> 
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="secondaryDeathRate" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="0">
+        <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/constraints">
+        	<details key="minValue" value="0"/>
+    	</eAnnotations>
+    </eStructuralFeatures> 
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DengueModelHostLabel" eSuperTypes="../../org.eclipse.stem.diseasemodels/model/standard.ecore#//StandardDiseaseModelLabel">
+    <eAnnotations source="http:///org/eclipse/stem/modelgen/generated">
+      <details key="version" value="1.0"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DengueModelHostLabelValue" eSuperTypes="#//SimpleDengueModelHostLabelValue">
+    <eAnnotations source="http:///org/eclipse/stem/modelgen/generated">
+      <details key="version" value="1.0"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="E1" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="E2" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="E3" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="E4" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="E12" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="E13" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="E14" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="E21" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="E23" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="E24" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="E31" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="E32" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="E34" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="E41" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="E42" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="E43" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DengueModelVectorLabel" eSuperTypes="../../org.eclipse.stem.diseasemodels/model/standard.ecore#//StandardDiseaseModelLabel">
+    <eAnnotations source="http:///org/eclipse/stem/modelgen/generated">
+      <details key="version" value="1.0"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DengueModelVectorLabelValue" eSuperTypes="../../org.eclipse.stem.diseasemodels/model/standard.ecore#//StandardDiseaseModelLabelValue">
+    <eAnnotations source="http:///org/eclipse/stem/modelgen/generated">
+      <details key="version" value="1.0"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="E1" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="E2" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="E3" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="E4" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="I1" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="I2" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="I3" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="I4" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="incidence1" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="incidence2" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="incidence3" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="incidence4" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractDengueModel" abstract="true"
+      eSuperTypes="#//VectorDiseaseModel">
+    <eAnnotations source="http:///org/eclipse/stem/modelgen/generated">
+      <details key="version" value="1.0"/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/stem/modelgen/model/label">
+      <details key="*" value="DengueModelHostLabel"/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/stem/modelgen/model/labelvalue">
+      <details key="*" value="DengueModelHostLabelValue"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SimpleDengueModelHostLabel" eSuperTypes="../../org.eclipse.stem.diseasemodels/model/standard.ecore#//StandardDiseaseModelLabel">
+    <eAnnotations source="http:///org/eclipse/stem/modelgen/generated">
+      <details key="version" value="1.0"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SimpleDengueModelHostLabelValue" eSuperTypes="../../org.eclipse.stem.diseasemodels/model/standard.ecore#//StandardDiseaseModelLabelValue">
+    <eAnnotations source="http:///org/eclipse/stem/modelgen/generated">
+      <details key="version" value="1.0"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="I1" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="I2" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="I3" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="I4" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="C1" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="C2" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="C3" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="C4" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="R1" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="R2" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="R3" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="R4" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="I12" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="I13" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="I14" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="I21" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="I23" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="I24" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="I31" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="I32" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="I34" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="I41" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="I42" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="I43" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="R" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="incidence1" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="incidence2" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="incidence3" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="incidence4" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="incidence12" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="incidence21" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="incidence31" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="incidence41" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="incidence13" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="incidence23" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="incidence32" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="incidence42" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="incidence14" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="incidence24" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="incidence34" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="incidence43" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="diseaseDeaths1" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="diseaseDeaths2" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="diseaseDeaths3" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="diseaseDeaths4" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="diseaseDeaths12" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="diseaseDeaths21" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="diseaseDeaths31" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="diseaseDeaths41" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="diseaseDeaths13" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="diseaseDeaths23" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="diseaseDeaths32" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="diseaseDeaths42" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="diseaseDeaths14" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="diseaseDeaths24" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="diseaseDeaths34" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="diseaseDeaths43" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"/>
+  </eClassifiers>
+</ecore:EPackage>

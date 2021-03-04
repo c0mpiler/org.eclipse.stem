@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.eclipse.stem.foodproduction/src"
+    editDirectory="/org.eclipse.stem.foodproduction/src" editorDirectory="/org.eclipse.stem.ui.foodproduction/src"
+    modelPluginID="org.eclipse.stem.foodproduction" modelName="Foodproduction" editorPluginClass="org.eclipse.stem.foodproduction.presentation.FoodproductionEditorPlugin"
+    testsDirectory="/org.eclipse.stem.test.foodproduction/src" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="6.0" copyrightFields="false" editorPluginID="org.eclipse.stem.ui.foodproduction.editor"
+    runtimeVersion="2.6" usedGenPackages="../../org.eclipse.stem.core/model/core.genmodel#//common ../../org.eclipse.stem.core/model/core.genmodel#//graph ../../org.eclipse.stem.core/model/core.genmodel#//model ../../org.eclipse.stem.core/model/core.genmodel#//modifier ../../org.eclipse.stem.core/model/core.genmodel#//scenario ../../org.eclipse.stem.core/model/core.genmodel#//sequencer ../../org.eclipse.stem.core/model/core.genmodel#//solver ../../org.eclipse.stem.core/model/core.genmodel#//logger platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore">
+  <foreignModel>foodproduction.ecore</foreignModel>
+  <genPackages prefix="Foodproduction" basePackage="org.eclipse.stem" disposableProviderFactory="true"
+      ecorePackage="foodproduction.ecore#/">
+    <genClasses image="false" ecoreClass="foodproduction.ecore#//FoodTransformer">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute foodproduction.ecore#//FoodTransformer/sourcePopulationName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute foodproduction.ecore#//FoodTransformer/targetPopulationName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute foodproduction.ecore#//FoodTransformer/targetURI"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute foodproduction.ecore#//FoodTransformer/timePeriod"/>
+    </genClasses>
+    <genClasses ecoreClass="foodproduction.ecore#//FoodProducer">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute foodproduction.ecore#//FoodProducer/foodYieldPopulationMultiplier"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute foodproduction.ecore#//FoodProducer/sourceProcessingRate"/>
+    </genClasses>
+    <genClasses ecoreClass="foodproduction.ecore#//SlaughterHouse"/>
+    <genClasses image="false" ecoreClass="foodproduction.ecore#//DiseaseCarryingTransformer">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference foodproduction.ecore#//DiseaseCarryingTransformer/sourceDecorator"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference foodproduction.ecore#//DiseaseCarryingTransformer/targetDecorator"/>
+      <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference foodproduction.ecore#//DiseaseCarryingTransformer/stateTransitionsMap"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference foodproduction.ecore#//DiseaseCarryingTransformer/sourceAttributes"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference foodproduction.ecore#//DiseaseCarryingTransformer/targetAttributes"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-SymbolicName: org.eclipse.stem.diseases;singleton:=true
+Export-Package: org.eclipse.stem.diseases
+Bundle-Name: %pluginName
+Bundle-Version: 3.0.0.201812181050
+Bundle-Localization: plugin
+Require-Bundle: org.eclipse.core.runtime
+Bundle-ManifestVersion: 2
+Bundle-Activator: org.eclipse.stem.diseases.Activator
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Bundle-Vendor: %providerName
+

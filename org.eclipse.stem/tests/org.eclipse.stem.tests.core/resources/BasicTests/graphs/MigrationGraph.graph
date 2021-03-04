@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<org.eclipse.stem.core.graph:Graph xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.eclipse.stem.core.graph="http:///org/eclipse/stem/core/graph.ecore" xmlns:org.eclipse.stem.definitions.edges="http:///org/eclipse/stem/definitions/edges.ecore" uRI="platform:/resource/BasicTests/graphs/MigrationGraph.graph" typeURI="stemtype://org.eclipse.stem/Graph">
+  <dublinCore identifier="platform:/resource/BasicTests/graphs/MigrationGraph.graph" creator="edlund" date="2011-02-03" format="http:///org/eclipse/stem/core/graph.ecore" source="Generated" type="stemtype://org.eclipse.stem/Graph" created="2011-02-03"/>
+  <edges key="stem://org.eclipse.stem/edge/migration/relationship/migration/0">
+    <value xsi:type="org.eclipse.stem.definitions.edges:MigrationEdge" uRI="stem://org.eclipse.stem/edge/migration/relationship/migration/0" typeURI="stemtype://org.eclipse.stem/Edge" nodeAURI="stem://org.eclipse.stem/node/geo/region/YE-S-G160001" nodeBURI="stem://org.eclipse.stem/node/geo/region/YE-S-G160002" directed="true">
+      <dublinCore title="MigrationEdge[(YE-S-G160001)&lt;-->(YE-S-G160002)]" identifier="stem://org.eclipse.stem/edge/migration/relationship/migration/0" type="stemtype://org.eclipse.stem/Edge"/>
+      <label xsi:type="org.eclipse.stem.definitions.edges:MigrationEdgeLabel" uRI="stem://org.eclipse.stem/YE-S-G160001_YE-S-G160002" typeURI="stemtype://org.eclipse.stem/label" uRIOfIdentifiableToBeLabeled="stem://org.eclipse.stem/edge/migration/0">
+        <dublinCore identifier="stem://org.eclipse.stem/YE-S-G160001_YE-S-G160002" type="stemtype://org.eclipse.stem/label"/>
+        <currentValue xsi:type="org.eclipse.stem.definitions.edges:MigrationEdgeLabelValue" migrationRate="0.05"/>
+      </label>
+    </value>
+  </edges>
+  <edges key="stem://org.eclipse.stem/edge/migration/relationship/migration/1">
+    <value xsi:type="org.eclipse.stem.definitions.edges:MigrationEdge" uRI="stem://org.eclipse.stem/edge/migration/relationship/migration/1" typeURI="stemtype://org.eclipse.stem/Edge" nodeAURI="stem://org.eclipse.stem/node/geo/region/YE-S-G160002" nodeBURI="stem://org.eclipse.stem/node/geo/region/YE-S-G160001" directed="true">
+      <dublinCore title="MigrationEdge[(YE-S-G160002)&lt;-->(YE-S-G160001)]" identifier="stem://org.eclipse.stem/edge/migration/relationship/migration/1" type="stemtype://org.eclipse.stem/Edge"/>
+      <label xsi:type="org.eclipse.stem.definitions.edges:MigrationEdgeLabel" uRI="stem://org.eclipse.stem/YE-S-G160002_YE-S-G160001" typeURI="stemtype://org.eclipse.stem/label" uRIOfIdentifiableToBeLabeled="stem://org.eclipse.stem/edge/migration/1">
+        <dublinCore identifier="stem://org.eclipse.stem/YE-S-G160002_YE-S-G160001" type="stemtype://org.eclipse.stem/label"/>
+        <currentValue xsi:type="org.eclipse.stem.definitions.edges:MigrationEdgeLabelValue" migrationRate="0.05"/>
+      </label>
+    </value>
+  </edges>
+  <edges key="stem://org.eclipse.stem/edge/migration/relationship/migration/2">
+    <value xsi:type="org.eclipse.stem.definitions.edges:MigrationEdge" uRI="stem://org.eclipse.stem/edge/migration/relationship/migration/2" typeURI="stemtype://org.eclipse.stem/Edge" nodeAURI="stem://org.eclipse.stem/node/geo/region/YE-S-G160004" nodeBURI="stem://org.eclipse.stem/node/geo/region/YE-S-G160006" directed="true">
+      <dublinCore title="MigrationEdge[(YE-S-G160004)&lt;-->(YE-S-G160006)]" identifier="stem://org.eclipse.stem/edge/migration/relationship/migration/2" type="stemtype://org.eclipse.stem/Edge"/>
+      <label xsi:type="org.eclipse.stem.definitions.edges:MigrationEdgeLabel" uRI="stem://org.eclipse.stem/YE-S-G160004_YE-S-G160006" typeURI="stemtype://org.eclipse.stem/label" uRIOfIdentifiableToBeLabeled="stem://org.eclipse.stem/edge/migration/2">
+        <dublinCore identifier="stem://org.eclipse.stem/YE-S-G160004_YE-S-G160006" type="stemtype://org.eclipse.stem/label"/>
+        <currentValue xsi:type="org.eclipse.stem.definitions.edges:MigrationEdgeLabelValue" migrationRate="0.05"/>
+      </label>
+    </value>
+  </edges>
+  <edges key="stem://org.eclipse.stem/edge/migration/relationship/migration/3">
+    <value xsi:type="org.eclipse.stem.definitions.edges:MigrationEdge" uRI="stem://org.eclipse.stem/edge/migration/relationship/migration/3" typeURI="stemtype://org.eclipse.stem/Edge" nodeAURI="stem://org.eclipse.stem/node/geo/region/YE-S-G160006" nodeBURI="stem://org.eclipse.stem/node/geo/region/YE-S-G160004" directed="true">
+      <dublinCore title="MigrationEdge[(YE-S-G160006)&lt;-->(YE-S-G160004)]" identifier="stem://org.eclipse.stem/edge/migration/relationship/migration/3" type="stemtype://org.eclipse.stem/Edge"/>
+      <label xsi:type="org.eclipse.stem.definitions.edges:MigrationEdgeLabel" uRI="stem://org.eclipse.stem/YE-S-G160006_YE-S-G160004" typeURI="stemtype://org.eclipse.stem/label" uRIOfIdentifiableToBeLabeled="stem://org.eclipse.stem/edge/migration/3">
+        <dublinCore identifier="stem://org.eclipse.stem/YE-S-G160006_YE-S-G160004" type="stemtype://org.eclipse.stem/label"/>
+        <currentValue xsi:type="org.eclipse.stem.definitions.edges:MigrationEdgeLabelValue" migrationRate="0.05"/>
+      </label>
+    </value>
+  </edges>
+  <edges key="stem://org.eclipse.stem/edge/migration/relationship/migration/4">
+    <value xsi:type="org.eclipse.stem.definitions.edges:MigrationEdge" uRI="stem://org.eclipse.stem/edge/migration/relationship/migration/4" typeURI="stemtype://org.eclipse.stem/Edge" nodeAURI="stem://org.eclipse.stem/node/geo/region/YE-N-G150001" nodeBURI="stem://org.eclipse.stem/node/geo/region/YE-S-G160002" directed="true">
+      <dublinCore title="MigrationEdge[(YE-N-G150001)&lt;-->(YE-S-G160002)]" identifier="stem://org.eclipse.stem/edge/migration/relationship/migration/4" type="stemtype://org.eclipse.stem/Edge"/>
+      <label xsi:type="org.eclipse.stem.definitions.edges:MigrationEdgeLabel" uRI="stem://org.eclipse.stem/YE-N-G150001_YE-S-G160002" typeURI="stemtype://org.eclipse.stem/label" uRIOfIdentifiableToBeLabeled="stem://org.eclipse.stem/edge/migration/4">
+        <dublinCore identifier="stem://org.eclipse.stem/YE-N-G150001_YE-S-G160002" type="stemtype://org.eclipse.stem/label"/>
+        <currentValue xsi:type="org.eclipse.stem.definitions.edges:MigrationEdgeLabelValue" migrationRate="0.05"/>
+      </label>
+    </value>
+  </edges>
+  <edges key="stem://org.eclipse.stem/edge/migration/relationship/migration/5">
+    <value xsi:type="org.eclipse.stem.definitions.edges:MigrationEdge" uRI="stem://org.eclipse.stem/edge/migration/relationship/migration/5" typeURI="stemtype://org.eclipse.stem/Edge" nodeAURI="stem://org.eclipse.stem/node/geo/region/YE-S-G160002" nodeBURI="stem://org.eclipse.stem/node/geo/region/YE-N-G150001" directed="true">
+      <dublinCore title="MigrationEdge[(YE-S-G160002)&lt;-->(YE-N-G150001)]" identifier="stem://org.eclipse.stem/edge/migration/relationship/migration/5" type="stemtype://org.eclipse.stem/Edge"/>
+      <label xsi:type="org.eclipse.stem.definitions.edges:MigrationEdgeLabel" uRI="stem://org.eclipse.stem/YE-S-G160002_YE-N-G150001" typeURI="stemtype://org.eclipse.stem/label" uRIOfIdentifiableToBeLabeled="stem://org.eclipse.stem/edge/migration/5">
+        <dublinCore identifier="stem://org.eclipse.stem/YE-S-G160002_YE-N-G150001" type="stemtype://org.eclipse.stem/label"/>
+        <currentValue xsi:type="org.eclipse.stem.definitions.edges:MigrationEdgeLabelValue" migrationRate="0.05"/>
+      </label>
+    </value>
+  </edges>
+  <edges key="stem://org.eclipse.stem/edge/migration/relationship/migration/6">
+    <value xsi:type="org.eclipse.stem.definitions.edges:MigrationEdge" uRI="stem://org.eclipse.stem/edge/migration/relationship/migration/6" typeURI="stemtype://org.eclipse.stem/Edge" nodeAURI="stem://org.eclipse.stem/node/geo/region/YE-N-G150001" nodeBURI="stem://org.eclipse.stem/node/geo/region/YE-S-G160006" directed="true">
+      <dublinCore title="MigrationEdge[(YE-N-G150001)&lt;-->(YE-S-G160006)]" identifier="stem://org.eclipse.stem/edge/migration/relationship/migration/6" type="stemtype://org.eclipse.stem/Edge"/>
+      <label xsi:type="org.eclipse.stem.definitions.edges:MigrationEdgeLabel" uRI="stem://org.eclipse.stem/YE-N-G150001_YE-S-G160006" typeURI="stemtype://org.eclipse.stem/label" uRIOfIdentifiableToBeLabeled="stem://org.eclipse.stem/edge/migration/6">
+        <dublinCore identifier="stem://org.eclipse.stem/YE-N-G150001_YE-S-G160006" type="stemtype://org.eclipse.stem/label"/>
+        <currentValue xsi:type="org.eclipse.stem.definitions.edges:MigrationEdgeLabelValue" migrationRate="0.05"/>
+      </label>
+    </value>
+  </edges>
+  <edges key="stem://org.eclipse.stem/edge/migration/relationship/migration/7">
+    <value xsi:type="org.eclipse.stem.definitions.edges:MigrationEdge" uRI="stem://org.eclipse.stem/edge/migration/relationship/migration/7" typeURI="stemtype://org.eclipse.stem/Edge" nodeAURI="stem://org.eclipse.stem/node/geo/region/YE-S-G160006" nodeBURI="stem://org.eclipse.stem/node/geo/region/YE-N-G150001" directed="true">
+      <dublinCore title="MigrationEdge[(YE-S-G160006)&lt;-->(YE-N-G150001)]" identifier="stem://org.eclipse.stem/edge/migration/relationship/migration/7" type="stemtype://org.eclipse.stem/Edge"/>
+      <label xsi:type="org.eclipse.stem.definitions.edges:MigrationEdgeLabel" uRI="stem://org.eclipse.stem/YE-S-G160006_YE-N-G150001" typeURI="stemtype://org.eclipse.stem/label" uRIOfIdentifiableToBeLabeled="stem://org.eclipse.stem/edge/migration/7">
+        <dublinCore identifier="stem://org.eclipse.stem/YE-S-G160006_YE-N-G150001" type="stemtype://org.eclipse.stem/label"/>
+        <currentValue xsi:type="org.eclipse.stem.definitions.edges:MigrationEdgeLabelValue" migrationRate="0.05"/>
+      </label>
+    </value>
+  </edges>
+  <edges key="stem://org.eclipse.stem/edge/migration/relationship/migration/8">
+    <value xsi:type="org.eclipse.stem.definitions.edges:MigrationEdge" uRI="stem://org.eclipse.stem/edge/migration/relationship/migration/8" typeURI="stemtype://org.eclipse.stem/Edge" nodeAURI="stem://org.eclipse.stem/node/geo/region/YE-S-G160003" nodeBURI="stem://org.eclipse.stem/node/geo/region/YE-S-G160004" directed="true">
+      <dublinCore title="MigrationEdge[(YE-S-G160003)&lt;-->(YE-S-G160004)]" identifier="stem://org.eclipse.stem/edge/migration/relationship/migration/8" type="stemtype://org.eclipse.stem/Edge"/>
+      <label xsi:type="org.eclipse.stem.definitions.edges:MigrationEdgeLabel" uRI="stem://org.eclipse.stem/YE-S-G160003_YE-S-G160004" typeURI="stemtype://org.eclipse.stem/label" uRIOfIdentifiableToBeLabeled="stem://org.eclipse.stem/edge/migration/8">
+        <dublinCore identifier="stem://org.eclipse.stem/YE-S-G160003_YE-S-G160004" type="stemtype://org.eclipse.stem/label"/>
+        <currentValue xsi:type="org.eclipse.stem.definitions.edges:MigrationEdgeLabelValue" migrationRate="0.05"/>
+      </label>
+    </value>
+  </edges>
+  <edges key="stem://org.eclipse.stem/edge/migration/relationship/migration/9">
+    <value xsi:type="org.eclipse.stem.definitions.edges:MigrationEdge" uRI="stem://org.eclipse.stem/edge/migration/relationship/migration/9" typeURI="stemtype://org.eclipse.stem/Edge" nodeAURI="stem://org.eclipse.stem/node/geo/region/YE-S-G160004" nodeBURI="stem://org.eclipse.stem/node/geo/region/YE-S-G160003" directed="true">
+      <dublinCore title="MigrationEdge[(YE-S-G160004)&lt;-->(YE-S-G160003)]" identifier="stem://org.eclipse.stem/edge/migration/relationship/migration/9" type="stemtype://org.eclipse.stem/Edge"/>
+      <label xsi:type="org.eclipse.stem.definitions.edges:MigrationEdgeLabel" uRI="stem://org.eclipse.stem/YE-S-G160004_YE-S-G160003" typeURI="stemtype://org.eclipse.stem/label" uRIOfIdentifiableToBeLabeled="stem://org.eclipse.stem/edge/migration/9">
+        <dublinCore identifier="stem://org.eclipse.stem/YE-S-G160004_YE-S-G160003" type="stemtype://org.eclipse.stem/label"/>
+        <currentValue xsi:type="org.eclipse.stem.definitions.edges:MigrationEdgeLabelValue" migrationRate="0.05"/>
+      </label>
+    </value>
+  </edges>
+  <edges key="stem://org.eclipse.stem/edge/migration/relationship/migration/10">
+    <value xsi:type="org.eclipse.stem.definitions.edges:MigrationEdge" uRI="stem://org.eclipse.stem/edge/migration/relationship/migration/10" typeURI="stemtype://org.eclipse.stem/Edge" nodeAURI="stem://org.eclipse.stem/node/geo/region/YE-N-G150001" nodeBURI="stem://org.eclipse.stem/node/geo/region/YE-S-G160001" directed="true">
+      <dublinCore title="MigrationEdge[(YE-N-G150001)&lt;-->(YE-S-G160001)]" identifier="stem://org.eclipse.stem/edge/migration/relationship/migration/10" type="stemtype://org.eclipse.stem/Edge"/>
+      <label xsi:type="org.eclipse.stem.definitions.edges:MigrationEdgeLabel" uRI="stem://org.eclipse.stem/YE-N-G150001_YE-S-G160001" typeURI="stemtype://org.eclipse.stem/label" uRIOfIdentifiableToBeLabeled="stem://org.eclipse.stem/edge/migration/10">
+        <dublinCore identifier="stem://org.eclipse.stem/YE-N-G150001_YE-S-G160001" type="stemtype://org.eclipse.stem/label"/>
+        <currentValue xsi:type="org.eclipse.stem.definitions.edges:MigrationEdgeLabelValue" migrationRate="0.05"/>
+      </label>
+    </value>
+  </edges>
+  <edges key="stem://org.eclipse.stem/edge/migration/relationship/migration/11">
+    <value xsi:type="org.eclipse.stem.definitions.edges:MigrationEdge" uRI="stem://org.eclipse.stem/edge/migration/relationship/migration/11" typeURI="stemtype://org.eclipse.stem/Edge" nodeAURI="stem://org.eclipse.stem/node/geo/region/YE-S-G160001" nodeBURI="stem://org.eclipse.stem/node/geo/region/YE-N-G150001" directed="true">
+      <dublinCore title="MigrationEdge[(YE-S-G160001)&lt;-->(YE-N-G150001)]" identifier="stem://org.eclipse.stem/edge/migration/relationship/migration/11" type="stemtype://org.eclipse.stem/Edge"/>
+      <label xsi:type="org.eclipse.stem.definitions.edges:MigrationEdgeLabel" uRI="stem://org.eclipse.stem/YE-S-G160001_YE-N-G150001" typeURI="stemtype://org.eclipse.stem/label" uRIOfIdentifiableToBeLabeled="stem://org.eclipse.stem/edge/migration/11">
+        <dublinCore identifier="stem://org.eclipse.stem/YE-S-G160001_YE-N-G150001" type="stemtype://org.eclipse.stem/label"/>
+        <currentValue xsi:type="org.eclipse.stem.definitions.edges:MigrationEdgeLabelValue" migrationRate="0.05"/>
+      </label>
+    </value>
+  </edges>
+  <edges key="stem://org.eclipse.stem/edge/migration/relationship/migration/12">
+    <value xsi:type="org.eclipse.stem.definitions.edges:MigrationEdge" uRI="stem://org.eclipse.stem/edge/migration/relationship/migration/12" typeURI="stemtype://org.eclipse.stem/Edge" nodeAURI="stem://org.eclipse.stem/node/geo/region/YE-N-G150001" nodeBURI="stem://org.eclipse.stem/node/geo/region/YE-S-G160005" directed="true">
+      <dublinCore title="MigrationEdge[(YE-N-G150001)&lt;-->(YE-S-G160005)]" identifier="stem://org.eclipse.stem/edge/migration/relationship/migration/12" type="stemtype://org.eclipse.stem/Edge"/>
+      <label xsi:type="org.eclipse.stem.definitions.edges:MigrationEdgeLabel" uRI="stem://org.eclipse.stem/YE-N-G150001_YE-S-G160005" typeURI="stemtype://org.eclipse.stem/label" uRIOfIdentifiableToBeLabeled="stem://org.eclipse.stem/edge/migration/12">
+        <dublinCore identifier="stem://org.eclipse.stem/YE-N-G150001_YE-S-G160005" type="stemtype://org.eclipse.stem/label"/>
+        <currentValue xsi:type="org.eclipse.stem.definitions.edges:MigrationEdgeLabelValue" migrationRate="0.05"/>
+      </label>
+    </value>
+  </edges>
+  <edges key="stem://org.eclipse.stem/edge/migration/relationship/migration/13">
+    <value xsi:type="org.eclipse.stem.definitions.edges:MigrationEdge" uRI="stem://org.eclipse.stem/edge/migration/relationship/migration/13" typeURI="stemtype://org.eclipse.stem/Edge" nodeAURI="stem://org.eclipse.stem/node/geo/region/YE-S-G160005" nodeBURI="stem://org.eclipse.stem/node/geo/region/YE-N-G150001" directed="true">
+      <dublinCore title="MigrationEdge[(YE-S-G160005)&lt;-->(YE-N-G150001)]" identifier="stem://org.eclipse.stem/edge/migration/relationship/migration/13" type="stemtype://org.eclipse.stem/Edge"/>
+      <label xsi:type="org.eclipse.stem.definitions.edges:MigrationEdgeLabel" uRI="stem://org.eclipse.stem/YE-S-G160005_YE-N-G150001" typeURI="stemtype://org.eclipse.stem/label" uRIOfIdentifiableToBeLabeled="stem://org.eclipse.stem/edge/migration/13">
+        <dublinCore identifier="stem://org.eclipse.stem/YE-S-G160005_YE-N-G150001" type="stemtype://org.eclipse.stem/label"/>
+        <currentValue xsi:type="org.eclipse.stem.definitions.edges:MigrationEdgeLabelValue" migrationRate="0.05"/>
+      </label>
+    </value>
+  </edges>
+  <edges key="stem://org.eclipse.stem/edge/migration/relationship/migration/14">
+    <value xsi:type="org.eclipse.stem.definitions.edges:MigrationEdge" uRI="stem://org.eclipse.stem/edge/migration/relationship/migration/14" typeURI="stemtype://org.eclipse.stem/Edge" nodeAURI="stem://org.eclipse.stem/node/geo/region/YE-S-G160001" nodeBURI="stem://org.eclipse.stem/node/geo/region/YE-S-G160005" directed="true">
+      <dublinCore title="MigrationEdge[(YE-S-G160001)&lt;-->(YE-S-G160005)]" identifier="stem://org.eclipse.stem/edge/migration/relationship/migration/14" type="stemtype://org.eclipse.stem/Edge"/>
+      <label xsi:type="org.eclipse.stem.definitions.edges:MigrationEdgeLabel" uRI="stem://org.eclipse.stem/YE-S-G160001_YE-S-G160005" typeURI="stemtype://org.eclipse.stem/label" uRIOfIdentifiableToBeLabeled="stem://org.eclipse.stem/edge/migration/14">
+        <dublinCore identifier="stem://org.eclipse.stem/YE-S-G160001_YE-S-G160005" type="stemtype://org.eclipse.stem/label"/>
+        <currentValue xsi:type="org.eclipse.stem.definitions.edges:MigrationEdgeLabelValue" migrationRate="0.05"/>
+      </label>
+    </value>
+  </edges>
+  <edges key="stem://org.eclipse.stem/edge/migration/relationship/migration/15">
+    <value xsi:type="org.eclipse.stem.definitions.edges:MigrationEdge" uRI="stem://org.eclipse.stem/edge/migration/relationship/migration/15" typeURI="stemtype://org.eclipse.stem/Edge" nodeAURI="stem://org.eclipse.stem/node/geo/region/YE-S-G160005" nodeBURI="stem://org.eclipse.stem/node/geo/region/YE-S-G160001" directed="true">
+      <dublinCore title="MigrationEdge[(YE-S-G160005)&lt;-->(YE-S-G160001)]" identifier="stem://org.eclipse.stem/edge/migration/relationship/migration/15" type="stemtype://org.eclipse.stem/Edge"/>
+      <label xsi:type="org.eclipse.stem.definitions.edges:MigrationEdgeLabel" uRI="stem://org.eclipse.stem/YE-S-G160005_YE-S-G160001" typeURI="stemtype://org.eclipse.stem/label" uRIOfIdentifiableToBeLabeled="stem://org.eclipse.stem/edge/migration/15">
+        <dublinCore identifier="stem://org.eclipse.stem/YE-S-G160005_YE-S-G160001" type="stemtype://org.eclipse.stem/label"/>
+        <currentValue xsi:type="org.eclipse.stem.definitions.edges:MigrationEdgeLabelValue" migrationRate="0.05"/>
+      </label>
+    </value>
+  </edges>
+  <edges key="stem://org.eclipse.stem/edge/migration/relationship/migration/16">
+    <value xsi:type="org.eclipse.stem.definitions.edges:MigrationEdge" uRI="stem://org.eclipse.stem/edge/migration/relationship/migration/16" typeURI="stemtype://org.eclipse.stem/Edge" nodeAURI="stem://org.eclipse.stem/node/geo/region/YE-S-G160002" nodeBURI="stem://org.eclipse.stem/node/geo/region/YE-S-G160005" directed="true">
+      <dublinCore title="MigrationEdge[(YE-S-G160002)&lt;-->(YE-S-G160005)]" identifier="stem://org.eclipse.stem/edge/migration/relationship/migration/16" type="stemtype://org.eclipse.stem/Edge"/>
+      <label xsi:type="org.eclipse.stem.definitions.edges:MigrationEdgeLabel" uRI="stem://org.eclipse.stem/YE-S-G160002_YE-S-G160005" typeURI="stemtype://org.eclipse.stem/label" uRIOfIdentifiableToBeLabeled="stem://org.eclipse.stem/edge/migration/16">
+        <dublinCore identifier="stem://org.eclipse.stem/YE-S-G160002_YE-S-G160005" type="stemtype://org.eclipse.stem/label"/>
+        <currentValue xsi:type="org.eclipse.stem.definitions.edges:MigrationEdgeLabelValue" migrationRate="0.05"/>
+      </label>
+    </value>
+  </edges>
+  <edges key="stem://org.eclipse.stem/edge/migration/relationship/migration/17">
+    <value xsi:type="org.eclipse.stem.definitions.edges:MigrationEdge" uRI="stem://org.eclipse.stem/edge/migration/relationship/migration/17" typeURI="stemtype://org.eclipse.stem/Edge" nodeAURI="stem://org.eclipse.stem/node/geo/region/YE-S-G160005" nodeBURI="stem://org.eclipse.stem/node/geo/region/YE-S-G160002" directed="true">
+      <dublinCore title="MigrationEdge[(YE-S-G160005)&lt;-->(YE-S-G160002)]" identifier="stem://org.eclipse.stem/edge/migration/relationship/migration/17" type="stemtype://org.eclipse.stem/Edge"/>
+      <label xsi:type="org.eclipse.stem.definitions.edges:MigrationEdgeLabel" uRI="stem://org.eclipse.stem/YE-S-G160005_YE-S-G160002" typeURI="stemtype://org.eclipse.stem/label" uRIOfIdentifiableToBeLabeled="stem://org.eclipse.stem/edge/migration/17">
+        <dublinCore identifier="stem://org.eclipse.stem/YE-S-G160005_YE-S-G160002" type="stemtype://org.eclipse.stem/label"/>
+        <currentValue xsi:type="org.eclipse.stem.definitions.edges:MigrationEdgeLabelValue" migrationRate="0.05"/>
+      </label>
+    </value>
+  </edges>
+  <edges key="stem://org.eclipse.stem/edge/migration/relationship/migration/18">
+    <value xsi:type="org.eclipse.stem.definitions.edges:MigrationEdge" uRI="stem://org.eclipse.stem/edge/migration/relationship/migration/18" typeURI="stemtype://org.eclipse.stem/Edge" nodeAURI="stem://org.eclipse.stem/node/geo/region/YE-S-G160001" nodeBURI="stem://org.eclipse.stem/node/geo/region/YE-S-G160006" directed="true">
+      <dublinCore title="MigrationEdge[(YE-S-G160001)&lt;-->(YE-S-G160006)]" identifier="stem://org.eclipse.stem/edge/migration/relationship/migration/18" type="stemtype://org.eclipse.stem/Edge"/>
+      <label xsi:type="org.eclipse.stem.definitions.edges:MigrationEdgeLabel" uRI="stem://org.eclipse.stem/YE-S-G160001_YE-S-G160006" typeURI="stemtype://org.eclipse.stem/label" uRIOfIdentifiableToBeLabeled="stem://org.eclipse.stem/edge/migration/18">
+        <dublinCore identifier="stem://org.eclipse.stem/YE-S-G160001_YE-S-G160006" type="stemtype://org.eclipse.stem/label"/>
+        <currentValue xsi:type="org.eclipse.stem.definitions.edges:MigrationEdgeLabelValue" migrationRate="0.05"/>
+      </label>
+    </value>
+  </edges>
+  <edges key="stem://org.eclipse.stem/edge/migration/relationship/migration/19">
+    <value xsi:type="org.eclipse.stem.definitions.edges:MigrationEdge" uRI="stem://org.eclipse.stem/edge/migration/relationship/migration/19" typeURI="stemtype://org.eclipse.stem/Edge" nodeAURI="stem://org.eclipse.stem/node/geo/region/YE-S-G160006" nodeBURI="stem://org.eclipse.stem/node/geo/region/YE-S-G160001" directed="true">
+      <dublinCore title="MigrationEdge[(YE-S-G160006)&lt;-->(YE-S-G160001)]" identifier="stem://org.eclipse.stem/edge/migration/relationship/migration/19" type="stemtype://org.eclipse.stem/Edge"/>
+      <label xsi:type="org.eclipse.stem.definitions.edges:MigrationEdgeLabel" uRI="stem://org.eclipse.stem/YE-S-G160006_YE-S-G160001" typeURI="stemtype://org.eclipse.stem/label" uRIOfIdentifiableToBeLabeled="stem://org.eclipse.stem/edge/migration/19">
+        <dublinCore identifier="stem://org.eclipse.stem/YE-S-G160006_YE-S-G160001" type="stemtype://org.eclipse.stem/label"/>
+        <currentValue xsi:type="org.eclipse.stem.definitions.edges:MigrationEdgeLabelValue" migrationRate="0.05"/>
+      </label>
+    </value>
+  </edges>
+</org.eclipse.stem.core.graph:Graph>

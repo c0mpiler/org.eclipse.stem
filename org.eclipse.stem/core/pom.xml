@@ -1,0 +1,43 @@
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.eclipse.stem.tycho</groupId>
+    <artifactId>org.eclipse.stem.tycho.core</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <parent>
+        <groupId>org.eclipse.stem.tycho</groupId>
+        <artifactId>org.eclipse.stem.tycho.root</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
+
+    <modules>
+        <module>org.eclipse.stem.core</module>
+        <module>org.eclipse.stem.definitions</module>
+        <module>org.eclipse.stem.geography</module>
+        <module>org.eclipse.stem.gis</module>
+        <module>org.eclipse.stem.graphgenerators</module>
+        <module>org.eclipse.stem.jobs</module>
+        <module>org.eclipse.stem.loggers</module>
+        <module>org.eclipse.stem.loggers.csv</module>
+        <module>org.eclipse.stem.loggers.imagewriter</module>
+        <module>org.eclipse.stem.runtime</module>
+        <module>org.eclipse.stem.sequencers</module>
+        <module>org.eclipse.stem.solvers.fd</module>
+        <module>org.eclipse.stem.solvers.rk</module>
+        <module>org.eclipse.stem.solvers.stochastic</module>
+        <module>org.eclipse.stem.transport</module>
+        <module>org.eclipse.stem.ui</module>
+        <module>org.eclipse.stem.ui.ge</module>
+        <module>org.eclipse.stem.ui.grapheditor</module>
+        <module>org.eclipse.stem.ui.graphgenerators</module>
+        <module>org.eclipse.stem.ui.headless</module>
+        <module>org.eclipse.stem.ui.loggers</module>
+        <module>org.eclipse.stem.ui.reports</module>
+        <module>org.eclipse.stem.ui.solvers.fd</module>
+        <module>org.eclipse.stem.ui.solvers.rk</module>
+        <module>org.eclipse.stem.ui.solvers.stochastic</module>
+        <module>org.eclipse.stem.ui.transport</module>
+        <module>org.eclipse.stem.util.loggers</module>
+    </modules>
+</project>

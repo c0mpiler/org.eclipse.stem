@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="csv" nsURI="http://org/eclipse/stem/loggers/csv" nsPrefix="org.eclipse.stem.loggers.csv.model">
+  <eClassifiers xsi:type="ecore:EClass" name="CSVLogger" eSuperTypes="../../org.eclipse.stem.loggers/models/SimulationLogger.ecore#//SynchronousDecoratorPropertyLogger">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="useDefaultLogDirectory"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dataPath" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="delimeter" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral=","/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="logRunParameters" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="bufferSize" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        defaultValueLiteral="1024"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="logInitialState" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="false"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="logHtmlSummary" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="true"/>
+  </eClassifiers>
+</ecore:EPackage>

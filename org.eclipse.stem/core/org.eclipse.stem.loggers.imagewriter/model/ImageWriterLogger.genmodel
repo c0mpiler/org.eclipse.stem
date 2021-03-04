@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+/******************************************************************************
+ * Copyright (c) 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018
+ * IBM Corporation, BfR, and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v2.0
+ * which accompanies this distribution, and is available at
+ * https://www.eclipse.org/legal/epl-2.0/
+ *
+ * Contributors:
+ *     IBM Corporation - initial API and implementation and new features
+ *     Bundesinstitut für Risikobewertung - Pajek Graph interface, new Veterinary Models
+ *******************************************************************************/
+ -->
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.eclipse.stem.loggers.imagewriter/src"
+    editDirectory="/org.eclipse.stem.loggers.imagewriter/src" editorDirectory="/org.eclipse.stem.loggers.imagewriter/src"
+    modelPluginID="org.eclipse.stem.loggers.imagewriter" modelName="ImageWriterLogger"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0" publicConstructors="true"
+    runtimeVersion="2.6" language="" usedGenPackages="../../org.eclipse.stem.core/model/core.genmodel#//common ../../org.eclipse.stem.core/model/core.genmodel#//graph ../../org.eclipse.stem.core/model/core.genmodel#//model ../../org.eclipse.stem.core/model/core.genmodel#//modifier ../../org.eclipse.stem.core/model/core.genmodel#//scenario ../../org.eclipse.stem.core/model/core.genmodel#//sequencer ../../org.eclipse.stem.core/model/core.genmodel#//solver ../../org.eclipse.stem.core/model/core.genmodel#//logger platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore ../../org.eclipse.stem.loggers/models/SimulationLogger.genmodel#//loggers"
+    runtimePlatform="RCP">
+  <foreignModel>ImageWriterLogger.ecore</foreignModel>
+  <genPackages prefix="Imagewriter" basePackage="org.eclipse.stem.loggers" disposableProviderFactory="true"
+      ecorePackage="ImageWriterLogger.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ImageWriterLogger.ecore#//MAP_PROJECTIONS">
+      <genEnumLiterals ecoreEnumLiteral="ImageWriterLogger.ecore#//MAP_PROJECTIONS/EQUIRECTANGULAR"/>
+      <genEnumLiterals ecoreEnumLiteral="ImageWriterLogger.ecore#//MAP_PROJECTIONS/MERCATOR"/>
+    </genEnums>
+    <genDataTypes ecoreDataType="ImageWriterLogger.ecore#//IMapProjection"/>
+    <genDataTypes ecoreDataType="ImageWriterLogger.ecore#//ColorProvider"/>
+    <genClasses ecoreClass="ImageWriterLogger.ecore#//ImageWriterLogger">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ImageWriterLogger.ecore#//ImageWriterLogger/useDefaultLogDirectory"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ImageWriterLogger.ecore#//ImageWriterLogger/dataPath"/>
+    </genClasses>
+    <genClasses ecoreClass="ImageWriterLogger.ecore#//ProjectedMapImageLogger">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ImageWriterLogger.ecore#//ProjectedMapImageLogger/projection"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ImageWriterLogger.ecore#//ProjectedMapImageLogger/width"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ImageWriterLogger.ecore#//ProjectedMapImageLogger/height"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ImageWriterLogger.ecore#//ProjectedMapImageLogger/forceAspectRatio"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ImageWriterLogger.ecore#//ProjectedMapImageLogger/fitToShapeBounds"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ImageWriterLogger.ecore#//ProjectedMapImageLogger/logScaling"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ImageWriterLogger.ecore#//ProjectedMapImageLogger/gain"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ImageWriterLogger.ecore#//ProjectedMapImageLogger/colorProvider"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ImageWriterLogger.ecore#//ProjectedMapImageLogger/transparentBackground"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ImageWriterLogger.ecore#//ProjectedMapImageLogger/borderTransparency"/>
+      <genOperations ecoreOperation="ImageWriterLogger.ecore#//ProjectedMapImageLogger/getMapProjector"/>
+    </genClasses>
+    <genClasses ecoreClass="ImageWriterLogger.ecore#//MapViewImageWriterLogger">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ImageWriterLogger.ecore#//MapViewImageWriterLogger/openMapView"/>
+    </genClasses>
+    <genClasses ecoreClass="ImageWriterLogger.ecore#//EquirectangularMapLogger"/>
+    <genClasses ecoreClass="ImageWriterLogger.ecore#//MercatorMapLogger"/>
+    <genClasses ecoreClass="ImageWriterLogger.ecore#//OriginDependentProjectedMapImageLogger">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ImageWriterLogger.ecore#//OriginDependentProjectedMapImageLogger/originLatitude"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ImageWriterLogger.ecore#//OriginDependentProjectedMapImageLogger/originLongitude"/>
+    </genClasses>
+    <genClasses ecoreClass="ImageWriterLogger.ecore#//AzimuthalEquidistantMapLogger"/>
+    <genClasses ecoreClass="ImageWriterLogger.ecore#//OrthographicMapLogger"/>
+  </genPackages>
+</genmodel:GenModel>

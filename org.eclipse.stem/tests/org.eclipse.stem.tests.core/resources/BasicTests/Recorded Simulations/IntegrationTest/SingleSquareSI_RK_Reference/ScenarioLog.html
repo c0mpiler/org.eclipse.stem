@@ -1,0 +1,1189 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script type="text/javascript">function toggleRow(tr, open)
+{
+	if (open == 1) {
+		tr.style.display = 'table-row';
+	} else {
+		tr.style.display = 'none';
+	}
+}
+
+function getVisibleStatusNode(node)
+{
+	var attr = node.getAttributeNode('showRow');
+	if (attr == null) {
+		attr = document.createAttribute('showRow')
+		attr.nodeValue = '1';
+		node.setAttributeNode(attr);
+	}
+	return attr;
+}
+
+function toggleButton(node,state)
+{
+	var nodeText = node.innerHTML.substring(1);
+
+	console.log(nodeText);
+
+	if (state == 1) {
+		node.innerHTML = "-"+nodeText;
+	} else {
+		node.innerHTML = "+"+nodeText;
+	}
+}
+
+function toggleIdentifiable(node,buttonNode)
+{
+	var visStatusNode = getVisibleStatusNode(node);
+
+	var state;
+	var forceClose;
+	if (visStatusNode.nodeValue == 1) {
+		state = 0;
+		forceClose = true;
+	} else {
+		state = 1;
+		forceClose = false;
+	}
+
+	toggleButton(buttonNode,state);
+
+	visStatusNode.nodeValue = state;
+
+	var tr = node;
+	while (tr = tr.nextSibling) {
+		if (tr.tagName == "TR") {
+			if (tr.id.search('TITLE_ROW') >= 0) {
+				break;
+			}
+
+			toggleRow(tr,state);
+
+			if (tr.id.search('DUBLINCORE') >= 0) {
+				toggleDublinCore(tr,false,forceClose);
+				break;
+			}
+		}
+	}    	
+
+}
+
+function toggleDublinCore(node, toggle, forceClose)
+{
+	var visStatusNode = getVisibleStatusNode(node);
+
+	var state = 0;
+
+	if (!forceClose) {
+		if (toggle) {
+			if (visStatusNode.nodeValue == 1) {
+				state = 0;
+			} else {
+				state = 1;
+			}
+			visStatusNode.nodeValue = state;
+		} else {
+			state = visStatusNode.nodeValue;
+		}
+	}
+
+	var tr = node;
+	while (tr = tr.nextSibling) {
+		if (tr.tagName == "TR") {
+			if (tr.id.search('DUBLINCORE') < 0) {
+				break;
+			}
+
+			toggleRow(tr, state);
+		}
+	}    			
+}
+
+
+function toggle(node)
+{
+	var titleRow = node.parentNode.parentNode;
+	toggleIdentifiable(titleRow,node);
+}
+
+
+function collapseDublinCores()
+{
+	var nodes = document.getElementsByTagName('tr');
+	for (var idx=0; idx<nodes.length; idx++) {
+		var node = nodes[idx];
+		if (node.id.search('DUBLINCORE_ROW_0') >= 0) {
+			toggleDublinCore(node,true,false);
+		}
+	}
+}
+
+</script>
+    <style type="text/css">A {color: #000; text-decoration: none;}
+.idHeader {background-color:#00ffff; font-weight: bold;}
+.idBody {background-color:#c8ffff;}
+.dcBody {background-color:#e1ffe1;}
+.dcHeader {background-color:#c8ffc8;}
+.scenario {background-color:#c8c8ff;}
+.blank {background-color: #fff;}</style>
+    <title>SingleSquareSI_RK</title>
+  </head>
+  <body onload="collapseDublinCores();">
+    <table style="text-align: left; width: 100%;" cellpadding="2" border="4" cellspacing="5">
+      <tbody>
+        <tr id="TITLE_ROW_SingleSquareSI_RK" align="left">
+          <td style="background-color: rgb(200, 200, 255);">
+            <span style="font-weight: bold;">-STEM Scenario: SingleSquareSI_RK</span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <table frame="box" style="text-align: left;" width="100%" cellpadding="2" border="0" cellspacing="2">
+              <tbody>
+                <tr>
+                  <td style="width: 100px;">
+                  </td>
+                  <td style="width: 100px;">
+                  </td>
+                  <td style="width: 200px;">
+                  </td>
+                  <td style="background-color: rgb(255, 255, 255);">
+                  </td>
+                </tr>
+                <tr>
+                </tr>
+                <tr id="TITLE_ROW_SingleSquareSI_RK" class="idHeader">
+                  <td>
+                    <a id="TITLE_ROW_SingleSquareSI_RK_toggle" null="null" onclick="toggle(this);return false;" href="#">-Scenario</a>
+                  </td>
+                  <td>SingleSquareSI_RK</td>
+                  <td>Scenario</td>
+                </tr>
+                <tr id="DATA_ROW_0_platform:/resource/BasicTests/scenarios/SingleSquareSI_RK.scenario_uRI" class="idBody">
+                  <td align="left">
+                  </td>
+                  <td align="right">uRI:   </td>
+                  <td align="left">platform:/resource/BasicTests/scenarios/SingleSquareSI_RK.scenario</td>
+                </tr>
+                <tr id="DATA_ROW_1_platform:/resource/BasicTests/scenarios/SingleSquareSI_RK.scenario_typeURI" class="idBody">
+                  <td align="left">
+                  </td>
+                  <td align="right">typeURI:   </td>
+                  <td align="left">stemtype://org.eclipse.stem/Scenario</td>
+                </tr>
+                <tr align="center">
+                </tr>
+                <tr id="DUBLINCORE_ROW_1_platform:/resource/BasicTests/scenarios/SingleSquareSI_RK.scenario">
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">identifier:   </td>
+                  <td style="width: 200px;" class="dcBody">platform:/resource/BasicTests/scenarios/SingleSquareSI_RK.scenario</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_3_platform:/resource/BasicTests/scenarios/SingleSquareSI_RK.scenario">
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">creator:   </td>
+                  <td style="width: 200px;" class="dcBody">edlund</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_5_platform:/resource/BasicTests/scenarios/SingleSquareSI_RK.scenario">
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">format:   </td>
+                  <td style="width: 200px;" class="dcBody">http:///org/eclipse/stem/core/scenario.ecore</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_13_platform:/resource/BasicTests/scenarios/SingleSquareSI_RK.scenario">
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">type:   </td>
+                  <td style="width: 200px;" class="dcBody">stemtype://org.eclipse.stem/Scenario</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_16_platform:/resource/BasicTests/scenarios/SingleSquareSI_RK.scenario">
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">created:   </td>
+                  <td style="width: 200px;" class="dcBody">2011-01-24</td>
+                </tr>
+                <tr>
+                </tr>
+                <tr id="TITLE_ROW_SingleSquareSIInfector" class="idHeader">
+                  <td>
+                    <a id="TITLE_ROW_SingleSquareSIInfector_toggle" null="null" onclick="toggle(this);return false;" href="#">-Decorator</a>
+                  </td>
+                  <td>SingleSquareSIInfector</td>
+                  <td>SIInfector</td>
+                </tr>
+                <tr id="DATA_ROW_0_platform:/resource/BasicTests/decorators/SingleSquareSIInfector.standard_uRI" class="idBody">
+                  <td align="left">
+                  </td>
+                  <td align="right">uRI:   </td>
+                  <td align="left">platform:/resource/BasicTests/decorators/SingleSquareSIInfector.standard</td>
+                </tr>
+                <tr id="DATA_ROW_1_platform:/resource/BasicTests/decorators/SingleSquareSIInfector.standard_typeURI" class="idBody">
+                  <td align="left">
+                  </td>
+                  <td align="right">typeURI:   </td>
+                  <td align="left">stemtype://org.eclipse.stem/Identifiable</td>
+                </tr>
+                <tr id="DATA_ROW_5_platform:/resource/BasicTests/decorators/SingleSquareSIInfector.standard_targetURI" class="idBody">
+                  <td align="left">
+                  </td>
+                  <td align="right">targetURI:   </td>
+                  <td align="left">stem://org.eclipse.stem/node/54D5EEA3F5CBE3/LAT_SQR_0_0</td>
+                </tr>
+                <tr id="DATA_ROW_6_platform:/resource/BasicTests/decorators/SingleSquareSIInfector.standard_diseaseName" class="idBody">
+                  <td align="left">
+                  </td>
+                  <td align="right">diseaseName:   </td>
+                  <td align="left">TestSI</td>
+                </tr>
+                <tr id="DATA_ROW_7_platform:/resource/BasicTests/decorators/SingleSquareSIInfector.standard_targetISOKey" class="idBody">
+                  <td align="left">
+                  </td>
+                  <td align="right">targetISOKey:   </td>
+                  <td align="left">LAT_SQR_0_0</td>
+                </tr>
+                <tr id="DATA_ROW_8_platform:/resource/BasicTests/decorators/SingleSquareSIInfector.standard_populationIdentifier" class="idBody">
+                  <td align="left">
+                  </td>
+                  <td align="right">populationIdentifier:   </td>
+                  <td align="left">human</td>
+                </tr>
+                <tr id="DATA_ROW_9_platform:/resource/BasicTests/decorators/SingleSquareSIInfector.standard_infectPercentage" class="idBody">
+                  <td align="left">
+                  </td>
+                  <td align="right">infectPercentage:   </td>
+                  <td align="left">false</td>
+                </tr>
+                <tr id="DATA_ROW_10_platform:/resource/BasicTests/decorators/SingleSquareSIInfector.standard_targetFeature" class="idBody">
+                  <td align="left">
+                  </td>
+                  <td align="right">targetFeature:   </td>
+                  <td align="left">i</td>
+                </tr>
+                <tr id="DATA_ROW_11_platform:/resource/BasicTests/decorators/SingleSquareSIInfector.standard_infectiousCount" class="idBody">
+                  <td align="left">
+                  </td>
+                  <td align="right">infectiousCount:   </td>
+                  <td align="left">1.0</td>
+                </tr>
+                <tr align="center">
+                </tr>
+                <tr id="DUBLINCORE_ROW_1_platform:/resource/BasicTests/decorators/SingleSquareSIInfector.standard">
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">identifier:   </td>
+                  <td style="width: 200px;" class="dcBody">platform:/resource/BasicTests/decorators/SingleSquareSIInfector.standard</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_3_platform:/resource/BasicTests/decorators/SingleSquareSIInfector.standard">
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">creator:   </td>
+                  <td style="width: 200px;" class="dcBody">edlund</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_5_platform:/resource/BasicTests/decorators/SingleSquareSIInfector.standard">
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">format:   </td>
+                  <td style="width: 200px;" class="dcBody">http:///org/eclipse/stem/diseasemodels/standard.ecore</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_13_platform:/resource/BasicTests/decorators/SingleSquareSIInfector.standard">
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">type:   </td>
+                  <td style="width: 200px;" class="dcBody">stemtype://org.eclipse.stem/Identifiable</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_16_platform:/resource/BasicTests/decorators/SingleSquareSIInfector.standard">
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">created:   </td>
+                  <td style="width: 200px;" class="dcBody">2011-01-24</td>
+                </tr>
+                <tr>
+                </tr>
+                <tr id="TITLE_ROW_30DaySequencer" class="idHeader">
+                  <td>
+                    <a id="TITLE_ROW_30DaySequencer_toggle" null="null" onclick="toggle(this);return false;" href="#">-Sequencer</a>
+                  </td>
+                  <td>30DaySequencer</td>
+                  <td>SequentialSequencer</td>
+                </tr>
+                <tr id="DATA_ROW_0_platform:/resource/BasicTests/sequencers/30DaySequencer.sequencer_uRI" class="idBody">
+                  <td align="left">
+                  </td>
+                  <td align="right">uRI:   </td>
+                  <td align="left">platform:/resource/BasicTests/sequencers/30DaySequencer.sequencer</td>
+                </tr>
+                <tr id="DATA_ROW_1_platform:/resource/BasicTests/sequencers/30DaySequencer.sequencer_typeURI" class="idBody">
+                  <td align="left">
+                  </td>
+                  <td align="right">typeURI:   </td>
+                  <td align="left">stemtype://org.eclipse.stem/Identifiable</td>
+                </tr>
+                <tr id="DATA_ROW_3_platform:/resource/BasicTests/sequencers/30DaySequencer.sequencer_duration" class="idBody">
+                  <td align="left">
+                  </td>
+                  <td align="right">duration:   </td>
+                  <td align="left">2678399000</td>
+                </tr>
+                <tr id="DATA_ROW_5_platform:/resource/BasicTests/sequencers/30DaySequencer.sequencer_workComplete" class="idBody">
+                  <td align="left">
+                  </td>
+                  <td align="right">workComplete:   </td>
+                  <td align="left">0.0</td>
+                </tr>
+                <tr id="DATA_ROW_7_platform:/resource/BasicTests/sequencers/30DaySequencer.sequencer_cycle" class="idBody">
+                  <td align="left">
+                  </td>
+                  <td align="right">cycle:   </td>
+                  <td align="left">0</td>
+                </tr>
+                <tr id="DATA_ROW_8_platform:/resource/BasicTests/sequencers/30DaySequencer.sequencer_timeIncrement" class="idBody">
+                  <td align="left">
+                  </td>
+                  <td align="right">timeIncrement:   </td>
+                  <td align="left">86400000</td>
+                </tr>
+                <tr align="center">
+                </tr>
+                <tr id="DUBLINCORE_ROW_1_platform:/resource/BasicTests/sequencers/30DaySequencer.sequencer">
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">identifier:   </td>
+                  <td style="width: 200px;" class="dcBody">platform:/resource/BasicTests/sequencers/30DaySequencer.sequencer</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_2_platform:/resource/BasicTests/sequencers/30DaySequencer.sequencer">
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">description:   </td>
+                  <td style="width: 200px;" class="dcBody">Sequential Sequencer "30DaySequencer" starting from 2011-01-24 to 2011-02-24 with a cycle period of 1 day.</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_3_platform:/resource/BasicTests/sequencers/30DaySequencer.sequencer">
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">creator:   </td>
+                  <td style="width: 200px;" class="dcBody">edlund</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_5_platform:/resource/BasicTests/sequencers/30DaySequencer.sequencer">
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">format:   </td>
+                  <td style="width: 200px;" class="dcBody">http:///org/eclipse/stem/core/sequencer.ecore</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_13_platform:/resource/BasicTests/sequencers/30DaySequencer.sequencer">
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">type:   </td>
+                  <td style="width: 200px;" class="dcBody">stemtype://org.eclipse.stem/Identifiable</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_16_platform:/resource/BasicTests/sequencers/30DaySequencer.sequencer">
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">created:   </td>
+                  <td style="width: 200px;" class="dcBody">2011-01-24</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_20_platform:/resource/BasicTests/sequencers/30DaySequencer.sequencer">
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">valid:   </td>
+                  <td style="width: 200px;" class="dcBody">start=2011-01-24; end=2011-02-24;</td>
+                </tr>
+                <tr>
+                </tr>
+                <tr id="TITLE_ROW_9003919583A78F21" class="idHeader">
+                  <td>
+                    <a id="TITLE_ROW_9003919583A78F21_toggle" null="null" onclick="toggle(this);return false;" href="#">-Solver</a>
+                  </td>
+                  <td>9003919583A78F21</td>
+                  <td>RungeKutta</td>
+                </tr>
+                <tr id="DATA_ROW_0_stem://org.eclipse.stem/RungeKuttaSolver/9003919583A78F21_uRI" class="idBody">
+                  <td align="left">
+                  </td>
+                  <td align="right">uRI:   </td>
+                  <td align="left">stem://org.eclipse.stem/RungeKuttaSolver/9003919583A78F21</td>
+                </tr>
+                <tr id="DATA_ROW_1_stem://org.eclipse.stem/RungeKuttaSolver/9003919583A78F21_typeURI" class="idBody">
+                  <td align="left">
+                  </td>
+                  <td align="right">typeURI:   </td>
+                  <td align="left">stemtype://org.eclipse.stem/Solver</td>
+                </tr>
+                <tr id="DATA_ROW_2_stem://org.eclipse.stem/RungeKuttaSolver/9003919583A78F21_relativeTolerance" class="idBody">
+                  <td align="left">
+                  </td>
+                  <td align="right">relativeTolerance:   </td>
+                  <td align="left">1.0E-9</td>
+                </tr>
+                <tr id="DATA_ROW_3_stem://org.eclipse.stem/RungeKuttaSolver/9003919583A78F21_minStep" class="idBody">
+                  <td align="left">
+                  </td>
+                  <td align="right">minStep:   </td>
+                  <td align="left">1.0E-15</td>
+                </tr>
+                <tr align="center">
+                </tr>
+                <tr id="DUBLINCORE_ROW_1_stem://org.eclipse.stem/RungeKuttaSolver/9003919583A78F21">
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">identifier:   </td>
+                  <td style="width: 200px;" class="dcBody">stem://org.eclipse.stem/RungeKuttaSolver/9003919583A78F21</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_13_stem://org.eclipse.stem/RungeKuttaSolver/9003919583A78F21">
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">type:   </td>
+                  <td style="width: 200px;" class="dcBody">stemtype://org.eclipse.stem/Solver</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <table frame="box" style="text-align: left;" width="100%" cellpadding="2" border="0" cellspacing="2">
+              <tbody>
+                <tr>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;">
+                  </td>
+                  <td style="width: 100px;">
+                  </td>
+                  <td style="width: 200px;">
+                  </td>
+                  <td style="background-color: rgb(255, 255, 255);">
+                  </td>
+                </tr>
+                <tr>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                </tr>
+                <tr id="TITLE_ROW_SingleSquareSIModel" class="idHeader">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td>
+                    <a id="TITLE_ROW_SingleSquareSIModel_toggle" null="null" onclick="toggle(this);return false;" href="#">-Model</a>
+                  </td>
+                  <td>SingleSquareSIModel</td>
+                  <td>Model</td>
+                </tr>
+                <tr id="DATA_ROW_0_platform:/resource/BasicTests/models/SingleSquareSIModel.model_uRI" class="idBody">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td align="left">
+                  </td>
+                  <td align="right">uRI:   </td>
+                  <td align="left">platform:/resource/BasicTests/models/SingleSquareSIModel.model</td>
+                </tr>
+                <tr id="DATA_ROW_1_platform:/resource/BasicTests/models/SingleSquareSIModel.model_typeURI" class="idBody">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td align="left">
+                  </td>
+                  <td align="right">typeURI:   </td>
+                  <td align="left">stemtype://org.eclipse.stem/Model</td>
+                </tr>
+                <tr align="center">
+                </tr>
+                <tr id="DUBLINCORE_ROW_1_platform:/resource/BasicTests/models/SingleSquareSIModel.model">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">identifier:   </td>
+                  <td style="width: 200px;" class="dcBody">platform:/resource/BasicTests/models/SingleSquareSIModel.model</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_3_platform:/resource/BasicTests/models/SingleSquareSIModel.model">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">creator:   </td>
+                  <td style="width: 200px;" class="dcBody">edlund</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_5_platform:/resource/BasicTests/models/SingleSquareSIModel.model">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">format:   </td>
+                  <td style="width: 200px;" class="dcBody">http:///org/eclipse/stem/core/model.ecore</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_13_platform:/resource/BasicTests/models/SingleSquareSIModel.model">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">type:   </td>
+                  <td style="width: 200px;" class="dcBody">stemtype://org.eclipse.stem/Model</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_16_platform:/resource/BasicTests/models/SingleSquareSIModel.model">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">created:   </td>
+                  <td style="width: 200px;" class="dcBody">2011-01-24</td>
+                </tr>
+                <tr>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                </tr>
+                <tr id="TITLE_ROW_AC3025839DDF0234" class="idHeader">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td>
+                    <a id="TITLE_ROW_AC3025839DDF0234_toggle" null="null" onclick="toggle(this);return false;" href="#">-Decorator</a>
+                  </td>
+                  <td>AC3025839DDF0234</td>
+                  <td>StandardPopulationModel</td>
+                </tr>
+                <tr id="DATA_ROW_0_stem://org.eclipse.stem/auto_gen_human_population_model/AC3025839DDF0234_uRI" class="idBody">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td align="left">
+                  </td>
+                  <td align="right">uRI:   </td>
+                  <td align="left">stem://org.eclipse.stem/auto_gen_human_population_model/AC3025839DDF0234</td>
+                </tr>
+                <tr id="DATA_ROW_1_stem://org.eclipse.stem/auto_gen_human_population_model/AC3025839DDF0234_typeURI" class="idBody">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td align="left">
+                  </td>
+                  <td align="right">typeURI:   </td>
+                  <td align="left">stemtype://org.eclipse.stem/Identifiable</td>
+                </tr>
+                <tr id="DATA_ROW_5_stem://org.eclipse.stem/auto_gen_human_population_model/AC3025839DDF0234_addStochasticNoise" class="idBody">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td align="left">
+                  </td>
+                  <td align="right">addStochasticNoise:   </td>
+                  <td align="left">false</td>
+                </tr>
+                <tr id="DATA_ROW_6_stem://org.eclipse.stem/auto_gen_human_population_model/AC3025839DDF0234_randomSeed" class="idBody">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td align="left">
+                  </td>
+                  <td align="right">randomSeed:   </td>
+                  <td align="left">1</td>
+                </tr>
+                <tr id="DATA_ROW_8_stem://org.eclipse.stem/auto_gen_human_population_model/AC3025839DDF0234_populationIdentifier" class="idBody">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td align="left">
+                  </td>
+                  <td align="right">populationIdentifier:   </td>
+                  <td align="left">human</td>
+                </tr>
+                <tr id="DATA_ROW_9_stem://org.eclipse.stem/auto_gen_human_population_model/AC3025839DDF0234_name" class="idBody">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td align="left">
+                  </td>
+                  <td align="right">name:   </td>
+                  <td align="left">auto_gen_human_population_model</td>
+                </tr>
+                <tr id="DATA_ROW_11_stem://org.eclipse.stem/auto_gen_human_population_model/AC3025839DDF0234_initialRescalingFactor" class="idBody">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td align="left">
+                  </td>
+                  <td align="right">initialRescalingFactor:   </td>
+                  <td align="left">1.0</td>
+                </tr>
+                <tr id="DATA_ROW_12_stem://org.eclipse.stem/auto_gen_human_population_model/AC3025839DDF0234_birthRate" class="idBody">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td align="left">
+                  </td>
+                  <td align="right">birthRate:   </td>
+                  <td align="left">0.0</td>
+                </tr>
+                <tr id="DATA_ROW_13_stem://org.eclipse.stem/auto_gen_human_population_model/AC3025839DDF0234_deathRate" class="idBody">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td align="left">
+                  </td>
+                  <td align="right">deathRate:   </td>
+                  <td align="left">0.0</td>
+                </tr>
+                <tr id="DATA_ROW_14_stem://org.eclipse.stem/auto_gen_human_population_model/AC3025839DDF0234_timePeriod" class="idBody">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td align="left">
+                  </td>
+                  <td align="right">timePeriod:   </td>
+                  <td align="left">86400000</td>
+                </tr>
+                <tr align="center">
+                </tr>
+                <tr id="DUBLINCORE_ROW_0_stem://org.eclipse.stem/auto_gen_human_population_model/AC3025839DDF0234">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                    <a onclick="toggle(this);return false;" href="#">+Dublin Core</a>
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">title:   </td>
+                  <td style="width: 200px;" class="dcBody">Auto Generated human population model</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_1_stem://org.eclipse.stem/auto_gen_human_population_model/AC3025839DDF0234">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">identifier:   </td>
+                  <td style="width: 200px;" class="dcBody">stem://org.eclipse.stem/auto_gen_human_population_model/AC3025839DDF0234</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_13_stem://org.eclipse.stem/auto_gen_human_population_model/AC3025839DDF0234">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">type:   </td>
+                  <td style="width: 200px;" class="dcBody">stemtype://org.eclipse.stem/Identifiable</td>
+                </tr>
+                <tr>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                </tr>
+                <tr id="TITLE_ROW_SI.standard" class="idHeader">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td>
+                    <a id="TITLE_ROW_SI.standard_toggle" null="null" onclick="toggle(this);return false;" href="#">-Decorator</a>
+                  </td>
+                  <td>SI.standard</td>
+                  <td>DeterministicSIDiseaseModel</td>
+                </tr>
+                <tr id="DATA_ROW_0_platform:/resource/BasicTests/decorators/SI.standard_uRI" class="idBody">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td align="left">
+                  </td>
+                  <td align="right">uRI:   </td>
+                  <td align="left">platform:/resource/BasicTests/decorators/SI.standard</td>
+                </tr>
+                <tr id="DATA_ROW_1_platform:/resource/BasicTests/decorators/SI.standard_typeURI" class="idBody">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td align="left">
+                  </td>
+                  <td align="right">typeURI:   </td>
+                  <td align="left">stemtype://org.eclipse.stem/Identifiable</td>
+                </tr>
+                <tr id="DATA_ROW_5_platform:/resource/BasicTests/decorators/SI.standard_addStochasticNoise" class="idBody">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td align="left">
+                  </td>
+                  <td align="right">addStochasticNoise:   </td>
+                  <td align="left">false</td>
+                </tr>
+                <tr id="DATA_ROW_6_platform:/resource/BasicTests/decorators/SI.standard_randomSeed" class="idBody">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td align="left">
+                  </td>
+                  <td align="right">randomSeed:   </td>
+                  <td align="left">1</td>
+                </tr>
+                <tr id="DATA_ROW_8_platform:/resource/BasicTests/decorators/SI.standard_populationIdentifier" class="idBody">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td align="left">
+                  </td>
+                  <td align="right">populationIdentifier:   </td>
+                  <td align="left">human</td>
+                </tr>
+                <tr id="DATA_ROW_9_platform:/resource/BasicTests/decorators/SI.standard_timePeriod" class="idBody">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td align="left">
+                  </td>
+                  <td align="right">timePeriod:   </td>
+                  <td align="left">86400000</td>
+                </tr>
+                <tr id="DATA_ROW_10_platform:/resource/BasicTests/decorators/SI.standard_diseaseName" class="idBody">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td align="left">
+                  </td>
+                  <td align="right">diseaseName:   </td>
+                  <td align="left">TestSI</td>
+                </tr>
+                <tr id="DATA_ROW_11_platform:/resource/BasicTests/decorators/SI.standard_finiteDifference" class="idBody">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td align="left">
+                  </td>
+                  <td align="right">finiteDifference:   </td>
+                  <td align="left">true</td>
+                </tr>
+                <tr id="DATA_ROW_12_platform:/resource/BasicTests/decorators/SI.standard_frequencyDependent" class="idBody">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td align="left">
+                  </td>
+                  <td align="right">frequencyDependent:   </td>
+                  <td align="left">true</td>
+                </tr>
+                <tr id="DATA_ROW_13_platform:/resource/BasicTests/decorators/SI.standard_referencePopulationDensity" class="idBody">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td align="left">
+                  </td>
+                  <td align="right">referencePopulationDensity:   </td>
+                  <td align="left">100.0</td>
+                </tr>
+                <tr id="DATA_ROW_14_platform:/resource/BasicTests/decorators/SI.standard_roadNetworkInfectiousProportion" class="idBody">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td align="left">
+                  </td>
+                  <td align="right">roadNetworkInfectiousProportion:   </td>
+                  <td align="left">0.01</td>
+                </tr>
+                <tr id="DATA_ROW_15_platform:/resource/BasicTests/decorators/SI.standard_characteristicMixingDistance" class="idBody">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td align="left">
+                  </td>
+                  <td align="right">characteristicMixingDistance:   </td>
+                  <td align="left">2.25</td>
+                </tr>
+                <tr id="DATA_ROW_16_platform:/resource/BasicTests/decorators/SI.standard_transmissionRate" class="idBody">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td align="left">
+                  </td>
+                  <td align="right">transmissionRate:   </td>
+                  <td align="left">0.4</td>
+                </tr>
+                <tr id="DATA_ROW_17_platform:/resource/BasicTests/decorators/SI.standard_nonLinearityCoefficient" class="idBody">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td align="left">
+                  </td>
+                  <td align="right">nonLinearityCoefficient:   </td>
+                  <td align="left">1.0</td>
+                </tr>
+                <tr id="DATA_ROW_18_platform:/resource/BasicTests/decorators/SI.standard_recoveryRate" class="idBody">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td align="left">
+                  </td>
+                  <td align="right">recoveryRate:   </td>
+                  <td align="left">0.0</td>
+                </tr>
+                <tr id="DATA_ROW_19_platform:/resource/BasicTests/decorators/SI.standard_infectiousMortalityRate" class="idBody">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td align="left">
+                  </td>
+                  <td align="right">infectiousMortalityRate:   </td>
+                  <td align="left">0.0</td>
+                </tr>
+                <tr align="center">
+                </tr>
+                <tr id="DUBLINCORE_ROW_1_platform:/resource/BasicTests/decorators/SI.standard">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">identifier:   </td>
+                  <td style="width: 200px;" class="dcBody">platform:/resource/BasicTests/decorators/SI.standard</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_3_platform:/resource/BasicTests/decorators/SI.standard">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">creator:   </td>
+                  <td style="width: 200px;" class="dcBody">edlund</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_5_platform:/resource/BasicTests/decorators/SI.standard">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">format:   </td>
+                  <td style="width: 200px;" class="dcBody">http:///org/eclipse/stem/diseasemodels/standard.ecore</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_13_platform:/resource/BasicTests/decorators/SI.standard">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">type:   </td>
+                  <td style="width: 200px;" class="dcBody">stemtype://org.eclipse.stem/Identifiable</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_16_platform:/resource/BasicTests/decorators/SI.standard">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">created:   </td>
+                  <td style="width: 200px;" class="dcBody">2011-01-24</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <table frame="box" style="text-align: left;" width="100%" cellpadding="2" border="0" cellspacing="2">
+              <tbody>
+                <tr>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;">
+                  </td>
+                  <td style="width: 100px;">
+                  </td>
+                  <td style="width: 200px;">
+                  </td>
+                  <td style="background-color: rgb(255, 255, 255);">
+                  </td>
+                </tr>
+                <tr>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                </tr>
+                <tr id="TITLE_ROW_SingleSquareModel" class="idHeader">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td>
+                    <a id="TITLE_ROW_SingleSquareModel_toggle" null="null" onclick="toggle(this);return false;" href="#">-Model</a>
+                  </td>
+                  <td>SingleSquareModel</td>
+                  <td>Model</td>
+                </tr>
+                <tr id="DATA_ROW_0_platform:/resource/BasicTests/models/SingleSquareModel.model_uRI" class="idBody">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td align="left">
+                  </td>
+                  <td align="right">uRI:   </td>
+                  <td align="left">platform:/resource/BasicTests/models/SingleSquareModel.model</td>
+                </tr>
+                <tr id="DATA_ROW_1_platform:/resource/BasicTests/models/SingleSquareModel.model_typeURI" class="idBody">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td align="left">
+                  </td>
+                  <td align="right">typeURI:   </td>
+                  <td align="left">stemtype://org.eclipse.stem/Model</td>
+                </tr>
+                <tr align="center">
+                </tr>
+                <tr id="DUBLINCORE_ROW_1_platform:/resource/BasicTests/models/SingleSquareModel.model">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">identifier:   </td>
+                  <td style="width: 200px;" class="dcBody">platform:/resource/BasicTests/models/SingleSquareModel.model</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_3_platform:/resource/BasicTests/models/SingleSquareModel.model">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">creator:   </td>
+                  <td style="width: 200px;" class="dcBody">edlund</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_5_platform:/resource/BasicTests/models/SingleSquareModel.model">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">format:   </td>
+                  <td style="width: 200px;" class="dcBody">http:///org/eclipse/stem/core/model.ecore</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_13_platform:/resource/BasicTests/models/SingleSquareModel.model">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">type:   </td>
+                  <td style="width: 200px;" class="dcBody">stemtype://org.eclipse.stem/Model</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_16_platform:/resource/BasicTests/models/SingleSquareModel.model">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">created:   </td>
+                  <td style="width: 200px;" class="dcBody">2011-01-24</td>
+                </tr>
+                <tr>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                </tr>
+                <tr id="TITLE_ROW_SingleSquarePopulationInitializer" class="idHeader">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td>
+                    <a id="TITLE_ROW_SingleSquarePopulationInitializer_toggle" null="null" onclick="toggle(this);return false;" href="#">-Decorator</a>
+                  </td>
+                  <td>SingleSquarePopulationInitializer</td>
+                  <td>StandardPopulationInitializer</td>
+                </tr>
+                <tr id="DATA_ROW_0_platform:/resource/BasicTests/decorators/SingleSquarePopulationInitializer.standard_uRI" class="idBody">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td align="left">
+                  </td>
+                  <td align="right">uRI:   </td>
+                  <td align="left">platform:/resource/BasicTests/decorators/SingleSquarePopulationInitializer.standard</td>
+                </tr>
+                <tr id="DATA_ROW_1_platform:/resource/BasicTests/decorators/SingleSquarePopulationInitializer.standard_typeURI" class="idBody">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td align="left">
+                  </td>
+                  <td align="right">typeURI:   </td>
+                  <td align="left">stemtype://org.eclipse.stem/Identifiable</td>
+                </tr>
+                <tr id="DATA_ROW_5_platform:/resource/BasicTests/decorators/SingleSquarePopulationInitializer.standard_populationIdentifier" class="idBody">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td align="left">
+                  </td>
+                  <td align="right">populationIdentifier:   </td>
+                  <td align="left">human</td>
+                </tr>
+                <tr id="DATA_ROW_6_platform:/resource/BasicTests/decorators/SingleSquarePopulationInitializer.standard_individuals" class="idBody">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td align="left">
+                  </td>
+                  <td align="right">individuals:   </td>
+                  <td align="left">1000.0</td>
+                </tr>
+                <tr id="DATA_ROW_7_platform:/resource/BasicTests/decorators/SingleSquarePopulationInitializer.standard_useDensity" class="idBody">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td align="left">
+                  </td>
+                  <td align="right">useDensity:   </td>
+                  <td align="left">false</td>
+                </tr>
+                <tr id="DATA_ROW_8_platform:/resource/BasicTests/decorators/SingleSquarePopulationInitializer.standard_targetISOKey" class="idBody">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td align="left">
+                  </td>
+                  <td align="right">targetISOKey:   </td>
+                  <td align="left">LAT_SQR_0_0</td>
+                </tr>
+                <tr align="center">
+                </tr>
+                <tr id="DUBLINCORE_ROW_1_platform:/resource/BasicTests/decorators/SingleSquarePopulationInitializer.standard">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">identifier:   </td>
+                  <td style="width: 200px;" class="dcBody">platform:/resource/BasicTests/decorators/SingleSquarePopulationInitializer.standard</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_3_platform:/resource/BasicTests/decorators/SingleSquarePopulationInitializer.standard">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">creator:   </td>
+                  <td style="width: 200px;" class="dcBody">edlund</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_5_platform:/resource/BasicTests/decorators/SingleSquarePopulationInitializer.standard">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">format:   </td>
+                  <td style="width: 200px;" class="dcBody">http:///org/eclipse/stem/populationmodels/standard</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_13_platform:/resource/BasicTests/decorators/SingleSquarePopulationInitializer.standard">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">type:   </td>
+                  <td style="width: 200px;" class="dcBody">stemtype://org.eclipse.stem/Identifiable</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_16_platform:/resource/BasicTests/decorators/SingleSquarePopulationInitializer.standard">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">created:   </td>
+                  <td style="width: 200px;" class="dcBody">2011-01-24</td>
+                </tr>
+                <tr>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                </tr>
+                <tr id="TITLE_ROW_SingleSquareGraph" class="idHeader">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td>
+                    <a id="TITLE_ROW_SingleSquareGraph_toggle" null="null" onclick="toggle(this);return false;" href="#">-Graph</a>
+                  </td>
+                  <td>SingleSquareGraph</td>
+                  <td>Graph</td>
+                </tr>
+                <tr id="DATA_ROW_0_platform:/resource/BasicTests/graphs/SingleSquareGraph.graph_uRI" class="idBody">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td align="left">
+                  </td>
+                  <td align="right">uRI:   </td>
+                  <td align="left">platform:/resource/BasicTests/graphs/SingleSquareGraph.graph</td>
+                </tr>
+                <tr id="DATA_ROW_1_platform:/resource/BasicTests/graphs/SingleSquareGraph.graph_typeURI" class="idBody">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td align="left">
+                  </td>
+                  <td align="right">typeURI:   </td>
+                  <td align="left">stemtype://org.eclipse.stem/Graph</td>
+                </tr>
+                <tr align="center">
+                </tr>
+                <tr id="DUBLINCORE_ROW_1_platform:/resource/BasicTests/graphs/SingleSquareGraph.graph">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">identifier:   </td>
+                  <td style="width: 200px;" class="dcBody">platform:/resource/BasicTests/graphs/SingleSquareGraph.graph</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_3_platform:/resource/BasicTests/graphs/SingleSquareGraph.graph">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">creator:   </td>
+                  <td style="width: 200px;" class="dcBody">edlund</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_4_platform:/resource/BasicTests/graphs/SingleSquareGraph.graph">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">date:   </td>
+                  <td style="width: 200px;" class="dcBody">2011-01-24</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_5_platform:/resource/BasicTests/graphs/SingleSquareGraph.graph">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">format:   </td>
+                  <td style="width: 200px;" class="dcBody">http:///org/eclipse/stem/core/graph.ecore</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_11_platform:/resource/BasicTests/graphs/SingleSquareGraph.graph">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">source:   </td>
+                  <td style="width: 200px;" class="dcBody">Generated</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_13_platform:/resource/BasicTests/graphs/SingleSquareGraph.graph">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">type:   </td>
+                  <td style="width: 200px;" class="dcBody">stemtype://org.eclipse.stem/Graph</td>
+                </tr>
+                <tr id="DUBLINCORE_ROW_16_platform:/resource/BasicTests/graphs/SingleSquareGraph.graph">
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 80px;" class="blank">
+                  </td>
+                  <td style="width: 100px;" class="dcHeader">
+                  </td>
+                  <td style="width: 100px;" align="right" class="dcBody">created:   </td>
+                  <td style="width: 200px;" class="dcBody">2011-01-24</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

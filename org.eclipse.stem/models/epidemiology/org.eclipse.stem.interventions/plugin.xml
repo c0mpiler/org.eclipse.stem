@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ <copyright>
+ </copyright>
+
+ $Id$
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <factory
+            uri="http:///org/eclipse/stem/interventions.ecore"
+            class="org.eclipse.stem.interventions.provider.InterventionsItemProviderAdapterFactory"
+            supportedTypes=
+              "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
+               org.eclipse.emf.edit.provider.IStructuredItemContentProvider
+               org.eclipse.emf.edit.provider.ITreeItemContentProvider
+               org.eclipse.emf.edit.provider.IItemLabelProvider
+               org.eclipse.emf.edit.provider.IItemPropertySource"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http:///org/eclipse/stem/interventions.ecore"
+            class="org.eclipse.stem.interventions.InterventionsPackage"
+            genModel="model/interventions.genmodel"/>
+   </extension>
+
+<extension
+    point="org.eclipse.stem.graphgenerators.graphgenerator">
+    <classdef
+        class="org.eclipse.stem.interventions.impl.ControlGraphGeneratorImpl">
+    </classdef>
+    <dublin_core
+            creator="%dc_cgg_creator_sed"
+           identifier="%dc_cgg_identier"
+           license="%dc_cgg_license"
+           publisher="%dc_cgg_publisher"
+           source="%dc_cgg_source"
+           description="%dc_cgg_desc"
+           title="%dc_cgg_title">
+    </dublin_core>
+  </extension>
+
+<extension
+    point="org.eclipse.stem.graphgenerators.graphgenerator">
+    <classdef
+        class="org.eclipse.stem.interventions.impl.PeriodicControlGraphGeneratorImpl">
+    </classdef>
+    <dublin_core
+            creator="%dc_pcgg_creator_sed"
+           identifier="%dc_pcgg_identier"
+           license="%dc_pcgg_license"
+           publisher="%dc_pcgg_publisher"
+           source="%dc_pcgg_source"
+           description="%dc_pcgg_desc"
+           title="%dc_pcgg_title">
+    </dublin_core>
+  </extension>
+
+  
+</plugin>

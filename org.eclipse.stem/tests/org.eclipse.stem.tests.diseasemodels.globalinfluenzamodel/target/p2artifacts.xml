@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<?artifactRepository version='1.1.0'?>
+<artifacts size='1'>
+  <artifact classifier='osgi.bundle' id='org.eclipse.stem.diseasemodels.globalinfluenzamodel.tests' version='1.0.0'>
+    <properties size='5'>
+      <property name='artifact.size' value='8299'/>
+      <property name='download.size' value='8299'/>
+      <property name='maven-groupId' value='org.eclipse.stem.tycho'/>
+      <property name='maven-artifactId' value='org.eclipse.stem.diseasemodels.globalinfluenzamodel.tests'/>
+      <property name='maven-version' value='1.0.0'/>
+    </properties>
+  </artifact>
+</artifacts>

@@ -1,0 +1,34 @@
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.eclipse.stem.tycho</groupId>
+    <artifactId>org.eclipse.stem.tycho.features</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>pom</packaging> 
+
+    <parent>
+        <groupId>org.eclipse.stem.tycho</groupId>
+        <artifactId>org.eclipse.stem.tycho.root</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
+
+    <modules>
+        <module>org.eclipse.stem.analysis.feature</module>
+        <module>org.eclipse.stem.core.feature</module>
+        <module>org.eclipse.stem.distributed.feature</module>
+        <module>org.eclipse.stem.feature</module>
+
+        <!--        
+        <module>org.eclipse.stem.data.transportation.feature</module>        
+        <module>org.eclipse.stem.data.population.human.feature</module>
+        <module>org.eclipse.stem.data.geography.feature</module>
+        <module>org.eclipse.stem.data.feature</module>
+        <module>org.eclipse.stem.data.diseasemodels.feature</module> -->
+        <module>org.eclipse.stem.internal.data.feature</module>
+        <module>org.eclipse.stem.modelgen.feature</module>
+        <module>org.eclipse.stem.models.epidemiology.feature</module>
+        <module>org.eclipse.stem.models.population.feature</module>
+        <module>org.eclipse.stem.product.feature</module>
+        <module>org.eclipse.stem.tests.feature</module> 
+        
+    </modules>
+</project>

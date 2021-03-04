@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<org.eclipse.stem.model:Package xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:org.eclipse.stem.model="http:///org/eclipse/stem/model/metamodel.ecore" packagePrefix="org.eclipse.stem.diseasemodels.globalinfluenzamodel"
+    name="globalinfluenzamodel">
+  <models name="GlobalInfluenzaModel" class="globalinfluenzamodel.ecore#//GlobalInfluenzaModel"
+      parentModel="../../org.eclipse.stem.diseasemodels/model/standard.metamodel#//@models.3"
+      compartments="../../org.eclipse.stem.diseasemodels/model/standard.metamodel#//@compartmentGroups.3">
+    <parameters name="latitudeSigmoidWidth" dataType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+        defaultValue="4.50" displayName="Latitude Sigmoid Width"/>
+    <parameters name="seasonalModulationExponent" dataType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+        defaultValue="2.0" displayName="Seasonal Modulation Exponent"/>
+    <parameters name="modulationPeriod" dataType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+        defaultValue="365.256363051" displayName="Modulation Period"/>
+    <parameters name="modulationPhaseShift" dataType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+        defaultValue="0.0" displayName="Modulation Phase Shift"/>
+    <parameters name="seasonalModulationFloor" dataType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+        defaultValue="0.6" displayName="Seasonal Modulation Floor"/>
+    <generatorSettings propertyEditorClass="org.eclipse.stem.ui.diseasemodels.globalinfluenzamodel.presentation.GlobalinfluenzamodelPropertyEditor"
+        propertyEditorParentClass="" stringProviderAdapterClass="org.eclipse.stem.ui.diseasemodels.globalinfluenzamodel.presentation.GlobalinfluenzamodelPropertyStringProviderAdapterFactory.GlobalinfluenzePropertyStringProviderAdapter"/>
+  </models>
+</org.eclipse.stem.model:Package>

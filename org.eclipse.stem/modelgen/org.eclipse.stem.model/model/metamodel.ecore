@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="metamodel" nsURI="http:///org/eclipse/stem/model/metamodel.ecore"
+    nsPrefix="org.eclipse.stem.model">
+  <eClassifiers xsi:type="ecore:EEnum" name="ModelType">
+    <eLiterals name="DiseaseModel"/>
+    <eLiterals name="PopulationModel" value="1"/>
+    <eLiterals name="FoodProductionModel" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="CompartmentType">
+    <eLiterals name="Standard" literal="Standard"/>
+    <eLiterals name="Incidence" value="1" literal="Incidence"/>
+    <eLiterals name="Deaths" value="2"/>
+    <eLiterals name="Derived" value="3" literal="Derived"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Package">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="packagePrefix" lowerBound="1"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="models" upperBound="-1"
+        eType="#//Model" containment="true" eOpposite="#//Model/containerPackage"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="compartmentGroups" upperBound="-1"
+        eType="#//CompartmentGroup" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="generatorSettings" eType="#//PackageGenSettings"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Model">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="modelType" lowerBound="1"
+        eType="#//ModelType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="class" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClass"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parentModel" eType="#//Model"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
+        eType="#//ModelParam" containment="true" eOpposite="#//ModelParam/containerModel"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="transitions" upperBound="-1"
+        eType="#//Transition" containment="true" eOpposite="#//Transition/containerModel"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="compartments" eType="#//CompartmentGroup"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="author" eType="#//AuthorDetails"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="containerPackage" eType="#//Package"
+        changeable="false" transient="true" eOpposite="#//Package/models"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="generatorSettings" eType="#//ModelGenSettings"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ModelParam">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dataType" lowerBound="1"
+        eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClassifier"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="defaultValue" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="constraints" upperBound="-1"
+        eType="#//ModelParamConstraint" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="displayName" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="unit" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="helpMessage" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="invalidMessage" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="missingMessage" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="containerModel" eType="#//Model"
+        changeable="false" transient="true" eOpposite="#//Model/parameters"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ModelParamConstraint">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="constraint" lowerBound="1"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CompartmentGroup">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="class" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClass"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="valueClass" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClass"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parentGroup" eType="#//CompartmentGroup"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="compartments" upperBound="-1"
+        eType="#//Compartment" containment="true" eOpposite="#//Compartment/containerGroup"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Compartment">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dataType" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDataType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//CompartmentType"
+        defaultValueLiteral="Standard"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="containerGroup" eType="#//CompartmentGroup"
+        changeable="false" transient="true" eOpposite="#//CompartmentGroup/compartments"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AuthorDetails">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="creator" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="source" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="publisher" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="license" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PackageGenSettings">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="modelPluginId" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="editorPluginId" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ModelGenSettings">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="propertyEditorClass" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="propertyEditorParentClass"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="stringProviderAdapterClass"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="stringProviderAdapterParentClass"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="labelRelativeValueProviderAdapterClass"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="labelRelativeValueProviderAdapterParentClass"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="labelValueRelativeValueProviderAdapterClass"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="labelValueRelativeValueProviderAdapterParentClass"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Transition">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" eType="#//Compartment"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" eType="#//Compartment"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="forIncidence" upperBound="-1"
+        eType="#//Compartment"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="expression" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="compiledExpression" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EObject"
+        transient="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="containerModel" eType="#//Model"
+        changeable="false" transient="true" eOpposite="#//Model/transitions"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="expressionResource" eType="#//Resource"
+        transient="true" defaultValueLiteral=""/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="Resource" instanceClassName="org.eclipse.emf.ecore.resource.Resource"
+      serializable="false"/>
+</ecore:EPackage>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?NLS TYPE="org.eclipse.help.toc"?>
+
+<toc label="Tutorials (internet access required)" link_to="toc.xml#tutorials">
+	<topic label="Creating a Scenario"
+		href="http://wiki.eclipse.org/Creating_a_STEM_Scenario" />
+   <topic href="http://wiki.eclipse.org/Batch_Mode_%28Running_Experiments%29" label="Creating and running Experiments">
+   </topic>
+   <topic href="http://wiki.eclipse.org/Invoking_modifiers_using_triggers_and_predicates." label="Modifying scenarios using triggers">
+   </topic>
+	<topic label="Analysis">
+		<topic label="Analysis overview"
+		href="http://wiki.eclipse.org/Analysis" />
+		<topic label="Analyzing an Epidemic"
+		href="http://wiki.eclipse.org/Epidemic_View" />
+		<topic label="Estimating Model Parameters"
+		href="http://wiki.eclipse.org/Estimating_Model_Parameters_from_External_Data" />
+		<topic label="Lyapunov (Phase Space) Analysis"
+		href="http://wiki.eclipse.org/Lyapunov_Analysis" />
+		<topic label="Comparing Scenarios and Epidemics"
+		href="http://wiki.eclipse.org/RMS_Comparison_between_data_sets" />
+ 	</topic>
+</toc>
+

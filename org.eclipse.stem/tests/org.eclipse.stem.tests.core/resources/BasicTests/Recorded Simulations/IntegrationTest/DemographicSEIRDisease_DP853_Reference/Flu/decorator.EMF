@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<org.eclipse.stem.diseasemodels.multipopulation:MultiPopulationSEIRDiseaseModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:org.eclipse.stem.diseasemodels.multipopulation="http:///org/eclipse/stem/diseasemodels/multipopulation.ecore" uRI="platform:/resource/BasicTests/decorators/DemographicSEIRDisease.standard" typeURI="stemtype://org.eclipse.stem/Identifiable" diseaseName="Flu">
+  <dublinCore identifier="platform:/resource/BasicTests/decorators/DemographicSEIRDisease.standard" creator="edlund" format="http:///org/eclipse/stem/diseasemodels/standard.ecore" type="stemtype://org.eclipse.stem/Identifiable" created="2011-05-11"/>
+  <populationGroups>
+    <values value="men"/>
+    <values value="women"/>
+  </populationGroups>
+  <transmissionRate>
+    <valueLists identifier="men">
+      <values identifier="men"/>
+      <values identifier="women" value="1.2"/>
+    </valueLists>
+    <valueLists identifier="women">
+      <values identifier="men" value="1.3"/>
+      <values identifier="women"/>
+    </valueLists>
+  </transmissionRate>
+  <recoveryRate>
+    <values identifier="men" value="0.3"/>
+    <values identifier="women" value="0.4"/>
+  </recoveryRate>
+  <infectiousMortalityRate>
+    <values identifier="men"/>
+    <values identifier="women"/>
+  </infectiousMortalityRate>
+  <immunityLossRate>
+    <values identifier="men" value="0.0010"/>
+    <values identifier="women" value="0.0020"/>
+  </immunityLossRate>
+  <incubationRate>
+    <values identifier="men" value="0.5"/>
+    <values identifier="women" value="0.5"/>
+  </incubationRate>
+</org.eclipse.stem.diseasemodels.multipopulation:MultiPopulationSEIRDiseaseModel>

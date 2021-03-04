@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<!--
+/*******************************************************************************
+ * Copyright (c) 2012 Bundesinstitut für Risikobewertung and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v2.0
+ * which accompanies this distribution, and is available at
+ * https://www.eclipse.org/legal/epl-2.0/
+ *
+ * Contributors:
+ *     Bundesinstitut für Risikobewertung - initial API and implementation
+ *******************************************************************************/
+-->
+<plugin>
+   <extension-point id="model_type" name="STEM Model Generator ModelTypes" schema="schema/model_type.exsd"/>
+
+   <extension point="org.eclipse.emf.codegen.ecore.generatorAdapters">
+      <adapterFactory class="org.eclipse.stem.model.codegen.ModelGeneratorAdapterFactory"/>
+   </extension>
+	
+	<extension point="org.eclipse.stem.model.codegen.model_type">
+		<modelType name="DiseaseModel" iconPath="icons/disease.gif" extensionPointId="org.eclipse.stem.diseasemodels.diseasemodel">
+			<baseModel 
+				packageUri="http:///org/eclipse/stem/diseasemodels/standard.ecore" 
+				className="DiseaseModel"/>
+			<extendableModel
+				packageUri="http:///org/eclipse/stem/diseasemodels/standard.ecore" 
+				className="StandardDiseaseModel"/>
+			<baseLabel 
+				packageUri="http:///org/eclipse/stem/diseasemodels/standard.ecore" 
+				className="DiseaseModelLabel"/>
+			<extendableLabel 
+				packageUri="http:///org/eclipse/stem/diseasemodels/standard.ecore" 
+				className="StandardDiseaseModelLabel"/>
+			<baseLabelValue 
+				packageUri="http:///org/eclipse/stem/diseasemodels/standard.ecore" 
+				className="DiseaseModelLabelValue"/>
+			<extendableLabelValue 
+				packageUri="http:///org/eclipse/stem/diseasemodels/standard.ecore" 
+				className="StandardDiseaseModelLabelValue"/>
+			<propertyEditor
+				class="org.eclipse.stem.ui.adapters.diseasemodelpropertyeditor.DiseaseModelPropertyEditor" />
+			<propertyEditorComposite
+				class="org.eclipse.stem.ui.wizards.DiseaseModelPropertyComposite" />				
+			<propertyEditorAdapter
+         		class="org.eclipse.stem.ui.adapters.diseasemodelpropertyeditor.DiseaseModelPropertyEditorAdapter" />
+         	<propertyEditorAdapterFactory
+                class="org.eclipse.stem.ui.adapters.diseasemodelpropertyeditor.DiseaseModelPropertyEditorAdapterFactory" />
+            <propertyStringAdapterFactory
+                class="org.eclipse.stem.ui.wizards.StandardPropertyStringProviderAdapterFactory"/>
+            <propertyStringAdapter
+                class="org.eclipse.stem.ui.wizards.StandardPropertyStringProviderAdapterFactory.StandardPropertyStringProviderAdapter"/>
+			<labelRelativeValueProvider
+                class="org.eclipse.stem.diseasemodels.standard.provider.StandardRelativeValueProviderAdapterFactory.DiseaseModelLabelRelativeValueProvider"/>
+			<labelValueRelativeValueProvider
+                class="org.eclipse.stem.diseasemodels.standard.provider.StandardRelativeValueProviderAdapterFactory.DiseaseModelLabelValueRelativeValueProvider"/>
+		</modelType>
+	</extension>
+	
+	<extension point="org.eclipse.stem.model.codegen.model_type">
+		<modelType name="PopulationModel" iconPath="icons/population.gif" extensionPointId="org.eclipse.stem.populationmodels.populationmodel">
+			<baseModel 
+				packageUri="http:///org/eclipse/stem/populationmodels/standard" 
+				className="PopulationModel"/>
+			<extendableModel
+				packageUri="http:///org/eclipse/stem/populationmodels/standard" 
+				className="StandardPopulationModel"/>
+			<baseLabel 
+				packageUri="http:///org/eclipse/stem/populationmodels/standard" 
+				className="PopulationModelLabel"/>
+			<extendableLabel 
+				packageUri="http:///org/eclipse/stem/populationmodels/standard" 
+				className="StandardPopulationModelLabel"/>
+			<baseLabelValue 
+				packageUri="http:///org/eclipse/stem/populationmodels/standard" 
+				className="PopulationModelLabelValue"/>
+			<extendableLabelValue 
+				packageUri="http:///org/eclipse/stem/populationmodels/standard" 
+				className="StandardPopulationModelLabelValue"/>
+			<propertyEditor
+				class="org.eclipse.stem.ui.populationmodels.adapters.PopulationModelPropertyEditor" />
+			<propertyEditorComposite
+				class="org.eclipse.stem.ui.populationmodels.standard.wizards.PopulationModelPropertyComposite" />			
+			<propertyEditorAdapter
+         		class="org.eclipse.stem.ui.populationmodels.adapters.PopulationModelPropertyEditorAdapter" />
+         	<propertyEditorAdapterFactory
+                class="org.eclipse.stem.ui.populationmodels.adapters.PopulationModelPropertyEditorAdapterFactory" />
+            <propertyStringAdapterFactory
+                class="org.eclipse.stem.ui.populationmodels.standard.wizards.StandardPropertyStringProviderAdapterFactory"/>
+            <propertyStringAdapter
+                class="org.eclipse.stem.ui.populationmodels.standard.wizards.StandardPropertyStringProviderAdapterFactory.StandardPropertyStringProviderAdapter"/>
+			<labelRelativeValueProvider
+                class="org.eclipse.stem.ui.populationmodels.adapters.StandardRelativeValueProviderAdapterFactory.StandardPopulationModelLabelRelativeValueProvider"/>
+			<labelValueRelativeValueProvider
+                class="org.eclipse.stem.ui.populationmodels.adapters.StandardRelativeValueProviderAdapterFactory.PopulationModelLabelValueRelativeValueProvider"/>
+		</modelType>
+	</extension>
+
+</plugin>

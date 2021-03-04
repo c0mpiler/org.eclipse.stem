@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<org.eclipse.stem.populationmodels.standard:StandardPopulationInitializer xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:org.eclipse.stem.populationmodels.standard="http:///org/eclipse/stem/populationmodels/standard" uRI="platform:/resource/BasicTests/decorators/SingleSquarePopulationInitializer.standard" typeURI="stemtype://org.eclipse.stem/Identifiable" targetISOKey="LAT_SQR_0_0" individuals="1000.0">
+  <dublinCore identifier="platform:/resource/BasicTests/decorators/SingleSquarePopulationInitializer.standard" creator="edlund" format="http:///org/eclipse/stem/populationmodels/standard" type="stemtype://org.eclipse.stem/Identifiable" created="2011-01-24"/>
+</org.eclipse.stem.populationmodels.standard:StandardPopulationInitializer>

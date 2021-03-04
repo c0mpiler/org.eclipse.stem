@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<org.eclipse.stem.diseasemodels.standard:SIRInoculator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:org.eclipse.stem.diseasemodels.standard="http:///org/eclipse/stem/diseasemodels/standard.ecore" uRI="platform:/resource/BasicTests/decorators/EgyptInoculator.standard" typeURI="stemtype://org.eclipse.stem/Identifiable" diseaseName="TestSEIR" targetISOKey="EGY" populationIdentifier="human" infectiousCount="0.0" inoculatedPercentage="35.0">
+  <dublinCore identifier="platform:/resource/BasicTests/decorators/EgyptInoculator.standard" creator="edlund" format="http:///org/eclipse/stem/diseasemodels/standard.ecore" created="2011-01-31"/>
+</org.eclipse.stem.diseasemodels.standard:SIRInoculator>

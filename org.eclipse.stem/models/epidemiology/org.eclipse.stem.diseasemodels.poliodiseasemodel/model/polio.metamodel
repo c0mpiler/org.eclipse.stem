@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<org.eclipse.stem.model:Package xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:org.eclipse.stem.model="http:///org/eclipse/stem/model/metamodel.ecore" packagePrefix="org.eclipse.stem.diseasemodels" name="poliodiseasemodel">
+  <models name="OralPolioVaccineModel" compartments="//@compartmentGroups.0">
+    <class href="polio.ecore#//OralPolioVaccineModel"/>
+    <parentModel href="../../org.eclipse.stem.diseasemodels/model/standard.metamodel#//@models.1"/>
+    <parameters name="efficacyVaccine" defaultValue="1.0" displayName="Efficacy of Vaccine">
+      <dataType xsi:type="ecore:EDataType" href="../../../plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"/>
+    </parameters>
+    <parameters name="reversionRate" defaultValue="1.0E-4" displayName="Reversion Rate">
+      <dataType xsi:type="ecore:EDataType" href="../../../plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"/>
+    </parameters>
+    <parameters name="partialSusceptibilityVaccine" defaultValue="0.0" displayName="Partial Susceptibility (Vaccine)">
+      <dataType xsi:type="ecore:EDataType" href="../../../plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"/>
+    </parameters>
+    <parameters name="transRateVaccine" defaultValue="1.0" displayName="Transmission Rate (Vaccine)">
+      <dataType xsi:type="ecore:EDataType" href="../../../plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"/>
+    </parameters>
+    <parameters name="incubRateVaccine" defaultValue="1.0" displayName="Incubation Rate (Vaccine)">
+      <dataType xsi:type="ecore:EDataType" href="../../../plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"/>
+    </parameters>
+    <parameters name="infectRecoveryRateVaccine" defaultValue="22.81" displayName="Infectious Recovery Rate (Vaccine)" helpMessage="">
+      <dataType xsi:type="ecore:EDataType" href="../../../plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"/>
+    </parameters>
+    <parameters name="paralyticFractionVaccine" defaultValue="7.14E-7" displayName="Paralytic Fraction (Vaccine)" helpMessage="">
+      <dataType xsi:type="ecore:EDataType" href="../../../plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"/>
+    </parameters>
+    <parameters name="paralyticFractionWild" defaultValue="0.0050" displayName="Paralytic Fraction (Wild)" helpMessage="">
+      <dataType xsi:type="ecore:EDataType" href="../../../plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"/>
+    </parameters>
+    <generatorSettings propertyEditorClass="org.eclipse.stem.ui.diseasemodels.poliodiseasemodel.PolioDiseaseModelPropertyEditor" propertyEditorParentClass="" stringProviderAdapterClass="org.eclipse.stem.ui.diseasemodels.poliodiseasemodel.PolioPropertyStringProviderAdapterFactory.PolioPropertyStringProviderAdapter" labelRelativeValueProviderAdapterClass="org.eclipse.stem.ui.diseasemodels.poliodiseasemodel.PolioRelativeValueProviderAdapterFactory.PolioLabelRelativeValueProviderAdapter" labelValueRelativeValueProviderAdapterClass="org.eclipse.stem.ui.diseasemodels.poliodiseasemodel.PolioRelativeValueProviderAdapterFactory.PolioLabelValueRelativeValueProviderAdapter"/>
+  </models>
+  <compartmentGroups name="Opv">
+    <class href="polio.ecore#//OpvLabel"/>
+    <valueClass href="polio.ecore#//OpvLabelValue"/>
+    <parentGroup href="../../org.eclipse.stem.diseasemodels/model/standard.metamodel#//@compartmentGroups.1"/>
+    <compartments name="sv">
+      <dataType href="../../../plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"/>
+    </compartments>
+    <compartments name="ev">
+      <dataType href="../../../plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"/>
+    </compartments>
+    <compartments name="v">
+      <dataType href="../../../plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"/>
+    </compartments>
+    <compartments name="pv">
+      <dataType href="../../../plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"/>
+    </compartments>
+    <compartments name="pw">
+      <dataType href="../../../plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"/>
+    </compartments>
+  </compartmentGroups>
+</org.eclipse.stem.model:Package>

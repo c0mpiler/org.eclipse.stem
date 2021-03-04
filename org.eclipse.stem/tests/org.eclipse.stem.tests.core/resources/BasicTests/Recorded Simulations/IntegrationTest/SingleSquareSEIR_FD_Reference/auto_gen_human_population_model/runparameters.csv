@@ -1,0 +1,2 @@
+decorator,populationIdentifier,name,targetISOKey,initialRescalingFactor,birthRate,deathRate,timePeriod
+org.eclipse.stem.populationmodels.standard.impl.StandardPopulationModelImpl,human,auto_gen_human_population_model,,1.0,0.0,0.0,86400000

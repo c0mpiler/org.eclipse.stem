@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>New Disease Wizard</title>
+</head>
+<body>
+To create a new automated experiment in STEM, click the "New Automatic experiment" toolbar icon. A new wizard shows up similar to the one in the figure below.
+
+<img src="img/automaticexperimentwizard.jpg" />
+
+<p>First, specify a name for your new automated experiment. You can give it any name you want. Next, pick the algorithm to use. 
+Currently there is only one option available, "AutomaticExperiment" which is an implementation of a Nelder Mead downhill simplex numerical optimization algorithm.
+</p> 
+<p>
+The Nelder Mead algorithm can be configured as follows:
+</p>
+<p>1. Maximum Iterations. If this number of simulations has ran without convergence to an error variation smaller than the tolerance, the algorithm stops or restarts itself (depending upon the setting of Re-initialize parameter see below). If you set it to -1, the algorithm will run until the error converges (-1 essentially means no maximum number of iterations)</p>
+
+<p>2. Reference data folder. This is the directory containing the reference data. The directory must contain the same files that STEM generates in its log output folders, e.g. an I_2.csv, Incidence_2.csv, S_2.csv etc. The current error function only requires the Incidence file. If the reference files are located in a folder inside the current project, the location is specified in a platform neutral manner and the project and associated automatic experiment can be shared with others.</p>
+
+<p>3. Base Scenario. Clicking the "Select Scenario" button will allow you to pick any Scenario that is inside your current project. The base scenario the is the scenario the automatic experiment will run and compare to the reference</p>
+
+<p>4. Error Function. The error function to use when comparing model output to the reference. Currently only a single error function "SimpleErrorFunction" is provided. It calculates a Normalized Mean Square Error (NMSE) between the incidence outputted by the model and the incidence in the reference data.</p>
+
+<p>5. Re-initialize. If this is set to Yes, the automatic experiment will restart itself using the current best (smallest error) set of parameter values found. The automatic experiment will stop of it converges towards the same minimal error twice in a row. If set to No, the automatic experiment will stop once it's converged to an error variation smaller than the tolerance.</p>
+
+<p>6. Tolerance. The error tolerance determining when the Nelder Mead algorithm stops. If the error variation between multiple simulations is smaller than this tolerance, the Nelder Mead algorithm either stops or restarts itself. The smaller you make the tolerance the more simulations are needed for convergence, but the resulting set of parameter values becomes more accurate.</p>
+
+<p>
+In the window in the bottom left you can add one or more parameter that you want to optimize in the automatic experiment. If you click the + button below the window, a dialog shows up displaying on the left all objects inside your current project that has parameters you can optimize.
+The objects includes Disease Models, Infectors and Inoculators. If you select any object on the left, a list of the object parameters are shown on the right. If you select one of them and click Okay, it will show up ion the bottom left window and will be added to the set of parameters varied by the Nedler Mead algorithm. If you select the parameter in the window, you can specify the initial value for the parameter on the bottom right. You can also specify an initial step size and a maximum and minim value for the parameter used by the optimizer.
+</p>
+
+<p>You can add as many parameters are you want to the automatic experiment, but the more parameters you have the larger the parameter space and the longer it might take for the algorithm to converge.</p>
+
+<p>Often convergence to a global minima can be reached quicker by manually restarting the automated experiment on the Controls tab. If it seems that the error variation is small, restart the algorithm again using the best set of parameters. This can often speed things up compared to waiting for convergence below the tolerance.d.Net.Inf.Proportion: Fraction per Road
+</p>
+</body>
+</html>

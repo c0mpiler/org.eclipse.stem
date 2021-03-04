@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="Copyright (c) 2011 IBM Corporation and others.&#xA;All rights reserved. This program and the accompanying materials&#xA;are made available under the terms of the Eclipse Public License v1.0&#xA;which accompanies this distribution, and is available at&#xA;http://www.eclipse.org/legal/epl-v10.html&#xA;&#xA;Contributors:&#xA;    IBM Corporation - initial API and implementation"
+    modelDirectory="/org.eclipse.stem.loggers/src" editDirectory="/org.eclipse.stem.ui.loggers/src"
+    editorDirectory="/org.eclipse.stem.ui.loggers/src" modelPluginID="org.eclipse.stem.loggers"
+    templateDirectory="" redirection="" modelName="simulationlogger" modelPluginClass=""
+    editPluginClass="org.eclipse.stem.loggers.provider.SimulationLoggerEditPlugin"
+    editorPluginClass="org.eclipse.stem.loggers.presentation.SimulationLoggerEditorPlugin"
+    testSuiteClass="org.eclipse.stem.loggers.tests.SimulationLoggerAllTests" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="5.0" editPluginID="org.eclipse.stem.ui.loggers" editorPluginID="org.eclipse.stem.ui.loggers"
+    runtimeVersion="2.6" language="" usedGenPackages="../../org.eclipse.stem.core/model/core.genmodel#//common ../../org.eclipse.stem.core/model/core.genmodel#//graph ../../org.eclipse.stem.core/model/core.genmodel#//model ../../org.eclipse.stem.core/model/core.genmodel#//modifier ../../org.eclipse.stem.core/model/core.genmodel#//scenario ../../org.eclipse.stem.core/model/core.genmodel#//sequencer ../../org.eclipse.stem.core/model/core.genmodel#//solver ../../org.eclipse.stem.core/model/core.genmodel#//logger platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore"
+    runtimePlatform="RCP">
+  <foreignModel>SimulationLogger.ecore</foreignModel>
+  <genPackages prefix="SimulationLogger" basePackage="org.eclipse.stem" disposableProviderFactory="true"
+      fileExtensions="logger" ecorePackage="SimulationLogger.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="SimulationLogger.ecore#//LOGGER_EVENTS">
+      <genEnumLiterals ecoreEnumLiteral="SimulationLogger.ecore#//LOGGER_EVENTS/LOGGER_MANAGER_STARTED"/>
+      <genEnumLiterals ecoreEnumLiteral="SimulationLogger.ecore#//LOGGER_EVENTS/LOGGER_MANAGER_STOPPED"/>
+      <genEnumLiterals ecoreEnumLiteral="SimulationLogger.ecore#//LOGGER_EVENTS/LOGGER_STARTED"/>
+      <genEnumLiterals ecoreEnumLiteral="SimulationLogger.ecore#//LOGGER_EVENTS/LOGGER_STOPPED"/>
+      <genEnumLiterals ecoreEnumLiteral="SimulationLogger.ecore#//LOGGER_EVENTS/LOGGER_ENABLED"/>
+      <genEnumLiterals ecoreEnumLiteral="SimulationLogger.ecore#//LOGGER_EVENTS/LOGGER_DISABLED"/>
+      <genEnumLiterals ecoreEnumLiteral="SimulationLogger.ecore#//LOGGER_EVENTS/SIMULATIONS_ADDED"/>
+      <genEnumLiterals ecoreEnumLiteral="SimulationLogger.ecore#//LOGGER_EVENTS/SIMULATIONS_REMOVED"/>
+      <genEnumLiterals ecoreEnumLiteral="SimulationLogger.ecore#//LOGGER_EVENTS/LOGGERS_ADDED"/>
+      <genEnumLiterals ecoreEnumLiteral="SimulationLogger.ecore#//LOGGER_EVENTS/LOGGERS_REMOVED"/>
+    </genEnums>
+    <genDataTypes ecoreDataType="SimulationLogger.ecore#//Simulation"/>
+    <genDataTypes ecoreDataType="SimulationLogger.ecore#//SimulationEvent"/>
+    <genClasses ecoreClass="SimulationLogger.ecore#//SimulationLogger">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SimulationLogger.ecore#//SimulationLogger/enabled"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SimulationLogger.ecore#//SimulationLogger/stepMod"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SimulationLogger.ecore#//SimulationLogger/startStep"/>
+      <genOperations ecoreOperation="SimulationLogger.ecore#//SimulationLogger/simulationEvent">
+        <genParameters ecoreParameter="SimulationLogger.ecore#//SimulationLogger/simulationEvent/event"/>
+      </genOperations>
+      <genOperations ecoreOperation="SimulationLogger.ecore#//SimulationLogger/loggerEvent">
+        <genParameters ecoreParameter="SimulationLogger.ecore#//SimulationLogger/loggerEvent/simulation"/>
+        <genParameters ecoreParameter="SimulationLogger.ecore#//SimulationLogger/loggerEvent/event"/>
+      </genOperations>
+    </genClasses>
+    <genClasses ecoreClass="SimulationLogger.ecore#//SynchronousLogger"/>
+    <genClasses image="false" ecoreClass="SimulationLogger.ecore#//ISimulationListener"/>
+    <genClasses image="false" ecoreClass="SimulationLogger.ecore#//AsynchronousLogger"/>
+    <genClasses ecoreClass="SimulationLogger.ecore#//SimulationLoggerEvent"/>
+    <genClasses image="false" ecoreClass="SimulationLogger.ecore#//SynchronousDecoratorPropertyLogger">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SimulationLogger.ecore#//SynchronousDecoratorPropertyLogger/properties"/>
+      <genOperations ecoreOperation="SimulationLogger.ecore#//SynchronousDecoratorPropertyLogger/getDecoratorProperties">
+        <genParameters ecoreParameter="SimulationLogger.ecore#//SynchronousDecoratorPropertyLogger/getDecoratorProperties/decoratorURI"/>
+      </genOperations>
+    </genClasses>
+    <genClasses ecoreClass="SimulationLogger.ecore#//IdentifierProperty">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SimulationLogger.ecore#//IdentifierProperty/identifier"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SimulationLogger.ecore#//IdentifierProperty/property"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

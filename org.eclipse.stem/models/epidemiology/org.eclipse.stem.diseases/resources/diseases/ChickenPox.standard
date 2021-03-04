@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<org.eclipse.stem.diseasemodels.multipopulation:MultiPopulationSeasonalDiseaseModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:org.eclipse.stem.diseasemodels.multipopulation="http:///org/eclipse/stem/diseasemodels/multipopulation.ecore" uRI="platform:/plugin/org.eclipse.stem.diseases/resources/diseases/ChickenPox.standard" typeURI="stemtype://org.eclipse.stem/Identifiable" diseaseName="ChickenPox" useSplineInterpolation="true">
+  <dublinCore title="MultiPopulation Seasonal Disease Model" identifier="platform:/plugin/org.eclipse.stem.diseases/resources/diseases/ChickenPox.standard" description="A multi-population seasonal disease model" creator="Christian Thöns" format="http:///org/eclipse/stem/diseasemodels/standard.ecore" publisher="The Eclipse Foundation" source="http://wiki.eclipse.org/Sample_Projects_available_for_Download#Chicken_Pox" type="stemtype://org.eclipse.stem/Identifiable" created="2011-06-22" license="Eclipse Public License (EPL)"/>
+  <populationGroups>
+    <values value="human0-4"/>
+    <values value="human5-14"/>
+    <values value="human15-44"/>
+    <values value="human45-64"/>
+    <values value="human65-"/>
+  </populationGroups>
+  <transmissionRate>
+    <valueLists identifier="human0-4">
+      <values identifier="human0-4" value="0.3"/>
+      <values identifier="human5-14" value="0.1"/>
+      <values identifier="human15-44" value="0.1"/>
+      <values identifier="human45-64" value="0.1"/>
+      <values identifier="human65-" value="0.1"/>
+    </valueLists>
+    <valueLists identifier="human5-14">
+      <values identifier="human0-4" value="0.1"/>
+      <values identifier="human5-14" value="0.3"/>
+      <values identifier="human15-44" value="0.1"/>
+      <values identifier="human45-64" value="0.1"/>
+      <values identifier="human65-" value="0.1"/>
+    </valueLists>
+    <valueLists identifier="human15-44">
+      <values identifier="human0-4" value="0.1"/>
+      <values identifier="human5-14" value="0.1"/>
+      <values identifier="human15-44" value="0.3"/>
+      <values identifier="human45-64" value="0.1"/>
+      <values identifier="human65-" value="0.1"/>
+    </valueLists>
+    <valueLists identifier="human45-64">
+      <values identifier="human0-4" value="0.1"/>
+      <values identifier="human5-14" value="0.1"/>
+      <values identifier="human15-44" value="0.1"/>
+      <values identifier="human45-64" value="0.3"/>
+      <values identifier="human65-" value="0.1"/>
+    </valueLists>
+    <valueLists identifier="human65-">
+      <values identifier="human0-4" value="0.1"/>
+      <values identifier="human5-14" value="0.1"/>
+      <values identifier="human15-44" value="0.1"/>
+      <values identifier="human45-64" value="0.1"/>
+      <values identifier="human65-" value="0.3"/>
+    </valueLists>
+  </transmissionRate>
+  <recoveryRate>
+    <values identifier="human0-4" value="0.15"/>
+    <values identifier="human5-14" value="0.15"/>
+    <values identifier="human15-44" value="0.15"/>
+    <values identifier="human45-64" value="0.15"/>
+    <values identifier="human65-" value="0.15"/>
+  </recoveryRate>
+  <infectiousMortalityRate>
+    <values identifier="human0-4"/>
+    <values identifier="human5-14"/>
+    <values identifier="human15-44"/>
+    <values identifier="human45-64"/>
+    <values identifier="human65-"/>
+  </infectiousMortalityRate>
+  <immunityLossRate>
+    <values identifier="human0-4"/>
+    <values identifier="human5-14"/>
+    <values identifier="human15-44"/>
+    <values identifier="human45-64"/>
+    <values identifier="human65-"/>
+  </immunityLossRate>
+  <incubationRate>
+    <values identifier="human0-4" value="0.07"/>
+    <values identifier="human5-14" value="0.07"/>
+    <values identifier="human15-44" value="0.07"/>
+    <values identifier="human45-64" value="0.07"/>
+    <values identifier="human65-" value="0.07"/>
+  </incubationRate>
+  <modulationPoints>
+    <valueLists identifier="p0">
+      <values identifier="x" value="14.0"/>
+      <values identifier="y" value="1.0"/>
+    </valueLists>
+    <valueLists identifier="p1">
+      <values identifier="x" value="42.0"/>
+      <values identifier="y" value="1.0"/>
+    </valueLists>
+    <valueLists identifier="p2">
+      <values identifier="x" value="70.0"/>
+      <values identifier="y" value="1.1"/>
+    </valueLists>
+    <valueLists identifier="p3">
+      <values identifier="x" value="98.0"/>
+      <values identifier="y" value="1.1"/>
+    </valueLists>
+    <valueLists identifier="p4">
+      <values identifier="x" value="126.0"/>
+      <values identifier="y" value="1.1"/>
+    </valueLists>
+    <valueLists identifier="p5">
+      <values identifier="x" value="154.0"/>
+      <values identifier="y" value="1.1"/>
+    </valueLists>
+    <valueLists identifier="p6">
+      <values identifier="x" value="182.0"/>
+      <values identifier="y" value="1.1"/>
+    </valueLists>
+    <valueLists identifier="p7">
+      <values identifier="x" value="210.0"/>
+      <values identifier="y" value="1.0"/>
+    </valueLists>
+    <valueLists identifier="p8">
+      <values identifier="x" value="238.0"/>
+      <values identifier="y" value="0.9"/>
+    </valueLists>
+    <valueLists identifier="p9">
+      <values identifier="x" value="266.0"/>
+      <values identifier="y" value="0.8"/>
+    </valueLists>
+    <valueLists identifier="p10">
+      <values identifier="x" value="294.0"/>
+      <values identifier="y" value="0.9"/>
+    </valueLists>
+    <valueLists identifier="p11">
+      <values identifier="x" value="322.0"/>
+      <values identifier="y" value="0.9"/>
+    </valueLists>
+    <valueLists identifier="p12">
+      <values identifier="x" value="350.0"/>
+      <values identifier="y" value="0.9"/>
+    </valueLists>
+  </modulationPoints>
+</org.eclipse.stem.diseasemodels.multipopulation:MultiPopulationSeasonalDiseaseModel>

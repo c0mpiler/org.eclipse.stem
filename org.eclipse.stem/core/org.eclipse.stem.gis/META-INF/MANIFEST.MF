@@ -1,0 +1,18 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: STEM GIS Utilities
+Bundle-SymbolicName: org.eclipse.stem.gis
+Bundle-Version: 3.0.0.qualifier
+Bundle-Activator: org.eclipse.stem.gis.Activator
+Require-Bundle: org.eclipse.core.runtime,
+ org.apache.commons.io
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Bundle-Vendor: Eclipse.org
+Export-Package: org.eclipse.stem.gis,
+ org.eclipse.stem.gis.coord,
+ org.eclipse.stem.gis.dbf,
+ org.eclipse.stem.gis.proj,
+ org.eclipse.stem.gis.shp,
+ org.eclipse.stem.gis.shp.type
+Automatic-Module-Name: org.eclipse.stem.gis

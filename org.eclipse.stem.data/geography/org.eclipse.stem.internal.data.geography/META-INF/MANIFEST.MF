@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: STEM Internal Geography Data
+Bundle-SymbolicName: org.eclipse.stem.internal.data.geography;singleton:=true
+Bundle-Version: 2.0.3.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Export-Package: org.eclipse.stem.internal.data.geography,
+ org.eclipse.stem.internal.data.geography.graphsynchronizer,
+ org.eclipse.stem.internal.data.geography.propertydata,
+ org.eclipse.stem.internal.data.geography.specifications
+Require-Bundle: org.eclipse.stem.definitions,
+ org.eclipse.stem.geography,
+ org.eclipse.stem.internal.data,
+ org.eclipse.stem.data.geography
+Bundle-Vendor: Eclipse.org
+Automatic-Module-Name: org.eclipse.stem.internal.data.geography

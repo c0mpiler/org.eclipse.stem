@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<!--
+/******************************************************************************
+ * Copyright (c) 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018
+ * IBM Corporation, BfR, and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v2.0
+ * which accompanies this distribution, and is available at
+ * https://www.eclipse.org/legal/epl-2.0/
+ *
+ * Contributors:
+ *     IBM Corporation - initial API and implementation and new features
+ *     Bundesinstitut für Risikobewertung - Pajek Graph interface, new Veterinary Models
+ *******************************************************************************/
+-->
+
+<plugin>
+
+
+<extension point = "org.eclipse.ui.editors">
+  <editor
+          class="org.eclipse.stem.loggers.presentation.SimulationLoggerEditor"
+          contributorClass="org.eclipse.stem.loggers.presentation.SimulationLoggerActionBarContributor"
+          default="false"
+          extensions="logger"
+          icon="icons/full/obj16/SimulationLoggerModelFile.gif"
+          id="org.eclipse.stem.loggers.presentation.SimulationLoggerEditorID"
+          name="%_UI_LoggerEditor_label">
+    </editor>
+</extension>
+
+
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            allowMultiple="false"
+            category="org.eclipse.stem.ui.views"
+            class="org.eclipse.stem.ui.views.ActiveLoggersView"
+            icon="icons/Logger.gif"
+            id="org.eclipse.stem.ui.views.activeloggers"
+            name="%_UI_Logger_Property" />
+   </extension>
+   
+   
+   <extension
+         point="org.eclipse.ui.newWizards">
+      <wizard
+            category="org.eclipse.stem.ui.wizards.stemcategory"
+            class="org.eclipse.stem.ui.wizards.NewLoggerWizard"
+            hasPages="true"
+            icon="icons/Logger.gif"
+            id="org.eclipse.stem.ui.wizards.newlogger"
+            name="%_UI_LoggerModelWizard_label"/>
+                  
+   </extension>
+   
+    <extension
+        point="org.eclipse.ui.menus"> 
+   <menuContribution
+            locationURI="popup:org.eclipse.stem.ui.views.activeloggers">
+         <command
+               commandId="org.eclipse.stem.ui.loggers.enable"
+               mnemonic="Enable Logger">
+         	<visibleWhen
+                 checkEnabled="true">
+              <reference
+                    definitionId="org.eclipse.stem.ui.loggers.loggerDisabled">
+              </reference>
+           </visibleWhen>               
+         </command>
+         
+      </menuContribution>
+        <menuContribution
+            locationURI="popup:org.eclipse.stem.ui.views.activeloggers">
+         <command
+               commandId="org.eclipse.stem.ui.loggers.disable"
+               mnemonic="Disable Logger">
+           	<visibleWhen
+                 checkEnabled="true">
+              <reference
+                    definitionId="org.eclipse.stem.ui.loggers.loggerEnabled">
+              </reference>
+           </visibleWhen>
+         </command>
+      </menuContribution> 
+      
+      </extension> 
+      
+   
+   <extension
+        point="org.eclipse.ui.commands">
+     <command
+           categoryId="org.eclipse.stem.ui.wizards"
+           defaultHandler="org.eclipse.stem.ui.wizards.NewLoggerWizard$NewLoggerWizardCommandHandler"
+           description="%_UI_LoggerModelWizard_description"
+           id="org.eclipse.stem.ui.command.wiz.logger"
+           name="%_UI_LoggerModelWizard_label"> 
+     </command>
+     
+	<command
+           defaultHandler="org.eclipse.stem.ui.handlers.LoggerCommandHandler$EnableLoggerCommandHandler"
+           description="%_UI_New_STEM_Project_Wizard_TT "
+           id="org.eclipse.stem.ui.loggers.enable"
+           name="Enable Logger">
+
+     </command>
+     
+	<command
+           defaultHandler="org.eclipse.stem.ui.handlers.LoggerCommandHandler$DisableLoggerCommandHandler"
+           description="%_UI_New_STEM_Project_Wizard_TT "
+           id="org.eclipse.stem.ui.loggers.disable"
+           name="Disable Logger">        
+     </command>     
+   </extension>   
+ 
+  <extension
+        point="org.eclipse.ui.menus">   
+      <menuContribution
+            locationURI="toolbar:org.eclipse.ui.main.toolbar?after=additions">
+         <toolbar
+               id="org.eclipse.stem.ui.toolbar.newwizards">
+            <command
+                  commandId="org.eclipse.stem.ui.command.wiz.logger"
+                  icon="icons/Logger.gif"
+                  label="%_UI_LoggerWizard_label"
+                  style="push"
+                  tooltip="%_UI_LoggerWizard_description ">
+            </command>
+   		 </toolbar>
+   	</menuContribution>
+  </extension>
+ 
+   <extension
+        point="org.eclipse.core.expressions.propertyTesters">
+     <propertyTester
+           class="org.eclipse.stem.ui.handlers.LoggerPropertyTester"
+           id="org.eclipse.stem.ui.loggers.loggerepropertytester"
+           namespace="org.eclipse.stem.loggers.simulationlogger"
+           properties="enabled"
+           type="org.eclipse.stem.loggers.SimulationLogger">
+     </propertyTester>
+  </extension>
+ 
+ 
+  <extension
+        point="org.eclipse.core.expressions.definitions">
+ 
+   <definition
+           id="org.eclipse.stem.ui.loggers.loggerEnabled">
+        <with
+              variable="selection">
+           <iterate
+                 ifEmpty="false"
+                 operator="and">
+              <adapt
+                    type="org.eclipse.stem.loggers.SimulationLogger">
+                 <test
+                       property="org.eclipse.stem.loggers.simulationlogger.enabled">
+                 </test>
+              </adapt>
+           </iterate>
+        </with>
+     </definition>
+     <definition
+           id="org.eclipse.stem.ui.loggers.loggerDisabled">
+        <with
+              variable="selection">
+           <iterate
+                 ifEmpty="false"
+                 operator="and">
+              <adapt
+                    type="org.eclipse.stem.loggers.SimulationLogger">
+                 <not>
+                    <test
+                          property="org.eclipse.stem.loggers.simulationlogger.enabled">
+                    </test>
+                 </not>
+              </adapt>
+           </iterate>
+        </with>
+     </definition>
+ 
+ 
+     <definition
+           id="org.eclipse.stem.ui.loggers.islogger">
+        <with
+              variable="selection">
+           <iterate
+                 ifEmpty="false"
+                 operator="and">
+              <adapt type="org.eclipse.stem.loggers.SimulationLogger">
+              </adapt>
+           </iterate>
+        </with>
+     </definition>
+   </extension>
+</plugin>

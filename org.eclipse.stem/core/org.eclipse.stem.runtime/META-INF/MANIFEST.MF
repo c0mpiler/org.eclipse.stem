@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Runtime
+Bundle-SymbolicName: org.eclipse.stem.runtime;singleton:=true
+Bundle-Version: 1.2.2
+Bundle-Activator: org.eclipse.stem.runtime.Activator
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.stem.ui,
+ org.apache.commons.math3;bundle-version="3.1.1"
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Bundle-Localization: plugin
+Bundle-ClassPath: resources/commons-math-2.2.jar
+

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<org.eclipse.stem.core.graph:Graph xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.eclipse.stem.core.graph="http:///org/eclipse/stem/core/graph.ecore" xmlns:org.eclipse.stem.definitions.labels="http:///org/eclipse/stem/definitions/labels.ecore" xmlns:org.eclipse.stem.definitions.nodes="http:///org/eclipse/stem/definitions/nodes.ecore" uRI="platform:/resource/BasicTests/graphs/TwoSquaresWithMixing.graph" typeURI="stemtype://org.eclipse.stem/Graph">
+  <dublinCore identifier="platform:/resource/BasicTests/graphs/TwoSquaresWithMixing.graph" creator="edlund" date="2011-01-24" format="http:///org/eclipse/stem/core/graph.ecore" source="Generated" type="stemtype://org.eclipse.stem/Graph" created="2011-01-24"/>
+  <edges key="stem://org.eclipse.stem/edge/relationship/commonborder/8BC16041FAF70F1D">
+    <value uRI="stem://org.eclipse.stem/edge/relationship/commonborder/8BC16041FAF70F1D" typeURI="stemtype://org.eclipse.stem/Edge" nodeAURI="stem://org.eclipse.stem/node/4495365A02328B16/LAT_SQR_0_0" nodeBURI="stem://org.eclipse.stem/node/4495365A02328B16/LAT_SQR_1_0">
+      <dublinCore title="Edge[(Node[0.0, 0.0])&lt;-->(Node[1.0, 0.0])]" identifier="stem://org.eclipse.stem/edge/relationship/commonborder/8BC16041FAF70F1D" type="stemtype://org.eclipse.stem/Edge"/>
+      <label xsi:type="org.eclipse.stem.definitions.labels:CommonBorderRelationshipLabel" uRI="stem://org.eclipse.stem/LAT.SQR.0.0_LAT.SQR.1.0" typeURI="stemtype://org.eclipse.stem/label" uRIOfIdentifiableToBeLabeled="stem://org.eclipse.stem/edge/8BC16041FAF70F1D">
+        <dublinCore identifier="stem://org.eclipse.stem/LAT.SQR.0.0_LAT.SQR.1.0" type="stemtype://org.eclipse.stem/label"/>
+        <currentValue xsi:type="org.eclipse.stem.definitions.labels:CommonBorderRelationshipLabelValue" borderLength="45.0"/>
+      </label>
+    </value>
+  </edges>
+  <nodes key="stem://org.eclipse.stem/node/4495365A02328B16/LAT_SQR_0_0">
+    <value xsi:type="org.eclipse.stem.definitions.nodes:Region" uRI="stem://org.eclipse.stem/node/4495365A02328B16/LAT_SQR_0_0" typeURI="stemtype://org.eclipse.stem/Node">
+      <dublinCore title="Node[0.0, 0.0]" identifier="stem://org.eclipse.stem/node/4495365A02328B16/LAT_SQR_0_0" type="stemtype://org.eclipse.stem/Node" spatial="stemspatial:inline:///-0.2,0.2,0.2,0.2,0.2,-0.2,-0.2,-0.2"/>
+      <labels xsi:type="org.eclipse.stem.definitions.labels:AreaLabel" href="platform:/resource/BasicTests/graphs/TwoSquaresWithMixing.graph#//@nodeLabels.0/@value"/>
+    </value>
+  </nodes>
+  <nodes key="stem://org.eclipse.stem/node/4495365A02328B16/LAT_SQR_1_0">
+    <value xsi:type="org.eclipse.stem.definitions.nodes:Region" uRI="stem://org.eclipse.stem/node/4495365A02328B16/LAT_SQR_1_0" typeURI="stemtype://org.eclipse.stem/Node">
+      <dublinCore title="Node[1.0, 0.0]" identifier="stem://org.eclipse.stem/node/4495365A02328B16/LAT_SQR_1_0" type="stemtype://org.eclipse.stem/Node" spatial="stemspatial:inline:///0.2,0.2,0.6,0.2,0.6,-0.2,0.2,-0.2"/>
+      <labels xsi:type="org.eclipse.stem.definitions.labels:AreaLabel" href="platform:/resource/BasicTests/graphs/TwoSquaresWithMixing.graph#//@nodeLabels.1/@value"/>
+    </value>
+  </nodes>
+  <nodeLabels key="stem://org.eclipse.stem/label/FF00AB531D16FE73">
+    <value xsi:type="org.eclipse.stem.definitions.labels:AreaLabel" uRI="stem://org.eclipse.stem/label/FF00AB531D16FE73" typeURI="stemtype://org.eclipse.stem/label">
+      <dublinCore identifier="stem://org.eclipse.stem/label/FF00AB531D16FE73" type="stemtype://org.eclipse.stem/label"/>
+      <currentValue xsi:type="org.eclipse.stem.definitions.labels:AreaLabelValue" area="2025.0" averageExtent="45.0"/>
+      <node href="#//@nodes.0/@value"/>
+    </value>
+  </nodeLabels>
+  <nodeLabels key="stem://org.eclipse.stem/label/37EF2CB2156D20C5">
+    <value xsi:type="org.eclipse.stem.definitions.labels:AreaLabel" uRI="stem://org.eclipse.stem/label/37EF2CB2156D20C5" typeURI="stemtype://org.eclipse.stem/label">
+      <dublinCore identifier="stem://org.eclipse.stem/label/37EF2CB2156D20C5" type="stemtype://org.eclipse.stem/label"/>
+      <currentValue xsi:type="org.eclipse.stem.definitions.labels:AreaLabelValue" area="2025.0" averageExtent="45.0"/>
+      <node href="#//@nodes.1/@value"/>
+    </value>
+  </nodeLabels>
+</org.eclipse.stem.core.graph:Graph>

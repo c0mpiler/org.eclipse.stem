@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<org.eclipse.stem.model:Package xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:org.eclipse.stem.model="http:///org/eclipse/stem/model/metamodel.ecore"
+    packagePrefix="org.eclipse.stem.diseasemodels" name="Evolving">
+  <models name="EvolvingSIDiseaseModel" class="evolving.ecore#//EvolvingSIDiseaseModel"
+      parentModel="platform:/plugin/org.eclipse.stem.diseasemodels/model/standard.metamodel#//@models.2"
+      compartments="platform:/plugin/org.eclipse.stem.diseasemodels/model/standard.metamodel#//@compartmentGroups.2"/>
+  <models name="EvolvingSIRDiseaseModel" class="evolving.ecore#//EvolvingSIRDiseaseModel"
+      parentModel="platform:/plugin/org.eclipse.stem.diseasemodels/model/standard.metamodel#//@models.2"
+      compartments="platform:/plugin/org.eclipse.stem.diseasemodels/model/standard.metamodel#//@compartmentGroups.3">
+    <parameters name="immunityLossRate" dataType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+        defaultValue="0.0" displayName="Immunity Loss Rate" unit="" helpMessage=""
+        invalidMessage="" missingMessage="">
+      <constraints name="minValue" constraint="0.0"/>
+      <constraints name="maxValue" constraint="1.0"/>
+    </parameters>
+  </models>
+  <models name="EvolvingSEIRDiseaseModel" class="evolving.ecore#//EvolvingSEIRDiseaseModel"
+      parentModel="platform:/plugin/org.eclipse.stem.diseasemodels/model/standard.metamodel#//@models.3"
+      compartments="platform:/plugin/org.eclipse.stem.diseasemodels/model/standard.metamodel#//@compartmentGroups.1">
+    <parameters name="incubationRate" dataType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+        defaultValue="0.0" displayName="Incubation Rate" unit="" helpMessage="" invalidMessage=""
+        missingMessage="">
+      <constraints name="minValue" constraint="0.0"/>
+      <constraints name="maxValue" constraint="1.0"/>
+    </parameters>
+  </models>
+</org.eclipse.stem.model:Package>

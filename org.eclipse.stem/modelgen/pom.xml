@@ -1,0 +1,26 @@
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.eclipse.stem.tycho</groupId>
+    <artifactId>org.eclipse.stem.tycho.modelgen</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <parent>
+        <groupId>org.eclipse.stem.tycho</groupId>
+        <artifactId>org.eclipse.stem.tycho.root</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
+
+    <modules>
+        <module>org.eclipse.stem.model</module>
+        <module>org.eclipse.stem.model.builder</module>
+        <module>org.eclipse.stem.model.codegen</module>
+        <module>org.eclipse.stem.model.common</module>
+        <module>org.eclipse.stem.model.ctdl</module>
+        <module>org.eclipse.stem.model.ctdl.functions</module>
+        <module>org.eclipse.stem.model.ctdl.ui</module>
+        <module>org.eclipse.stem.model.transform</module>
+        <module>org.eclipse.stem.model.ui</module>
+        <module>org.eclipse.stem.model.ui.editor</module>
+    </modules>
+</project>

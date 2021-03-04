@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ <copyright>
+ </copyright>
+
+ $Id$
+-->
+
+<plugin>
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="org.eclipse.stem.diseasemodels.polio.presentation.PolioEditorID"
+            name="%_UI_PolioEditor_label"
+            icon="icons/full/obj16/PolioModelFile.gif"
+            extensions="polio"
+            class="org.eclipse.stem.diseasemodels.poliodiseasemodel.presentation.PolioEditor"
+            contributorClass="org.eclipse.stem.diseasemodels.poliodiseasemodel.presentation.PolioActionBarContributor">
+      </editor>
+   </extension>
+   <extension
+         point="org.eclipse.ui.startup">
+      <startup
+            class="org.eclipse.stem.ui.diseasemodels.poliodiseasemodel.PolioPropertyStringProviderAdapterFactory">
+      </startup>
+       <startup
+            class="org.eclipse.stem.ui.diseasemodels.poliodiseasemodel.PolioRelativeValueProviderAdapterFactory">
+      </startup>
+   </extension>
+
+</plugin>

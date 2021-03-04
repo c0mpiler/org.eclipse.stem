@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<org.eclipse.stem.diseasemodels.standard:SIInfector xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:org.eclipse.stem.diseasemodels.standard="http:///org/eclipse/stem/diseasemodels/standard.ecore" uRI="platform:/resource/BasicTests/decorators/SingleSquareSEIRInfector.standard" typeURI="stemtype://org.eclipse.stem/Identifiable" targetURI="stem://org.eclipse.stem/node/54D5EEA3F5CBE3/LAT_SQR_0_0" diseaseName="TestSEIR" targetISOKey="LAT_SQR_0_0" populationIdentifier="human">
+  <dublinCore identifier="platform:/resource/BasicTests/decorators/SingleSquareSEIRInfector.standard" creator="edlund" format="http:///org/eclipse/stem/diseasemodels/standard.ecore" created="2011-01-24"/>
+</org.eclipse.stem.diseasemodels.standard:SIInfector>

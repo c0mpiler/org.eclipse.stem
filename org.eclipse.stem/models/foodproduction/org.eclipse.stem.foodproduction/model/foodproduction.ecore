@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="foodproduction"
+    nsURI="http:///org/eclipse/stem/foodproduction/foodproduction.ecore" nsPrefix="org.eclipse.stem.foodproduction">
+  <eClassifiers xsi:type="ecore:EClass" name="FoodTransformer" abstract="true" eSuperTypes="../../org.eclipse.stem.core/model/model.ecore#//TransformationDecorator">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sourcePopulationName" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"
+        defaultValueLiteral="cattle"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="targetPopulationName" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"
+        defaultValueLiteral="beef"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="targetURI" eType="ecore:EDataType ../../org.eclipse.stem.core/model/common.ecore#//URI"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="timePeriod" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//ELong"
+        defaultValueLiteral="86400000"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FoodProducer" eSuperTypes="#//FoodTransformer">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="foodYieldPopulationMultiplier"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="100"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sourceProcessingRate" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="1.0"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SlaughterHouse" eSuperTypes="#//FoodProducer #//DiseaseCarryingTransformer"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DiseaseCarryingTransformer" abstract="true"
+      interface="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sourceDecorator" eType="ecore:EClass ../../org.eclipse.stem.core/model/model.ecore#//IntegrationDecorator"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="targetDecorator" eType="ecore:EClass ../../org.eclipse.stem.core/model/model.ecore#//IntegrationDecorator"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="stateTransitionsMap" eType="ecore:EClass ../../org.eclipse.stem.core/model/common.ecore#//DoubleValueMatrix"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sourceAttributes" upperBound="-1"
+        eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EAttribute"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="targetAttributes" upperBound="-1"
+        eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EAttribute"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FoodConsumer" eSuperTypes="#//FoodTransformer #//DiseaseCarryingTransformer">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="consumptionRate" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="0.1"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="consumptionType" eType="#//ConsumptionType"
+        defaultValueLiteral="1"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="wasteRate" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="0.0"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxVolumeOfStocks" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="1000000"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ConsumptionType">
+    <eLiterals name="RELATIVE_CONSUMPTION" value="1"/>
+    <eLiterals name="ABSOLUTE_CONSUMPTION" value="2"/>
+    <eLiterals name="CONSUMPTION_PER_PERSON" value="3"/>
+  </eClassifiers>
+</ecore:EPackage>

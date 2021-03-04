@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<org.eclipse.stem.diseasemodels.multipopulation:MultiPopulationSEIRDiseaseModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:org.eclipse.stem.diseasemodels.multipopulation="http:///org/eclipse/stem/diseasemodels/multipopulation.ecore" uRI="platform:/resource/BasicTests/decorators/AgingSEIRDisease.standard" typeURI="stemtype://org.eclipse.stem/Identifiable" diseaseName="AgingSEIRDisease">
+  <dublinCore identifier="platform:/resource/BasicTests/decorators/AgingSEIRDisease.standard" creator="loaner25" format="http:///org/eclipse/stem/diseasemodels/standard.ecore" type="stemtype://org.eclipse.stem/Identifiable" created="2011-05-26"/>
+  <populationGroups>
+    <values value="human0to0"/>
+    <values value="human1to1"/>
+    <values value="human2to-"/>
+  </populationGroups>
+  <transmissionRate>
+    <valueLists identifier="human0to0">
+      <values identifier="human0to0" value="0.3"/>
+      <values identifier="human1to1" value="0.3"/>
+      <values identifier="human2to-" value="0.3"/>
+    </valueLists>
+    <valueLists identifier="human1to1">
+      <values identifier="human0to0" value="0.3"/>
+      <values identifier="human1to1"/>
+      <values identifier="human2to-"/>
+    </valueLists>
+    <valueLists identifier="human2to-">
+      <values identifier="human0to0"/>
+      <values identifier="human1to1" value="0.3"/>
+      <values identifier="human2to-"/>
+    </valueLists>
+  </transmissionRate>
+  <recoveryRate>
+    <values identifier="human0to0" value="0.1"/>
+    <values identifier="human1to1" value="0.1"/>
+    <values identifier="human2to-" value="0.1"/>
+  </recoveryRate>
+  <infectiousMortalityRate>
+    <values identifier="human0to0"/>
+    <values identifier="human1to1"/>
+    <values identifier="human2to-"/>
+  </infectiousMortalityRate>
+  <immunityLossRate>
+    <values identifier="human0to0"/>
+    <values identifier="human1to1"/>
+    <values identifier="human2to-"/>
+  </immunityLossRate>
+  <incubationRate>
+    <values identifier="human0to0" value="0.5"/>
+    <values identifier="human1to1" value="0.5"/>
+    <values identifier="human2to-" value="0.5"/>
+  </incubationRate>
+</org.eclipse.stem.diseasemodels.multipopulation:MultiPopulationSEIRDiseaseModel>

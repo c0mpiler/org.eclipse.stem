@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<org.eclipse.stem.model:Package xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:org.eclipse.stem.model="http:///org/eclipse/stem/model/metamodel.ecore" packagePrefix="org.eclipse.stem.diseasemodels" name="PolioOpvIpv">
+  <models name="PolioOpvIpvDiseaseModel" compartments="//@compartmentGroups.0">
+    <class href="polioopvipv.ecore#//PolioOpvIpvDiseaseModel"/>
+    <parentModel href="../../org.eclipse.stem.diseasemodels/model/standard.metamodel#//@models.1"/>
+    <parameters name="opvEfficacy" defaultValue="0.9" displayName="Efficacy of live-attenuated vaccine (a)">
+      <dataType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+      <constraints name="minValue" constraint="0.0"/>
+      <constraints name="maxValue" constraint="1.0"/>
+    </parameters>
+    <parameters name="reversionRateOPV" defaultValue="10e-4" displayName="OPV Reversion Rate (φ)">
+      <dataType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+      <constraints name="minValue" constraint="0.0"/>
+      <constraints name="maxValue" constraint="1.0"/>
+    </parameters>
+    <parameters name="birthDeathRateDeveloping" 
+        defaultValue="0.04" displayName="Birth-Death Rate - Developing Countries (μ)">
+        <dataType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+      <constraints name="minValue" constraint="0.0"/>
+      <constraints name="maxValue" constraint="1.0"/>
+    </parameters>
+    <parameters name="transmissionRateOPV" 
+        defaultValue="0.1" displayName="Transmission Rate - OPV Derived Virus (βopv)">
+        <dataType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+      <constraints name="minValue" constraint="0.0"/>
+      <constraints name="maxValue" constraint="1.0"/>
+    </parameters>
+    <parameters name="transmissionRateWild" 
+        defaultValue="0.5" displayName="Transmission Rate - Wild Virus (βw)">
+        <dataType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+      <constraints name="minValue" constraint="0.0"/>
+      <constraints name="maxValue" constraint="1.0"/>
+    </parameters>
+    <parameters name="relativeSusceptibilityRecentOPV" 
+        defaultValue="0.25" displayName="Relative Susceptibility - Recent OPV Infection (fr)">
+        <dataType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+      <constraints name="minValue" constraint="0.0"/>
+      <constraints name="maxValue" constraint="1.0"/>
+    </parameters>
+    <parameters name="relativeSusceptibilityIPV" 
+        defaultValue="0.95" displayName="Relative Susceptibility - IPV Only (fi)">
+        <dataType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+      <constraints name="minValue" constraint="0.0"/>
+      <constraints name="maxValue" constraint="1.0"/>
+    </parameters>
+    <parameters name="incubationRateVaccine" 
+        defaultValue="0.1" displayName="Incubation Rate - Vaccine (σv)" helpMessage="Incubation rate of vaccine-derived poliovirus">
+        <dataType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+      <constraints name="minValue" constraint="0.0"/>
+      <constraints name="maxValue" constraint="1.0"/>
+    </parameters>
+    <parameters name="incubationRateWild" 
+        defaultValue="0.5" displayName="Incubation Rate - Wild (σw)" helpMessage="Incubation rate of wild poliovirus">
+        <dataType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+      <constraints name="minValue" constraint="0.0"/>
+      <constraints name="maxValue" constraint="1.0"/>
+    </parameters>
+    <parameters name="recoveryRateVaccine" 
+        defaultValue="0.143" displayName="Recovery Rate - Vaccine (γv)" helpMessage="Recovery Rate of vaccine-derived poliovirus">
+        <dataType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+      <constraints name="minValue" constraint="0.0"/>
+      <constraints name="maxValue" constraint="1.0"/>
+    </parameters>
+    <parameters name="recoveryRateWild" 
+        defaultValue="0.625" displayName="Recovery Rate - Wild (γw)" helpMessage="Recovery Rate of wild poliovirus">
+        <dataType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+      <constraints name="minValue" constraint="0.0"/>
+      <constraints name="maxValue" constraint="1.0"/>
+    </parameters>
+    <parameters name="paralyticIncidenceFromVaccine" 
+        defaultValue="7.14e-7" displayName="Paralytic Incidences in Newly Vaccinated (ε)">
+        <dataType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+      <constraints name="minValue" constraint="0.0"/>
+      <constraints name="maxValue" constraint="1.0"/>
+    </parameters>
+    <parameters name="paralyticCaseProportion" 
+        defaultValue="0.005" displayName="Proportion of Paralytic Polio cases (πpara)">
+        <dataType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+      <constraints name="minValue" constraint="0.0"/>
+      <constraints name="maxValue" constraint="1.0"/>
+    </parameters>
+ </models>
+ <compartmentGroups name="PolioOpvIpv">
+	<class href="polioopvipv.ecore#//PolioOpvIpvLabel"/>
+	<valueClass href="polioopvipv.ecore#//PolioOpvIpvLabelValue"/>
+	<parentGroup href="../../org.eclipse.stem.diseasemodels/model/standard.metamodel#//@compartmentGroups.1"/>
+	<compartments name="Sopv">
+  		<dataType href="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+	</compartments>
+	<compartments name="Eopv">
+  		<dataType href="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+	</compartments>
+	<compartments name="Vopv">
+  		<dataType href="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+	</compartments>
+	<compartments name="Popv">
+  		<dataType href="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+	</compartments>
+	<compartments name="Pw">
+  		<dataType href="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+	</compartments>
+	<compartments name="Sipv">
+  		<dataType href="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+	</compartments>
+	<compartments name="Eipv_w">
+  		<dataType href="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+	</compartments>
+	<compartments name="Cipv_w">
+  		<dataType href="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+	</compartments>
+	<compartments name="Eipv_opv">
+  		<dataType href="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+	</compartments>
+	<compartments name="Cipv_opv">
+  		<dataType href="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+	</compartments>
+	<compartments name="Incidence_opv" type="Incidence">
+  		<dataType href="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+	</compartments>
+	<compartments name="Incidence_ipv_w" type="Incidence">
+  		<dataType href="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+	</compartments>
+	<compartments name="Incidence_ipv_opv" type="Incidence">
+  		<dataType href="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+	</compartments>	
+</compartmentGroups>
+</org.eclipse.stem.model:Package>

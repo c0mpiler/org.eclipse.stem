@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<org.eclipse.stem.diseasemodels.standard:SIInfector xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:org.eclipse.stem.diseasemodels.standard="http:///org/eclipse/stem/diseasemodels/standard.ecore" uRI="platform:/resource/BasicTests/decorators/InfectCalifornia3.standard" typeURI="stemtype://org.eclipse.stem/Identifiable" diseaseName="TestSIR" targetISOKey="US-CA" populationIdentifier="human">
+  <dublinCore identifier="platform:/resource/BasicTests/decorators/InfectCalifornia3.standard" creator="edlund" format="http:///org/eclipse/stem/diseasemodels/standard.ecore" type="stemtype://org.eclipse.stem/Identifiable" created="2011-02-07"/>
+</org.eclipse.stem.diseasemodels.standard:SIInfector>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+/******************************************************************************
+ * Copyright (c) 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018
+ * IBM Corporation, BfR, and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v2.0
+ * which accompanies this distribution, and is available at
+ * https://www.eclipse.org/legal/epl-2.0/
+ *
+ * Contributors:
+ *     IBM Corporation - initial API and implementation and new features
+ *     Bundesinstitut für Risikobewertung - Pajek Graph interface, new Veterinary Models
+ *******************************************************************************/
+-->
+
+<plugin>
+
+
+   <extension
+         point="org.eclipse.stem.core.logger">
+      <classdef
+            class="org.eclipse.stem.loggers.csv.impl.CSVLoggerImpl">
+      </classdef>
+     <dublin_core
+           category_id="/"
+           creator="%dc_creator_stemteam"
+           description="%dc_descr"
+           identifier="%dc_identifier"
+           license="%dc_license"
+           publisher="%dc_publisher"
+           source="%dc_source"
+           title="%dc_title"/>
+   </extension>
+
+
+   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <factory
+            uri="http://org/eclipse/stem/loggers/csv"
+            class="org.eclipse.stem.loggers.csv.provider.CSVItemProviderAdapterFactory"
+            supportedTypes=
+              "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
+               org.eclipse.emf.edit.provider.IStructuredItemContentProvider
+               org.eclipse.emf.edit.provider.ITreeItemContentProvider
+               org.eclipse.emf.edit.provider.IItemLabelProvider
+               org.eclipse.emf.edit.provider.IItemPropertySource"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://org/eclipse/stem/loggers/csv"
+            class="org.eclipse.stem.loggers.csv.CSVPackage"
+            genModel="models/CSVLogger.genmodel"/>
+   </extension>
+
+<!--
+   <extension point="org.eclipse.ui.newWizards">
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="org.eclipse.stem.loggers.csv.presentation.CSVModelWizardID"
+            name="%_UI_CSVModelWizard_label"
+            class="org.eclipse.stem.loggers.csv.presentation.CSVModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/CSVModelFile.gif">
+         <description>%_UI_CSVModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="org.eclipse.stem.loggers.csv.presentation.CSVEditorID"
+            name="%_UI_CSVEditor_label"
+            icon="icons/full/obj16/CSVModelFile.gif"
+            extensions="csv"
+            class="org.eclipse.stem.loggers.csv.presentation.CSVEditor"
+            contributorClass="org.eclipse.stem.loggers.csv.presentation.CSVActionBarContributor">
+      </editor>
+   </extension>
+-->
+
+
+</plugin>

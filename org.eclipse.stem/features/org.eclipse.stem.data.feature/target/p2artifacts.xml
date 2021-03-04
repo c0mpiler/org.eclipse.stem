@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<?artifactRepository version='1.1.0'?>
+<artifacts size='1'>
+  <artifact classifier='org.eclipse.update.feature' id='org.eclipse.stem.data.feature' version='3.0.0.201812181050'>
+    <properties size='6'>
+      <property name='artifact.size' value='13203'/>
+      <property name='download.size' value='13203'/>
+      <property name='maven-groupId' value='org.eclipse.stem.tycho'/>
+      <property name='maven-artifactId' value='org.eclipse.stem.data.feature'/>
+      <property name='maven-version' value='3.0.0-SNAPSHOT'/>
+      <property name='download.contentType' value='application/zip'/>
+    </properties>
+  </artifact>
+</artifacts>

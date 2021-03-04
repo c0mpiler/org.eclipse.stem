@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ <copyright>
+ </copyright>
+
+ $Id$
+-->
+
+<plugin>
+
+
+   <extension point="org.eclipse.ui.newWizards">
+      <category 
+            id="org.eclipse.stem.ui.wizards.stemcategory"
+            name="%_UI_STEM"/>
+      <wizard
+            id="org.eclipse.stem.graphgenerators.presentation.GraphgeneratorsModelWizardID"
+            name="%_UI_GraphgeneratorsModelWizard_label"
+            class="org.eclipse.stem.graphgenerators.presentation.GraphgeneratorsModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/GraphgeneratorsModelFile.gif">
+         <description>%_UI_GraphgeneratorsModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="org.eclipse.stem.graphgenerators.presentation.GraphgeneratorsEditorID"
+            name="%_UI_GraphgeneratorsEditor_label"
+            icon="icons/full/obj16/GraphgeneratorsModelFile.gif"
+            extensions="graphgenerators"
+            class="org.eclipse.stem.graphgenerators.presentation.GraphgeneratorsEditor"
+            contributorClass="org.eclipse.stem.graphgenerators.presentation.GraphgeneratorsActionBarContributor">
+      </editor>
+   </extension>
+
+  <extension
+        point="org.eclipse.ui.menus">
+      <menuContribution
+            locationURI="menu:org.eclipse.ui.main.menu?after=edit">
+         <menu
+               id="org.eclipse.stem.ui.menu.newwizards"
+               label="%_UI_STEM_NewActionSet_Menu">
+            <command
+                  commandId="org.eclipse.stem.ui.command.wiz.graph"
+                  icon="icons/full/customobj16/Graph.gif"
+                  label="%_UI_GraphModelWizard_label"
+                  style="push"
+                  tooltip="%_UI_GraphModelWizard_description">
+            </command>
+        </menu>
+     </menuContribution>
+           <menuContribution
+            locationURI="toolbar:org.eclipse.stem.ui.toolbar.newwizards?before=scenariocontent">
+            <command
+                  commandId="org.eclipse.stem.ui.command.wiz.graph"
+                  icon="icons/full/customobj16/Graph.gif"
+                  label="%_UI_GraphModelWizard_label"
+                  style="push"
+                  tooltip="%_UI_GraphModelWizard_description">
+            </command>
+     </menuContribution>
+  </extension>
+  
+   <extension
+        point="org.eclipse.ui.commands">
+     <category
+           description="%_UI_STEM_WizCmd_Cat_Desc"
+           id="org.eclipse.stem.ui.wizards"
+           name="%_UI_STEM_WizCmd_Cat_Name">
+     </category>
+      <command
+           categoryId="org.eclipse.stem.ui.wizards"
+           defaultHandler="org.eclipse.stem.ui.graphgenerators.wizards.NewGraphWizard$NewGraphWizardCommandHandler"
+           description="%_UI_GraphModelWizard_description"
+           id="org.eclipse.stem.ui.command.wiz.graph"
+           name="%_UI_GraphModelWizard_label">
+     </command>
+   </extension>
+</plugin>

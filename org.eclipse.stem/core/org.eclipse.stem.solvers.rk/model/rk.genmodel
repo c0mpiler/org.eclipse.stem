@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.eclipse.stem.solvers.rk/src"
+    editDirectory="/org.eclipse.stem.solvers.rk/src" editorDirectory="/org.eclipse.stem.ui.solvers.rk/src"
+    modelPluginID="org.eclipse.stem.solvers.rk" modelName="Rk" testsDirectory="/org.eclipse.stem.tests.solvers.rk/src"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0" copyrightFields="false"
+    runtimeVersion="2.6" usedGenPackages="../../org.eclipse.stem.core/model/core.genmodel#//common ../../org.eclipse.stem.core/model/core.genmodel#//graph ../../org.eclipse.stem.core/model/core.genmodel#//model ../../org.eclipse.stem.core/model/core.genmodel#//modifier ../../org.eclipse.stem.core/model/core.genmodel#//scenario ../../org.eclipse.stem.core/model/core.genmodel#//sequencer ../../org.eclipse.stem.core/model/core.genmodel#//solver platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore ../../org.eclipse.stem.core/model/core.genmodel#//logger">
+  <foreignModel>rk.ecore</foreignModel>
+  <genPackages prefix="Rk" basePackage="org.eclipse.stem.solvers" disposableProviderFactory="true"
+      ecorePackage="rk.ecore#/">
+    <genDataTypes ecoreDataType="rk.ecore#//FirstOrderIntegrator"/>
+    <genClasses ecoreClass="rk.ecore#//RungeKutta">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rk.ecore#//RungeKutta/relativeTolerance"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rk.ecore#//RungeKutta/minStep"/>
+    </genClasses>
+    <genClasses ecoreClass="rk.ecore#//DormandPrince853">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rk.ecore#//DormandPrince853/relativeTolerance"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rk.ecore#//DormandPrince853/absoluteTolerance"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rk.ecore#//DormandPrince853/minStep"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rk.ecore#//DormandPrince853/maxStep"/>
+    </genClasses>
+    <genClasses ecoreClass="rk.ecore#//ApacheCommonsMathODESolver">
+      <genOperations ecoreOperation="rk.ecore#//ApacheCommonsMathODESolver/createIntegrator"/>
+    </genClasses>
+    <genClasses ecoreClass="rk.ecore#//DormandPrince54">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rk.ecore#//DormandPrince54/relativeTolerance"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rk.ecore#//DormandPrince54/absoluteTolerance"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rk.ecore#//DormandPrince54/minStep"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rk.ecore#//DormandPrince54/maxStep"/>
+    </genClasses>
+    <genClasses ecoreClass="rk.ecore#//FastRungeKutta">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rk.ecore#//FastRungeKutta/relativeTolerance"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rk.ecore#//FastRungeKutta/minStep"/>
+    </genClasses>
+    <genClasses ecoreClass="rk.ecore#//GraggBulirschStoer">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rk.ecore#//GraggBulirschStoer/relativeTolerance"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rk.ecore#//GraggBulirschStoer/absoluteTolerance"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rk.ecore#//GraggBulirschStoer/minStep"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rk.ecore#//GraggBulirschStoer/maxStep"/>
+    </genClasses>
+    <genClasses ecoreClass="rk.ecore#//HighamHall54">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rk.ecore#//HighamHall54/relativeTolerance"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rk.ecore#//HighamHall54/absoluteTolerance"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rk.ecore#//HighamHall54/minStep"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rk.ecore#//HighamHall54/maxStep"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

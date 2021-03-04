@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<org.eclipse.stem.core.scenario:Scenario xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.eclipse.stem.core.scenario="http:///org/eclipse/stem/core/scenario.ecore" xmlns:org.eclipse.stem.core.sequencer="http:///org/eclipse/stem/core/sequencer.ecore" xmlns:org.eclipse.stem.solvers.rk="http:///org/eclipse/stem/solvers/rk" uRI="platform:/resource/BasicTests/scenarios/InoculationTest_DP853.scenario" typeURI="stemtype://org.eclipse.stem/Scenario">
+  <dublinCore title="Scenario" identifier="platform:/resource/BasicTests/scenarios/InoculationTest_DP853.scenario" description="A scenario contains a complete model or model hierarchy along with initial conditions (infectors, inoculators) and a sequencer" creator="edlund" format="http:///org/eclipse/stem/core/scenario.ecore" publisher="The Eclipse Foundation" source="http://wiki.eclipse.org/Creating_a_STEM_Scenario   (and references there-in)" type="stemtype://org.eclipse.stem/Scenario" created="2011-09-13" license="Eclipse Public License (EPL)"/>
+  <model href="platform:/resource/BasicTests/models/PopulationGrowthModel.model#/"/>
+  <sequencer xsi:type="org.eclipse.stem.core.sequencer:SequentialSequencer" href="platform:/resource/BasicTests/sequencers/30DaySequencer.sequencer#/"/>
+  <scenarioDecorators href="platform:/resource/BasicTests/decorators/EgyptInfector.standard#/"/>
+  <scenarioDecorators href="platform:/resource/BasicTests/decorators/EgyptInoculator.standard#/"/>
+  <solver xsi:type="org.eclipse.stem.solvers.rk:DormandPrince853" uRI="stem://org.eclipse.stem/RungeKuttaSolver/584D419175E1BE5B" typeURI="stemtype://org.eclipse.stem/Solver">
+    <dublinCore identifier="stem://org.eclipse.stem/RungeKuttaSolver/584D419175E1BE5B" type="stemtype://org.eclipse.stem/Solver"/>
+  </solver>
+</org.eclipse.stem.core.scenario:Scenario>

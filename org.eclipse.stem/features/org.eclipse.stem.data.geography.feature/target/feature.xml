@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.eclipse.stem.data.geography.feature"
+      label="%featureName"
+      version="3.0.0.201812181050"
+      provider-name="%providerName">
+
+   <description>
+      %description
+   </description>
+
+   <copyright>
+      %copyright
+   </copyright>
+
+   <license url="%licenseURL">
+      %license
+   </license>
+
+   <url>
+      <update label="%updateSiteName" url="http://download.eclipse.org/stem/update-site/"/>
+   </url>
+
+   <requires>
+      <import plugin="org.eclipse.core.runtime"/>
+   </requires>
+
+   <plugin
+         id="org.eclipse.stem.data.geography"
+         download-size="69233"
+         install-size="324778"
+         version="3.0.0.201812181050"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.stem.data.geography.models"
+         download-size="514"
+         install-size="1410"
+         version="3.0.0.201812181050"
+         unpack="false"/>
+
+</feature>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.eclipse.stem.feature"
+      label="%featureName"
+      version="3.0.0.qualifier"
+      provider-name="%providerName">
+
+   <description>
+      %description
+   </description>
+
+   <copyright>
+      %copyright
+   </copyright>
+
+   <license url="%licenseURL">
+      %license
+   </license>
+
+   <url>
+      <update label="%updateSiteName" url="http://download.eclipse.org/stem/update-site/"/>
+   </url>
+
+   <includes
+         id="org.eclipse.stem.product.feature"
+         version="0.0.0"/>
+
+<!--   <includes
+         id="org.eclipse.stem.internal.data.feature"
+         version="0.0.0"/>
+-->
+   <includes
+         id="org.eclipse.stem.tests.feature"
+         version="0.0.0"/>
+
+</feature>

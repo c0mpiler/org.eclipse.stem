@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<org.eclipse.stem.model:Package xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:org.eclipse.stem.model="http:///org/eclipse/stem/model/metamodel.ecore" packagePrefix="org.eclipse.stem.diseasemodels.forcing"
+    name="forcing">
+  <models name="ForcingDiseaseModel" class="forcing.ecore#//ForcingDiseaseModel" parentModel="../../org.eclipse.stem.diseasemodels/model/standard.metamodel#//@models.3"
+      compartments="../../org.eclipse.stem.diseasemodels/model/standard.metamodel#//@compartmentGroups.3">
+    <parameters name="modulationExponent" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="2.0" displayName="Modulation Exponent"/>
+    <parameters name="modulationPeriod" dataType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+        defaultValue="365.256363051" displayName="Modulation Period"/>
+    <parameters name="modulationPhaseShift" dataType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+        defaultValue="0.0" displayName="Modulation Phase Shift"/>
+    <parameters name="modulationFloor" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="0.6" displayName="Modulation Floor"/>
+    <generatorSettings propertyEditorClass="org.eclipse.stem.ui.diseasemodels.forcing.presentation.ForcingDiseaseModelPropertyEditor"
+        stringProviderAdapterClass="org.eclipse.stem.ui.diseasemodels.forcing.presentation.ForcingPropertyStringProviderAdapterFactory.ForcingPropertyStringProviderAdapter"/>
+  </models>
+  <models name="GaussianForcingDiseaseModel" class="forcing.ecore#//GaussianForcingDiseaseModel"
+      parentModel="../../org.eclipse.stem.diseasemodels/model/standard.metamodel#//@models.3"
+      compartments="../../org.eclipse.stem.diseasemodels/model/standard.metamodel#//@compartmentGroups.3">
+    <parameters name="sigma2" dataType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+        defaultValue="100" displayName="Sigma2"/>
+    <parameters name="modulationPeriod" dataType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+        defaultValue="365.25" displayName="Modulation Period"/>
+    <parameters name="modulationPhaseShift" dataType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+        defaultValue="0" displayName="Modulation Phase Shift"/>
+    <parameters name="modulationFloor" dataType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+        defaultValue="0.6" displayName="Modulation Floor"/>
+    <generatorSettings propertyEditorClass="org.eclipse.stem.ui.diseasemodels.forcing.presentation.ForcingDiseaseModelPropertyEditor"
+        stringProviderAdapterClass="org.eclipse.stem.ui.diseasemodels.forcing.presentation.ForcingPropertyStringProviderAdapterFactory.ForcingPropertyStringProviderAdapter"/>
+  </models>
+  <models name="Gaussian2ForcingDiseaseModel" class="forcing.ecore#//Gaussian2ForcingDiseaseModel"
+      parentModel="#//@models.1" compartments="../../org.eclipse.stem.diseasemodels/model/standard.metamodel#//@compartmentGroups.3">
+    <parameters name="sigma2_2" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="100" displayName="Sigma2_2"/>
+    <parameters name="att1" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="1.0" displayName="Att1"/>
+    <parameters name="att2" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="1.0" displayName="Att2"/>
+    <parameters name="att3" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="1.0" displayName="Att3"/>
+    <parameters name="att4" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="1.0" displayName="Att4"/>
+    <generatorSettings propertyEditorClass="org.eclipse.stem.ui.diseasemodels.forcing.presentation.ForcingDiseaseModelPropertyEditor"
+        stringProviderAdapterClass="org.eclipse.stem.ui.diseasemodels.forcing.presentation.ForcingPropertyStringProviderAdapterFactory.ForcingPropertyStringProviderAdapter"/>
+  </models>
+  <models name="Gaussian3ForcingDiseaseModel" class="forcing.ecore#//Gaussian3ForcingDiseaseModel"
+      parentModel="#//@models.2" compartments="../../org.eclipse.stem.diseasemodels/model/standard.metamodel#//@compartmentGroups.3">
+    <parameters name="sigma2_3" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="100" displayName="Sigma2_3"/>
+    <parameters name="transmissionRate2" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="0.0" displayName="Transmission Rate2"/>
+    <parameters name="transmissionRate3" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="0.0" displayName="Transmission Rate3"/>
+    <parameters name="modulationFloor_2" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValue="0.6" displayName="Modulation Floor_2"/>
+    <generatorSettings propertyEditorClass="org.eclipse.stem.ui.diseasemodels.forcing.presentation.ForcingDiseaseModelPropertyEditor"
+        stringProviderAdapterClass="org.eclipse.stem.ui.diseasemodels.forcing.presentation.ForcingPropertyStringProviderAdapterFactory.ForcingPropertyStringProviderAdapter"/>
+  </models>
+</org.eclipse.stem.model:Package>

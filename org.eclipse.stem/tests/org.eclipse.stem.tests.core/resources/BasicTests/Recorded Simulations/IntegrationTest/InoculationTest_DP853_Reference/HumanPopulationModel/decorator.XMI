@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<org.eclipse.stem.populationmodels.standard:StandardPopulationModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:org.eclipse.stem.populationmodels.standard="http:///org/eclipse/stem/populationmodels/standard" uRI="platform:/resource/BasicTests/decorators/GrowingPopulationModel.standard" typeURI="stemtype://org.eclipse.stem/Identifiable" addStochasticNoise="false" randomSeed="1" populationIdentifier="human" name="HumanPopulationModel" targetISOKey="" initialRescalingFactor="1.0" birthRate="3.9E-5" deathRate="3.5E-5" timePeriod="86400000">
+  <dublinCore identifier="platform:/resource/BasicTests/decorators/GrowingPopulationModel.standard" creator="edlund" format="http:///org/eclipse/stem/populationmodels/standard" type="stemtype://org.eclipse.stem/Identifiable" created="2011-01-28"/>
+</org.eclipse.stem.populationmodels.standard:StandardPopulationModel>

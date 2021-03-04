@@ -1,0 +1,20 @@
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.eclipse.stem.tycho</groupId>
+    <artifactId>org.eclipse.stem.tycho.analysis</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <parent>
+        <groupId>org.eclipse.stem.tycho</groupId>
+        <artifactId>org.eclipse.stem.tycho.root</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
+
+    <modules>
+        <module>org.eclipse.stem.analysis</module>
+        <module>org.eclipse.stem.analysis.automaticexperiment</module>
+        <module>org.eclipse.stem.fbd.ui</module>
+        <module>org.eclipse.stem.util.analysis</module>
+    </modules>
+</project>

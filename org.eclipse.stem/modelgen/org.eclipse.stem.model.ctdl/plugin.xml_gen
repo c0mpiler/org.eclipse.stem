@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<plugin>
+
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <package 
+       uri = "http:///org/eclipse/stem/model/ctdl.ecore" 
+       class = "org.eclipse.stem.model.ctdl.ctdl.CtdlPackage"
+       genModel = "model/generated/CTDL.genmodel" /> 
+	
+  </extension>
+
+
+
+
+</plugin>

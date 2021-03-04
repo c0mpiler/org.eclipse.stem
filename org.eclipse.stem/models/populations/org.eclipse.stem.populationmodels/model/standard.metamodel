@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<org.eclipse.stem.model:Package xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:org.eclipse.stem.model="http:///org/eclipse/stem/model/metamodel.ecore" packagePrefix="org.eclipse.stem.populationmodels.standard" name="standard">
+  <models name="PopulationModel" modelType="PopulationModel" compartments="//@compartmentGroups.0">
+    <class href="standard.ecore#//PopulationModel"/>
+    <parameters name="populationIdentifier" defaultValue="human" displayName="Population Identifier">
+      <dataType xsi:type="ecore:EDataType" href="../../../plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    </parameters>
+    <parameters name="name" defaultValue="HumanPopulationModel" displayName="Name">
+      <dataType xsi:type="ecore:EDataType" href="../../../plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    </parameters>
+    <parameters name="targetISOKey" defaultValue="" displayName="Target ISO Key">
+      <dataType xsi:type="ecore:EDataType" href="../../../plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    </parameters>
+    <parameters name="initialRescalingFactor" defaultValue="1.0" displayName="Initial Rescaling Factor">
+      <dataType xsi:type="ecore:EDataType" href="../../../plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"/>
+    </parameters>
+    <generatorSettings propertyEditorClass="org.eclipse.stem.ui.populationmodels.adapters.PopulationModelPropertyEditor" stringProviderAdapterClass="org.eclipse.stem.ui.populationmodels.standard.wizards.StandardPropertyStringProviderAdapterFactory.StandardPropertyStringProviderAdapter" labelRelativeValueProviderAdapterClass="org.eclipse.stem.ui.populationmodels.adapters.StandardRelativeValueProviderAdapterFactory.StandardPopulationModelLabelRelativeValueProvider" labelValueRelativeValueProviderAdapterClass="org.eclipse.stem.ui.populationmodels.adapters.StandardRelativeValueProviderAdapterFactory.PopulationModelLabelValueRelativeValueProvider"/>
+  </models>
+  <models name="StandardPopulationModel" modelType="PopulationModel" parentModel="//@models.0" compartments="//@compartmentGroups.1">
+    <class href="standard.ecore#//StandardPopulationModel"/>
+    <parameters name="birthRate" defaultValue="0.0" displayName="Birth Rate">
+      <dataType xsi:type="ecore:EDataType" href="../../../plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"/>
+    </parameters>
+    <parameters name="deathRate" defaultValue="0.0" displayName="Death Rate">
+      <dataType xsi:type="ecore:EDataType" href="../../../plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"/>
+    </parameters>
+    <parameters name="timePeriod" defaultValue="86400000" displayName="Time Period">
+      <dataType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
+    </parameters>
+    <generatorSettings propertyEditorClass="org.eclipse.stem.ui.populationmodels.standard.wizards.StandardPopulationModelPropertyEditor" propertyEditorParentClass="" stringProviderAdapterClass="org.eclipse.stem.ui.populationmodels.standard.wizards.StandardPropertyStringProviderAdapterFactory.StandardPropertyStringProviderAdapter" labelRelativeValueProviderAdapterClass="org.eclipse.stem.ui.populationmodels.adapters.StandardRelativeValueProviderAdapterFactory.StandardPopulationModelLabelRelativeValueProvider" labelValueRelativeValueProviderAdapterClass="org.eclipse.stem.ui.populationmodels.adapters.StandardRelativeValueProviderAdapterFactory.PopulationModelLabelValueRelativeValueProvider" labelValueRelativeValueProviderAdapterParentClass=""/>
+  </models>
+  <models name="DemographicPopulationModel" modelType="PopulationModel" parentModel="//@models.1">
+    <class href="standard.ecore#//DemographicPopulationModel"/>
+    <parameters name="populationGroups" displayName="Population Groups">
+      <dataType xsi:type="ecore:EClass" href="standard.ecore#//PopulationGroup"/>
+    </parameters>
+    <generatorSettings propertyEditorClass="org.eclipse.stem.ui.populationmodels.standard.wizards.StandardPopulationModelPropertyEditor" propertyEditorParentClass="" stringProviderAdapterClass="org.eclipse.stem.ui.populationmodels.standard.wizards.StandardPropertyStringProviderAdapterFactory.StandardPropertyStringProviderAdapter" labelRelativeValueProviderAdapterClass="org.eclipse.stem.ui.populationmodels.adapters.StandardRelativeValueProviderAdapterFactory.StandardPopulationModelLabelRelativeValueProvider" labelValueRelativeValueProviderAdapterClass="org.eclipse.stem.ui.populationmodels.adapters.StandardRelativeValueProviderAdapterFactory.PopulationModelLabelValueRelativeValueProvider" labelValueRelativeValueProviderAdapterParentClass=""/>
+  </models>
+  <models name="SeasonalPopulationModel" modelType="PopulationModel" parentModel="//@models.1">
+    <class href="standard.ecore#//SeasonalPopulationModel"/>
+    <parameters name="phase" defaultValue="0.0" displayName="Phase">
+      <dataType xsi:type="ecore:EDataType" href="../../../plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"/>
+    </parameters>
+    <parameters name="modulationAmplitude" defaultValue="1.0" displayName="Modulation Amplitude">
+      <dataType xsi:type="ecore:EDataType" href="../../../plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"/>
+    </parameters>
+    <parameters name="period" defaultValue="365.25" displayName="Period">
+      <dataType xsi:type="ecore:EDataType" href="../../../plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"/>
+    </parameters>
+    <parameters name="useLatitude" defaultValue="true" displayName="Use Latitude">
+      <dataType xsi:type="ecore:EDataType" href="../../../plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
+    </parameters>
+    <generatorSettings propertyEditorClass="org.eclipse.stem.ui.populationmodels.standard.wizards.StandardPopulationModelPropertyEditor" propertyEditorParentClass="" stringProviderAdapterClass="org.eclipse.stem.ui.populationmodels.standard.wizards.StandardPropertyStringProviderAdapterFactory.StandardPropertyStringProviderAdapter" labelRelativeValueProviderAdapterClass="org.eclipse.stem.ui.populationmodels.adapters.StandardRelativeValueProviderAdapterFactory.StandardPopulationModelLabelRelativeValueProvider" labelValueRelativeValueProviderAdapterClass="org.eclipse.stem.ui.populationmodels.adapters.StandardRelativeValueProviderAdapterFactory.PopulationModelLabelValueRelativeValueProvider" labelValueRelativeValueProviderAdapterParentClass=""/>
+  </models>
+  <models name="MosquitoPopulationModel" modelType="PopulationModel" parentModel="//@models.0">
+    <class href="standard.ecore#//MosquitoPopulationModel"/>
+    <parameters name="scalingFactor" defaultValue="1.0" displayName="Scaling Factor">
+      <dataType xsi:type="ecore:EDataType" href="../../../plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"/>
+    </parameters>
+    <parameters name="timePeriod" defaultValue="86400000" displayName="Time Period">
+      <dataType xsi:type="ecore:EDataType" href="../../../plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//ELong"/>
+    </parameters>
+    <parameters name="mortalityRate" defaultValue="0.05" displayName="Mortality Rate">
+      <dataType xsi:type="ecore:EDataType" href="../../../plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"/>
+    </parameters>
+    <parameters name="host" defaultValue="human" displayName="Host">
+      <dataType xsi:type="ecore:EDataType" href="../../../plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    </parameters>
+    <generatorSettings propertyEditorClass="org.eclipse.stem.ui.populationmodels.standard.wizards.StandardPopulationModelPropertyEditor" propertyEditorParentClass="" stringProviderAdapterClass="org.eclipse.stem.ui.populationmodels.standard.wizards.StandardPropertyStringProviderAdapterFactory.StandardPropertyStringProviderAdapter" labelRelativeValueProviderAdapterClass="org.eclipse.stem.ui.populationmodels.adapters.StandardRelativeValueProviderAdapterFactory.StandardPopulationModelLabelRelativeValueProvider" labelValueRelativeValueProviderAdapterClass="org.eclipse.stem.ui.populationmodels.adapters.StandardRelativeValueProviderAdapterFactory.PopulationModelLabelValueRelativeValueProvider" labelValueRelativeValueProviderAdapterParentClass=""/>
+  </models>
+  <models name="AgingPopulationModel" modelType="PopulationModel" parentModel="//@models.2">
+    <class href="standard.ecore#//AgingPopulationModel"/>
+    <parameters name="hasMaxAge" displayName="Has Max Age">
+      <dataType xsi:type="ecore:EDataType" href="../../../plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
+    </parameters>
+    <generatorSettings propertyEditorClass="org.eclipse.stem.ui.populationmodels.standard.wizards.StandardPopulationModelPropertyEditor" propertyEditorParentClass="" stringProviderAdapterClass="org.eclipse.stem.ui.populationmodels.standard.wizards.StandardPropertyStringProviderAdapterFactory.StandardPropertyStringProviderAdapter" labelRelativeValueProviderAdapterClass="org.eclipse.stem.ui.populationmodels.adapters.StandardRelativeValueProviderAdapterFactory.StandardPopulationModelLabelRelativeValueProvider" labelValueRelativeValueProviderAdapterClass="org.eclipse.stem.ui.populationmodels.adapters.StandardRelativeValueProviderAdapterFactory.PopulationModelLabelValueRelativeValueProvider" labelValueRelativeValueProviderAdapterParentClass=""/>
+  </models>
+  <models name="ExternalDataSourcePopulationModel" modelType="PopulationModel" parentModel="//@models.0">
+    <class href="standard.ecore#//ExternalDataSourcePopulationModel"/>
+    <parameters name="dataPath" displayName="Data Path">
+      <dataType xsi:type="ecore:EDataType" href="../../../plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    </parameters>
+    <generatorSettings propertyEditorClass="org.eclipse.stem.ui.populationmodels.adapters.PopulationModelPropertyEditor" propertyEditorParentClass="" stringProviderAdapterClass="org.eclipse.stem.ui.populationmodels.standard.wizards.StandardPropertyStringProviderAdapterFactory.StandardPropertyStringProviderAdapter" labelRelativeValueProviderAdapterClass="org.eclipse.stem.ui.populationmodels.adapters.StandardRelativeValueProviderAdapterFactory.StandardPopulationModelLabelRelativeValueProvider" labelValueRelativeValueProviderAdapterClass="org.eclipse.stem.ui.populationmodels.adapters.StandardRelativeValueProviderAdapterFactory.PopulationModelLabelValueRelativeValueProvider" labelValueRelativeValueProviderAdapterParentClass=""/>
+  </models>
+  <models name="SinModulatePopulationModel" modelType="PopulationModel" parentModel="//@models.1">
+    <class href="standard.ecore#//SinModulatePopulationModel"/>
+    <parameters name="phaseShift" defaultValue="0.0" displayName="Phase Shift">
+      <dataType xsi:type="ecore:EDataType" href="../../../plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"/>
+    </parameters>
+    <parameters name="periodSin" defaultValue="365.25" displayName="Period Sin">
+      <dataType xsi:type="ecore:EDataType" href="../../../plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"/>
+    </parameters>
+    <parameters name="maxBound" defaultValue="1" displayName="Max Bound">
+      <dataType xsi:type="ecore:EDataType" href="../../../plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"/>
+    </parameters>
+    <parameters name="minBound" defaultValue="0" displayName="Min Bound">
+      <dataType xsi:type="ecore:EDataType" href="../../../plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"/>
+    </parameters>
+    <generatorSettings propertyEditorClass="org.eclipse.stem.ui.populationmodels.standard.wizards.StandardPopulationModelPropertyEditor" propertyEditorParentClass="" stringProviderAdapterClass="org.eclipse.stem.ui.populationmodels.standard.wizards.StandardPropertyStringProviderAdapterFactory.StandardPropertyStringProviderAdapter" labelRelativeValueProviderAdapterClass="org.eclipse.stem.ui.populationmodels.adapters.StandardRelativeValueProviderAdapterFactory.StandardPopulationModelLabelRelativeValueProvider" labelValueRelativeValueProviderAdapterClass="org.eclipse.stem.ui.populationmodels.adapters.StandardRelativeValueProviderAdapterFactory.PopulationModelLabelValueRelativeValueProvider" labelValueRelativeValueProviderAdapterParentClass=""/>
+  </models>
+  <compartmentGroups name="PopulationModel">
+    <class href="standard.ecore#//PopulationModelLabel"/>
+    <valueClass href="standard.ecore#//PopulationModelLabelValue"/>
+  </compartmentGroups>
+  <compartmentGroups name="StandardPopulationModel" parentGroup="//@compartmentGroups.0">
+    <class href="standard.ecore#//StandardPopulationModelLabel"/>
+    <valueClass href="standard.ecore#//StandardPopulationModelLabelValue"/>
+    <compartments name="count">
+      <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    </compartments>
+    <compartments name="births">
+      <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    </compartments>
+    <compartments name="deaths" type="Deaths">
+      <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    </compartments>
+    <compartments name="density">
+      <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    </compartments>
+  </compartmentGroups>
+</org.eclipse.stem.model:Package>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="experimental"
+    nsURI="http:///org/eclipse/stem/diseasemodels/experimental.ecore" nsPrefix="org.eclipse.stem.diseasemodels.experimental">
+  <eClassifiers xsi:type="ecore:EClass" name="PercolationDiseaseModel" eSuperTypes="../../org.eclipse.stem.diseasemodels/model/standard.ecore#//SEIR"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TBDiseaseModelLabel" eSuperTypes="../../org.eclipse.stem.diseasemodels/model/standard.ecore#//StandardDiseaseModelLabel"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TBDiseaseModelLabelValue" eSuperTypes="../../org.eclipse.stem.diseasemodels/model/standard.ecore#//StandardDiseaseModelLabelValue">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="il" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="0.0"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ia" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="0.0"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TBDiseaseModel" eSuperTypes="../../org.eclipse.stem.diseasemodels/model/standard.ecore#//StandardDiseaseModel">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="transmissionRate" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="1.2"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="activeInfProb" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="0.8"/>
+  </eClassifiers>
+</ecore:EPackage>

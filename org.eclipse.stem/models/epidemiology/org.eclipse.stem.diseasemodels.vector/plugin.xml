@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ <copyright>
+ </copyright>
+
+ $Id$
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <factory
+            uri="http:///org/eclipse/stem/diseasemodels/vector.ecore"
+            class="org.eclipse.stem.diseasemodels.vector.provider.VectorItemProviderAdapterFactory"
+            supportedTypes=
+              "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
+               org.eclipse.emf.edit.provider.IStructuredItemContentProvider
+               org.eclipse.emf.edit.provider.ITreeItemContentProvider
+               org.eclipse.emf.edit.provider.IItemLabelProvider
+               org.eclipse.emf.edit.provider.IItemPropertySource"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http:///org/eclipse/stem/diseasemodels/vector.ecore"
+            class="org.eclipse.stem.diseasemodels.vector.VectorPackage"
+            genModel="model/vector.genmodel"/>
+   </extension>
+
+
+ <extension
+        point="org.eclipse.stem.diseasemodels.diseasemodel">
+     <classdef
+           class="org.eclipse.stem.diseasemodels.vector.impl.MacdonaldRossDiseaseModelImpl">
+     </classdef>
+     <dublin_core
+           creator="%dc_creator_edlund"
+           description="%dc_desc_mcross"
+           identifier="%dc_identier"
+           license="%dc_license"
+           publisher="%dc_publisher" 
+           title="%dc_title_mcross"
+           source="%dc_mac_source">
+           
+     </dublin_core>
+  </extension>
+   <extension
+         point="org.eclipse.stem.diseasemodels.diseasemodel">
+      <classdef
+            class="org.eclipse.stem.diseasemodels.vector.impl.DengueModelImpl">
+      </classdef>
+      <dublin_core
+            creator="%dc_creator_kun"
+            description="%dc_desc_dengue"
+            identifier="%dc_identier"
+            license="%dc_license"
+            publisher="%dc_publisher"
+            source="%dc_mac_source"
+            title="%dc_title_dengue">
+      </dublin_core>
+   </extension>
+   <extension
+         point="org.eclipse.stem.diseasemodels.diseasemodel">
+      <classdef
+            class="org.eclipse.stem.diseasemodels.vector.impl.SimpleDengueModelImpl">
+      </classdef>
+      <dublin_core
+            creator="%dc_creator_cthoens"
+            description="%dc_desc_simple_dengue"
+            identifier="%dc_identier"
+            license="%dc_license"
+            publisher="%dc_publisher"
+            source="%dc_mac_source"
+            title="%dc_title_simple_dengue">
+      </dublin_core>
+   </extension>
+   <extension
+         point="org.eclipse.stem.diseasemodels.diseasemodel">
+      <classdef
+            class="org.eclipse.stem.diseasemodels.vector.impl.VerySimpleDengueModelImpl">
+      </classdef>
+      <dublin_core
+            creator="%dc_creator_cthoens"
+            description="%dc_desc_very_simple_dengue"
+            identifier="%dc_identier"
+            license="%dc_license"
+            publisher="%dc_publisher"
+            source="%dc_mac_source"
+            title="%dc_title_very_simple_dengue">
+      </dublin_core>
+   </extension>
+
+	<extension point="org.eclipse.stem.model.metamodel">
+    	<metamodel path="model/vector.metamodel">
+    	</metamodel>
+    </extension>
+</plugin>

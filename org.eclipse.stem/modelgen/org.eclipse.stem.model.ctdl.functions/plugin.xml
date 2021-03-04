@@ -1,0 +1,733 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<!--
+/*******************************************************************************
+ * Copyright (c) 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018
+ * IBM Corporation, BfR, and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v2.0
+ * which accompanies this distribution, and is available at
+ * https://www.eclipse.org/legal/epl-2.0/
+ *
+ * Contributors:
+ *     IBM Corporation - initial API and implementation and new features
+ *     Bundesinstitut für Risikobewertung - Pajek Graph interface, new Veterinary Models
+ *******************************************************************************/
+-->
+<plugin>
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http:///org/eclipse/stem/model/ctdl/functions.ecore"
+            class="org.eclipse.stem.model.ctdl.functions.ExternalFunctionsPackage"
+            genModel="model/ExternalFunctions.genmodel"/>
+   </extension>
+
+
+   <extension-point id="functions" name="STEM External Functions" schema="schema/functions.exsd"/>
+
+	<extension
+         point="org.eclipse.stem.model.ctdl.functions.functions">
+         
+         <function 
+         	name="test1"
+         	className="org.eclipse.stem.model.ctdl.functions.TestFunctions"
+         	methodName="test1Method">
+         	<functionParams/>
+         	<generatedParams>
+         		<generatedParam name="node" mapsFrom="node" />
+         	</generatedParams>
+         </function>
+         
+         <function 
+         	name="test2"
+         	className="org.eclipse.stem.model.ctdl.functions.TestFunctions"
+         	methodName="test2Method">
+         	<functionParams>
+         		<functionParam name="x" type="double" />       	
+         	</functionParams>
+         	<generatedParams>
+         		<generatedParam name="x" mapsFrom="x" />
+         		<generatedParam name="node" mapsFrom="node" />
+         	</generatedParams>
+         </function> 
+        
+        
+         
+         
+    <!--
+    public static double test1Method(Node n)
+	public static double test2Method(double x, Node n)
+	public static double test3Method(double x, STEMTime time, Node n)
+	public static double test4Method(STEMTime time, Node n, double x)
+    -->     
+		<function 
+         	name="test3"
+         	className="org.eclipse.stem.model.ctdl.functions.TestFunctions"
+         	methodName="test3Method">
+         	<functionParams>
+         		<functionParam name="x" type="double" />       	
+         	</functionParams>
+         	<generatedParams>
+         		<generatedParam name="x" mapsFrom="x" />
+         		<generatedParam name="time" mapsFrom="time" />
+         		<generatedParam name="node" mapsFrom="node" />
+         	</generatedParams>
+         </function>
+         
+    	<function 
+         	name="test4"
+         	className="org.eclipse.stem.model.ctdl.functions.TestFunctions"
+         	methodName="test4Method">
+         	<functionParams>
+         		<functionParam name="x" type="double" />       	
+         	</functionParams>
+         	<generatedParams>
+         		<generatedParam name="time" mapsFrom="time" />
+         		<generatedParam name="node" mapsFrom="node" />
+         		<generatedParam name="x" mapsFrom="x" />
+         	</generatedParams>
+         </function>
+         
+    	<function 
+         	name="test5"
+         	className="org.eclipse.stem.model.ctdl.functions.TestFunctions"
+         	methodName="test5Method">
+         	<functionParams>
+         		<functionParam name="x" type="double" />
+         		<functionParam name="y" type="java.lang.String" />   	
+         	</functionParams>
+         	<generatedParams>
+         		<generatedParam mapsFrom="x" />
+         		<generatedParam mapsFrom="y" />
+         	</generatedParams>
+         </function>
+
+    	<function 
+         	name="test6"
+         	className="org.eclipse.stem.model.ctdl.functions.TestFunctions"
+         	methodName="test6Method">
+         	<functionParams>
+         		<functionParam name="x" type="double" />
+         		<functionParam name="y" type="java.lang.String" />
+         		<functionParam name="z" type="boolean" />
+         	</functionParams>
+         	<generatedParams>
+         		<generatedParam mapsFrom="x" />
+         		<generatedParam mapsFrom="y" />
+         		<generatedParam mapsFrom="z" />
+         	</generatedParams>
+         </function>
+         
+         <function 
+         	name="test7"
+         	className="org.eclipse.stem.model.ctdl.functions.TestFunctions"
+         	methodName="test7Method">
+         	<functionParams>
+         		<functionParam name="x" type="double" />
+         	</functionParams>
+         	<generatedParams>
+         		<generatedParam mapsFrom="x" />
+         	</generatedParams>
+         </function>
+         
+         <function 
+         	name="test8"
+         	className="org.eclipse.stem.model.ctdl.functions.TestFunctions"
+         	methodName="test8Method">
+         	<functionParams>
+         		<functionParam name="x" type="double" />       	
+         	</functionParams>
+         	<generatedParams>
+         		<generatedParam name="time" mapsFrom="time" />
+         		<generatedParam name="node" mapsFrom="node" />
+         		<generatedParam name="x" mapsFrom="x" />
+         		<generatedParam mapsFrom="label" />
+         		<generatedParam mapsFrom="labelValue" />
+         	</generatedParams>
+         </function>
+         
+         <function 
+         	name="one"
+         	className="org.eclipse.stem.model.ctdl.functions.TestFunctions"
+         	methodName="one">
+         	<functionParams/>
+         	<generatedParams/>
+         </function>
+         
+         <function 
+         	name="add"
+         	className="org.eclipse.stem.model.ctdl.functions.TestFunctions"
+         	methodName="add">
+         	<functionParams>
+         		<functionParam name="x" type="double" />
+         		<functionParam name="y" type="double" />         	
+         	</functionParams>
+         	<generatedParams>
+         		<generatedParam name="x" mapsFrom="x" />
+         		<generatedParam name="y" mapsFrom="y" />
+         	</generatedParams>
+         </function>
+         
+         <function 
+         	name="subtract"
+         	className="org.eclipse.stem.model.ctdl.functions.TestFunctions"
+         	methodName="subtract">
+         	<functionParams>
+         		<functionParam name="x" type="double" />
+         		<functionParam name="y" type="double" />         	
+         	</functionParams>
+         	<generatedParams>
+         		<generatedParam name="x" mapsFrom="x" />
+         		<generatedParam name="y" mapsFrom="y" />
+         	</generatedParams>
+         </function>
+         
+		<function 
+         	name="multiply"
+         	className="org.eclipse.stem.model.ctdl.functions.TestFunctions"
+         	methodName="multiply">
+         	<functionParams>
+         		<functionParam name="x" type="double" />
+         		<functionParam name="y" type="double" />         	
+         	</functionParams>
+         	<generatedParams>
+         		<generatedParam name="x" mapsFrom="x" />
+         		<generatedParam name="y" mapsFrom="y" />
+         	</generatedParams>
+         </function>
+         
+		<function 
+         	name="divide"
+         	className="org.eclipse.stem.model.ctdl.functions.TestFunctions"
+         	methodName="divide">
+         	<functionParams>
+         		<functionParam name="x" type="double" />
+         		<functionParam name="y" type="double" />         	
+         	</functionParams>
+         	<generatedParams>
+         		<generatedParam name="x" mapsFrom="x" />
+         		<generatedParam name="y" mapsFrom="y" />
+         	</generatedParams>
+         </function>
+         
+         <!-- java.lang.Math.abs(double) -->
+         <function 
+         	name="abs"
+         	className="java.lang.Math"
+         	methodName="abs">
+         	<functionParams>
+         		<functionParam name="a" type="double" />         	
+         	</functionParams>
+         	<generatedParams>
+         		<generatedParam mapsFrom="a" />
+         	</generatedParams>
+         </function>
+         
+         <!-- java.lang.Math.acos(double) -->
+         <function 
+         	name="acos"
+         	className="java.lang.Math"
+         	methodName="acos">
+         	<functionParams>
+         		<functionParam name="a" type="double" />         	
+         	</functionParams>
+         	<generatedParams>
+         		<generatedParam mapsFrom="a" />
+         	</generatedParams>
+         </function> 
+         
+         <!-- java.lang.Math.asin(double) -->
+         <function 
+         	name="asin"
+         	className="java.lang.Math"
+         	methodName="asin">
+         	<functionParams>
+         		<functionParam name="a" type="double" />         	
+         	</functionParams>
+         	<generatedParams>
+         		<generatedParam mapsFrom="a" />
+         	</generatedParams>
+         </function> 
+
+         <!-- java.lang.Math.atan(double) -->
+         <function 
+         	name="atan"
+         	className="java.lang.Math"
+         	methodName="atan">
+         	<functionParams>
+         		<functionParam name="a" type="double" />         	
+         	</functionParams>
+         	<generatedParams>
+         		<generatedParam mapsFrom="a" />
+         	</generatedParams>
+         </function>
+
+         <!-- java.lang.Math.atan2(double,double) -->
+         <function 
+         	name="atan2"
+         	className="java.lang.Math"
+         	methodName="atan2">
+         	<functionParams>
+         		<functionParam name="y" type="double" />
+         		<functionParam name="x" type="double" />
+         	</functionParams>
+         	<generatedParams>
+         		<generatedParam mapsFrom="y" />
+         		<generatedParam mapsFrom="x" />
+         	</generatedParams>
+         </function>
+
+         <!-- java.lang.Math.cbrt(double) -->
+         <function 
+         	name="cbrt"
+         	className="java.lang.Math"
+         	methodName="cbrt">
+         	<functionParams>
+         		<functionParam name="a" type="double" />         	
+         	</functionParams>
+         	<generatedParams>
+         		<generatedParam mapsFrom="a" />
+         	</generatedParams>
+         </function>
+
+         <!-- java.lang.Math.ceil(double) -->
+         <function 
+         	name="ceil"
+         	className="java.lang.Math"
+         	methodName="ceil">
+         	<functionParams>
+         		<functionParam name="a" type="double" />         	
+         	</functionParams>
+         	<generatedParams>
+         		<generatedParam mapsFrom="a" />
+         	</generatedParams>
+         </function>
+
+         <!-- java.lang.Math.copySign(double,double) -->
+         <function 
+         	name="copySign"
+         	className="java.lang.Math"
+         	methodName="copySign">
+         	<functionParams>
+         		<functionParam name="magnitude" type="double" />
+         		<functionParam name="sign" type="double" />
+         	</functionParams>
+         	<generatedParams>
+         		<generatedParam mapsFrom="magnitude" />
+         		<generatedParam mapsFrom="sign" />
+         	</generatedParams>
+         </function>
+
+         <!-- java.lang.Math.cos(double) -->
+         <function 
+         	name="cos"
+         	className="java.lang.Math"
+         	methodName="cos">
+         	<functionParams>
+         		<functionParam name="a" type="double" />         	
+         	</functionParams>
+         	<generatedParams>
+         		<generatedParam mapsFrom="a" />
+         	</generatedParams>
+         </function>
+
+         <!-- java.lang.Math.cosh(double) -->
+         <function 
+         	name="cosh"
+         	className="java.lang.Math"
+         	methodName="cosh">
+         	<functionParams>
+         		<functionParam name="a" type="double" />         	
+         	</functionParams>
+         	<generatedParams>
+         		<generatedParam mapsFrom="a" />
+         	</generatedParams>
+         </function>
+
+         <!-- java.lang.Math.exp(double) -->
+         <function 
+         	name="exp"
+         	className="java.lang.Math"
+         	methodName="exp">
+         	<functionParams>
+         		<functionParam name="a" type="double" />         	
+         	</functionParams>
+         	<generatedParams>
+         		<generatedParam mapsFrom="a" />
+         	</generatedParams>
+         </function>
+
+         <!-- java.lang.Math.expm1(double) -->
+         <function 
+         	name="expm1"
+         	className="java.lang.Math"
+         	methodName="expm1">
+         	<functionParams>
+         		<functionParam name="a" type="double" />         	
+         	</functionParams>
+         	<generatedParams>
+         		<generatedParam mapsFrom="a" />
+         	</generatedParams>
+         </function>
+
+         <!-- java.lang.Math.floor(double) -->
+         <function 
+         	name="floor"
+         	className="java.lang.Math"
+         	methodName="floor">
+         	<functionParams>
+         		<functionParam name="a" type="double" />         	
+         	</functionParams>
+         	<generatedParams>
+         		<generatedParam mapsFrom="a" />
+         	</generatedParams>
+         </function>
+
+         <!-- java.lang.Math.getExponent(double) -->
+         <function 
+         	name="getExponent"
+         	className="java.lang.Math"
+         	methodName="getExponent">
+         	<functionParams>
+         		<functionParam name="a" type="double" />         	
+         	</functionParams>
+         	<generatedParams>
+         		<generatedParam mapsFrom="a" />
+         	</generatedParams>
+         </function>
+
+         <!-- java.lang.Math.hypot(double,double) -->
+         <function 
+         	name="hypot"
+         	className="java.lang.Math"
+         	methodName="hypot">
+         	<functionParams>
+         		<functionParam name="x" type="double" />
+         		<functionParam name="y" type="double" />
+         	</functionParams>
+         	<generatedParams>
+         		<generatedParam mapsFrom="x" />
+         		<generatedParam mapsFrom="y" />
+         	</generatedParams>
+         </function>
+
+         <!-- java.lang.Math.log(double) -->
+         <function 
+         	name="log"
+         	className="java.lang.Math"
+         	methodName="log">
+         	<functionParams>
+         		<functionParam name="a" type="double" />         	
+         	</functionParams>
+         	<generatedParams>
+         		<generatedParam mapsFrom="a" />
+         	</generatedParams>
+         </function>
+
+         <!-- java.lang.Math.log10(double) -->
+         <function 
+         	name="log10"
+         	className="java.lang.Math"
+         	methodName="log10">
+         	<functionParams>
+         		<functionParam name="a" type="double" />         	
+         	</functionParams>
+         	<generatedParams>
+         		<generatedParam mapsFrom="a" />
+         	</generatedParams>
+         </function>
+
+         <!-- java.lang.Math.log1p(double) -->
+         <function 
+         	name="log1p"
+         	className="java.lang.Math"
+         	methodName="log1p">
+         	<functionParams>
+         		<functionParam name="a" type="double" />         	
+         	</functionParams>
+         	<generatedParams>
+         		<generatedParam mapsFrom="a" />
+         	</generatedParams>
+         </function>
+
+         <!-- java.lang.Math.max(double,double) -->
+         <function 
+         	name="max"
+         	className="java.lang.Math"
+         	methodName="max">
+         	<functionParams>
+         		<functionParam name="a" type="double" />
+         		<functionParam name="b" type="double" />
+         	</functionParams>
+         	<generatedParams>
+         		<generatedParam mapsFrom="a" />
+         		<generatedParam mapsFrom="b" />
+         	</generatedParams>
+         </function>
+
+         <!-- java.lang.Math.min(double,double) -->
+         <function 
+         	name="min"
+         	className="java.lang.Math"
+         	methodName="min">
+         	<functionParams>
+         		<functionParam name="a" type="double" />
+         		<functionParam name="b" type="double" />
+         	</functionParams>
+         	<generatedParams>
+         		<generatedParam mapsFrom="a" />
+         		<generatedParam mapsFrom="b" />
+         	</generatedParams>
+         </function>
+
+		<!-- java.lang.Math.nextAfter(double,double) -->
+         <function 
+         	name="nextAfter"
+         	className="java.lang.Math"
+         	methodName="nextAfter">
+         	<functionParams>
+         		<functionParam name="start" type="double" />  
+         		<functionParam name="direction" type="double" />       	
+         	</functionParams>
+         	<generatedParams>
+         		<generatedParam mapsFrom="start" />
+         		<generatedParam mapsFrom="direction" />
+         	</generatedParams>
+         </function> 
+
+		<!-- java.lang.Math.nextUp(double) -->
+         <function 
+         	name="nextUp"
+         	className="java.lang.Math"
+         	methodName="nextUp">
+         	<functionParams>
+         		<functionParam name="d" type="double" />         	
+         	</functionParams>
+         	<generatedParams>
+         		<generatedParam mapsFrom="d" />
+         	</generatedParams>
+         </function> 
+
+		<!-- java.lang.Math.pow(double,double) -->
+         <function 
+         	name="pow"
+         	className="java.lang.Math"
+         	methodName="pow">
+         	<functionParams>
+         		<functionParam name="a" type="double" />  
+         		<functionParam name="b" type="double" />       	
+         	</functionParams>
+         	<generatedParams>
+         		<generatedParam mapsFrom="a" />
+         		<generatedParam mapsFrom="b" />
+         	</generatedParams>
+         </function> 
+
+		<!-- java.lang.Math.random() -->
+        <function 
+         	name="random"
+         	className="java.lang.Math"
+         	methodName="random">
+         	<functionParams/>
+         	<generatedParams/>
+        </function>
+
+		<!-- java.lang.Math.rint(double) -->
+		<function 
+         	name="rint"
+         	className="java.lang.Math"
+         	methodName="rint">
+         	<functionParams>
+         		<functionParam name="a" type="double" />         	
+         	</functionParams>
+         	<generatedParams>
+         		<generatedParam mapsFrom="a" />
+         	</generatedParams>
+		</function> 
+
+		<!-- java.lang.Math.round(double) -->
+		<function 
+         	name="round"
+         	className="java.lang.Math"
+         	methodName="round">
+         	<functionParams>
+         		<functionParam name="a" type="double" />         	
+         	</functionParams>
+         	<generatedParams>
+         		<generatedParam mapsFrom="a" />
+         	</generatedParams>
+		</function>
+
+		<!-- java.lang.Math.scalb(double,int) -->
+		<function 
+         	name="scalb"
+         	className="java.lang.Math"
+         	methodName="scalb">
+         	<functionParams>
+         		<functionParam name="x" type="double" />
+         		<functionParam name="scaleFactor" type="int" />     	
+         	</functionParams>
+         	<generatedParams>
+         		<generatedParam mapsFrom="x" />
+         		<generatedParam mapsFrom="scaleFactor" />
+         	</generatedParams>
+		</function> 
+
+		<!-- java.lang.Math.signum(double) -->
+		<function 
+         	name="signum"
+         	className="java.lang.Math"
+         	methodName="signum">
+         	<functionParams>
+         		<functionParam name="a" type="double" />         	
+         	</functionParams>
+         	<generatedParams>
+         		<generatedParam mapsFrom="a" />
+         	</generatedParams>
+		</function> 
+
+		<!-- java.lang.Math.sin(double) -->
+		<function 
+         	name="sin"
+         	className="java.lang.Math"
+         	methodName="sin">
+         	<functionParams>
+         		<functionParam name="a" type="double" />         	
+         	</functionParams>
+         	<generatedParams>
+         		<generatedParam mapsFrom="a" />
+         	</generatedParams>
+		</function> 
+
+		<!-- java.lang.Math.sinh(double) -->
+		<function 
+         	name="sinh"
+         	className="java.lang.Math"
+         	methodName="sinh">
+         	<functionParams>
+         		<functionParam name="x" type="double" />         	
+         	</functionParams>
+         	<generatedParams>
+         		<generatedParam mapsFrom="x" />
+         	</generatedParams>
+		</function> 		
+
+		<!-- java.lang.Math.sqrt(double) -->
+		<function 
+         	name="sqrt"
+         	className="java.lang.Math"
+         	methodName="sqrt">
+         	<functionParams>
+         		<functionParam name="a" type="double" />         	
+         	</functionParams>
+         	<generatedParams>
+         		<generatedParam mapsFrom="a" />
+         	</generatedParams>
+		</function> 
+
+		<!-- java.lang.Math.tan(double) -->
+		<function 
+         	name="tan"
+         	className="java.lang.Math"
+         	methodName="tan">
+         	<functionParams>
+         		<functionParam name="a" type="double" />         	
+         	</functionParams>
+         	<generatedParams>
+         		<generatedParam mapsFrom="a" />
+         	</generatedParams>
+		</function> 
+
+		<!-- java.lang.Math.tanh(double) -->
+		<function 
+         	name="tanh"
+         	className="java.lang.Math"
+         	methodName="tanh">
+         	<functionParams>
+         		<functionParam name="x" type="double" />         	
+         	</functionParams>
+         	<generatedParams>
+         		<generatedParam mapsFrom="x" />
+         	</generatedParams>
+		</function> 
+
+		<!-- java.lang.Math.degrees(double) -->
+		<function 
+         	name="degrees"
+         	className="java.lang.Math"
+         	methodName="toDegrees">
+         	<functionParams>
+         		<functionParam name="radians" type="double" />         	
+         	</functionParams>
+         	<generatedParams>
+         		<generatedParam mapsFrom="radians" />
+         	</generatedParams>
+		</function> 
+
+		<!-- java.lang.Math.radians(double) -->
+		<function 
+         	name="radians"
+         	className="java.lang.Math"
+         	methodName="toRadians">
+         	<functionParams>
+         		<functionParam name="degrees" type="double" />         	
+         	</functionParams>
+         	<generatedParams>
+         		<generatedParam mapsFrom="degrees" />
+         	</generatedParams>
+		</function> 
+
+		<!-- java.lang.Math.ulp(double) -->
+		<function 
+         	name="ulp"
+         	className="java.lang.Math"
+         	methodName="ulp">
+         	<functionParams>
+         		<functionParam name="a" type="double" />         	
+         	</functionParams>
+         	<generatedParams>
+         		<generatedParam mapsFrom="a" />
+         	</generatedParams>
+		</function> 
+
+<!--
+acos(double)
+asin(double)
+atan(double)
+atan2(double, double)
+cbrt(double)
+ceil(double)
+copySign(double, double)
+cos(double)
+cosh(double)
+exp(double)
+expm1(double)
+floor(double)
+getExponent(double)
+hypot(double, double)
+log(double)
+log10(double)
+log1p(double)
+max(double, double)
+min(double, double)
+nextAfter(double, double)
+nextUp(double)
+pow(double, double)
+random()
+rint(double)
+round(double)
+scalb(double, int)
+signum(double)
+sin(double)
+sinh(double)
+sqrt(double)
+tan(double)
+tanh(double)
+toDegrees(double)
+toRadians(double)
+ulp(double)
+-->
+    
+   </extension>
+
+</plugin>

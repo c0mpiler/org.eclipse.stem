@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<org.eclipse.stem.model:Package xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:org.eclipse.stem.model="http:///org/eclipse/stem/model/metamodel.ecore" packagePrefix="org.eclipse.stem.diseasemodels.multipopulation"
+    name="multipopulation">
+  <models name="MultiPopulationSIDiseaseModel" class="multipopulation.ecore#//MultiPopulationSIDiseaseModel"
+      parentModel="../../org.eclipse.stem.diseasemodels/model/standard.metamodel#//@models.4"
+      compartments="../../org.eclipse.stem.diseasemodels/model/standard.metamodel#//@compartmentGroups.2">
+    <parameters name="populationGroups" dataType="ecore:EClass ../../org.eclipse.stem.core/model/common.ecore#//StringValueList"
+        displayName="Population Groups"/>
+    <parameters name="transmissionRate" dataType="ecore:EClass ../../org.eclipse.stem.core/model/common.ecore#//DoubleValueMatrix"
+        displayName="Transmission Rate"/>
+    <parameters name="recoveryRate" dataType="ecore:EClass ../../org.eclipse.stem.core/model/common.ecore#//DoubleValueList"
+        displayName="Recovery Rate"/>
+    <parameters name="infectiousMortalityRate" dataType="ecore:EClass ../../org.eclipse.stem.core/model/common.ecore#//DoubleValueList"
+        displayName="Infectious Mortality Rate"/>
+  </models>
+  <models name="MultiPopulationSIRDiseaseModel" class="multipopulation.ecore#//MultiPopulationSIRDiseaseModel"
+      parentModel="#//@models.0" compartments="../../org.eclipse.stem.diseasemodels/model/standard.metamodel#//@compartmentGroups.3">
+    <parameters name="immunityLossRate" dataType="ecore:EClass ../../org.eclipse.stem.core/model/common.ecore#//DoubleValueList"
+        displayName="Immunity Loss Rate"/>
+  </models>
+  <models name="MultiPopulationSEIRDiseaseModel" class="multipopulation.ecore#//MultiPopulationSEIRDiseaseModel"
+      parentModel="#//@models.1" compartments="../../org.eclipse.stem.diseasemodels/model/standard.metamodel#//@compartmentGroups.1">
+    <parameters name="incubationRate" dataType="ecore:EClass ../../org.eclipse.stem.core/model/common.ecore#//DoubleValueList"
+        displayName="Incubation Rate"/>
+  </models>
+  <models name="MultiPopulationSeasonalDiseaseModel" class="multipopulation.ecore#//MultiPopulationSeasonalDiseaseModel"
+      parentModel="#//@models.2" compartments="../../org.eclipse.stem.diseasemodels/model/standard.metamodel#//@compartmentGroups.1">
+    <parameters name="useSplineInterpolation" dataType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"
+        displayName="Use Spline Interpolation"/>
+    <parameters name="modulationPoints" dataType="ecore:EClass ../../org.eclipse.stem.core/model/common.ecore#//DoubleValueMatrix"
+        displayName="Modulation Points"/>
+  </models>
+</org.eclipse.stem.model:Package>

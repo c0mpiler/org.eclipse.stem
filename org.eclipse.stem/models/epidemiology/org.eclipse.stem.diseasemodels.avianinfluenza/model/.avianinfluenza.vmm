@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<org.eclipse.stem.model.vmm:CanvasPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:org.eclipse.stem.model.vmm="http:///org/eclipse/stem/model/vmm.ecore" metamodel="avianinfluenza.metamodel#/">
+  <modelElements model="avianinfluenza.metamodel#//@models.0">
+    <compartmentElements x="5" y="5" width="75" height="75" compartment="platform:/plugin/org.eclipse.stem.diseasemodels/model/standard.metamodel#//@compartmentGroups.0/@compartments.0"/>
+    <compartmentElements x="110" y="5" width="75" height="75" compartment="platform:/plugin/org.eclipse.stem.diseasemodels/model/standard.metamodel#//@compartmentGroups.4/@compartments.0"/>
+    <compartmentElements x="215" y="5" width="75" height="75" compartment="platform:/plugin/org.eclipse.stem.diseasemodels/model/standard.metamodel#//@compartmentGroups.4/@compartments.1"/>
+    <compartmentElements x="320" y="5" width="75" height="75" compartment="platform:/plugin/org.eclipse.stem.diseasemodels/model/standard.metamodel#//@compartmentGroups.4/@compartments.2"/>
+    <compartmentElements x="425" y="5" width="75" height="75" compartment="platform:/plugin/org.eclipse.stem.diseasemodels/model/standard.metamodel#//@compartmentGroups.2/@compartments.0"/>
+    <compartmentElements x="530" y="5" width="75" height="75" compartment="platform:/plugin/org.eclipse.stem.diseasemodels/model/standard.metamodel#//@compartmentGroups.3/@compartments.0"/>
+  </modelElements>
+</org.eclipse.stem.model.vmm:CanvasPackage>

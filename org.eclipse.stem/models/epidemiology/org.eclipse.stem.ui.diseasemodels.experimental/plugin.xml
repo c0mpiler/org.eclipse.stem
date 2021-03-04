@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ <copyright>
+ </copyright>
+
+ $Id$
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="org.eclipse.stem.diseasemodels.experimental.presentation.ExperimentalModelWizardID"
+            name="%_UI_ExperimentalModelWizard_label"
+            class="org.eclipse.stem.diseasemodels.experimental.presentation.ExperimentalModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/ExperimentalModelFile.gif">
+         <description>%_UI_ExperimentalModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="org.eclipse.stem.diseasemodels.experimental.presentation.ExperimentalEditorID"
+            name="%_UI_ExperimentalEditor_label"
+            icon="icons/full/obj16/ExperimentalModelFile.gif"
+            extensions="experimental"
+            class="org.eclipse.stem.diseasemodels.experimental.presentation.ExperimentalEditor"
+            contributorClass="org.eclipse.stem.diseasemodels.experimental.presentation.ExperimentalActionBarContributor">
+      </editor>
+   </extension>
+ <extension
+        point="org.eclipse.ui.startup">
+     <startup
+           class="org.eclipse.stem.ui.diseasemodels.experimental.adapters.ExperimentalRelativeValueProviderAdapterFactory"></startup>
+  </extension>
+  <extension
+        point="org.eclipse.ui.startup">
+     <startup
+           class="org.eclipse.stem.ui.diseasemodels.experimental.adapters.ExperimentalPropertyStringProviderAdapterFactory">
+     </startup>
+  </extension>
+</plugin>

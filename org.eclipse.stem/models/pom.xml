@@ -1,0 +1,18 @@
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.eclipse.stem.tycho</groupId>
+    <artifactId>org.eclipse.stem.tycho.models</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <parent>
+        <groupId>org.eclipse.stem.tycho</groupId>
+        <artifactId>org.eclipse.stem.tycho.root</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
+    <modules>
+        <module>epidemiology</module>
+        <module>foodproduction</module>
+        <module>populations</module>
+    </modules>
+</project>

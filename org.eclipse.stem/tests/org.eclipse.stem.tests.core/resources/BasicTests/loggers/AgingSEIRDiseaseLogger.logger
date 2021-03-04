@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<org.eclipse.stem.loggers.csv.model:CSVLogger xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:org.eclipse.stem.loggers.csv.model="http://org/eclipse/stem/loggers/csv" uRI="platform:/resource/BasicTests/loggers/AgingSEIRDiseaseLogger.logger" typeURI="stemtype://org.eclipse.stem/Identifiable" dataPath="" logInitialState="true">
+  <dublinCore title="CSV File Logger" identifier="platform:/resource/BasicTests/loggers/AgingSEIRDiseaseLogger.logger" description="STEM logger for writing the results of a simulation to an entry-delimited text file" creator="edlund" format="http://org/eclipse/stem/core/logger" publisher="The Eclipse Foundation" source="http://wiki.eclipse.org/STEM_Loggers" type="stemtype://org.eclipse.stem/Identifiable" created="2013-08-02" license="Eclipse Public License (EPL)"/>
+  <properties>platform:/resource/BasicTests/decorators/AgingSEIRDisease.standard#human2to-/i</properties>
+  <properties>platform:/resource/BasicTests/decorators/AgingSEIRDisease.standard#human0to0/incidence</properties>
+  <properties>platform:/resource/BasicTests/decorators/AgingSEIRDisease.standard#human1to1/diseaseDeaths</properties>
+  <properties>platform:/resource/BasicTests/decorators/AgingSEIRDisease.standard#human1to1/incidence</properties>
+  <properties>platform:/resource/BasicTests/decorators/AgingSEIRDisease.standard#human2to-/e</properties>
+  <properties>platform:/resource/BasicTests/decorators/AgingSEIRDisease.standard#human0to0/diseaseDeaths</properties>
+  <properties>platform:/resource/BasicTests/decorators/AgingSEIRDisease.standard#human1to1/s</properties>
+  <properties>platform:/resource/BasicTests/decorators/AgingSEIRDisease.standard#human1to1/r</properties>
+  <properties>platform:/resource/BasicTests/decorators/AgingSEIRDisease.standard#human2to-/r</properties>
+  <properties>platform:/resource/BasicTests/decorators/AgingSEIRDisease.standard#human2to-/populationCount</properties>
+  <properties>platform:/resource/BasicTests/decorators/AgingSEIRDisease.standard#human0to0/r</properties>
+  <properties>platform:/resource/BasicTests/decorators/AgingSEIRDisease.standard#human0to0/s</properties>
+  <properties>platform:/resource/BasicTests/decorators/AgingSEIRDisease.standard#human2to-/diseaseDeaths</properties>
+  <properties>platform:/resource/BasicTests/decorators/AgingSEIRDisease.standard#human0to0/i</properties>
+  <properties>platform:/resource/BasicTests/decorators/AgingSEIRDisease.standard#human2to-/incidence</properties>
+  <properties>platform:/resource/BasicTests/decorators/AgingSEIRDisease.standard#human1to1/e</properties>
+  <properties>platform:/resource/BasicTests/decorators/AgingSEIRDisease.standard#human2to-/s</properties>
+  <properties>platform:/resource/BasicTests/decorators/AgingSEIRDisease.standard#human1to1/i</properties>
+  <properties>platform:/resource/BasicTests/decorators/AgingSEIRDisease.standard#human1to1/populationCount</properties>
+  <properties>platform:/resource/BasicTests/decorators/AgingSEIRDisease.standard#human0to0/e</properties>
+  <properties>platform:/resource/BasicTests/decorators/AgingSEIRDisease.standard#human0to0/populationCount</properties>
+</org.eclipse.stem.loggers.csv.model:CSVLogger>

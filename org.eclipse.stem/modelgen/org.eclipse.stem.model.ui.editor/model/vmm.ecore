@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/*******************************************************************************
+ * Copyright (c) 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018
+ * IBM Corporation, BfR, and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v2.0
+ * which accompanies this distribution, and is available at
+ * https://www.eclipse.org/legal/epl-2.0/
+ *
+ * Contributors:
+ *     IBM Corporation - initial API and implementation and new features
+ *     Bundesinstitut für Risikobewertung - Pajek Graph interface, new Veterinary Models
+ *******************************************************************************/
+ -->
+ <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="vismodel" nsURI="http:///org/eclipse/stem/model/vmm.ecore" nsPrefix="org.eclipse.stem.model.vmm">
+  <eClassifiers xsi:type="ecore:EClass" name="VisualElement" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="LineElement" eSuperTypes="#//VisualElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="style" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        defaultValueLiteral="0"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RectangleElement" abstract="true" eSuperTypes="#//VisualElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="color" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        defaultValueLiteral="0"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="x" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        defaultValueLiteral="0"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="y" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        defaultValueLiteral="0"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="width" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        defaultValueLiteral="0"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="height" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        defaultValueLiteral="0"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ConnectorElement" eSuperTypes="#//LineElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="CanvasPackage">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="modelElements" upperBound="-1"
+        eType="#//ModelElement" containment="true" eOpposite="#//ModelElement/canvas"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="metamodel" eType="ecore:EClass ../../org.eclipse.stem.model/model/metamodel.ecore#//Package"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ModelElement" eSuperTypes="#//VisualElement">
+    <eOperations name="addCompartment">
+      <eParameters name="compartment" eType="#//CompartmentElement"/>
+    </eOperations>
+    <eOperations name="removeCompartment">
+      <eParameters name="compartment" eType="#//CompartmentElement"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="model" eType="ecore:EClass ../../org.eclipse.stem.model/model/metamodel.ecore#//Model"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="compartmentElements" upperBound="-1"
+        eType="#//CompartmentElement" containment="true" eOpposite="#//CompartmentElement/modelElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="transitionElements" upperBound="-1"
+        eType="#//TransitionElement" containment="true" eOpposite="#//TransitionElement/modelElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="canvas" eType="#//CanvasPackage"
+        transient="true" eOpposite="#//CanvasPackage/modelElements"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CompartmentElement" eSuperTypes="#//RectangleElement">
+    <eOperations name="getSourceTransitions" upperBound="-1" eType="#//TransitionElement"/>
+    <eOperations name="getTargetTransitions" upperBound="-1" eType="#//TransitionElement"/>
+    <eOperations name="isInherited" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="compartment" eType="ecore:EClass ../../org.eclipse.stem.model/model/metamodel.ecore#//Compartment"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="modelElement" eType="#//ModelElement"
+        transient="true" eOpposite="#//ModelElement/compartmentElements"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TransitionElement" eSuperTypes="#//ConnectorElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" eType="#//CompartmentElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" eType="#//CompartmentElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="transition" eType="ecore:EClass ../../org.eclipse.stem.model/model/metamodel.ecore#//Transition"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="modelElement" eType="#//ModelElement"
+        transient="true" eOpposite="#//ModelElement/transitionElements"/>
+  </eClassifiers>
+</ecore:EPackage>

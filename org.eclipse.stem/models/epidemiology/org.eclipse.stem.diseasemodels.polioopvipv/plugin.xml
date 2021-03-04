@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<!--
+/**
+ * Copyright (c) 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018
+ * IBM Corporation, BfR, and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v2.0
+ * which accompanies this distribution, and is available at
+ * https://www.eclipse.org/legal/epl-2.0/
+ *
+ * Contributors:
+ *     IBM Corporation - initial API and implementation and new features
+ *     Bundesinstitut für Risikobewertung - Pajek Graph interface, new Veterinary Models 
+ */
+-->
+<plugin>
+
+   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <factory
+            uri="http:///org/eclipse/stem/diseasemodels/polioopvipv/polioopvipv.ecore"
+            class="org.eclipse.stem.diseasemodels.polioopvipv.provider.PolioOpvIpvItemProviderAdapterFactory"
+            supportedTypes=
+              "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
+               org.eclipse.emf.edit.provider.IStructuredItemContentProvider
+               org.eclipse.emf.edit.provider.ITreeItemContentProvider
+               org.eclipse.emf.edit.provider.IItemLabelProvider
+               org.eclipse.emf.edit.provider.IItemPropertySource"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http:///org/eclipse/stem/diseasemodels/polioopvipv/polioopvipv.ecore"
+            class="org.eclipse.stem.diseasemodels.polioopvipv.PolioOpvIpvPackage"
+            genModel="model/polioopvipv.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="org.eclipse.stem.diseasemodels.polioopvipv.presentation.PolioOpvIpvModelWizardID"
+            name="%_UI_PolioOpvIpvModelWizard_label"
+            class="org.eclipse.stem.diseasemodels.polioopvipv.presentation.PolioOpvIpvModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/PolioOpvIpvModelFile.gif">
+         <description>%_UI_PolioOpvIpvModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="org.eclipse.stem.diseasemodels.polioopvipv.presentation.PolioOpvIpvEditorID"
+            name="%_UI_PolioOpvIpvEditor_label"
+            icon="icons/full/obj16/PolioOpvIpvModelFile.gif"
+            extensions="polioopvipv"
+            class="org.eclipse.stem.diseasemodels.polioopvipv.presentation.PolioOpvIpvEditor"
+            contributorClass="org.eclipse.stem.diseasemodels.polioopvipv.presentation.PolioOpvIpvActionBarContributor">
+      </editor>
+   </extension>
+
+	<extension point="org.eclipse.stem.model.metamodel">
+		<metamodel
+       	path="model/polioopvipv.metamodel">
+		</metamodel>
+	</extension>
+	
+	<extension point="org.eclipse.stem.diseasemodels.diseasemodel">
+		<classdef class="org.eclipse.stem.diseasemodels.polioopvipv.impl.PolioOpvIpvDiseaseModelImpl"></classdef>
+		<dublin_core
+			creator=""
+			description=""
+			identifier=""
+			source=""
+			title="Polio OPV/IPV Disease Model"
+			license=""
+			publisher="">
+		</dublin_core>
+	</extension>
+
+  <extension
+        point="org.eclipse.ui.startup">        
+     <startup
+           class="org.eclipse.stem.diseasemodels.polioopvipv.presentation.PolioOpvIpvRelativeValueProviderAdapterFactory">
+     </startup>
+  </extension>
+  
+  <extension
+        point="org.eclipse.ui.startup">        
+     <startup
+           class="org.eclipse.stem.diseasemodels.polioopvipv.presentation.PolioOpvIpvPropertyEditorAdapterFactory">
+     </startup>
+  </extension>
+
+
+</plugin>

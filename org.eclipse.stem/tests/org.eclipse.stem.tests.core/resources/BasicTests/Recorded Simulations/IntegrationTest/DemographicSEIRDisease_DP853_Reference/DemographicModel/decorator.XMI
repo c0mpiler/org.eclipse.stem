@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<org.eclipse.stem.populationmodels.standard:DemographicPopulationModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:org.eclipse.stem.populationmodels.standard="http:///org/eclipse/stem/populationmodels/standard" uRI="platform:/resource/BasicTests/decorators/DemographicPopModel.standard" typeURI="stemtype://org.eclipse.stem/Identifiable" addStochasticNoise="false" randomSeed="1" populationIdentifier="human" name="DemographicModel" targetISOKey="" initialRescalingFactor="1.0" birthRate="4.0E-5" deathRate="3.9E-5" timePeriod="86400000">
+  <dublinCore identifier="platform:/resource/BasicTests/decorators/DemographicPopModel.standard" creator="edlund" format="http:///org/eclipse/stem/populationmodels/standard" type="stemtype://org.eclipse.stem/Identifiable" created="2011-05-11"/>
+  <populationGroups identifier="men" fraction="0.5"/>
+  <populationGroups identifier="women" fraction="0.5"/>
+</org.eclipse.stem.populationmodels.standard:DemographicPopulationModel>

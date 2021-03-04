@@ -1,0 +1,34 @@
+instructions.configure=\
+addRepository(type:0,location:http${#58}//download.eclipse.org/stem/update-site/,name:STEM Add-ons);\
+addRepository(type:1,location:http${#58}//download.eclipse.org/stem/update-site/,name:STEM Add-ons);\
+mkdir(path:${installFolder}/dropins);\
+org.eclipse.equinox.p2.touchpoint.natives.remove(path:${installFolder}/Eclipse.app/);\
+org.eclipse.equinox.p2.touchpoint.natives.remove(path:${installFolder}/launcher);\
+org.eclipse.equinox.p2.touchpoint.natives.remove(path:${installFolder}/launcher.exe);\
+
+
+
+#############################################
+### Customize Mac OS X Workspace Location ###
+#############################################
+
+requires.5.namespace=org.eclipse.equinox.p2.iu
+requires.5.name=tooling.org.eclipse.configuration.macosx
+requires.5.filter=(osgi.os=macosx)
+requires.5.range=[1.0.0,1.0.0]
+requires.5.greedy=true
+
+units.5.id=tooling.org.eclipse.configuration.macosx
+units.5.version=1.0.0
+units.5.provides.1.namespace=org.eclipse.equinox.p2.iu
+units.5.provides.1.name=tooling.org.eclipse.configuration.macosx
+units.5.provides.1.version=1.0.0
+units.5.filter=(osgi.os=macosx)
+units.5.touchpoint.id=org.eclipse.equinox.p2.osgi
+units.5.touchpoint.version=1.0.0
+units.5.instructions.configure=setProgramProperty(propName:osgi.instance.area.default,propValue:../../../workspace);
+units.5.instructions.unconfigure=setProgramProperty(propName:osgi.instance.area.default,propValue:);
+
+
+
+

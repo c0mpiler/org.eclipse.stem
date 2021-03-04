@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+   <extension
+         point="org.eclipse.stem.diseasemodels.disease">
+      <stem_category
+            id="org.eclipse.stem.diseases.stem"
+            name="%_UI_STEM"
+            parent_id="/"/>
+      <stem_category
+            id="org.eclipse.stem.diseases.stem.builtin"
+            name="%_UI_Builtin"
+            parent_id="org.eclipse.stem.diseases.stem"/>
+      <stem_category
+            id="org.eclipse.stem.diseases.stem.builtin.diseasemodels"
+            name="%_UI_DiseaseModels"
+            parent_id="org.eclipse.stem.diseases.stem.builtin"/>            
+      <stem_category
+            id="org.eclipse.stem.diseases.stem.builtin.populationmodels"
+            name="%_UI_PopulationModels"
+            parent_id="org.eclipse.stem.diseases.stem.builtin"/>      
+            
+      <dublin_core
+            category_id="org.eclipse.stem.diseases.stem.builtin.diseasemodels"
+            created="2007-02-15"
+            creator="%dc_creator_daford"
+            description="%dc_flu_d_seir_desc"
+            format="http:///org/eclipse/stem/diseasemodels/standard.ecore"
+            identifier="platform:/plugin/org.eclipse.stem.diseases/resources/diseases/influenza_deterministic_seir.standard"
+            publisher="%dc_pub"
+            title="%dc_flu_d_seir_title"/>
+      <dublin_core
+            category_id="org.eclipse.stem.diseases.stem.builtin.diseasemodels"
+            created="2011-06-22"
+            creator="%dc_creator_thoens"
+            description="%dc_disease_chickenpox_desc"
+            format="http:///org/eclipse/stem/diseasemodels/diseasemodels/standard.ecore"
+            identifier="platform:/plugin/org.eclipse.stem.diseases/resources/diseases/ChickenPox.standard"
+            publisher="%dc_pub"
+            title="%dc_disease_chickenpox_title"/>            
+       
+      <dublin_core
+            category_id="org.eclipse.stem.diseases.stem.builtin.populationmodels"
+            created="2011-06-22"
+            creator="%dc_creator_thoens"
+            description="%dc_population_aging_desc"
+            format="http:///org/eclipse/stem/populationmodels/standard.ecore"
+            identifier="platform:/plugin/org.eclipse.stem.diseases/resources/populations/AgingPopulation.standard"
+            publisher="%dc_pub"
+            title="%dc_population_aging_title"/>   
+            
+      <dublin_core
+            category_id="org.eclipse.stem.diseases.stem.builtin.populationmodels"
+            created="2011-12-22"
+            creator="%dc_creator_kaufman"
+            description="%dc_population_beef_desc"
+            format="http:///org/eclipse/stem/populationmodels/standard.ecore"
+            identifier="platform:/plugin/org.eclipse.stem.diseases/resources/populations/BeefPopulation.standard"
+            publisher="%dc_pub"
+            title="%dc_population_beef_title"/>   
+      
+      <dublin_core
+            category_id="org.eclipse.stem.diseases.stem.builtin.populationmodels"
+            created="2011-12-22"
+            creator="%dc_creator_kaufman"
+            description="%dc_population_cattle_desc"
+            format="http:///org/eclipse/stem/populationmodels/standard.ecore"
+            identifier="platform:/plugin/org.eclipse.stem.diseases/resources/populations/CattlePopulation.standard"
+            publisher="%dc_pub"
+            title="%dc_population_cattle_title"/>   
+       <dublin_core
+            category_id="org.eclipse.stem.diseases.stem.builtin.populationmodels"
+            created="2013-03-06"
+            creator="%dc_creator_edlund"
+            description="%dc_population_standard_desc"
+            format="http:///org/eclipse/stem/populationmodels/standard.ecore"
+            identifier="platform:/plugin/org.eclipse.stem.diseases/resources/populations/StandardPopulation.standard"
+            publisher="%dc_pub"
+            title="%dc_population_standard_title"/>        
+                       
+		
+   </extension>
+
+
+</plugin>

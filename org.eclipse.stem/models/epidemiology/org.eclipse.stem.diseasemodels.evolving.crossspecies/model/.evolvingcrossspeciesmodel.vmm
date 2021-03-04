@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<org.eclipse.stem.model.vmm:CanvasPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:org.eclipse.stem.model.vmm="http:///org/eclipse/stem/model/vmm.ecore" metamodel="evolvingcrossspeciesmodel.metamodel#/">
+  <modelElements model="evolvingcrossspeciesmodel.metamodel#//@models.0">
+    <compartmentElements x="5" y="5" width="75" height="75" compartment="platform:/plugin/org.eclipse.stem.diseasemodels/model/standard.metamodel#//@compartmentGroups.0/@compartments.0"/>
+    <compartmentElements x="99" y="262" width="75" height="75" compartment="platform:/plugin/org.eclipse.stem.diseasemodels/model/standard.metamodel#//@compartmentGroups.4/@compartments.0"/>
+    <compartmentElements x="215" y="5" width="75" height="75" compartment="platform:/plugin/org.eclipse.stem.diseasemodels/model/standard.metamodel#//@compartmentGroups.4/@compartments.1"/>
+    <compartmentElements x="320" y="5" width="75" height="75" compartment="platform:/plugin/org.eclipse.stem.diseasemodels/model/standard.metamodel#//@compartmentGroups.4/@compartments.2"/>
+    <compartmentElements x="390" y="265" width="75" height="75" compartment="platform:/plugin/org.eclipse.stem.diseasemodels/model/standard.metamodel#//@compartmentGroups.2/@compartments.0"/>
+    <compartmentElements x="540" y="254" width="75" height="75" compartment="platform:/plugin/org.eclipse.stem.diseasemodels/model/standard.metamodel#//@compartmentGroups.3/@compartments.0"/>
+    <compartmentElements x="261" y="280" width="80" height="60" compartment="evolvingcrossspeciesmodel.metamodel#//@compartmentGroups.0/@compartments.0"/>
+    <compartmentElements x="467" y="7" width="94" height="82" compartment="evolvingcrossspeciesmodel.metamodel#//@compartmentGroups.0/@compartments.1"/>
+    <transitionElements source="#//@modelElements.0/@compartmentElements.4" target="#//@modelElements.0/@compartmentElements.5"
+        transition="evolvingcrossspeciesmodel.metamodel#//@models.0/@transitions.0"/>
+    <transitionElements source="#//@modelElements.0/@compartmentElements.5" target="#//@modelElements.0/@compartmentElements.1"
+        transition="evolvingcrossspeciesmodel.metamodel#//@models.0/@transitions.1"/>
+    <transitionElements source="#//@modelElements.0/@compartmentElements.1" target="#//@modelElements.0/@compartmentElements.6"
+        transition="evolvingcrossspeciesmodel.metamodel#//@models.0/@transitions.2"/>
+    <transitionElements source="#//@modelElements.0/@compartmentElements.6" target="#//@modelElements.0/@compartmentElements.4"
+        transition="evolvingcrossspeciesmodel.metamodel#//@models.0/@transitions.3"/>
+  </modelElements>
+</org.eclipse.stem.model.vmm:CanvasPackage>

@@ -1,0 +1,2 @@
+decorator,addStochasticNoise,randomSeed,populationIdentifier,name,targetISOKey,initialRescalingFactor,birthRate,deathRate,timePeriod,populationGroups
+org.eclipse.stem.populationmodels.standard.impl.DemographicPopulationModelImpl,false,1,human,DemographicModel,,1.0,4.0E-5,3.9E-5,86400000,[org.eclipse.stem.populationmodels.standard.impl.PopulationGroupImpl@462ac22a (identifier: men  fraction: 0.5)  org.eclipse.stem.populationmodels.standard.impl.PopulationGroupImpl@21317763 (identifier: women  fraction: 0.5)]

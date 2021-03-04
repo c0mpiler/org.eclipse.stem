@@ -1,0 +1,51 @@
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.eclipse.stem.tycho</groupId>
+    <artifactId>org.eclipse.stem.tycho.epidemiology</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <parent>
+        <groupId>org.eclipse.stem.tycho</groupId>
+        <artifactId>org.eclipse.stem.tycho.models</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
+
+    <modules>
+        <!--  
+        <module>org.eclipse.stem.data.diseasemodels.models</module>
+        <module>org.eclipse.stem.data.diseasemodels.scenarios</module>
+        <module>org.eclipse.stem.diseases</module>
+        -->
+        <module>org.eclipse.stem.diseasemodels</module>
+        <module>org.eclipse.stem.diseasemodels.avianinfluenza</module>
+        <module>org.eclipse.stem.diseasemodels.evolving</module>
+        <module>org.eclipse.stem.diseasemodels.evolving.crossspecies</module>
+        <module>org.eclipse.stem.diseasemodels.example</module>
+        <module>org.eclipse.stem.diseasemodels.experimental</module>
+        <module>org.eclipse.stem.diseasemodels.externaldatasource</module>
+        <module>org.eclipse.stem.diseasemodels.forcing</module>
+        <module>org.eclipse.stem.diseasemodels.globalinfluenzamodel</module>
+        <module>org.eclipse.stem.diseasemodels.measles</module>
+        <module>org.eclipse.stem.diseasemodels.multipopulation</module>
+        <module>org.eclipse.stem.diseasemodels.poliodiseasemodel</module>
+        <module>org.eclipse.stem.diseasemodels.polioopvipv</module>
+        <module>org.eclipse.stem.diseasemodels.vector</module>
+        <module>org.eclipse.stem.diseasemodels.veterinary</module>
+        
+        <module>org.eclipse.stem.internal.diseasemodels.models</module>
+        <module>org.eclipse.stem.internal.diseasemodels.scenarios</module>
+        <module>org.eclipse.stem.interventions</module>
+        <module>org.eclipse.stem.tests.diseasemodels.poliodiseasemodel</module>
+        <module>org.eclipse.stem.ui.diseasemodels</module>
+        <module>org.eclipse.stem.ui.diseasemodels.example</module>
+        <module>org.eclipse.stem.ui.diseasemodels.experimental</module>
+        <module>org.eclipse.stem.ui.diseasemodels.externaldatasource</module>
+        <module>org.eclipse.stem.ui.diseasemodels.forcing</module>
+        <module>org.eclipse.stem.ui.diseasemodels.globalinfluenzamodel</module>
+        <module>org.eclipse.stem.ui.diseasemodels.multipopulation</module>
+        <module>org.eclipse.stem.ui.diseasemodels.poliodiseasemodel</module>
+        <module>org.eclipse.stem.ui.diseasemodels.vector</module>
+        <module>org.eclipse.stem.ui.interventions</module>
+    </modules>
+</project>

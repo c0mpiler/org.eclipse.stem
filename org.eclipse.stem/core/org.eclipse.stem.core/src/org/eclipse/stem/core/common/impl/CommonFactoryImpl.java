@@ -1,0 +1,230 @@
+package org.eclipse.stem.core.common.impl;
+
+/******************************************************************************* 
+ * Copyright (c) 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018
+ * IBM Corporation, BfR, and others. 
+ * All rights reserved. This program and the accompanying materials 
+ * are made available under the terms of the Eclipse Public License v1.0 
+ * which accompanies this distribution, and is available at 
+ * http://www.eclipse.org/legal/epl-v10.html 
+ * 
+ * Contributors: 
+ *     IBM Corporation - initial API and implementation 
+ *******************************************************************************/
+
+import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.impl.EFactoryImpl;
+import org.eclipse.emf.ecore.plugin.EcorePlugin;
+import org.eclipse.stem.core.common.CommonFactory;
+import org.eclipse.stem.core.common.CommonPackage;
+import org.eclipse.stem.core.common.DoubleValue;
+import org.eclipse.stem.core.common.DoubleValueList;
+import org.eclipse.stem.core.common.DoubleValueMatrix;
+import org.eclipse.stem.core.common.DublinCore;
+import org.eclipse.stem.core.common.IdentifiableFilter;
+import org.eclipse.stem.core.common.StringValue;
+import org.eclipse.stem.core.common.StringValueList;
+
+/**
+ * <!-- begin-user-doc -->
+ * An implementation of the model <b>Factory</b>.
+ * <!-- end-user-doc -->
+ * @generated
+ */
+public class CommonFactoryImpl extends EFactoryImpl implements CommonFactory {
+	/**
+	 * Creates the default factory implementation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static CommonFactory init() {
+		try {
+			CommonFactory theCommonFactory = (CommonFactory)EPackage.Registry.INSTANCE.getEFactory("http:///org/eclipse/stem/core/common.ecore"); //$NON-NLS-1$ 
+			if (theCommonFactory != null) {
+				return theCommonFactory;
+			}
+		}
+		catch (Exception exception) {
+			EcorePlugin.INSTANCE.log(exception);
+		}
+		return new CommonFactoryImpl();
+	}
+
+	/**
+	 * Creates an instance of the factory.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CommonFactoryImpl() {
+		super();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EObject create(EClass eClass) {
+		switch (eClass.getClassifierID()) {
+			case CommonPackage.DUBLIN_CORE: return createDublinCore();
+			case CommonPackage.IDENTIFIABLE_FILTER: return createIdentifiableFilter();
+			case CommonPackage.DOUBLE_VALUE_LIST: return createDoubleValueList();
+			case CommonPackage.DOUBLE_VALUE_MATRIX: return createDoubleValueMatrix();
+			case CommonPackage.DOUBLE_VALUE: return createDoubleValue();
+			case CommonPackage.STRING_VALUE_LIST: return createStringValueList();
+			case CommonPackage.STRING_VALUE: return createStringValue();
+			default:
+				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object createFromString(EDataType eDataType, String initialValue) {
+		switch (eDataType.getClassifierID()) {
+			case CommonPackage.URI:
+				return createURIFromString(eDataType, initialValue);
+			default:
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String convertToString(EDataType eDataType, Object instanceValue) {
+		switch (eDataType.getClassifierID()) {
+			case CommonPackage.URI:
+				return convertURIToString(eDataType, instanceValue);
+			default:
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DublinCore createDublinCore() {
+		DublinCoreImpl dublinCore = new DublinCoreImpl();
+		return dublinCore;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public IdentifiableFilter createIdentifiableFilter() {
+		IdentifiableFilterImpl identifiableFilter = new IdentifiableFilterImpl();
+		return identifiableFilter;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DoubleValueList createDoubleValueList() {
+		DoubleValueListImpl doubleValueList = new DoubleValueListImpl();
+		return doubleValueList;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DoubleValueMatrix createDoubleValueMatrix() {
+		DoubleValueMatrixImpl doubleValueMatrix = new DoubleValueMatrixImpl();
+		return doubleValueMatrix;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DoubleValue createDoubleValue() {
+		DoubleValueImpl doubleValue = new DoubleValueImpl();
+		return doubleValue;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public StringValueList createStringValueList() {
+		StringValueListImpl stringValueList = new StringValueListImpl();
+		return stringValueList;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public StringValue createStringValue() {
+		StringValueImpl stringValue = new StringValueImpl();
+		return stringValue;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param eDataType 
+	 * @param initialValue 
+	 * @return the URI
+	 * @generated NOT
+	 */
+	public URI createURIFromString(EDataType eDataType, String initialValue) {
+		return URI.createURI(initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public String convertURIToString(EDataType eDataType, Object instanceValue) {
+		if(instanceValue == null) return "";
+		return instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CommonPackage getCommonPackage() {
+		return (CommonPackage)getEPackage();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @deprecated
+	 * @generated
+	 */
+	@Deprecated
+	public static CommonPackage getPackage() {
+		return CommonPackage.eINSTANCE;
+	}
+
+} //CommonFactoryImpl

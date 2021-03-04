@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<org.eclipse.stem.diseasemodels.standard:SIInfector xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:org.eclipse.stem.diseasemodels.standard="http:///org/eclipse/stem/diseasemodels/standard.ecore" uRI="platform:/resource/BasicTests/decorators/EgyptWomenInfector.standard" typeURI="stemtype://org.eclipse.stem/Identifiable" diseaseName="Flu" targetISOKey="EG-URG-G300002" populationIdentifier="women" infectPercentage="true">
+  <dublinCore identifier="platform:/resource/BasicTests/decorators/EgyptWomenInfector.standard" creator="edlund" format="http:///org/eclipse/stem/diseasemodels/standard.ecore" type="stemtype://org.eclipse.stem/Identifiable" created="2011-05-11"/>
+</org.eclipse.stem.diseasemodels.standard:SIInfector>

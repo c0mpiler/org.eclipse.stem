@@ -1,0 +1,21 @@
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.eclipse.stem.tycho</groupId>
+    <artifactId>org.eclipse.stem.tycho.population</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <parent>
+        <groupId>org.eclipse.stem.tycho</groupId>
+        <artifactId>org.eclipse.stem.tycho.data</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
+    <modules>
+         <!--  <module>org.eclipse.stem.data.geography.population.human</module>
+        <module>org.eclipse.stem.data.geography.population.human.models</module>-->
+        <module>org.eclipse.stem.internal.data.geography.population</module>
+        <module>org.eclipse.stem.internal.data.geography.population.human</module>
+        <module>org.eclipse.stem.internal.data.geography.population.human.models</module>
+        <module>org.eclipse.stem.internal.data.population.human</module>
+    </modules>
+</project>

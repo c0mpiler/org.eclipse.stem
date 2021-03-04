@@ -1,0 +1,21 @@
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.eclipse.stem.tycho</groupId>
+    <artifactId>org.eclipse.stem.tycho.geography</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <parent>
+        <groupId>org.eclipse.stem.tycho</groupId>
+        <artifactId>org.eclipse.stem.tycho.data</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
+    <modules>
+        <!-- <module>org.eclipse.stem.data.geography</module>
+        <module>org.eclipse.stem.data.geography.infrastructure.transportation</module>
+        <module>org.eclipse.stem.data.geography.models</module> -->
+        <module>org.eclipse.stem.internal.data.geography</module>
+        <module>org.eclipse.stem.internal.data.geography.infrastructure.transportation</module>
+        <module>org.eclipse.stem.internal.data.geography.models</module>
+    </modules>
+</project>

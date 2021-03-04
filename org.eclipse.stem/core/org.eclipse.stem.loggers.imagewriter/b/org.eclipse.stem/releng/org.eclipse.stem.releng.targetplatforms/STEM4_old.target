@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?pde version="3.8"?>
+<target includeMode="feature" name="STEM4" sequenceNumber="6">
+<locations>
+<location includeAllPlatforms="true" includeConfigurePhase="true" includeMode="planner" includeSource="true" type="InstallableUnit">
+<unit id="org.eclipse.birt.feature.group" version="4.7.0.v201706222054"/>
+<unit id="org.eclipse.emf.sdk.feature.group" version="2.13.0.v20170609-0928"/>
+<unit id="org.eclipse.xtext.sdk.feature.group" version="2.12.0.v20170519-1412"/>
+<unit id="org.eclipse.zest.sdk.feature.group" version="1.7.0.201606061308"/>
+<repository location="http://download.eclipse.org/releases/oxygen"/>
+</location>
+<location includeAllPlatforms="true" includeConfigurePhase="true" includeMode="planner" includeSource="true" type="InstallableUnit">
+<unit id="org.apache.batik.dom" version="1.7.1.v201505191845"/>
+<unit id="org.apache.batik.dom.svg" version="1.7.0.v201011041433"/>
+<unit id="org.apache.batik.svggen" version="1.7.0.v201011041433"/>
+<unit id="org.apache.commons.collections" version="3.2.2.v201511171945"/>
+<unit id="org.apache.commons.io" version="2.2.0.v201405211200"/>
+<repository location="http://download.eclipse.org/tools/orbit/downloads/drops/R20170919201930/repository/"/>
+</location>
+<location includeAllPlatforms="true" includeConfigurePhase="true" includeMode="planner" includeSource="true" type="InstallableUnit">
+<unit id="org.eclipse.equinox.executable" version="3.7.2.v20171108-1834"/>
+<unit id="org.eclipse.equinox.executable.feature.group" version="3.7.2.v20171108-1834"/>
+<unit id="org.eclipse.sdk.ide" version="4.7.2.M20171130-0510"/>
+<repository location="http://download.eclipse.org/eclipse/updates/4.7"/>
+</location>
+</locations>
+</target>

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<org.eclipse.stem.diseasemodels.standard:DeterministicSIRDiseaseModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:org.eclipse.stem.diseasemodels.standard="http:///org/eclipse/stem/diseasemodels/standard.ecore" uRI="platform:/resource/BasicTests/decorators/SIR.standard" typeURI="stemtype://org.eclipse.stem/Identifiable" diseaseName="TestSIR" transmissionRate="0.8" recoveryRate="0.3">
+  <dublinCore identifier="platform:/resource/BasicTests/decorators/SIR.standard" creator="edlund" format="http:///org/eclipse/stem/diseasemodels/standard.ecore" type="stemtype://org.eclipse.stem/Identifiable" created="2011-01-24"/>
+</org.eclipse.stem.diseasemodels.standard:DeterministicSIRDiseaseModel>

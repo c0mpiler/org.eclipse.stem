@@ -1,0 +1,23 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>org.eclipse.stem.tycho.root</artifactId>
+	<packaging>pom</packaging>
+    <parent>
+        <groupId>org.eclipse.stem.tycho</groupId>
+        <artifactId>org.eclipse.stem</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
+	<modules>
+		<module>lib</module>
+	    <module>models</module>
+	    <module>distributed</module>
+	    <module>tests</module>
+	    <module>docs</module>
+        <module>core</module>
+		<module>analysis</module>
+		<module>modelgen</module>
+		<module>features</module>
+		<module>releng</module>
+	</modules>
+</project>

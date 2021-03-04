@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<org.eclipse.stem.model:Package xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:org.eclipse.stem.model="http:///org/eclipse/stem/model/metamodel.ecore" packagePrefix="org.eclipse.stem.diseasemodels.externaldatasource"
+    name="externaldatasource">
+  <models name="ExternalDataSourceDiseaseModel" class="externaldatasource.ecore#//ExternalDataSourceDiseaseModel"
+      parentModel="../../org.eclipse.stem.diseasemodels/model/standard.metamodel#//@models.4"
+      compartments="../../org.eclipse.stem.diseasemodels/model/standard.metamodel#//@compartmentGroups.4">
+    <parameters name="dataPath" dataType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        displayName="Data Path" missingMessage=""/>
+    <parameters name="diseaseType" dataType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        displayName="Disease Type" missingMessage=""/>
+    <generatorSettings propertyEditorClass="org.eclipse.stem.diseasemodels.externaldatasource.presentation.ExternalDataSourceDiseaseModelPropertyEditor"
+        stringProviderAdapterClass="org.eclipse.stem.diseasemodels.externaldatasource.presentation.ExternalDataSourcePropertyStringProviderAdapterFactory.ExternalDataSourcePropertyStringProviderAdapter"/>
+  </models>
+</org.eclipse.stem.model:Package>

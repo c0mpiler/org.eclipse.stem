@@ -1,0 +1,2 @@
+decorator,addStochasticNoise,randomSeed,populationIdentifier,name,targetISOKey,initialRescalingFactor,birthRate,deathRate,timePeriod
+org.eclipse.stem.populationmodels.standard.impl.StandardPopulationModelImpl,false,1,human,HumanPopulationModel,,1.0,3.9E-5,3.5E-5,86400000

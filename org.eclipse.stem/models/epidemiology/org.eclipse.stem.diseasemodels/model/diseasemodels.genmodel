@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.eclipse.stem.diseasemodels/src" editDirectory="/org.eclipse.stem.diseasemodels/src"
+    editorDirectory="/org.eclipse.stem.ui.diseasemodels/src" modelPluginID="org.eclipse.stem.diseasemodels"
+    modelName="Diseasemodels" nonNLSMarkers="true" testsDirectory="/org.eclipse.stem.tests.diseasemodels/src"
+    importerID="org.eclipse.emf.importer.ecore" suppressNotification="true" complianceLevel="5.0"
+    copyrightFields="false" publicConstructors="true" editorPluginID="org.eclipse.stem.ui.diseasemodels"
+    runtimeVersion="2.6" usedGenPackages="../../org.eclipse.stem.core/model/core.genmodel#//common ../../org.eclipse.stem.core/model/core.genmodel#//graph ../../org.eclipse.stem.core/model/core.genmodel#//model ../../org.eclipse.stem.core/model/core.genmodel#//modifier ../../org.eclipse.stem.core/model/core.genmodel#//predicate ../../org.eclipse.stem.core/model/core.genmodel#//scenario ../../org.eclipse.stem.core/model/core.genmodel#//sequencer ../../org.eclipse.stem.core/model/core.genmodel#//solver ../../org.eclipse.stem.core/model/core.genmodel#//logger ../../org.eclipse.stem.definitions/model/definitions.genmodel#//labels platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore ../../org.eclipse.stem.populationmodels/model/standard.genmodel#//standard"
+    runtimePlatform="RCP">
+  <foreignModel>standard.ecore</foreignModel>
+  <foreignModel>diseasepredicates.ecore</foreignModel>
+  <genPackages prefix="Standard" basePackage="org.eclipse.stem.diseasemodels" disposableProviderFactory="true"
+      generateExampleClass="false" ecorePackage="standard.ecore#/">
+    <genDataTypes ecoreDataType="standard.ecore#//Random"/>
+    <genClasses image="false" ecoreClass="standard.ecore#//DeterministicSEIRDiseaseModel"/>
+    <genClasses image="false" ecoreClass="standard.ecore#//DeterministicSIDiseaseModel"/>
+    <genClasses image="false" ecoreClass="standard.ecore#//DeterministicSIRDiseaseModel"/>
+    <genClasses image="false" ecoreClass="standard.ecore#//DiseaseModel">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute standard.ecore#//DiseaseModel/populationIdentifier"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute standard.ecore#//DiseaseModel/timePeriod"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute standard.ecore#//DiseaseModel/diseaseName"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EAttribute standard.ecore#//DiseaseModel/finiteDifference"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute standard.ecore#//DiseaseModel/frequencyDependent"/>
+      <genOperations ecoreOperation="standard.ecore#//DiseaseModel/createDiseaseModelLabel">
+        <genParameters ecoreParameter="standard.ecore#//DiseaseModel/createDiseaseModelLabel/populationIdentifier"/>
+      </genOperations>
+      <genOperations ecoreOperation="standard.ecore#//DiseaseModel/createDiseaseModelLabelValue">
+        <genParameters ecoreParameter="standard.ecore#//DiseaseModel/createDiseaseModelLabelValue/populationIdentifier"/>
+      </genOperations>
+      <genOperations ecoreOperation="standard.ecore#//DiseaseModel/createInfector"/>
+      <genOperations ecoreOperation="standard.ecore#//DiseaseModel/getAllLabelIdentifiers"/>
+      <genOperations ecoreOperation="standard.ecore#//DiseaseModel/getPopulationModelLabels">
+        <genParameters ecoreParameter="standard.ecore#//DiseaseModel/getPopulationModelLabels/populationIdentifier"/>
+        <genParameters ecoreParameter="standard.ecore#//DiseaseModel/getPopulationModelLabels/graph"/>
+      </genOperations>
+    </genClasses>
+    <genClasses image="false" ecoreClass="standard.ecore#//DiseaseModelLabel">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference standard.ecore#//DiseaseModelLabel/populationLabel"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference standard.ecore#//DiseaseModelLabel/populationModelLabel"/>
+      <genOperations ecoreOperation="standard.ecore#//DiseaseModelLabel/toTooltipString"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="standard.ecore#//DiseaseModelLabelValue">
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute standard.ecore#//DiseaseModelLabelValue/populationCount"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="standard.ecore#//Infector">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference standard.ecore#//Infector/diseaseModel"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute standard.ecore#//Infector/targetURI"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute standard.ecore#//Infector/diseaseName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute standard.ecore#//Infector/targetISOKey"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference standard.ecore#//Infector/labelsToInfect"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute standard.ecore#//Infector/populationIdentifier"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute standard.ecore#//Infector/infectPercentage"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute standard.ecore#//Infector/targetFeature"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="standard.ecore#//SEIR">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute standard.ecore#//SEIR/incubationRate"/>
+      <genOperations ecoreOperation="standard.ecore#//SEIR/getAdjustedIncubationRate">
+        <genParameters ecoreParameter="standard.ecore#//SEIR/getAdjustedIncubationRate/timeDelta"/>
+      </genOperations>
+    </genClasses>
+    <genClasses image="false" ecoreClass="standard.ecore#//SEIRLabel"/>
+    <genClasses image="false" ecoreClass="standard.ecore#//SEIRLabelValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute standard.ecore#//SEIRLabelValue/e"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="standard.ecore#//SI">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute standard.ecore#//SI/transmissionRate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute standard.ecore#//SI/nonLinearityCoefficient"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute standard.ecore#//SI/recoveryRate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute standard.ecore#//SI/infectiousMortalityRate"/>
+      <genOperations ecoreOperation="standard.ecore#//SI/getAdjustedInfectiousMortalityRate">
+        <genParameters ecoreParameter="standard.ecore#//SI/getAdjustedInfectiousMortalityRate/timeDelta"/>
+      </genOperations>
+      <genOperations ecoreOperation="standard.ecore#//SI/getAdjustedTransmissionRate">
+        <genParameters ecoreParameter="standard.ecore#//SI/getAdjustedTransmissionRate/timeDelta"/>
+      </genOperations>
+      <genOperations ecoreOperation="standard.ecore#//SI/getAdjustedRecoveryRate">
+        <genParameters ecoreParameter="standard.ecore#//SI/getAdjustedRecoveryRate/timeDelta"/>
+      </genOperations>
+    </genClasses>
+    <genClasses image="false" ecoreClass="standard.ecore#//SIInfector">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute standard.ecore#//SIInfector/infectiousCount"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="standard.ecore#//SILabel"/>
+    <genClasses image="false" ecoreClass="standard.ecore#//SILabelValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute standard.ecore#//SILabelValue/i"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="standard.ecore#//SIR">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute standard.ecore#//SIR/immunityLossRate"/>
+      <genOperations ecoreOperation="standard.ecore#//SIR/getAdjustedImmunityLossRate">
+        <genParameters ecoreParameter="standard.ecore#//SIR/getAdjustedImmunityLossRate/timeDelta"/>
+      </genOperations>
+    </genClasses>
+    <genClasses image="false" ecoreClass="standard.ecore#//SIRLabel"/>
+    <genClasses image="false" ecoreClass="standard.ecore#//SIRLabelValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute standard.ecore#//SIRLabelValue/r"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="standard.ecore#//StandardDiseaseModel">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute standard.ecore#//StandardDiseaseModel/referencePopulationDensity"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute standard.ecore#//StandardDiseaseModel/roadNetworkInfectiousProportion"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute standard.ecore#//StandardDiseaseModel/characteristicMixingDistance"/>
+      <genOperations ecoreOperation="standard.ecore#//StandardDiseaseModel/getNormalizedEffectiveInfectious">
+        <genParameters ecoreParameter="standard.ecore#//StandardDiseaseModel/getNormalizedEffectiveInfectious/node"/>
+        <genParameters ecoreParameter="standard.ecore#//StandardDiseaseModel/getNormalizedEffectiveInfectious/diseaseLabel"/>
+        <genParameters ecoreParameter="standard.ecore#//StandardDiseaseModel/getNormalizedEffectiveInfectious/onsiteInfectious"/>
+        <genParameters ecoreParameter="standard.ecore#//StandardDiseaseModel/getNormalizedEffectiveInfectious/infectiousAttribute"/>
+        <genParameters ecoreParameter="standard.ecore#//StandardDiseaseModel/getNormalizedEffectiveInfectious/mixingAttribute"/>
+        <genParameters ecoreParameter="standard.ecore#//StandardDiseaseModel/getNormalizedEffectiveInfectious/roadAttribute"/>
+      </genOperations>
+      <genOperations ecoreOperation="standard.ecore#//StandardDiseaseModel/getBirthsCompartment"/>
+      <genOperations ecoreOperation="standard.ecore#//StandardDiseaseModel/doDeaths">
+        <genParameters ecoreParameter="standard.ecore#//StandardDiseaseModel/doDeaths/currentState"/>
+        <genParameters ecoreParameter="standard.ecore#//StandardDiseaseModel/doDeaths/delta"/>
+        <genParameters ecoreParameter="standard.ecore#//StandardDiseaseModel/doDeaths/deaths"/>
+      </genOperations>
+    </genClasses>
+    <genClasses image="false" ecoreClass="standard.ecore#//StandardDiseaseModelLabel"/>
+    <genClasses image="false" ecoreClass="standard.ecore#//StandardDiseaseModelLabelValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute standard.ecore#//StandardDiseaseModelLabelValue/s"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute standard.ecore#//StandardDiseaseModelLabelValue/incidence"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute standard.ecore#//StandardDiseaseModelLabelValue/diseaseDeaths"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="standard.ecore#//StandardInfector"/>
+    <genClasses image="false" ecoreClass="standard.ecore#//StochasticSEIRDiseaseModel"/>
+    <genClasses image="false" ecoreClass="standard.ecore#//StochasticSIDiseaseModel"/>
+    <genClasses image="false" ecoreClass="standard.ecore#//StochasticSIRDiseaseModel"/>
+    <genClasses image="false" ecoreClass="standard.ecore#//StochasticDiseaseModel">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute standard.ecore#//StochasticDiseaseModel/seed"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute standard.ecore#//StochasticDiseaseModel/randomGenerator"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="standard.ecore#//StandardStochasticDiseaseModel">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute standard.ecore#//StandardStochasticDiseaseModel/gain"/>
+      <genOperations ecoreOperation="standard.ecore#//StandardStochasticDiseaseModel/computeNoise"/>
+    </genClasses>
+    <genClasses ecoreClass="standard.ecore#//SIRInoculator">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute standard.ecore#//SIRInoculator/inoculatedPercentage"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute standard.ecore#//SIRInoculator/inoculatePercentage"/>
+    </genClasses>
+    <genClasses ecoreClass="standard.ecore#//StochasticPoissonSIDiseaseModel"/>
+    <genClasses ecoreClass="standard.ecore#//StochasticPoissonSIRDiseaseModel"/>
+    <genClasses ecoreClass="standard.ecore#//StochasticPoissonSEIRDiseaseModel"/>
+    <genClasses ecoreClass="standard.ecore#//InfectorInoculatorCollection">
+      <genFeatures notify="false" children="true" createChild="false" propertySortChoices="true"
+          ecoreFeature="ecore:EReference standard.ecore#//InfectorInoculatorCollection/list"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute standard.ecore#//InfectorInoculatorCollection/importFolder"/>
+    </genClasses>
+    <genClasses ecoreClass="standard.ecore#//StandardDiseaseInitializer">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute standard.ecore#//StandardDiseaseInitializer/targetISOKey"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute standard.ecore#//StandardDiseaseInitializer/targetURI"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute standard.ecore#//StandardDiseaseInitializer/compartments"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute standard.ecore#//StandardDiseaseInitializer/compartmentValues"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute standard.ecore#//StandardDiseaseInitializer/useFractions"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="standard.ecore#//DiseaseInitializer">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute standard.ecore#//DiseaseInitializer/diseaseName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute standard.ecore#//DiseaseInitializer/populationIdentifier"/>
+    </genClasses>
+    <genClasses ecoreClass="standard.ecore#//ExternalDataSourceDiseaseInitializer">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute standard.ecore#//ExternalDataSourceDiseaseInitializer/dataPath"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute standard.ecore#//ExternalDataSourceDiseaseInitializer/row"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute standard.ecore#//ExternalDataSourceDiseaseInitializer/doRescaling"/>
+    </genClasses>
+  </genPackages>
+  <genPackages prefix="Diseasepredicates" basePackage="org.eclipse.stem.diseasemodels.predicates"
+      disposableProviderFactory="true" generateExampleClass="false" childCreationExtenders="true"
+      ecorePackage="diseasepredicates.ecore#/">
+    <genClasses ecoreClass="diseasepredicates.ecore#//LabelValueTest">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute diseasepredicates.ecore#//LabelValueTest/modelName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute diseasepredicates.ecore#//LabelValueTest/targetURI"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute diseasepredicates.ecore#//LabelValueTest/state"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute diseasepredicates.ecore#//LabelValueTest/threshold"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute diseasepredicates.ecore#//LabelValueTest/predicate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute diseasepredicates.ecore#//LabelValueTest/populationIdentifier"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

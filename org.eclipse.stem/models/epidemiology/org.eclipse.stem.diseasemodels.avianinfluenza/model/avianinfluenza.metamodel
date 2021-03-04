@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<org.eclipse.stem.model:Package xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:org.eclipse.stem.model="http:///org/eclipse/stem/model/metamodel.ecore"
+    packagePrefix="org.eclipse.stem.diseasemodels" name="Avianinfluenza">
+  <models name="H7N9" class="avianinfluenza.ecore#//H7N9" parentModel="platform:/plugin/org.eclipse.stem.diseasemodels.vector/model/vector.metamodel#//@models.1"
+      compartments="#//@compartmentGroups.0">
+    <parameters name="avianToAvianTransmissionRate" dataType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+        defaultValue="0.1" displayName="Avian To Avian Transmission Rate" unit=""
+        helpMessage="" invalidMessage="" missingMessage="">
+      <constraints name="minValue" constraint="0"/>
+    </parameters>
+    <parameters name="avianRecoveryRate" dataType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+        defaultValue="0.0" displayName="Avian Recovery Rate" unit="" helpMessage=""
+        invalidMessage="" missingMessage="">
+      <constraints name="minValue" constraint="0"/>
+    </parameters>
+    <parameters name="avianToHumanTransmissionRate" dataType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+        defaultValue="1.2" displayName="Avian To Human Transmission Rate" unit=""
+        helpMessage="" invalidMessage="" missingMessage="">
+      <constraints name="minValue" constraint="0"/>
+    </parameters>
+    <parameters name="humanToHumanTransmissionRate" dataType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+        defaultValue="1.2" displayName="Human To Human Transmission Rate" unit=""
+        helpMessage="" invalidMessage="" missingMessage="">
+      <constraints name="minValue" constraint="0"/>
+    </parameters>
+    <parameters name="avianCharacteristicMixingDistance" dataType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+        defaultValue="0.5" displayName="Avian Characteristic Mixing Distance" unit=""
+        helpMessage="" invalidMessage="" missingMessage="">
+      <constraints name="minValue" constraint="0"/>
+    </parameters>
+    <parameters name="humanRecoveryRate" dataType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+        defaultValue="0.5" displayName="Human Recovery Rate" unit="" helpMessage=""
+        invalidMessage="" missingMessage="">
+      <constraints name="minValue" constraint="0"/>
+    </parameters>
+    <parameters name="humanImmunityLossRate" dataType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+        defaultValue="0.001" displayName="Human Immunity Loss Rate" unit="" helpMessage=""
+        invalidMessage="" missingMessage="">
+      <constraints name="minValue" constraint="0"/>
+    </parameters>
+    <parameters name="temperatureFactor" dataType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+        defaultValue="1.0" displayName="Temperature Factor" unit="" helpMessage=""
+        invalidMessage="" missingMessage="">
+      <constraints name="minValue" constraint="0"/>
+    </parameters>
+  </models>
+  <compartmentGroups name="H7N9" class="avianinfluenza.ecore#//H7N9Label" valueClass="avianinfluenza.ecore#//H7N9LabelValue"
+      parentGroup="platform:/plugin/org.eclipse.stem.diseasemodels/model/standard.metamodel#//@compartmentGroups.3"/>
+</org.eclipse.stem.model:Package>

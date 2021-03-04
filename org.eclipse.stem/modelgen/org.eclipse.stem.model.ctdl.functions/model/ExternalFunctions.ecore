@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="functions" nsURI="http:///org/eclipse/stem/model/ctdl/functions.ecore"
+    nsPrefix="org.eclipse.stem.model.ctdl.functions">
+  <eClassifiers xsi:type="ecore:EClass" name="ExternalFunctionDefinition">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="class">
+      <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaClass">
+        <eTypeArguments/>
+      </eGenericType>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="method" eType="#//Method"
+        transient="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="returnType" changeable="false"
+        volatile="true" transient="true" derived="true">
+      <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaClass">
+        <eTypeArguments/>
+      </eGenericType>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="signature" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        changeable="false" transient="true" derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="className" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="methodName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="contributingPlugin" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        changeable="false" transient="true" derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="extPointDefinition" eType="#//IConfigurationElement"
+        transient="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="functionArguments" upperBound="-1"
+        eType="#//FunctionArgument" transient="true" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="javaMethodArguments" upperBound="-1"
+        eType="#//JavaMethodArgument" transient="true" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FunctionArgument">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        transient="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        transient="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="JavaMethodArgument">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="mapsFrom" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        transient="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        transient="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="javaType" transient="true">
+      <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaClass">
+        <eTypeArguments/>
+      </eGenericType>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="IConfigurationElement" instanceClassName="org.eclipse.core.runtime.IConfigurationElement"
+      serializable="false"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="Method" instanceClassName="java.lang.reflect.Method"
+      serializable="false"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SystemArgumentReference" eSuperTypes="#//JavaMethodArgument">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ref" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FunctionArgumentReference" eSuperTypes="#//JavaMethodArgument">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="argIndex" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ref" eType="#//FunctionArgument"/>
+  </eClassifiers>
+</ecore:EPackage>

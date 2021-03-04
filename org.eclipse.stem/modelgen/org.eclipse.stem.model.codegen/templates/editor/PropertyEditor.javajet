@@ -1,0 +1,222 @@
+<%@ jet package="org.eclipse.emf.codegen.ecore.templates.editor" imports="org.eclipse.stem.model.codegen.* org.eclipse.emf.codegen.ecore.genmodel.*" class="PropertyEditor" version="" %>
+<%
+/**
+ * <copyright>
+ *
+ * Copyright (c) 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018
+ * IBM Corporation, BfR, and others.
+ * All rights reserved.   This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *   IBM - Initial API and implementation
+ *
+ * </copyright>
+ */
+%>
+<%
+STEMGenClass stemGenClass = (STEMGenClass)((Object[])argument)[0]; 
+GenClass genClass = stemGenClass.getGenClass();
+GenPackage genPackage = genClass.getGenPackage();
+GenModel genModel = genPackage.getGenModel();
+String importedModelClassName = genModel.getImportedName(stemGenClass.getModelTypeClassName());
+%>
+<%@ include file="../Header.javajetinc"%>
+package <%=genPackage.getPresentationPackageName()%>;
+
+import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+import org.eclipse.core.resources.IProject;
+import org.eclipse.swt.events.ModifyListener;
+import org.eclipse.swt.widgets.Composite;
+import java.util.MissingResourceException;
+<%genModel.markImportLocation(stringBuffer);%>
+
+/**
+ * @generated
+ */
+public class <%=genClass.getName()%>PropertyEditor extends
+		<%=genModel.getImportedName(stemGenClass.getPropertyEditorSuperClassName())%> 
+{
+	/**
+	 * @param parent
+	 * @param style
+	 * @param model
+	 * @param projectValidator
+	 * @generated
+	 */
+	public <%=genClass.getName()%>PropertyEditor(Composite parent, int style,
+			<%=importedModelClassName%> model, ModifyListener projectValidator,
+			IProject project) {
+		super(parent, style, model, projectValidator, project);
+	}
+
+	/**
+	 * @generated
+	 */
+	@Override
+	public void populate(<%=importedModelClassName%> object) {
+		super.populate(object);
+
+<%if (genClass.getImplementedGenFeatures().size() > 0) {
+String importedClassName = genModel.getImportedName(genPackage.getInterfacePackageName() + "." + genClass.getName());
+%>
+		<%=importedClassName%> model = (<%=importedClassName%>)object;
+<%}else{%>
+		// Remove Comment If Adding Custom Code
+		//<%=genClass.getName()%> model = (<%=genClass.getName()%>)object;
+<%}%>
+
+<% for (GenFeature genFeature : genClass.getImplementedGenFeatures()) { %>
+<% 
+ 	//STEMGenFeature stemFeature = STEMGenFeature.get(genFeature); 
+ 	//STEMGenFeature.STEMGenFeatureConstraint constraint = stemFeature.getConstraint();
+%>
+<% if (genFeature.isChangeable()) { %>
+  <% String rawType = STEMGenClass.getPrimitiveObjectName(genFeature.getImportedType(genClass)); %>
+ 		// Set value for <%=genFeature.getFormattedName()%> (<%=rawType%>)
+  <% if (rawType.equals("Double") || 
+  	rawType.equals("Float") || rawType.equals("Short") || 
+  	rawType.equals("Long") || rawType.equals("Byte")) { %>
+		try {
+			<%=rawType%> <%=genFeature.getName()%>Value = <%=rawType%>.parse<%=rawType%>(
+				map.get(<%=genFeature.getQualifiedFeatureAccessor()%>).getText());
+			model.set<%=genFeature.getAccessorName()%>(<%=genFeature.getName()%>Value);
+		} catch (NumberFormatException nfe) {
+			// empty
+		}
+  <% } else if (rawType.equals("Integer")) { %>
+		try {
+			Integer <%=genFeature.getName()%>Value = Integer.parseInt(
+					map.get(<%=genFeature.getQualifiedFeatureAccessor()%>).getText());
+			model.set<%=genFeature.getAccessorName()%>(<%=genFeature.getName()%>Value);
+		} catch (NumberFormatException nfe) {
+			// empty
+		}
+  <% } else if (rawType.equals("Boolean")) { %>
+		boolean <%=genFeature.getName()%>Value = booleanMap.get(<%=genFeature.getQualifiedFeatureAccessor()%>).getSelection();
+		model.set<%=genFeature.getAccessorName()%>(<%=genFeature.getName()%>Value);			
+  <% } else if (rawType.equals("String")) { %>
+  		String <%=genFeature.getName()%>Value = map.get(<%=genFeature.getQualifiedFeatureAccessor()%>).getText();
+		model.set<%=genFeature.getAccessorName()%>(<%=genFeature.getName()%>Value);
+  <% } else { %>
+		// TODO Add code to set "<%=genFeature.getFormattedName()%>" value
+		// <%=genFeature.getImportedType(genClass)%> <%=genFeature.getName()%>Value = ...;
+		// model.set<%=genFeature.getAccessorName()%>(<%=genFeature.getName()%>Value);
+  <% } //if type %>
+ <% } //if changeable %>
+<% } //for feature %>
+	}
+
+	/**
+	 * @generated
+	 */
+	@Override
+	public boolean validate() {
+		boolean valid = super.validate();
+
+  <% for (GenFeature genFeature : genClass.getImplementedGenFeatures()) { %>
+    <% if (genFeature.isChangeable()) { %>
+		valid = valid && validateFeatureConstraint(<%=genFeature.getQualifiedFeatureAccessor()%>);
+    <% } //if changeable %>
+  <% } //for feature %>
+
+		return valid;
+	}
+
+
+	/**
+	 * @generated
+	 */
+	public static class <%=genClass.getName()%>PropertyStringProviderAdapter
+		extends <%=genModel.getImportedName(stemGenClass.getStringProviderSuperClassName())%>
+	{
+		/**
+		 * @param descriptor
+		 * @return the NLS'd name of the property to display to the user
+		 * @generated
+		 */
+		public String getPropertyName(IItemPropertyDescriptor descriptor) {
+			try {
+				return <%=genPackage.getPrefix()%>WizardMessages
+						.getString(((EStructuralFeature) descriptor
+								.getFeature(null)).getName(), "<%=genClass.getName()%>");
+			} catch (MissingResourceException e) {
+				return super.getPropertyName(descriptor);
+			}
+		} // getPropertyName
+
+		/**
+		 * @param descriptor
+		 * @return the NLS'd tool tip text that describes the property
+		 * @generated
+		 */
+		public String getPropertyToolTip(
+				IItemPropertyDescriptor descriptor) {
+			try {
+				final EStructuralFeature feature = (EStructuralFeature) descriptor
+						.getFeature(null);
+				return <%=genPackage.getPrefix()%>WizardMessages.getString(feature
+						.getName() + TT_SUFFIX, "<%=genClass.getName()%>");
+			} catch (MissingResourceException e) {
+				return super.getPropertyToolTip(descriptor);
+			}
+		} // getPropertyToolTip
+
+		/**
+		 * @param descriptor
+		 * @return the NLS'd text that represents the units of the
+		 *         property
+		 * @generated
+		 */
+		public String getPropertyUnits(
+				IItemPropertyDescriptor descriptor) {
+			try {
+				final EStructuralFeature feature = (EStructuralFeature) descriptor
+						.getFeature(null);
+				return <%=genPackage.getPrefix()%>WizardMessages.getString(feature
+						.getName() + UNIT_SUFFIX, "<%=genClass.getName()%>");
+			} catch (MissingResourceException e) {
+				return super.getPropertyUnits(descriptor);
+			}
+		} // getPropertyUnits
+		
+		/**
+		 * @param descriptor
+		 * @return the NLS'd text for a missing property error message
+		 * @generated
+		 */
+		public String getPropertyMissing(
+				IItemPropertyDescriptor descriptor) {
+			try {
+				final EStructuralFeature feature = (EStructuralFeature) descriptor
+						.getFeature(null);
+				return <%=genPackage.getPrefix()%>WizardMessages.getString(feature
+						.getName() + MISSING_SUFFIX, "<%=genClass.getName()%>");
+			} catch (MissingResourceException e) {
+				return super.getPropertyMissing(descriptor);
+			}
+		} // getPropertyMissing
+		
+		/**
+		 * @param descriptor
+		 * @return the NLS'd text for a missing property error message
+		 * @generated
+		 */
+		public String getPropertyInvalid(
+				IItemPropertyDescriptor descriptor) {
+			try {
+				final EStructuralFeature feature = (EStructuralFeature) descriptor
+						.getFeature(null);
+				return <%=genPackage.getPrefix()%>WizardMessages.getString(feature
+						.getName() + INVALID_SUFFIX, "<%=genClass.getName()%>");
+			} catch (MissingResourceException e) {	
+				return super.getPropertyInvalid(descriptor);
+			}
+		} // getPropertyInvalid		
+	}
+
+}
+<%genModel.emitSortedImports();%>

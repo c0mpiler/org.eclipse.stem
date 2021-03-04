@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="evolving" nsURI="http:///org/eclipse/stem/diseasemodels/evolving/evolving.ecore"
+    nsPrefix="org.eclipse.stem.diseasemodels.evolving">
+  <eAnnotations source="http:///org/eclipse/stem/modelgen/generated">
+    <details key="version" value="1.0"/>
+  </eAnnotations>
+  <eAnnotations source="http:///org/eclipse/stem/modelgen/metamodel">
+    <details key="uri" value="platform:/resource/org.eclipse.stem.diseasemodels.evolving/model/evolving.metamodel"/>
+  </eAnnotations>
+  <eClassifiers xsi:type="ecore:EDataType" name="BooleanArray" instanceClassName="boolean[]"/>
+  <eClassifiers xsi:type="ecore:EClass" name="EvolvingDiseaseTransformer" eSuperTypes="platform:/plugin/org.eclipse.stem.core/model/model.ecore#//TransformationDecorator">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="baseDisease" lowerBound="1"
+        eType="ecore:EClass platform:/plugin/org.eclipse.stem.diseasemodels/model/standard.ecore#//DiseaseModel"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="evolvedDiseases" upperBound="-1"
+        eType="ecore:EClass platform:/plugin/org.eclipse.stem.diseasemodels/model/standard.ecore#//DiseaseModel"
+        transient="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="evolutionCount" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        defaultValueLiteral="0"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="evolutionCountHardLimit"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt" defaultValueLiteral="256"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="stopAllEvolution" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        transient="true" defaultValueLiteral="false"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EvolvingDiseaseModel" abstract="true"
+      interface="true">
+    <eOperations name="evolve" eType="#//EvolvingDiseaseModel">
+      <eParameters name="label" eType="ecore:EClass platform:/plugin/org.eclipse.stem.diseasemodels/model/standard.ecore#//DiseaseModelLabel"/>
+    </eOperations>
+    <eOperations name="calculateEvolvedInitialState"/>
+    <eOperations name="getGeneticDistance" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble">
+      <eParameters name="otherDiseaseStrain" eType="#//EvolvingDiseaseModel"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parentDisease" eType="#//EvolvingDiseaseModel"
+        transient="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="transformer" eType="#//EvolvingDiseaseTransformer"
+        transient="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="evolvedAt" eType="ecore:EClass platform:/plugin/org.eclipse.stem.diseasemodels/model/standard.ecore#//DiseaseModelLabel"
+        transient="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="genome" eType="#//BooleanArray"
+        transient="true" derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="evolutionCount" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        transient="true" defaultValueLiteral="0"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EvolvingSIDiseaseModelLabel" eSuperTypes="platform:/plugin/org.eclipse.stem.diseasemodels/model/standard.ecore#//StandardDiseaseModelLabel">
+    <eAnnotations source="http:///org/eclipse/stem/modelgen/generated">
+      <details key="version" value="1.0"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EvolvingSIDiseaseModelLabelValue" eSuperTypes="platform:/plugin/org.eclipse.stem.diseasemodels/model/standard.ecore#//SILabelValue">
+    <eAnnotations source="http:///org/eclipse/stem/modelgen/generated">
+      <details key="version" value="1.0"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EvolvingSIDiseaseModel" eSuperTypes="platform:/plugin/org.eclipse.stem.diseasemodels/model/standard.ecore#//SI #//EvolvingDiseaseModel">
+    <eAnnotations source="http:///org/eclipse/stem/modelgen/model/label">
+      <details key="*" value="EvolvingSIDiseaseModelLabel"/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/stem/modelgen/model/labelvalue">
+      <details key="*" value="EvolvingSIDiseaseModelLabelValue"/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/stem/modelgen/model/adapters">
+      <details key="propertyEditorSuperClass" value="org.eclipse.stem.ui.wizards.StandardDiseaseModelPropertyEditor"/>
+      <details key="stringProviderSuperClass" value="org.eclipse.stem.ui.wizards.StandardPropertyStringProviderAdapterFactory.StandardPropertyStringProviderAdapter"/>
+      <details key="labelRelativeValueProviderSuperClass" value="org.eclipse.stem.diseasemodels.standard.provider.StandardRelativeValueProviderAdapterFactory.DiseaseModelLabelRelativeValueProvider"/>
+      <details key="labelValueRelativeValueProviderSuperClass" value="org.eclipse.stem.diseasemodels.standard.provider.StandardRelativeValueProviderAdapterFactory.DiseaseModelLabelValueRelativeValueProvider"/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/stem/modelgen/generated">
+      <details key="version" value="1.0"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="caseMutationRate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+        defaultValueLiteral="0.00001"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="genomeLength" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        defaultValueLiteral="5"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="geneticDistNonlinExponent"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble" defaultValueLiteral="1.0"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EvolvingSIRDiseaseModelLabel" eSuperTypes="platform:/plugin/org.eclipse.stem.diseasemodels/model/standard.ecore#//StandardDiseaseModelLabel">
+    <eAnnotations source="http:///org/eclipse/stem/modelgen/generated">
+      <details key="version" value="1.0"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EvolvingSIRDiseaseModelLabelValue" eSuperTypes="platform:/plugin/org.eclipse.stem.diseasemodels/model/standard.ecore#//SIRLabelValue">
+    <eAnnotations source="http:///org/eclipse/stem/modelgen/generated">
+      <details key="version" value="1.0"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EvolvingSIRDiseaseModel" eSuperTypes="#//EvolvingSIDiseaseModel">
+    <eAnnotations source="http:///org/eclipse/stem/modelgen/model/label">
+      <details key="*" value="EvolvingSIRDiseaseModelLabel"/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/stem/modelgen/model/labelvalue">
+      <details key="*" value="EvolvingSIRDiseaseModelLabelValue"/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/stem/modelgen/model/adapters">
+      <details key="propertyEditorSuperClass" value="org.eclipse.stem.ui.wizards.StandardDiseaseModelPropertyEditor"/>
+      <details key="stringProviderSuperClass" value="org.eclipse.stem.ui.wizards.StandardPropertyStringProviderAdapterFactory.StandardPropertyStringProviderAdapter"/>
+      <details key="labelRelativeValueProviderSuperClass" value="org.eclipse.stem.diseasemodels.standard.provider.StandardRelativeValueProviderAdapterFactory.DiseaseModelLabelRelativeValueProvider"/>
+      <details key="labelValueRelativeValueProviderSuperClass" value="org.eclipse.stem.diseasemodels.standard.provider.StandardRelativeValueProviderAdapterFactory.DiseaseModelLabelValueRelativeValueProvider"/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/stem/modelgen/generated">
+      <details key="version" value="1.0"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="immunityLossRate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+        defaultValueLiteral="0.0">
+      <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/constraints">
+        <details key="minValue" value="0.0"/>
+        <details key="maxValue" value="1.0"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/messages">
+        <details key="name" value="Immunity Loss Rate"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/stem/modelgen/generated">
+        <details key="version" value="1.0"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="crossImmunityRate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+        defaultValueLiteral="0.75"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EvolvingSEIRDiseaseModelLabel" eSuperTypes="platform:/plugin/org.eclipse.stem.diseasemodels/model/standard.ecore#//StandardDiseaseModelLabel">
+    <eAnnotations source="http:///org/eclipse/stem/modelgen/generated">
+      <details key="version" value="1.0"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EvolvingSEIRDiseaseModelLabelValue"
+      eSuperTypes="platform:/plugin/org.eclipse.stem.diseasemodels/model/standard.ecore#//SEIRLabelValue">
+    <eAnnotations source="http:///org/eclipse/stem/modelgen/generated">
+      <details key="version" value="1.0"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EvolvingSEIRDiseaseModel" eSuperTypes="#//EvolvingSIRDiseaseModel">
+    <eAnnotations source="http:///org/eclipse/stem/modelgen/model/label">
+      <details key="*" value="EvolvingSEIRDiseaseModelLabel"/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/stem/modelgen/model/labelvalue">
+      <details key="*" value="EvolvingSEIRDiseaseModelLabelValue"/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/stem/modelgen/model/adapters">
+      <details key="propertyEditorSuperClass" value="org.eclipse.stem.ui.wizards.StandardDiseaseModelPropertyEditor"/>
+      <details key="stringProviderSuperClass" value="org.eclipse.stem.ui.wizards.StandardPropertyStringProviderAdapterFactory.StandardPropertyStringProviderAdapter"/>
+      <details key="labelRelativeValueProviderSuperClass" value="org.eclipse.stem.diseasemodels.standard.provider.StandardRelativeValueProviderAdapterFactory.DiseaseModelLabelRelativeValueProvider"/>
+      <details key="labelValueRelativeValueProviderSuperClass" value="org.eclipse.stem.diseasemodels.standard.provider.StandardRelativeValueProviderAdapterFactory.DiseaseModelLabelValueRelativeValueProvider"/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/stem/modelgen/generated">
+      <details key="version" value="1.0"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="incubationRate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+        defaultValueLiteral="0.0">
+      <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/constraints">
+        <details key="minValue" value="0.0"/>
+        <details key="maxValue" value="1.0"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/messages">
+        <details key="name" value="Incubation Rate"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/stem/modelgen/generated">
+        <details key="version" value="1.0"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+</ecore:EPackage>

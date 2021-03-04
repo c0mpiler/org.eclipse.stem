@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="poliodiseasemodel" nsURI="http:///org/eclipse/stem/diseasemodels/polio.ecore"
+    nsPrefix="org.eclipse.stem.diseasemodels.poliodiseasemodel">
+  <eClassifiers xsi:type="ecore:EClass" name="OralPolioVaccineModel" eSuperTypes="../../org.eclipse.stem.diseasemodels/model/standard.ecore#//SEIR">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="efficacyVaccine" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="1.0"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="reversionRate" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="1e-4"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="partialSusceptibilityVaccine"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="0.0"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="transRateVaccine" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="1.0"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="incubRateVaccine" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="1.0"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="infectRecoveryRateVaccine"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="22.81"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="paralyticFractionVaccine"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="7.14e-7"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="paralyticFractionWild"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="0.005"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OpvLabel" eSuperTypes="../../org.eclipse.stem.diseasemodels/model/standard.ecore#//SEIRLabel"/>
+  <eClassifiers xsi:type="ecore:EClass" name="OpvLabelValue" eSuperTypes="../../org.eclipse.stem.diseasemodels/model/standard.ecore#//SEIRLabelValue">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sv" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="0.0"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ev" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="0.0"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="v" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="0.0"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="pv" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="0.0"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="pw" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="0.0"/>
+  </eClassifiers>
+</ecore:EPackage>

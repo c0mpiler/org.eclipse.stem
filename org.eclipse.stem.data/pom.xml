@@ -1,0 +1,18 @@
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.eclipse.stem.tycho</groupId>
+    <artifactId>org.eclipse.stem.tycho.data</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <parent>
+        <groupId>org.eclipse.stem.tycho</groupId>
+        <artifactId>org.eclipse.stem</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
+    <modules>
+        <module>org.eclipse.stem.internal.data</module>
+        <module>geography</module>
+        <module>population</module>
+    </modules>
+</project>

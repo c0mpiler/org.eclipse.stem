@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="avianinfluenza" nsURI="http:///org/eclipse/stem/diseasemodels/avianinfluenza/avianinfluenza.ecore"
+    nsPrefix="org.eclipse.stem.diseasemodels.avianinfluenza">
+  <eAnnotations source="http:///org/eclipse/stem/modelgen/generated">
+    <details key="version" value="1.0"/>
+  </eAnnotations>
+  <eAnnotations source="http:///org/eclipse/stem/modelgen/metamodel">
+    <details key="uri" value="platform:/resource/.stemgenerator/model/avianinfluenza.metamodel"/>
+  </eAnnotations>
+  <eAnnotations source="http:///org/eclipse/stem/modelgen/metamodel">
+    <details key="uri" value="platform:/resource/org.eclipse.stem.diseasemodels.avianinfluenza/model/avianinfluenza.metamodel"/>
+  </eAnnotations>
+  <eClassifiers xsi:type="ecore:EClass" name="H7N9Label" eSuperTypes="platform:/plugin/org.eclipse.stem.diseasemodels/model/standard.ecore#//StandardDiseaseModelLabel">
+    <eAnnotations source="http:///org/eclipse/stem/modelgen/generated">
+      <details key="version" value="1.0"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="H7N9LabelValue" eSuperTypes="platform:/plugin/org.eclipse.stem.diseasemodels/model/standard.ecore#//SIRLabelValue">
+    <eAnnotations source="http:///org/eclipse/stem/modelgen/generated">
+      <details key="version" value="1.0"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="H7N9" eSuperTypes="platform:/plugin/org.eclipse.stem.diseasemodels.vector/model/vector.ecore#//VectorDiseaseModel">
+    <eAnnotations source="http:///org/eclipse/stem/modelgen/model/label">
+      <details key="*" value="H7N9Label"/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/stem/modelgen/model/labelvalue">
+      <details key="*" value="H7N9LabelValue"/>
+    </eAnnotations>
+    <eAnnotations source="http:///org/eclipse/stem/modelgen/model/adapters"/>
+    <eAnnotations source="http:///org/eclipse/stem/modelgen/generated">
+      <details key="version" value="1.0"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="avianToAvianTransmissionRate"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble" defaultValueLiteral="0.1">
+      <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/constraints">
+        <details key="minValue" value="0"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/messages">
+        <details key="name" value="Avian To Avian Transmission Rate"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/stem/modelgen/generated">
+        <details key="version" value="1.0"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="avianRecoveryRate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+        defaultValueLiteral="0.0">
+      <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/constraints">
+        <details key="minValue" value="0"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/messages">
+        <details key="name" value="Avian Recovery Rate"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/stem/modelgen/generated">
+        <details key="version" value="1.0"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="avianToHumanTransmissionRate"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble" defaultValueLiteral="1.2">
+      <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/constraints">
+        <details key="minValue" value="0"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/messages">
+        <details key="name" value="Avian To Human Transmission Rate"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/stem/modelgen/generated">
+        <details key="version" value="1.0"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="humanToHumanTransmissionRate"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble" defaultValueLiteral="1.2">
+      <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/constraints">
+        <details key="minValue" value="0"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/messages">
+        <details key="name" value="Human To Human Transmission Rate"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/stem/modelgen/generated">
+        <details key="version" value="1.0"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="avianCharacteristicMixingDistance"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble" defaultValueLiteral="0.5">
+      <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/constraints">
+        <details key="minValue" value="0"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/messages">
+        <details key="name" value="Avian Characteristic Mixing Distance"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/stem/modelgen/generated">
+        <details key="version" value="1.0"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="humanRecoveryRate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+        defaultValueLiteral="0.5">
+      <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/constraints">
+        <details key="minValue" value="0"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/messages">
+        <details key="name" value="Human Recovery Rate"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/stem/modelgen/generated">
+        <details key="version" value="1.0"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="humanImmunityLossRate"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble" defaultValueLiteral="0.001">
+      <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/constraints">
+        <details key="minValue" value="0"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/messages">
+        <details key="name" value="Human Immunity Loss Rate"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/stem/modelgen/generated">
+        <details key="version" value="1.0"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="temperatureFactor" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+        defaultValueLiteral="1.0">
+      <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/constraints">
+        <details key="minValue" value="0"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/stem/modelgen/modelparam/messages">
+        <details key="name" value="Temperature Factor"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/stem/modelgen/generated">
+        <details key="version" value="1.0"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+</ecore:EPackage>

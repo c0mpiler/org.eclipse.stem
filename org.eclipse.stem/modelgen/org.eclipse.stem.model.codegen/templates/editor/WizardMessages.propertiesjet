@@ -1,0 +1,37 @@
+<%@ jet package="org.eclipse.emf.codegen.ecore.templates.editor" imports="org.eclipse.stem.model.codegen.* org.eclipse.emf.codegen.ecore.genmodel.*" class="WizardMessagesProperties" version="" %>
+<%
+/**
+ * <copyright>
+ *
+ * Copyright (c) 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018
+ * IBM Corporation, BfR, and others.
+ * All rights reserved.   This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors: 
+ *   IBM - Initial API and implementation
+ *
+ * </copyright>
+ */
+%>
+<%
+STEMGenPackage stemGenPackage = (STEMGenPackage)((Object[])argument)[0]; 
+//GenPackage genPackage = stemGenPackage.getGenPackage(); 
+%>
+<%@ include file="../Header.propertiesjetinc"%>
+<%for(STEMGenClass stemGenClass : stemGenPackage.getComputationalModelClasses()){%>
+<%GenClass genClass = stemGenClass.getGenClass();%>
+# Messages for <%=genClass.getName()%>
+<%for(STEMGenFeature stemGenFeature : stemGenClass.getSTEMGenFeatures()){%>
+<%GenFeature genFeature = stemGenFeature.getGenFeature();%>
+<%=genClass.getName()%>.<%=genFeature.getName()%> = <%=stemGenFeature.getNameMessage()%>
+<%=genClass.getName()%>.<%=genFeature.getName()%>TT = <%=stemGenFeature.getToolTipMessage()%>
+<%=genClass.getName()%>.<%=genFeature.getName()%>UNIT = <%=stemGenFeature.getUnitMessage()%>
+<%=genClass.getName()%>.<%=genFeature.getName()%>MISSING = <%=stemGenFeature.getMissingMessage()%>
+<%=genClass.getName()%>.<%=genFeature.getName()%>INVALID = <%=stemGenFeature.getInvalidMessage()%>
+
+<%}%>
+<%}%>
+ 

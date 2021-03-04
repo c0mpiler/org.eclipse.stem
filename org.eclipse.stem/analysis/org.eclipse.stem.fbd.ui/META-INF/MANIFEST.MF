@@ -1,0 +1,19 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Ui
+Bundle-SymbolicName: org.eclipse.stem.fbd.ui; singleton:=true
+Bundle-Version: 0.0.1.UNRELEASED
+Bundle-Activator: org.eclipse.stem.fbd.ui.Activator
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.core.resources,
+ org.eclipse.stem.core,
+ org.eclipse.stem.ui,
+ org.eclipse.stem.definitions,
+ org.eclipse.stem.geography,
+ org.eclipse.birt.chart.engine;visibility:=reexport,
+ org.eclipse.stem.gis;visibility:=reexport
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Bundle-ClassPath: lib/commons-math3-3.0.jar,
+ .

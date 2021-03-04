@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="&#xA;Copyright (c) 2012 Bundesinstitut für Risikobewertung and others.&#xA;All rights reserved. This program and the accompanying materials&#xA;are made available under the terms of the Eclipse Public License v1.0&#xA;which accompanies this distribution, and is available at&#xA;  http://www.eclipse.org/legal/epl-v10.html&#xA;&#xA;Contributors:&#xA;    Bundesinstitut für Risikobewertung - initial API and implementation"
+    modelDirectory="/org.eclipse.stem.model/src" editDirectory="/org.eclipse.stem.model/src"
+    editorDirectory="/org.eclipse.stem.model.ui/src" modelPluginID="org.eclipse.stem.model"
+    modelName="Metamodel" editorPluginClass="org.eclipse.stem.model.ui.MetamodelEditorPlugin"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0" copyrightFields="false"
+    providerRootExtendsClass="" editPluginID="org.eclipse.stem.model" editorPluginID="org.eclipse.stem.model.ui"
+    runtimeVersion="2.7" language="" usedGenPackages="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore">
+  <foreignModel>metamodel.ecore</foreignModel>
+  <genPackages prefix="Metamodel" basePackage="org.eclipse.stem.model" disposableProviderFactory="true"
+      multipleEditorPages="false" generateModelWizard="false" ecorePackage="metamodel.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="metamodel.ecore#//ModelType">
+      <genEnumLiterals ecoreEnumLiteral="metamodel.ecore#//ModelType/DiseaseModel"/>
+      <genEnumLiterals ecoreEnumLiteral="metamodel.ecore#//ModelType/PopulationModel"/>
+      <genEnumLiterals ecoreEnumLiteral="metamodel.ecore#//ModelType/FoodProductionModel"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="metamodel.ecore#//CompartmentType">
+      <genEnumLiterals ecoreEnumLiteral="metamodel.ecore#//CompartmentType/Standard"/>
+      <genEnumLiterals ecoreEnumLiteral="metamodel.ecore#//CompartmentType/Incidence"/>
+      <genEnumLiterals ecoreEnumLiteral="metamodel.ecore#//CompartmentType/Deaths"/>
+      <genEnumLiterals ecoreEnumLiteral="metamodel.ecore#//CompartmentType/Derived"/>
+    </genEnums>
+    <genDataTypes ecoreDataType="metamodel.ecore#//Resource"/>
+    <genClasses ecoreClass="metamodel.ecore#//Package">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodel.ecore#//Package/packagePrefix"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodel.ecore#//Package/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference metamodel.ecore#//Package/models"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference metamodel.ecore#//Package/compartmentGroups"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference metamodel.ecore#//Package/generatorSettings"/>
+    </genClasses>
+    <genClasses ecoreClass="metamodel.ecore#//Model">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodel.ecore#//Model/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodel.ecore#//Model/modelType"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference metamodel.ecore#//Model/class"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference metamodel.ecore#//Model/parentModel"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference metamodel.ecore#//Model/parameters"/>
+      <genFeatures property="None" children="true" createChild="true" propertySortChoices="true"
+          ecoreFeature="ecore:EReference metamodel.ecore#//Model/transitions"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference metamodel.ecore#//Model/compartments"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference metamodel.ecore#//Model/author"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference metamodel.ecore#//Model/containerPackage"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference metamodel.ecore#//Model/generatorSettings"/>
+    </genClasses>
+    <genClasses ecoreClass="metamodel.ecore#//ModelParam">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodel.ecore#//ModelParam/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EReference metamodel.ecore#//ModelParam/dataType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodel.ecore#//ModelParam/defaultValue"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference metamodel.ecore#//ModelParam/constraints"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodel.ecore#//ModelParam/displayName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodel.ecore#//ModelParam/unit"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodel.ecore#//ModelParam/helpMessage"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodel.ecore#//ModelParam/invalidMessage"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodel.ecore#//ModelParam/missingMessage"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference metamodel.ecore#//ModelParam/containerModel"/>
+    </genClasses>
+    <genClasses ecoreClass="metamodel.ecore#//ModelParamConstraint">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodel.ecore#//ModelParamConstraint/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodel.ecore#//ModelParamConstraint/constraint"/>
+    </genClasses>
+    <genClasses ecoreClass="metamodel.ecore#//CompartmentGroup">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodel.ecore#//CompartmentGroup/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference metamodel.ecore#//CompartmentGroup/class"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference metamodel.ecore#//CompartmentGroup/valueClass"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference metamodel.ecore#//CompartmentGroup/parentGroup"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference metamodel.ecore#//CompartmentGroup/compartments"/>
+    </genClasses>
+    <genClasses ecoreClass="metamodel.ecore#//Compartment">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodel.ecore#//Compartment/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EReference metamodel.ecore#//Compartment/dataType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodel.ecore#//Compartment/type"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference metamodel.ecore#//Compartment/containerGroup"/>
+    </genClasses>
+    <genClasses ecoreClass="metamodel.ecore#//AuthorDetails">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodel.ecore#//AuthorDetails/title"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodel.ecore#//AuthorDetails/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodel.ecore#//AuthorDetails/creator"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodel.ecore#//AuthorDetails/source"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodel.ecore#//AuthorDetails/publisher"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodel.ecore#//AuthorDetails/license"/>
+    </genClasses>
+    <genClasses ecoreClass="metamodel.ecore#//PackageGenSettings">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodel.ecore#//PackageGenSettings/modelPluginId"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodel.ecore#//PackageGenSettings/editorPluginId"/>
+    </genClasses>
+    <genClasses ecoreClass="metamodel.ecore#//ModelGenSettings">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodel.ecore#//ModelGenSettings/propertyEditorClass"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodel.ecore#//ModelGenSettings/propertyEditorParentClass"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodel.ecore#//ModelGenSettings/stringProviderAdapterClass"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodel.ecore#//ModelGenSettings/stringProviderAdapterParentClass"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodel.ecore#//ModelGenSettings/labelRelativeValueProviderAdapterClass"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodel.ecore#//ModelGenSettings/labelRelativeValueProviderAdapterParentClass"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodel.ecore#//ModelGenSettings/labelValueRelativeValueProviderAdapterClass"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodel.ecore#//ModelGenSettings/labelValueRelativeValueProviderAdapterParentClass"/>
+    </genClasses>
+    <genClasses ecoreClass="metamodel.ecore#//Transition">
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference metamodel.ecore#//Transition/source"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference metamodel.ecore#//Transition/target"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference metamodel.ecore#//Transition/forIncidence"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute metamodel.ecore#//Transition/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodel.ecore#//Transition/expression"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference metamodel.ecore#//Transition/compiledExpression"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference metamodel.ecore#//Transition/containerModel"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EAttribute metamodel.ecore#//Transition/expressionResource"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

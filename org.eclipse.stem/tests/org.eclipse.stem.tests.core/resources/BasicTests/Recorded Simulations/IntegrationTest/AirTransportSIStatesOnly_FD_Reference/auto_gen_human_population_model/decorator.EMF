@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<org.eclipse.stem.populationmodels.standard:StandardPopulationModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:org.eclipse.stem.populationmodels.standard="http:///org/eclipse/stem/populationmodels/standard" uRI="stem://org.eclipse.stem/auto_gen_human_population_model/56D15DAAA70D0C95" typeURI="stemtype://org.eclipse.stem/Identifiable" name="auto_gen_human_population_model">
+  <dublinCore title="Auto Generated human population model" identifier="stem://org.eclipse.stem/auto_gen_human_population_model/56D15DAAA70D0C95" type="stemtype://org.eclipse.stem/Identifiable"/>
+</org.eclipse.stem.populationmodels.standard:StandardPopulationModel>

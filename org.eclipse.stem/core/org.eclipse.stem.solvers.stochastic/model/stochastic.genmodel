@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.eclipse.stem.solvers.stochastic/src" editDirectory="/org.eclipse.stem.solvers.stochastic/src"
+    editorDirectory="/org.eclipse.stem.ui.solvers.stochastic/src" modelPluginID="org.eclipse.stem.solvers.stochastic"
+    modelName="Stochastic" testsDirectory="/org.eclipse.stem.tests.solvers.stochastic/src"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0" copyrightFields="false"
+    editorPluginID="org.eclipse.stem.ui.solvers.stochastic" testsPluginID="org.eclipse.stem.tests.solvers.stochastic."
+    usedGenPackages="../../org.eclipse.stem.core/model/core.genmodel#//common ../../org.eclipse.stem.core/model/core.genmodel#//graph ../../org.eclipse.stem.core/model/core.genmodel#//model ../../org.eclipse.stem.core/model/core.genmodel#//modifier ../../org.eclipse.stem.core/model/core.genmodel#//scenario ../../org.eclipse.stem.core/model/core.genmodel#//sequencer ../../org.eclipse.stem.core/model/core.genmodel#//solver ../../org.eclipse.stem.core/model/core.genmodel#//logger platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore">
+  <foreignModel>stochastic.ecore</foreignModel>
+  <genPackages prefix="Stochastic" basePackage="org.eclipse.stem.solvers" disposableProviderFactory="true"
+      ecorePackage="stochastic.ecore#/">
+    <genClasses ecoreClass="stochastic.ecore#//Stochastic"/>
+    <genClasses ecoreClass="stochastic.ecore#//StandardStochastic">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute stochastic.ecore#//StandardStochastic/seed"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute stochastic.ecore#//StandardStochastic/RandomizeSeed"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

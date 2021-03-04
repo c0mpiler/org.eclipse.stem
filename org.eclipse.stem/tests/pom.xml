@@ -1,0 +1,39 @@
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.eclipse.stem.tycho</groupId>
+    <artifactId>org.eclipse.stem.tycho.tests</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <parent>
+        <groupId>org.eclipse.stem.tycho</groupId>
+        <artifactId>org.eclipse.stem.tycho.root</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
+    <modules>
+        <module>org.eclipse.stem.sample</module>
+        <module>org.eclipse.stem.tests.automaticexperiment</module>
+        <module>org.eclipse.stem.tests.core</module>
+        <module>org.eclipse.stem.tests.definitions</module>
+        <module>org.eclipse.stem.tests.diseasemodels</module>
+        <module>org.eclipse.stem.tests.diseasemodels.example</module>
+        <module>org.eclipse.stem.tests.diseasemodels.experimental</module>
+        <module>org.eclipse.stem.tests.diseasemodels.externaldatasource</module>
+        <module>org.eclipse.stem.tests.diseasemodels.forcing</module>
+        <module>org.eclipse.stem.tests.diseasemodels.multipopulation</module>
+        <!-- 
+         <module>org.eclipse.stem.tests.diseasemodels.vector</module>
+         <module>org.eclipse.stem.tests.diseasemodels.globalinfluenzamodel</module>  
+        -->
+        <module>org.eclipse.stem.tests.grapheditor</module>
+        <module>org.eclipse.stem.tests.graphgenerators</module>
+        <module>org.eclipse.stem.tests.internal.data</module>
+        <module>org.eclipse.stem.tests.interventions</module>
+        <module>org.eclipse.stem.tests.jobs</module>
+        <module>org.eclipse.stem.tests.populationmodels</module>
+        <module>org.eclipse.stem.tests.transport</module>
+        <module>org.eclipse.stem.tests.ui</module>
+        <module>org.eclipse.stem.tests.ui.ge</module>
+        <module>org.eclipse.stem.tests.util</module>
+    </modules>
+</project>

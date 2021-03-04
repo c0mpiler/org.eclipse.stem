@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+/******************************************************************************
+ * Copyright (c) 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018
+ * IBM Corporation, BfR, and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v2.0
+ * which accompanies this distribution, and is available at
+ * https://www.eclipse.org/legal/epl-2.0/
+ *
+ * Contributors:
+ *     IBM Corporation - initial API and implementation and new features
+ *     Bundesinstitut für Risikobewertung - Pajek Graph interface, new Veterinary Models
+ *******************************************************************************/
+ -->
+ <ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="imagewriter"
+    nsURI="http://org/eclipse/stem/loggers/imagewriter" nsPrefix="org.eclipse.stem.loggers.imagewriter.model">
+  <eClassifiers xsi:type="ecore:EClass" name="ImageWriterLogger" abstract="true" eSuperTypes="../../org.eclipse.stem.loggers/models/SimulationLogger.ecore#//SynchronousLogger">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="useDefaultLogDirectory"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dataPath" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ProjectedMapImageLogger" abstract="true"
+      eSuperTypes="../../org.eclipse.stem.loggers/models/SimulationLogger.ecore#//SynchronousDecoratorPropertyLogger #//ImageWriterLogger">
+    <eOperations name="getMapProjector" eType="#//IMapProjection"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="projection" lowerBound="1"
+        transient="true">
+      <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaClass">
+        <eTypeArguments>
+          <eUpperBound eClassifier="#//IMapProjection"/>
+        </eTypeArguments>
+      </eGenericType>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="width" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        defaultValueLiteral="1000"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="height" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt" defaultValueLiteral="500"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="forceAspectRatio" lowerBound="1"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"
+        defaultValueLiteral="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="fitToShapeBounds" lowerBound="1"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"
+        defaultValueLiteral="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="logScaling" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="gain" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"
+        defaultValueLiteral="1.0"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="colorProvider" defaultValueLiteral="org.eclipse.stem.ui.adapters.color.IntensityColorsLabelsMappingColorProviderAdapter">
+      <eGenericType eClassifier="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EJavaClass">
+        <eTypeArguments>
+          <eUpperBound eClassifier="#//ColorProvider"/>
+        </eTypeArguments>
+      </eGenericType>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="transparentBackground"
+        lowerBound="1" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"
+        defaultValueLiteral="false"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="borderTransparency" lowerBound="1"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"
+        defaultValueLiteral="25"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="IMapProjection" instanceClassName="org.eclipse.stem.loggers.imagewriter.logger.projections.IMapProjection"/>
+  <eClassifiers xsi:type="ecore:EClass" name="MapViewImageWriterLogger" eSuperTypes="#//ImageWriterLogger">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="openMapView" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="MAP_PROJECTIONS">
+    <eLiterals name="EQUIRECTANGULAR"/>
+    <eLiterals name="MERCATOR" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="ColorProvider" instanceClassName="org.eclipse.stem.ui.adapters.color.ColorProvider"/>
+  <eClassifiers xsi:type="ecore:EClass" name="EquirectangularMapLogger" eSuperTypes="#//ProjectedMapImageLogger"/>
+  <eClassifiers xsi:type="ecore:EClass" name="MercatorMapLogger" eSuperTypes="#//ProjectedMapImageLogger"/>
+  <eClassifiers xsi:type="ecore:EClass" name="OriginDependentProjectedMapImageLogger"
+      abstract="true" eSuperTypes="#//ProjectedMapImageLogger">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="originLatitude" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="0.0"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="originLongitude" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="0.0"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AzimuthalEquidistantMapLogger" eSuperTypes="#//OriginDependentProjectedMapImageLogger"/>
+  <eClassifiers xsi:type="ecore:EClass" name="OrthographicMapLogger" eSuperTypes="#//OriginDependentProjectedMapImageLogger"/>
+</ecore:EPackage>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ <copyright>
+ </copyright>
+
+ $Id$
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <factory
+            uri="http:///org/eclipse/stem/diseasemodels/avianinfluenza/avianinfluenza.ecore"
+            class="org.eclipse.stem.diseasemodels.avianinfluenza.provider.AvianinfluenzaItemProviderAdapterFactory"
+            supportedTypes=
+              "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
+               org.eclipse.emf.edit.provider.IStructuredItemContentProvider
+               org.eclipse.emf.edit.provider.ITreeItemContentProvider
+               org.eclipse.emf.edit.provider.IItemLabelProvider
+               org.eclipse.emf.edit.provider.IItemPropertySource"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http:///org/eclipse/stem/diseasemodels/avianinfluenza/avianinfluenza.ecore"
+            class="org.eclipse.stem.diseasemodels.avianinfluenza.AvianinfluenzaPackage"/>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="org.eclipse.stem.diseasemodels.avianinfluenza.presentation.AvianinfluenzaModelWizardID"
+            name="%_UI_AvianinfluenzaModelWizard_label"
+            class="org.eclipse.stem.diseasemodels.avianinfluenza.presentation.AvianinfluenzaModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/AvianinfluenzaModelFile.gif">
+         <description>%_UI_AvianinfluenzaModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="org.eclipse.stem.diseasemodels.avianinfluenza.presentation.AvianinfluenzaEditorID"
+            name="%_UI_AvianinfluenzaEditor_label"
+            icon="icons/full/obj16/AvianinfluenzaModelFile.gif"
+            extensions="avianinfluenza"
+            class="org.eclipse.stem.diseasemodels.avianinfluenza.presentation.AvianinfluenzaEditor"
+            contributorClass="org.eclipse.stem.diseasemodels.avianinfluenza.presentation.AvianinfluenzaActionBarContributor">
+      </editor>
+   </extension>
+
+	<extension point="org.eclipse.stem.diseasemodels.diseasemodel">
+		<classdef class="org.eclipse.stem.diseasemodels.avianinfluenza.impl.H7N9Impl"></classdef>
+		<dublin_core
+			creator="edlund"
+			description=""
+			identifier=""
+			source=""
+			title="Avian Influenza"
+			license=""
+			publisher="">
+		</dublin_core>
+	</extension>
+
+
+  <extension
+        point="org.eclipse.ui.startup">        
+     <startup
+           class="org.eclipse.stem.diseasemodels.avianinfluenza.presentation.AvianinfluenzaPropertyEditorAdapterFactory">
+     </startup>
+     <startup
+           class="org.eclipse.stem.diseasemodels.avianinfluenza.presentation.AvianinfluenzaRelativeValueProviderAdapterFactory">
+     </startup>     
+  </extension>
+
+
+</plugin>

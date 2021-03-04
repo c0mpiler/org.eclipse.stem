@@ -1,0 +1,34 @@
+!*** STEM Features ***
+!WS:STEM-Features
+feature@org.eclipse.stem.data.feature=COPY,${source.path.features},org.eclipse.stem.data.feature
+feature@org.eclipse.stem.data.geography.feature=COPY,${source.path.features},org.eclipse.stem.data.geography.feature
+feature@org.eclipse.stem.data.population.human.feature=COPY,${source.path.features},org.eclipse.stem.data.population.human.feature
+feature@org.eclipse.stem.data.diseasemodels.feature=COPY,${source.path.features},org.eclipse.stem.data.diseasemodels.feature
+feature@org.eclipse.stem.data.transportation.feature=COPY,${source.path.features},org.eclipse.stem.data.transportation.feature
+
+!*** Data ***
+!WS:STEM-Data
+plugin@org.eclipse.stem.internal.data=COPY,${source.path.data},org.eclipse.stem.internal.data
+plugin@org.eclipse.stem.internal.data.geography=COPY,${source.path.data.geography},org.eclipse.stem.internal.data.geography
+plugin@org.eclipse.stem.internal.data.geography.infrastructure.transportation=COPY,${source.path.data.geography},org.eclipse.stem.internal.data.geography.infrastructure.transportation
+plugin@org.eclipse.stem.internal.data.geography.models=COPY,${source.path.data.geography},org.eclipse.stem.internal.data.geography.models
+plugin@org.eclipse.stem.data.geography=COPY,${source.path.data.geography},org.eclipse.stem.data.geography
+plugin@org.eclipse.stem.data.geography.infrastructure.transportation=COPY,${source.path.data.geography},org.eclipse.stem.data.geography.infrastructure.transportation
+plugin@org.eclipse.stem.data.geography.models=COPY,${source.path.data.geography},org.eclipse.stem.data.geography.models
+
+!*** Population Data ***
+plugin@org.eclipse.stem.internal.data.geography.population=COPY,${source.path.data.population},org.eclipse.stem.internal.data.geography.population
+plugin@org.eclipse.stem.internal.data.geography.population.human=COPY,${source.path.data.population},org.eclipse.stem.internal.data.geography.population.human
+plugin@org.eclipse.stem.internal.data.geography.population.human.models=COPY,${source.path.data.population},org.eclipse.stem.internal.data.geography.population.human.models
+plugin@org.eclipse.stem.internal.data.population.human=COPY,${source.path.data.population},org.eclipse.stem.internal.data.population.human
+plugin@org.eclipse.stem.data.geography.population.human=COPY,${source.path.data.population},org.eclipse.stem.data.geography.population.human
+plugin@org.eclipse.stem.data.geography.population.human.models=COPY,${source.path.data.population},org.eclipse.stem.data.geography.population.human.models
+
+
+!*** Epidemiology / Disease Models ***
+!WS:STEM-DiseaseModels
+plugin@org.eclipse.stem.diseases=COPY,${source.path.models.epidemiology},org.eclipse.stem.diseases
+plugin@org.eclipse.stem.data.diseasemodels.models=COPY,${source.path.models.epidemiology},org.eclipse.stem.data.diseasemodels.models
+plugin@org.eclipse.stem.data.diseasemodels.scenarios=COPY,${source.path.models.epidemiology},org.eclipse.stem.data.diseasemodels.scenarios
+plugin@org.eclipse.stem.internal.diseasemodels.models=COPY,${source.path.models.epidemiology},org.eclipse.stem.internal.diseasemodels.models
+plugin@org.eclipse.stem.internal.diseasemodels.scenarios=COPY,${source.path.models.epidemiology},org.eclipse.stem.internal.diseasemodels.scenarios

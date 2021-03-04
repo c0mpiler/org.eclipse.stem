@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.eclipse.stem.diseasemodels.vector/src"
+    editDirectory="/org.eclipse.stem.diseasemodels.vector/src" editorDirectory="/org.eclipse.stem.ui.diseasemodels.vector/src"
+    modelPluginID="org.eclipse.stem.diseasemodels.vector" templateDirectory="platform:/plugin/org.eclipse.stem.model.codegen/templates"
+    dynamicTemplates="true" modelName="Vector" updateClasspath="false" testsDirectory="/org.eclipse.stem.tests.diseasemodels.vector/src"
+    importerID="org.eclipse.emf.importer.ecore" suppressNotification="true" complianceLevel="5.0"
+    copyrightFields="false" editorPluginID="org.eclipse.stem.ui.diseasemodels.vector"
+    runtimeVersion="2.6" usedGenPackages="../../org.eclipse.stem.diseasemodels/model/diseasemodels.genmodel#//standard ../../org.eclipse.stem.core/model/core.genmodel#//common platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore ../../org.eclipse.stem.core/model/core.genmodel#//modifier ../../org.eclipse.stem.core/model/core.genmodel#//model ../../org.eclipse.stem.core/model/core.genmodel#//graph ../../org.eclipse.stem.core/model/core.genmodel#//scenario ../../org.eclipse.stem.core/model/core.genmodel#//sequencer ../../org.eclipse.stem.core/model/core.genmodel#//solver ../../org.eclipse.stem.definitions/model/definitions.genmodel#//labels ../../org.eclipse.stem.populationmodels/model/standard.genmodel#//standard ../../org.eclipse.stem.core/model/core.genmodel#//logger">
+  <foreignModel>vector.ecore</foreignModel>
+  <templatePluginVariables>STEM_CODEGEN=org.eclipse.stem.model.codegen</templatePluginVariables>
+  <genPackages prefix="Vector" basePackage="org.eclipse.stem.diseasemodels" disposableProviderFactory="true"
+      ecorePackage="vector.ecore#/">
+    <genClasses ecoreClass="vector.ecore#//MacdonaldRossDiseaseModel">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//MacdonaldRossDiseaseModel/bitingRate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//MacdonaldRossDiseaseModel/infectiousBitingProportionHuman"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//MacdonaldRossDiseaseModel/infectiousBitingProportionVector"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//MacdonaldRossDiseaseModel/recoveryRate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//MacdonaldRossDiseaseModel/incubationRate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//MacdonaldRossDiseaseModel/vectorIncubationRate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//MacdonaldRossDiseaseModel/immunityLossRate"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="vector.ecore#//VectorDiseaseModel">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//VectorDiseaseModel/vectorPopulationIdentifier"/>
+    </genClasses>
+    <genClasses ecoreClass="vector.ecore#//DengueModel">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//DengueModel/bitingRateSV"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//DengueModel/bitingRateIV"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//DengueModel/hostInfectivity1"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//DengueModel/hostInfectivity2"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//DengueModel/hostInfectivity3"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//DengueModel/hostInfectivity4"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//DengueModel/hostPrimaryIncubationRate1"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//DengueModel/hostPrimaryIncubationRate2"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//DengueModel/hostPrimaryIncubationRate3"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//DengueModel/hostPrimaryIncubationRate4"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//DengueModel/hostPrimaryRecoveryRate1"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//DengueModel/hostPrimaryRecoveryRate2"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//DengueModel/hostPrimaryRecoveryRate3"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//DengueModel/hostPrimaryRecoveryRate4"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//DengueModel/hostPrimaryImmunityLossRate1"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//DengueModel/hostPrimaryImmunityLossRate2"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//DengueModel/hostPrimaryImmunityLossRate3"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//DengueModel/hostPrimaryImmunityLossRate4"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//DengueModel/hostPrimaryDiseaseDeathRate1"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//DengueModel/hostPrimaryDiseaseDeathRate2"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//DengueModel/hostPrimaryDiseaseDeathRate3"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//DengueModel/hostPrimaryDiseaseDeathRate4"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//DengueModel/hostADE12"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//DengueModel/hostADE13"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//DengueModel/hostADE14"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//DengueModel/hostADE21"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//DengueModel/hostADE23"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//DengueModel/hostADE24"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//DengueModel/hostADE31"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//DengueModel/hostADE32"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//DengueModel/hostADE34"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//DengueModel/hostADE41"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//DengueModel/hostADE42"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//DengueModel/hostADE43"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//DengueModel/hostSecondaryDiseaseDeathRate12"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//DengueModel/hostSecondaryDiseaseDeathRate13"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//DengueModel/hostSecondaryDiseaseDeathRate14"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//DengueModel/hostSecondaryDiseaseDeathRate21"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//DengueModel/hostSecondaryDiseaseDeathRate23"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//DengueModel/hostSecondaryDiseaseDeathRate24"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//DengueModel/hostSecondaryDiseaseDeathRate31"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//DengueModel/hostSecondaryDiseaseDeathRate32"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//DengueModel/hostSecondaryDiseaseDeathRate34"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//DengueModel/hostSecondaryDiseaseDeathRate41"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//DengueModel/hostSecondaryDiseaseDeathRate42"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//DengueModel/hostSecondaryDiseaseDeathRate43"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//DengueModel/hostSecondaryRecoveryRate12"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//DengueModel/hostSecondaryRecoveryRate13"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//DengueModel/hostSecondaryRecoveryRate14"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//DengueModel/hostSecondaryRecoveryRate21"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//DengueModel/hostSecondaryRecoveryRate23"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//DengueModel/hostSecondaryRecoveryRate24"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//DengueModel/hostSecondaryRecoveryRate31"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//DengueModel/hostSecondaryRecoveryRate32"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//DengueModel/hostSecondaryRecoveryRate34"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//DengueModel/hostSecondaryRecoveryRate41"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//DengueModel/hostSecondaryRecoveryRate42"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//DengueModel/hostSecondaryRecoveryRate43"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//DengueModel/hostSecondaryIncubationRate12"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//DengueModel/hostSecondaryIncubationRate13"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//DengueModel/hostSecondaryIncubationRate14"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//DengueModel/hostSecondaryIncubationRate21"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//DengueModel/hostSecondaryIncubationRate23"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//DengueModel/hostSecondaryIncubationRate24"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//DengueModel/hostSecondaryIncubationRate31"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//DengueModel/hostSecondaryIncubationRate32"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//DengueModel/hostSecondaryIncubationRate34"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//DengueModel/hostSecondaryIncubationRate41"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//DengueModel/hostSecondaryIncubationRate42"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//DengueModel/hostSecondaryIncubationRate43"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//DengueModel/vectorInfectivity1"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//DengueModel/vectorInfectivity2"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//DengueModel/vectorInfectivity3"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//DengueModel/vectorInfectivity4"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//DengueModel/vectorADE1"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//DengueModel/vectorADE2"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//DengueModel/vectorADE3"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//DengueModel/vectorADE4"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//DengueModel/vectorIncubationRate1"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//DengueModel/vectorIncubationRate2"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//DengueModel/vectorIncubationRate3"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//DengueModel/vectorIncubationRate4"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//DengueModel/episilon1"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//DengueModel/episilon2"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//DengueModel/episilon3"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//DengueModel/episilon4"/>
+    </genClasses>
+    <genClasses ecoreClass="vector.ecore#//SimpleDengueModel">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//SimpleDengueModel/hostTransmissionRate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//SimpleDengueModel/adeFactor"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//SimpleDengueModel/hostImmunityLossRate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//SimpleDengueModel/hostPrimaryDeathRate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//SimpleDengueModel/hostRecoveryRate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//SimpleDengueModel/hostSecondaryDeathRate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//SimpleDengueModel/vectorIncubationRate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//SimpleDengueModel/vectorTransmissionRate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//SimpleDengueModel/immunityStrength"/>
+    </genClasses>
+    <genClasses ecoreClass="vector.ecore#//VerySimpleDengueModel">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//VerySimpleDengueModel/transmissionRate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//VerySimpleDengueModel/recoveryRate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//VerySimpleDengueModel/immunityLossRate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//VerySimpleDengueModel/adeFactor"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//VerySimpleDengueModel/immunityStrength"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//VerySimpleDengueModel/primaryDeathRate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//VerySimpleDengueModel/secondaryDeathRate"/>
+    </genClasses>
+    <genClasses ecoreClass="vector.ecore#//DengueModelHostLabel"/>
+    <genClasses ecoreClass="vector.ecore#//DengueModelHostLabelValue">
+      <genFeatures notify="false" createChild="false" propertyCategory="" ecoreFeature="ecore:EAttribute vector.ecore#//DengueModelHostLabelValue/E1"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//DengueModelHostLabelValue/E2"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//DengueModelHostLabelValue/E3"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//DengueModelHostLabelValue/E4"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//DengueModelHostLabelValue/E12"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//DengueModelHostLabelValue/E13"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//DengueModelHostLabelValue/E14"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//DengueModelHostLabelValue/E21"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//DengueModelHostLabelValue/E23"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//DengueModelHostLabelValue/E24"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//DengueModelHostLabelValue/E31"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//DengueModelHostLabelValue/E32"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//DengueModelHostLabelValue/E34"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//DengueModelHostLabelValue/E41"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//DengueModelHostLabelValue/E42"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//DengueModelHostLabelValue/E43"/>
+    </genClasses>
+    <genClasses ecoreClass="vector.ecore#//DengueModelVectorLabel"/>
+    <genClasses ecoreClass="vector.ecore#//DengueModelVectorLabelValue">
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//DengueModelVectorLabelValue/E1"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//DengueModelVectorLabelValue/E2"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//DengueModelVectorLabelValue/E3"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//DengueModelVectorLabelValue/E4"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//DengueModelVectorLabelValue/I1"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//DengueModelVectorLabelValue/I2"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//DengueModelVectorLabelValue/I3"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//DengueModelVectorLabelValue/I4"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//DengueModelVectorLabelValue/incidence1"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//DengueModelVectorLabelValue/incidence2"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//DengueModelVectorLabelValue/incidence3"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//DengueModelVectorLabelValue/incidence4"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="vector.ecore#//AbstractDengueModel"/>
+    <genClasses ecoreClass="vector.ecore#//SimpleDengueModelHostLabel"/>
+    <genClasses ecoreClass="vector.ecore#//SimpleDengueModelHostLabelValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//SimpleDengueModelHostLabelValue/I1"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//SimpleDengueModelHostLabelValue/I2"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//SimpleDengueModelHostLabelValue/I3"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//SimpleDengueModelHostLabelValue/I4"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//SimpleDengueModelHostLabelValue/C1"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//SimpleDengueModelHostLabelValue/C2"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//SimpleDengueModelHostLabelValue/C3"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//SimpleDengueModelHostLabelValue/C4"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//SimpleDengueModelHostLabelValue/R1"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//SimpleDengueModelHostLabelValue/R2"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//SimpleDengueModelHostLabelValue/R3"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//SimpleDengueModelHostLabelValue/R4"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//SimpleDengueModelHostLabelValue/I12"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//SimpleDengueModelHostLabelValue/I13"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//SimpleDengueModelHostLabelValue/I14"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//SimpleDengueModelHostLabelValue/I21"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//SimpleDengueModelHostLabelValue/I23"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//SimpleDengueModelHostLabelValue/I24"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//SimpleDengueModelHostLabelValue/I31"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//SimpleDengueModelHostLabelValue/I32"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//SimpleDengueModelHostLabelValue/I34"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//SimpleDengueModelHostLabelValue/I41"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//SimpleDengueModelHostLabelValue/I42"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//SimpleDengueModelHostLabelValue/I43"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//SimpleDengueModelHostLabelValue/R"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//SimpleDengueModelHostLabelValue/incidence1"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//SimpleDengueModelHostLabelValue/incidence2"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//SimpleDengueModelHostLabelValue/incidence3"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//SimpleDengueModelHostLabelValue/incidence4"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//SimpleDengueModelHostLabelValue/incidence12"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//SimpleDengueModelHostLabelValue/incidence21"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//SimpleDengueModelHostLabelValue/incidence31"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//SimpleDengueModelHostLabelValue/incidence41"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//SimpleDengueModelHostLabelValue/incidence13"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//SimpleDengueModelHostLabelValue/incidence23"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//SimpleDengueModelHostLabelValue/incidence32"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//SimpleDengueModelHostLabelValue/incidence42"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//SimpleDengueModelHostLabelValue/incidence14"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//SimpleDengueModelHostLabelValue/incidence24"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//SimpleDengueModelHostLabelValue/incidence34"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//SimpleDengueModelHostLabelValue/incidence43"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//SimpleDengueModelHostLabelValue/diseaseDeaths1"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//SimpleDengueModelHostLabelValue/diseaseDeaths2"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//SimpleDengueModelHostLabelValue/diseaseDeaths3"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//SimpleDengueModelHostLabelValue/diseaseDeaths4"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//SimpleDengueModelHostLabelValue/diseaseDeaths12"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//SimpleDengueModelHostLabelValue/diseaseDeaths21"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//SimpleDengueModelHostLabelValue/diseaseDeaths31"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//SimpleDengueModelHostLabelValue/diseaseDeaths41"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//SimpleDengueModelHostLabelValue/diseaseDeaths13"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//SimpleDengueModelHostLabelValue/diseaseDeaths23"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//SimpleDengueModelHostLabelValue/diseaseDeaths32"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//SimpleDengueModelHostLabelValue/diseaseDeaths42"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//SimpleDengueModelHostLabelValue/diseaseDeaths14"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//SimpleDengueModelHostLabelValue/diseaseDeaths24"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//SimpleDengueModelHostLabelValue/diseaseDeaths34"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vector.ecore#//SimpleDengueModelHostLabelValue/diseaseDeaths43"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

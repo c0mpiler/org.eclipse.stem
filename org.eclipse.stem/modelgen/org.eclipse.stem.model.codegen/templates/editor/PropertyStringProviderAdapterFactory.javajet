@@ -1,0 +1,65 @@
+<%@ jet package="org.eclipse.emf.codegen.ecore.templates.editor" imports="org.eclipse.stem.model.codegen.* org.eclipse.emf.codegen.ecore.genmodel.*" class="PropertyStringProviderAdapterFactory" version="" %>
+<%
+/**
+ * <copyright>
+ *
+ * Copyright (c) 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018
+ * IBM Corporation, BfR, and others.
+ * All rights reserved.   This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *   IBM - Initial API and implementation
+ *
+ * </copyright>
+ */
+%>
+<%
+STEMGenPackage stemGenPackage = (STEMGenPackage)((Object[])argument)[0]; 
+GenPackage genPackage = stemGenPackage.getGenPackage(); 
+GenModel genModel=genPackage.getGenModel(); 
+%>
+<%@ include file="../Header.javajetinc"%>
+package <%=genPackage.getPresentationPackageName()%>;
+
+import org.eclipse.emf.common.notify.Adapter;
+<%genModel.markImportLocation(stringBuffer);%>
+
+/**
+ * @generated
+ */
+public class <%=genPackage.getPrefix()%>PropertyStringProviderAdapterFactory extends
+		<%=genModel.getImportedName(genPackage.getUtilitiesPackageName()+"."+genPackage.getAdapterFactoryClassName())%> implements
+		<%=genModel.getImportedName("org.eclipse.stem.ui.adapters.propertystrings.PropertyStringProviderAdapterFactory")%> {
+	/**
+	 * @generated
+	 */
+	public <%=genPackage.getPrefix()%>PropertyStringProviderAdapterFactory() {
+		super();
+		<%=genModel.getImportedName("org.eclipse.stem.ui.adapters.propertystrings.PropertyStringProviderAdapterFactory")%>.INSTANCE.addAdapterFactory(this);
+	}
+
+	/**
+	 * @generated
+	 */
+	@Override
+	public boolean isFactoryForType(Object type) {
+		return super.isFactoryForType(type)
+				|| type == <%=genModel.getImportedName("org.eclipse.stem.ui.adapters.propertystrings.PropertyStringProvider")%>.class;
+	}
+
+ <%/* Generates the adapter methods for each computational model EClass */%>
+ <%for (STEMGenClass stemGenClass : stemGenPackage.getComputationalModelClasses()){%>
+	/**
+	 * @generated
+	 */
+	@Override
+	public Adapter create<%=stemGenClass.getGenClass().getName() %>Adapter() {
+		return new <%=stemGenClass.getGenClass().getName()%>PropertyEditor.<%=stemGenClass.getGenClass().getName()%>PropertyStringProviderAdapter();
+	}
+	
+ <%}%>
+}
+<%genModel.emitSortedImports();%>

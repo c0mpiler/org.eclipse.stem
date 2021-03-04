@@ -1,0 +1,6 @@
+bin/
+*_trace
+# Mac-specific ignores
+.DS_Store
+.Spotlight-V100
+.Trashes

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.eclipse.stem.data.diseasemodels.feature"
+      label="%featureName"
+      version="3.0.0.201812181050"
+      provider-name="%providerName">
+
+   <description url="http://www.example.com/description">
+      [Enter Feature Description here.]
+   </description>
+
+   <copyright url="http://www.example.com/copyright">
+      [Enter Copyright Description here.]
+   </copyright>
+
+   <license url="http://www.example.com/license">
+      [Enter License Description here.]
+   </license>
+
+   <url>
+      <update label="%updateSiteName" url="http://download.eclipse.org/stem/update-site/"/>
+   </url>
+
+   <plugin
+         id="org.eclipse.stem.data.diseasemodels.models"
+         download-size="563"
+         install-size="1237"
+         version="3.0.0.201812181050"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.stem.data.diseasemodels.scenarios"
+         download-size="652"
+         install-size="1869"
+         version="3.0.0.201812181050"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.stem.diseases"
+         download-size="17"
+         install-size="43"
+         version="3.0.0.201812181050"
+         unpack="false"/>
+
+</feature>

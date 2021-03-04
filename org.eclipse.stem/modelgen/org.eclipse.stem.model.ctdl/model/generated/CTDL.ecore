@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="ctdl" nsURI="http:///org/eclipse/stem/model/ctdl.ecore" nsPrefix="ctdl">
+  <eClassifiers xsi:type="ecore:EClass" name="CompartmentTransitionDefinitions">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="metamodel" eType="#//MetamodelResource"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expression" eType="#//TransitionBlock"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MetamodelResource">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="package" eType="ecore:EClass platform:/resource/org.eclipse.stem.model/model/metamodel.ecore#//Package"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="model" eType="ecore:EClass platform:/resource/org.eclipse.stem.model/model/metamodel.ecore#//Model"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="transition" eType="ecore:EClass platform:/resource/org.eclipse.stem.model/model/metamodel.ecore#//Transition"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TransitionBlock">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="block" eType="#//Block"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Block">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="statements" upperBound="-1"
+        eType="#//DefStatement" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ret" eType="#//ReturnStatement"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DefStatement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="varname" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expr" eType="#//Evaluation"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ReturnStatement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Evaluation" eSuperTypes="#//ReturnStatement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expression" eType="#//Expression"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Expression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="exp" eType="#//Expression"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FunctionReference">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ScopedVariableReference">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LocalVariableReference" eSuperTypes="#//ScopedVariableReference"/>
+  <eClassifiers xsi:type="ecore:EClass" name="CompartmentReference" eSuperTypes="#//ScopedVariableReference">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="obj" eType="ecore:EClass platform:/resource/org.eclipse.stem.model/model/metamodel.ecore#//Compartment"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ModelParamReference" eSuperTypes="#//ScopedVariableReference">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="obj" eType="ecore:EClass platform:/resource/org.eclipse.stem.model/model/metamodel.ecore#//ModelParam"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="GlobalVariable">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Plus" eSuperTypes="#//Expression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//Expression"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="#//Expression"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Minus" eSuperTypes="#//Expression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//Expression"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="#//Expression"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Multi" eSuperTypes="#//Expression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//Expression"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="#//Expression"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Div" eSuperTypes="#//Expression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//Expression"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="#//Expression"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PrimaryExpression" eSuperTypes="#//Expression">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="negate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NumberLiteral" eSuperTypes="#//Expression">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FunctionCall" eSuperTypes="#//Expression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ref" eType="#//FunctionReference"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="args" upperBound="-1" eType="#//Expression"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="VariableReference" eSuperTypes="#//Expression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ref" eType="#//ScopedVariableReference"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BooleanLiteral" eSuperTypes="#//Expression">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StringLiteral" eSuperTypes="#//Expression">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ExternalFunctionReference" eSuperTypes="#//FunctionReference">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="func" eType="ecore:EClass platform:/resource/org.eclipse.stem.model.ctdl.functions/model/ExternalFunctions.ecore#//ExternalFunctionDefinition"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="GlobalVariableReference" eSuperTypes="#//ScopedVariableReference"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DefStatementReference" eSuperTypes="#//LocalVariableReference">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="obj" eType="#//DefStatement"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AbsoluteCompartmentValueReference" eSuperTypes="#//CompartmentReference"/>
+  <eClassifiers xsi:type="ecore:EClass" name="RelativeCompartmentValueReference" eSuperTypes="#//CompartmentReference"/>
+</ecore:EPackage>

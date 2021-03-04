@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<org.eclipse.stem.core.graph:Graph xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.eclipse.stem.core.graph="http:///org/eclipse/stem/core/graph.ecore" xmlns:org.eclipse.stem.definitions.edges="http:///org/eclipse/stem/definitions/edges.ecore" uRI="platform:/resource/BasicTests/graphs/TwoSquaresMigrationEdges.graph" typeURI="stemtype://org.eclipse.stem/Graph">
+  <dublinCore identifier="platform:/resource/BasicTests/graphs/TwoSquaresMigrationEdges.graph" creator="edlund" date="2011-01-24" format="http:///org/eclipse/stem/core/graph.ecore" source="Generated" type="stemtype://org.eclipse.stem/Graph" created="2011-01-24"/>
+  <edges key="stem://org.eclipse.stem/edge/migration/relationship/migration/0">
+    <value xsi:type="org.eclipse.stem.definitions.edges:MigrationEdge" uRI="stem://org.eclipse.stem/edge/migration/relationship/migration/0" typeURI="stemtype://org.eclipse.stem/Edge" nodeAURI="stem://org.eclipse.stem/node/4495365A02328B16/LAT_SQR_0_0" nodeBURI="stem://org.eclipse.stem/node/4495365A02328B16/LAT_SQR_1_0" directed="true">
+      <dublinCore title="MigrationEdge[(LAT_SQR_0_0)&lt;-->(LAT_SQR_1_0)]" identifier="stem://org.eclipse.stem/edge/migration/relationship/migration/0" type="stemtype://org.eclipse.stem/Edge"/>
+      <label xsi:type="org.eclipse.stem.definitions.edges:MigrationEdgeLabel" uRI="stem://org.eclipse.stem/LAT.SQR.0.0_LAT.SQR.1.0" typeURI="stemtype://org.eclipse.stem/label" uRIOfIdentifiableToBeLabeled="stem://org.eclipse.stem/edge/migration/0">
+        <dublinCore identifier="stem://org.eclipse.stem/LAT.SQR.0.0_LAT.SQR.1.0" type="stemtype://org.eclipse.stem/label"/>
+        <currentValue xsi:type="org.eclipse.stem.definitions.edges:MigrationEdgeLabelValue" migrationRate="0.1"/>
+      </label>
+    </value>
+  </edges>
+  <edges key="stem://org.eclipse.stem/edge/migration/relationship/migration/1">
+    <value xsi:type="org.eclipse.stem.definitions.edges:MigrationEdge" uRI="stem://org.eclipse.stem/edge/migration/relationship/migration/1" typeURI="stemtype://org.eclipse.stem/Edge" nodeAURI="stem://org.eclipse.stem/node/4495365A02328B16/LAT_SQR_1_0" nodeBURI="stem://org.eclipse.stem/node/4495365A02328B16/LAT_SQR_0_0" directed="true">
+      <dublinCore title="MigrationEdge[(LAT_SQR_1_0)&lt;-->(LAT_SQR_0_0)]" identifier="stem://org.eclipse.stem/edge/migration/relationship/migration/1" type="stemtype://org.eclipse.stem/Edge"/>
+      <label xsi:type="org.eclipse.stem.definitions.edges:MigrationEdgeLabel" uRI="stem://org.eclipse.stem/LAT.SQR.1.0_LAT.SQR.0.0" typeURI="stemtype://org.eclipse.stem/label" uRIOfIdentifiableToBeLabeled="stem://org.eclipse.stem/edge/migration/1">
+        <dublinCore identifier="stem://org.eclipse.stem/LAT.SQR.1.0_LAT.SQR.0.0" type="stemtype://org.eclipse.stem/label"/>
+        <currentValue xsi:type="org.eclipse.stem.definitions.edges:MigrationEdgeLabelValue" migrationRate="0.1"/>
+      </label>
+    </value>
+  </edges>
+</org.eclipse.stem.core.graph:Graph>

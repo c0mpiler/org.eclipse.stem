@@ -1,0 +1,10 @@
+-------------------------------------------------------------------------------
+Test set: org.eclipse.stem.diseasemodels.globalinfluenzamodel.tests.GlobalInfluenzaModelTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.415 sec <<< FAILURE! - in org.eclipse.stem.diseasemodels.globalinfluenzamodel.tests.GlobalInfluenzaModelTest
+warning(junit.framework.TestSuite$1)  Time elapsed: 0.002 sec  <<< FAILURE!
+junit.framework.AssertionFailedError: No tests found in org.eclipse.stem.diseasemodels.globalinfluenzamodel.tests.GlobalInfluenzaModelTest
+	at junit.framework.Assert.fail(Assert.java:57)
+	at junit.framework.TestCase.fail(TestCase.java:227)
+	at junit.framework.TestSuite$1.runTest(TestSuite.java:97)
+

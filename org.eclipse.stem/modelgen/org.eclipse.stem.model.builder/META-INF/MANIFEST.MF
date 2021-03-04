@@ -1,0 +1,20 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: STEM Model Generator Builder
+Bundle-SymbolicName: org.eclipse.stem.model.builder;singleton:=true
+Bundle-Version: 3.0.0.qualifier
+Bundle-Activator: org.eclipse.stem.model.builder.Activator
+Bundle-Vendor: Eclipse.org
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.core.resources,
+ org.eclipse.stem.model,
+ org.eclipse.stem.model.codegen,
+ org.eclipse.stem.model.transform,
+ org.eclipse.stem.model.ctdl,
+ org.eclipse.emf.codegen,
+ org.eclipse.emf.codegen.ecore,
+ org.eclipse.xtext
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Bundle-ActivationPolicy: lazy
+Automatic-Module-Name: org.eclipse.stem.model.builder

@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: STEM Internal Earth Science Data
+Bundle-SymbolicName: org.eclipse.stem.internal.data.geography.earthscience
+Bundle-Version: 2.0.0
+Bundle-RequiredExecutionEnvironment: J2SE-1.5,JavaSE-1.6
+Require-Bundle: org.eclipse.stem.definitions,
+ org.eclipse.stem.geography,
+ org.eclipse.stem.data.geography,
+ org.eclipse.stem.internal.data,
+ org.eclipse.stem.internal.data.geography,
+ org.eclipse.stem.internal.data.geography.models
+Bundle-Vendor: Eclipse.org
+Export-Package: org.eclipse.stem.internal.data.geography.earthscience,
+ org.eclipse.stem.internal.data.geography.earthscience.models,
+ org.eclipse.stem.internal.data.geography.propertydata,
+ org.eclipse.stem.internal.data.geography.specifications

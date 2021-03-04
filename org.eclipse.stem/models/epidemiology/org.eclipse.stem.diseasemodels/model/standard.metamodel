@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<org.eclipse.stem.model:Package xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:org.eclipse.stem.model="http:///org/eclipse/stem/model/metamodel.ecore" packagePrefix="org.eclipse.stem.diseasemodels.standard" name="standard">
+  <models name="DiseaseModel" compartments="//@compartmentGroups.0">
+    <class href="standard.ecore#//DiseaseModel"/>
+    <parameters name="populationIdentifier" defaultValue="human" displayName="Population Identifier">
+      <dataType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </parameters>
+    <parameters name="timePeriod" defaultValue="86400000" displayName="Time Period">
+      <dataType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
+    </parameters>
+    <parameters name="diseaseName" displayName="Disease Name">
+      <dataType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </parameters>
+    <parameters name="finiteDifference" defaultValue="true" displayName="Finite Difference">
+      <dataType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    </parameters>
+    <parameters name="frequencyDependent" defaultValue="true" displayName="Frequency Dependent">
+      <dataType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    </parameters>
+    <generatorSettings propertyEditorClass="org.eclipse.stem.ui.adapters.diseasemodelpropertyeditor.DiseaseModelPropertyEditor" stringProviderAdapterClass="org.eclipse.stem.ui.wizards.StandardPropertyStringProviderAdapterFactory.StandardPropertyStringProviderAdapter" stringProviderAdapterParentClass="" labelRelativeValueProviderAdapterClass="org.eclipse.stem.diseasemodels.standard.provider.StandardRelativeValueProviderAdapterFactory.DiseaseModelLabelRelativeValueProvider" labelRelativeValueProviderAdapterParentClass="" labelValueRelativeValueProviderAdapterClass="org.eclipse.stem.diseasemodels.standard.provider.StandardRelativeValueProviderAdapterFactory.DiseaseModelLabelValueRelativeValueProvider" labelValueRelativeValueProviderAdapterParentClass=""/>
+  </models>
+  <models name="SEIR" parentModel="//@models.3" compartments="//@compartmentGroups.1">
+    <class href="standard.ecore#//SEIR"/>
+    <parameters name="incubationRate" defaultValue="0.0" displayName="Incubation Rate">
+      <dataType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    </parameters>
+    <generatorSettings propertyEditorClass="org.eclipse.stem.ui.wizards.StandardDiseaseModelPropertyEditor" stringProviderAdapterClass="org.eclipse.stem.ui.wizards.StandardPropertyStringProviderAdapterFactory.StandardPropertyStringProviderAdapter" stringProviderAdapterParentClass="" labelRelativeValueProviderAdapterClass="org.eclipse.stem.diseasemodels.standard.provider.StandardRelativeValueProviderAdapterFactory.DiseaseModelLabelRelativeValueProvider" labelRelativeValueProviderAdapterParentClass="" labelValueRelativeValueProviderAdapterClass="org.eclipse.stem.diseasemodels.standard.provider.StandardRelativeValueProviderAdapterFactory.DiseaseModelLabelValueRelativeValueProvider" labelValueRelativeValueProviderAdapterParentClass=""/>
+  </models>
+  <models name="SI" parentModel="//@models.4" compartments="//@compartmentGroups.2">
+    <class href="standard.ecore#//SI"/>
+    <parameters name="transmissionRate" defaultValue="0.0" displayName="Transmission Rate">
+      <dataType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    </parameters>
+    <parameters name="nonLinearityCoefficient" defaultValue="1.0" displayName="Non Linearity Coefficient">
+      <dataType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    </parameters>
+    <parameters name="recoveryRate" defaultValue="0.0" displayName="Recovery Rate">
+      <dataType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    </parameters>
+    <parameters name="infectiousMortalityRate" defaultValue="0.0" displayName="Infectious Mortality Rate">
+      <dataType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    </parameters>
+    <generatorSettings propertyEditorClass="org.eclipse.stem.ui.wizards.StandardDiseaseModelPropertyEditor" stringProviderAdapterClass="org.eclipse.stem.ui.wizards.StandardPropertyStringProviderAdapterFactory.StandardPropertyStringProviderAdapter" stringProviderAdapterParentClass="" labelRelativeValueProviderAdapterClass="org.eclipse.stem.diseasemodels.standard.provider.StandardRelativeValueProviderAdapterFactory.DiseaseModelLabelRelativeValueProvider" labelRelativeValueProviderAdapterParentClass="" labelValueRelativeValueProviderAdapterClass="org.eclipse.stem.diseasemodels.standard.provider.StandardRelativeValueProviderAdapterFactory.DiseaseModelLabelValueRelativeValueProvider" labelValueRelativeValueProviderAdapterParentClass=""/>
+  </models>
+  <models name="SIR" parentModel="//@models.2" compartments="//@compartmentGroups.3">
+    <class href="standard.ecore#//SIR"/>
+    <parameters name="immunityLossRate" defaultValue="0.0" displayName="Immunity Loss Rate">
+      <dataType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    </parameters>
+    <generatorSettings propertyEditorClass="org.eclipse.stem.ui.wizards.StandardDiseaseModelPropertyEditor" stringProviderAdapterClass="org.eclipse.stem.ui.wizards.StandardPropertyStringProviderAdapterFactory.StandardPropertyStringProviderAdapter" stringProviderAdapterParentClass="" labelRelativeValueProviderAdapterClass="org.eclipse.stem.diseasemodels.standard.provider.StandardRelativeValueProviderAdapterFactory.DiseaseModelLabelRelativeValueProvider" labelRelativeValueProviderAdapterParentClass="" labelValueRelativeValueProviderAdapterClass="org.eclipse.stem.diseasemodels.standard.provider.StandardRelativeValueProviderAdapterFactory.DiseaseModelLabelValueRelativeValueProvider" labelValueRelativeValueProviderAdapterParentClass=""/>
+  </models>
+  <models name="StandardDiseaseModel" parentModel="//@models.0" compartments="//@compartmentGroups.4">
+    <class href="standard.ecore#//StandardDiseaseModel"/>
+    <parameters name="referencePopulationDensity" defaultValue="100" displayName="Reference Population Density">
+      <dataType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    </parameters>
+    <parameters name="roadNetworkInfectiousProportion" defaultValue="0.01" displayName="Road Network Infectious Proportion">
+      <dataType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    </parameters>
+    <parameters name="characteristicMixingDistance" defaultValue="2.25" displayName="Characteristic Mixing Distance">
+      <dataType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    </parameters>
+    <generatorSettings propertyEditorClass="org.eclipse.stem.ui.wizards.StandardDiseaseModelPropertyEditor" stringProviderAdapterClass="org.eclipse.stem.ui.wizards.StandardPropertyStringProviderAdapterFactory.StandardPropertyStringProviderAdapter" stringProviderAdapterParentClass="" labelRelativeValueProviderAdapterClass="org.eclipse.stem.diseasemodels.standard.provider.StandardRelativeValueProviderAdapterFactory.DiseaseModelLabelRelativeValueProvider" labelRelativeValueProviderAdapterParentClass="" labelValueRelativeValueProviderAdapterClass="org.eclipse.stem.diseasemodels.standard.provider.StandardRelativeValueProviderAdapterFactory.DiseaseModelLabelValueRelativeValueProvider" labelValueRelativeValueProviderAdapterParentClass=""/>
+  </models>
+  <compartmentGroups name="DiseaseModel">
+    <class href="standard.ecore#//DiseaseModelLabel"/>
+    <valueClass href="standard.ecore#//DiseaseModelLabelValue"/>
+    <compartments name="populationCount" type="Derived">
+      <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    </compartments>
+  </compartmentGroups>
+  <compartmentGroups name="SEIR" parentGroup="//@compartmentGroups.3">
+    <class href="standard.ecore#//SEIRLabel"/>
+    <valueClass href="standard.ecore#//SEIRLabelValue"/>
+    <compartments name="e">
+      <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    </compartments>
+  </compartmentGroups>
+  <compartmentGroups name="SI" parentGroup="//@compartmentGroups.4">
+    <class href="standard.ecore#//SILabel"/>
+    <valueClass href="standard.ecore#//SILabelValue"/>
+    <compartments name="i">
+      <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    </compartments>
+  </compartmentGroups>
+  <compartmentGroups name="SIR" parentGroup="//@compartmentGroups.2">
+    <class href="standard.ecore#//SIRLabel"/>
+    <valueClass href="standard.ecore#//SIRLabelValue"/>
+    <compartments name="r">
+      <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    </compartments>
+  </compartmentGroups>
+  <compartmentGroups name="StandardDiseaseModel" parentGroup="//@compartmentGroups.0">
+    <class href="standard.ecore#//StandardDiseaseModelLabel"/>
+    <valueClass href="standard.ecore#//StandardDiseaseModelLabelValue"/>
+    <compartments name="s">
+      <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    </compartments>
+    <compartments name="incidence" type="Incidence">
+      <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    </compartments>
+    <compartments name="diseaseDeaths" type="Deaths">
+      <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    </compartments>
+  </compartmentGroups>
+</org.eclipse.stem.model:Package>

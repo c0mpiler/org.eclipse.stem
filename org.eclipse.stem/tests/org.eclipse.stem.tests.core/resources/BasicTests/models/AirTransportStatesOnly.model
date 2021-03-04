@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<org.eclipse.stem.core.model:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:org.eclipse.stem.core.model="http:///org/eclipse/stem/core/model.ecore" uRI="platform:/resource/BasicTests/models/AirTransportStatesOnly.model" typeURI="stemtype://org.eclipse.stem/Model">
+  <dublinCore identifier="platform:/resource/BasicTests/models/AirTransportStatesOnly.model" creator="edlund" format="http:///org/eclipse/stem/core/model.ecore" type="stemtype://org.eclipse.stem/Model" created="2011-02-04"/>
+  <models href="platform:/plugin/org.eclipse.stem.data.geography.population.human.models/resources/data/country/USA/USA_0_1_population.model#/"/>
+  <graphs href="platform:/plugin/org.eclipse.stem.data.geography.infrastructure.transportation/resources/data/relationship/air/USA_0_USA_1.graph#/"/>
+</org.eclipse.stem.core.model:Model>

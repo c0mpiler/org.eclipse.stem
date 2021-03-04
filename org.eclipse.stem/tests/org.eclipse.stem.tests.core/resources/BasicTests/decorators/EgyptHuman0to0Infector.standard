@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<org.eclipse.stem.diseasemodels.standard:SIInfector xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:org.eclipse.stem.diseasemodels.standard="http:///org/eclipse/stem/diseasemodels/standard.ecore" uRI="platform:/resource/BasicTests/decorators/EgyptHuman0to0Infector.standard" typeURI="stemtype://org.eclipse.stem/Identifiable" diseaseName="AgingSEIRDisease" targetISOKey="EG-UPE" populationIdentifier="human0to0" infectPercentage="true">
+  <dublinCore identifier="platform:/resource/BasicTests/decorators/EgyptHuman0to0Infector.standard" creator="loaner25" format="http:///org/eclipse/stem/diseasemodels/standard.ecore" type="stemtype://org.eclipse.stem/Identifiable" created="2011-05-26"/>
+</org.eclipse.stem.diseasemodels.standard:SIInfector>

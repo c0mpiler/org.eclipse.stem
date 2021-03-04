@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: org.eclipse.stem.ui.diseasemodels.example;singleton:=true
+Bundle-Version: 3.0.0.qualifier
+Bundle-ClassPath: .
+Bundle-Activator: org.eclipse.stem.ui.diseasemodels.example.presentation.ExampleEditorPlugin$Implementation
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Export-Package: org.eclipse.stem.ui.diseasemodels.example.presentation
+Require-Bundle: org.eclipse.stem.diseasemodels.example;visibility:=reexport,
+ org.eclipse.emf.ecore.edit;visibility:=reexport,
+ org.eclipse.stem.ui,
+ org.eclipse.stem.ui.diseasemodels
+Bundle-ActivationPolicy: lazy
+Automatic-Module-Name: org.eclipse.stem.ui.diseasemodels.example

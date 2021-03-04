@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.eclipse.stem.loggers.csv/src" editDirectory="/org.eclipse.stem.loggers.csv/src"
+    editorDirectory="/org.eclipse.stem.loggers.csv/src" modelPluginID="org.eclipse.stem.loggers.csv"
+    modelName="CSVLogger" editPluginClass="org.eclipse.stem.loggers.csv.model.provider.CSVLoggerEditPlugin"
+    editorPluginClass="org.eclipse.stem.loggers.csv.model.presentation.CSVLoggerEditorPlugin"
+    testSuiteClass="org.eclipse.stem.loggers.csv.tests.CSVLoggerAllTests" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="5.0" publicConstructors="true" editPluginID="org.eclipse.stem.loggers.csv"
+    editorPluginID="org.eclipse.stem.loggers.csv" runtimeVersion="2.6" usedGenPackages="../../org.eclipse.stem.core/model/core.genmodel#//common ../../org.eclipse.stem.core/model/core.genmodel#//graph ../../org.eclipse.stem.core/model/core.genmodel#//model ../../org.eclipse.stem.core/model/core.genmodel#//modifier ../../org.eclipse.stem.core/model/core.genmodel#//scenario ../../org.eclipse.stem.core/model/core.genmodel#//sequencer ../../org.eclipse.stem.core/model/core.genmodel#//solver ../../org.eclipse.stem.core/model/core.genmodel#//logger platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore ../../org.eclipse.stem.loggers/models/SimulationLogger.genmodel#//loggers"
+    runtimePlatform="RCP">
+  <foreignModel>CSVLogger.ecore</foreignModel>
+  <genPackages prefix="CSV" basePackage="org.eclipse.stem.loggers" disposableProviderFactory="true"
+      ecorePackage="CSVLogger.ecore#/">
+    <genClasses ecoreClass="CSVLogger.ecore#//CSVLogger">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CSVLogger.ecore#//CSVLogger/useDefaultLogDirectory"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CSVLogger.ecore#//CSVLogger/dataPath"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CSVLogger.ecore#//CSVLogger/delimeter"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CSVLogger.ecore#//CSVLogger/logRunParameters"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CSVLogger.ecore#//CSVLogger/bufferSize"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CSVLogger.ecore#//CSVLogger/logInitialState"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CSVLogger.ecore#//CSVLogger/logHtmlSummary"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

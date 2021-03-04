@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: STEM Internal Infrastructure Data
+Bundle-SymbolicName: org.eclipse.stem.internal.data.geography.infrastructure.transportation
+Bundle-Version: 2.0.3.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Require-Bundle: org.eclipse.stem.definitions,
+ org.eclipse.stem.internal.data.geography,
+ org.eclipse.stem.internal.data,
+ org.eclipse.stem.data.geography,
+ org.eclipse.stem.data.geography.infrastructure.transportation,
+ org.eclipse.stem.transport,
+ org.eclipse.stem.geography
+Bundle-Vendor: Eclipse.org
+Automatic-Module-Name: org.eclipse.stem.internal.data.geography.infrastructure.transportation

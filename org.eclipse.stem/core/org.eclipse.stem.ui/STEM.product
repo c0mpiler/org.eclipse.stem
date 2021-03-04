@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?pde version="3.5"?>
+
+<product name="STEM" uid="stem4" id="org.eclipse.stem.ui.product" application="org.eclipse.stem.ui.CoreEditorAdvisorApplication" version="1.0.0.qualifier" useFeatures="true" includeLaunchers="true">
+
+
+   <configIni use="default">
+   </configIni>
+
+   <launcherArgs>
+      <vmArgsMac>-XstartOnFirstThread -Dorg.eclipse.swt.internal.carbon.smallFonts
+      </vmArgsMac>
+   </launcherArgs>
+
+   <windowImages i16="/org.eclipse.stem.ui/branding/ohf16_16_32.gif" i32="/org.eclipse.stem.ui/branding/ohf32_32_32.gif" i48="/org.eclipse.stem.ui/branding/ohf48_48_32.gif" i64="/org.eclipse.stem.ui/branding/ohf64_64_32.gif" i128="/org.eclipse.stem.ui/branding/ohf128_128_32.gif"/>
+
+   <splash
+      location="org.eclipse.stem.ui" />
+   <launcher>
+      <win useIco="false">
+         <bmp/>
+      </win>
+   </launcher>
+
+
+   <vm>
+   </vm>
+
+   <license>
+        <url>http://eclipse.org/legal/epl/notice.php</url>
+        <text>
+   32	   Eclipse Foundation Software User Agreement
+33	February 1, 2011
+34	
+35	Usage Of Content
+36	
+37	THE ECLIPSE FOUNDATION MAKES AVAILABLE SOFTWARE, DOCUMENTATION, INFORMATION AND/OR
+38	OTHER MATERIALS FOR OPEN SOURCE PROJECTS (COLLECTIVELY &quot;CONTENT&quot;).
+39	USE OF THE CONTENT IS GOVERNED BY THE TERMS AND CONDITIONS OF THIS
+40	AGREEMENT AND/OR THE TERMS AND CONDITIONS OF LICENSE AGREEMENTS OR
+41	NOTICES INDICATED OR REFERENCED BELOW.  BY USING THE CONTENT, YOU
+42	AGREE THAT YOUR USE OF THE CONTENT IS GOVERNED BY THIS AGREEMENT
+43	AND/OR THE TERMS AND CONDITIONS OF ANY APPLICABLE LICENSE AGREEMENTS
+44	OR NOTICES INDICATED OR REFERENCED BELOW.  IF YOU DO NOT AGREE TO THE
+45	TERMS AND CONDITIONS OF THIS AGREEMENT AND THE TERMS AND CONDITIONS
+46	OF ANY APPLICABLE LICENSE AGREEMENTS OR NOTICES INDICATED OR REFERENCED
+47	BELOW, THEN YOU MAY NOT USE THE CONTENT.
+48	
+49	Applicable Licenses
+50	
+51	Unless otherwise indicated, all Content made available by the
+52	Eclipse Foundation is provided to you under the terms and conditions of
+53	the Eclipse Public License Version 1.0 (&quot;EPL&quot;). A copy of the EPL is
+54	provided with this Content and is also available at http://www.eclipse.org/legal/epl-v10.html.
+55	For purposes of the EPL, &quot;Program&quot; will mean the Content.
+56	
+57	Content includes, but is not limited to, source code, object code,
+58	documentation and other files maintained in the Eclipse Foundation source code
+59	repository (&quot;Repository&quot;) in software modules (&quot;Modules&quot;) and made available
+60	as downloadable archives (&quot;Downloads&quot;).
+61	
+62	      - Content may be structured and packaged into modules to facilitate delivering,
+63	         extending, and upgrading the Content. Typical modules may include plug-ins (&quot;Plug-ins&quot;),
+64	         plug-in fragments (&quot;Fragments&quot;), and features (&quot;Features&quot;).
+65	       - Each Plug-in or Fragment may be packaged as a sub-directory or JAR (Java(TM) ARchive)
+66	         in a directory named &quot;plugins&quot;.
+67	       - A Feature is a bundle of one or more Plug-ins and/or Fragments and associated material.
+68	         Each Feature may be packaged as a sub-directory in a directory named &quot;features&quot;.
+69	         Within a Feature, files named &quot;feature.xml&quot; may contain a list of the names and version
+70	         numbers of the Plug-ins and/or Fragments associated with that Feature.
+71	       - Features may also include other Features (&quot;Included Features&quot;). Within a Feature, files
+72	         named &quot;feature.xml&quot; may contain a list of the names and version numbers of Included Features.
+73	
+74	The terms and conditions governing Plug-ins and Fragments should be
+75	contained in files named &quot;about.html&quot; (&quot;Abouts&quot;). The terms and
+76	conditions governing Features and Included Features should be contained
+77	in files named &quot;license.html&quot; (&quot;Feature Licenses&quot;). Abouts and Feature
+78	Licenses may be located in any directory of a Download or Module
+79	including, but not limited to the following locations:
+80	
+81	       - The top-level (root) directory
+82	       - Plug-in and Fragment directories
+83	       - Inside Plug-ins and Fragments packaged as JARs
+84	       - Sub-directories of the directory named &quot;src&quot; of certain Plug-ins
+85	       - Feature directories
+86	
+87	Note: if a Feature made available by the Eclipse Foundation is installed using the
+88	Provisioning Technology (as defined below), you must agree to a license (&quot;Feature 
+89	Update License&quot;) during the installation process. If the Feature contains
+90	Included Features, the Feature Update License should either provide you
+91	with the terms and conditions governing the Included Features or inform
+92	you where you can locate them. Feature Update Licenses may be found in
+93	the &quot;license&quot; property of files named &quot;feature.properties&quot; found within a Feature.
+94	Such Abouts, Feature Licenses, and Feature Update Licenses contain the
+95	terms and conditions (or references to such terms and conditions) that
+96	govern your use of the associated Content in that directory.
+97	
+98	THE ABOUTS, FEATURE LICENSES, AND FEATURE UPDATE LICENSES MAY REFER
+99	TO THE EPL OR OTHER LICENSE AGREEMENTS, NOTICES OR TERMS AND CONDITIONS.
+100	SOME OF THESE OTHER LICENSE AGREEMENTS MAY INCLUDE (BUT ARE NOT LIMITED TO):
+101	
+102	       - Eclipse Distribution License Version 1.0 (available at http://www.eclipse.org/licenses/edl-v1.0.html)
+103	       - Common Public License Version 1.0 (available at http://www.eclipse.org/legal/cpl-v10.html)
+104	       - Apache Software License 1.1 (available at http://www.apache.org/licenses/LICENSE)
+105	       - Apache Software License 2.0 (available at http://www.apache.org/licenses/LICENSE-2.0)
+106	       - Metro Link Public License 1.00 (available at http://www.opengroup.org/openmotif/supporters/metrolink/license.html)
+107	       - Mozilla Public License Version 1.1 (available at http://www.mozilla.org/MPL/MPL-1.1.html)
+108	
+109	IT IS YOUR OBLIGATION TO READ AND ACCEPT ALL SUCH TERMS AND CONDITIONS PRIOR
+110	TO USE OF THE CONTENT. If no About, Feature License, or Feature Update License
+111	is provided, please contact the Eclipse Foundation to determine what terms and conditions
+112	govern that particular Content.
+113	
+114	Use of Provisioning Technology
+115	
+116	The Eclipse Foundation makes available provisioning software, examples of which include,
+117	but are not limited to, p2 and the Eclipse Update Manager (&quot;Provisioning Technology&quot;) for
+118	the purpose of allowing users to install software, documentation, information and/or
+119	other materials (collectively &quot;Installable Software&quot;). This capability is provided with
+120	the intent of allowing such users to install, extend and update Eclipse-based products.
+121	Information about packaging Installable Software is available at
+122	http://eclipse.org/equinox/p2/repository_packaging.html (&quot;Specification&quot;).
+123	
+124	You may use Provisioning Technology to allow other parties to install Installable Software.
+125	You shall be responsible for enabling the applicable license agreements relating to the
+126	Installable Software to be presented to, and accepted by, the users of the Provisioning Technology
+127	in accordance with the Specification. By using Provisioning Technology in such a manner and
+128	making it available in accordance with the Specification, you further acknowledge your
+129	agreement to, and the acquisition of all necessary rights to permit the following:
+130	
+131	       1. A series of actions may occur (&quot;Provisioning Process&quot;) in which a user may execute
+132	          the Provisioning Technology on a machine (&quot;Target Machine&quot;) with the intent of installing,
+133	          extending or updating the functionality of an Eclipse-based product.
+134	       2. During the Provisioning Process, the Provisioning Technology may cause third party
+135	          Installable Software or a portion thereof to be accessed and copied to the Target Machine.
+136	       3. Pursuant to the Specification, you will provide to the user the terms and conditions that
+137	          govern the use of the Installable Software (&quot;Installable Software Agreement&quot;) and such
+138	          Installable Software Agreement shall be accessed from the Target Machine in accordance
+139	          with the Specification. Such Installable Software Agreement must inform the user of the
+140	          terms and conditions that govern the Installable Software and must solicit acceptance by
+141	          the end user in the manner prescribed in such Installable Software Agreement. Upon such
+142	          indication of agreement by the user, the provisioning Technology will complete installation
+143	          of the Installable Software.
+144	
+145	Cryptography
+146	
+147	Content may contain encryption software. The country in which you are
+148	currently may have restrictions on the import, possession, and use,
+149	and/or re-export to another country, of encryption software. BEFORE
+150	using any encryption software, please check the country&apos;s laws,
+151	regulations and policies concerning the import, possession, or use, and
+152	re-export of encryption software, to see if this is permitted.
+153	
+154	Java and all Java-based trademarks are trademarks of Oracle Corporation in the United States, other countries, or both.
+155
+         </text>
+   </license>
+
+   <plugins>
+   </plugins>
+
+   <features>
+      <feature id="org.eclipse.stem.product.feature" version="3.0.0.qualifier"/>
+      <feature id="org.eclipse.stem.modelgen" version="3.0.0.qualifier"/>
+   </features>
+
+   <configurations>
+      <plugin id="org.apache.felix.scr" autoStart="true" startLevel="2" />
+      <plugin id="org.eclipse.core.runtime" autoStart="true" startLevel="0" />
+      <plugin id="org.eclipse.equinox.common" autoStart="true" startLevel="2" />
+      <plugin id="org.eclipse.equinox.event" autoStart="true" startLevel="2" />
+      <plugin id="org.eclipse.equinox.simpleconfigurator" autoStart="true" startLevel="1" />
+      <property name="stem.buildId" value="4.0.0_v" />
+   </configurations>
+
+   <repositories>
+      <repository location="http://download.eclipse.org/stem/update-site/" enabled="true" />
+   </repositories>
+
+   <preferencesInfo>
+      <targetfile overwrite="false"/>
+   </preferencesInfo>
+
+   <cssInfo>
+   </cssInfo>
+
+</product>

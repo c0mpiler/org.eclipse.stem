@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Population Plug-in
+Bundle-SymbolicName: org.eclipse.stem.internal.data.population.human
+Bundle-Version: 1.0.1.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Require-Bundle: org.eclipse.stem.internal.data,
+ org.eclipse.stem.core
+Automatic-Module-Name: org.eclipse.stem.internal.data.population.human

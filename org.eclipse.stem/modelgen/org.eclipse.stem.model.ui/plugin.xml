@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<!--
+/*******************************************************************************
+ * Copyright (c) 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018
+ * IBM Corporation, BfR, and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v2.0
+ * which accompanies this distribution, and is available at
+ * https://www.eclipse.org/legal/epl-2.0/
+ *
+ * Contributors:
+ *     IBM Corporation - initial API and implementation and new features
+ *     Bundesinstitut für Risikobewertung - Pajek Graph interface, new Veterinary Models
+ *******************************************************************************/
+-->
+<plugin>
+
+
+   <!--<extension point="org.eclipse.ui.editors">
+      <editor
+            id="org.eclipse.stem.model.metamodel.presentation.MetamodelEditorID"
+            name="%_UI_MetamodelEditor_label"
+            icon="icons/full/obj16/MetamodelModelFile.gif"
+            extensions="metamodel"
+            class="org.eclipse.stem.model.metamodel.presentation.MetamodelEditor"
+            contributorClass="org.eclipse.stem.model.metamodel.presentation.MetamodelActionBarContributor">
+      </editor>
+   </extension>-->
+
+   <extension
+         point="org.eclipse.ui.views">      
+      <view
+            name="Model Package View"
+            class="org.eclipse.stem.model.ui.views.ModelPackageView"
+            id="org.eclipse.stem.model.transform.ui.modelpackageview">
+      </view>      
+   </extension>
+   
+   
+   
+  <extension
+        point="org.eclipse.ui.commands">
+      <command 
+      		defaultHandler="org.eclipse.stem.model.ui.wizards.NewModelProjectWizard$NewModelProjectWizardCommandHandler" 
+      		description="%_UI_NewModelWizardDescription" 
+      		id="org.eclipse.stem.model.ui.wizards.NewModelProjectWizard" 
+      		name="%_UI_NewModelWizardDescription">
+  		</command>
+  </extension>
+   
+   <extension
+        point="org.eclipse.ui.menus">
+     <menuContribution
+           locationURI="menu:org.eclipse.stem.ui.menu.newwizards?after=additions">
+        <command
+              commandId="org.eclipse.stem.model.ui.wizards.NewModelProjectWizard"
+              icon="icons/full/obj16/NewGenModel.png"
+              label="%_UI_NewModelWizardTitle"
+              style="push"
+              tooltip="%_UI_NewModelWizardDescription">
+        </command>
+     </menuContribution>
+     <!--
+     JHK This next contribution adds the new modelGenProject button to the main menubar
+      -->
+     <menuContribution
+           locationURI="toolbar:org.eclipse.stem.ui.toolbar.newwizards?before=experiments">
+        <command
+              commandId="org.eclipse.stem.model.ui.wizards.NewModelProjectWizard"
+              icon="icons/full/obj16/NewGenModel.png"
+              label="%_UI_NewModelWizardTitle"
+              style="push"
+              tooltip="%_UI_NewModelWizardDescription">
+        </command>
+     </menuContribution>
+    
+  </extension>
+   
+  <extension point="org.eclipse.ui.newWizards">
+  	<category
+            id="org.eclipse.stem.ui.wizards.stemcategory"
+            name="STEM"/>  
+    <wizard 
+    	id="org.eclipse.stem.model.ui.wizards.NewModelProjectWizard" 
+    	name="STEM Model Project" 
+    	class="org.eclipse.stem.model.ui.wizards.NewModelProjectWizard" 
+    	category="org.eclipse.stem.ui.wizards.stemcategory" 
+    	icon="icons/full/ctool16/NewGenModel.gif">
+    	
+      <description>%_UI_NewModelWizardDescription</description>
+      <selection class="org.eclipse.core.resources.IResource" />
+    </wizard>
+  </extension>   
+
+
+<!--
+  <extension
+         point="org.eclipse.ui.popupMenus">
+         
+      <objectContribution
+            adaptable="true"
+            id="org.eclipse.stem.model.ui.actions.loadBundle"
+            objectClass="org.eclipse.core.resources.IProject">
+         <action
+               class="org.eclipse.stem.model.ui.actions.LoadBundleAction"
+               id="org.eclipse.stem.model.ui.actions.LoadBundleAction"
+               label="Load into current OSGi Container"
+               >
+         </action>
+         <visibility>
+         	    <objectState
+    	              name="nature"
+        	          value="org.eclipse.pde.PluginNature">
+            	</objectState>
+         </visibility>
+      </objectContribution>
+      
+      <objectContribution
+            adaptable="true"
+            id="org.eclipse.stem.model.ui.actions.unloadBundle"
+            objectClass="org.eclipse.core.resources.IProject">
+         <action
+               class="org.eclipse.stem.model.ui.actions.UnloadBundleAction"
+               id="org.eclipse.stem.model.ui.actions.UnloadBundleAction"
+               label="Unload from current OSGi Container"
+               >
+         </action>
+         <visibility>
+
+          		<objectState
+    	              name="nature"
+        	          value="org.eclipse.pde.PluginNature">
+            	</objectState>
+
+         </visibility>
+      </objectContribution>      
+      
+      <objectContribution
+            adaptable="true"
+            id="org.eclipse.stem.model.ui.actions.addModelNature"
+            objectClass="org.eclipse.core.resources.IProject">
+         <action
+               class="org.eclipse.stem.model.ui.actions.ToggleNatureAction"
+               id="org.eclipse.stem.model.ui.actions.AddNatureAction"
+               label="Add STEM Model Project Nature"
+               >
+         </action>
+         <visibility>
+			<and>
+          		<objectState
+    	              name="nature"
+        	          value="org.eclipse.pde.PluginNature">
+            	</objectState>
+            	<not>
+            		<objectState
+    	              name="nature"
+        	          value="org.eclipse.stem.model.common.ModelProjectNature">
+            		</objectState>
+            	</not>
+			</and>
+         </visibility>
+         </objectContribution>
+      
+            <objectContribution
+            adaptable="true"
+            id="org.eclipse.stem.model.ui.actions.removeModelNature"
+            objectClass="org.eclipse.core.resources.IProject">
+         <action
+               class="org.eclipse.stem.model.ui.actions.ToggleNatureAction"
+               id="org.eclipse.stem.model.ui.actions.RemoveNatureAction"
+               label="Remove STEM Model Project Nature"
+               >
+         </action>
+         <visibility>
+			<and>
+          		<objectState
+    	              name="nature"
+        	          value="org.eclipse.pde.PluginNature">
+            	</objectState>
+            	<objectState
+    	              name="nature"
+        	          value="org.eclipse.stem.model.common.ModelProjectNature">
+            	</objectState>
+			</and>
+         </visibility>
+         </objectContribution>
+      
+      </extension>
+-->
+
+
+  <extension point="org.eclipse.ui.menus">
+      
+      <menuContribution locationURI="popup:org.eclipse.ui.popup.any?after=additions">
+        <command
+              commandId="org.eclipse.stem.model.ui.loadBundle"
+              label="Load Bundle"
+              style="push"
+              tooltip="Load Bundle">
+              
+        </command>
+     </menuContribution>
+     
+     
+      <menuContribution locationURI="popup:org.eclipse.ui.popup.any?after=additions">
+        <command
+              commandId="org.eclipse.stem.model.ui.unloadBundle"
+              label="UnLoad Bundle"
+              style="push"
+              tooltip="UnLoad Bundle">
+              
+        </command>
+     </menuContribution>
+     
+     
+  </extension>
+	
+   <extension point="org.eclipse.core.expressions.propertyTesters">
+      <propertyTester
+            class="org.eclipse.stem.model.ui.actions.BundleInstallTester"
+            id="org.eclipse.stem.model.ui.actions.bundleInstallTester"
+            namespace="org.eclipse.stem.model.ui"
+            properties="isBundleInstalled"
+            type="java.lang.Object">
+      </propertyTester>
+   </extension>
+   
+   
+   <extension
+         point="org.eclipse.ui.commands">
+         
+      <command
+            defaultHandler="org.eclipse.stem.model.ui.handlers.LoadBundleHandler"
+            id="org.eclipse.stem.model.ui.loadBundle"
+            name="Load Bundle">
+      </command>
+      
+      <command
+            defaultHandler="org.eclipse.stem.model.ui.handlers.UnLoadBundleHandler"
+            id="org.eclipse.stem.model.ui.unloadBundle"
+            name="UnLoad Bundle">
+      </command>
+      
+   </extension>
+   
+   <!--
+   <extension
+        point="org.eclipse.ui.menus">
+     <menuContribution
+           allPopups="true"
+           class="org.eclipse.core.resources.IProject"
+           locationURI="org.eclipse.stem.model.ui.actions.loadBundle">
+     </menuContribution>
+     <menuContribution
+           allPopups="true"
+           class="org.eclipse.core.resources.IProject"
+           locationURI="org.eclipse.stem.model.ui.actions.unloadBundle">
+     </menuContribution>
+     <menuContribution
+           allPopups="true"
+           class="org.eclipse.core.resources.IProject"
+           locationURI="org.eclipse.stem.model.ui.actions.addModelNature">
+     </menuContribution>
+     <menuContribution
+           allPopups="false"
+           class="org.eclipse.core.resources.IProject"
+           locationURI="org.eclipse.stem.model.ui.actions.removeModelNature">
+     </menuContribution>
+  </extension>
+  -->
+   
+     <extension
+        point="org.eclipse.core.expressions.definitions">
+          <definition
+           id="org.eclipse.stem.model.ui.isBundleLoaded">
+       <test
+             property="org.eclipse.stem.model.ui.isBundleInstalled">
+       </test>
+     </definition>
+     </extension>
+
+</plugin>
